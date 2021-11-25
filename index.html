@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+.inline {
+    background-color: #f7f7f7;
+    border:solid 1px #B0B0B0;
+}
+.error {
+    font-weight: bold;
+    color: #FF0000;
+}
+.warning {
+    font-weight: bold;
+}
+.message {
+    font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+    padding: 0 1em;
+    border:solid 1px #F7F7F7;
+}
+.source {
+    background-color: #f5f5f5;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+.hl.num {
+    color: #AF0F91;
+}
+.hl.str {
+    color: #317ECC;
+}
+.hl.com {
+    color: #AD95AF;
+    font-style: italic;
+}
+.hl.opt {
+    color: #000000;
+}
+.hl.std {
+    color: #585858;
+}
+.hl.kwa {
+    color: #295F94;
+    font-weight: bold;
+}
+.hl.kwb {
+    color: #B05A65;
+}
+.hl.kwc {
+    color: #55aa55;
+}
+.hl.kwd {
+    color: #BC5A65;
+    font-weight: bold;
+}
+        </style>
+        <title>DGPH</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1024" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+    h1, h2, h3, h4 {
+        color: #007C91;
+    }
+    #impress div .slide {
+        background:#F0EEEE;
+        border-radius:12px;
+        display:block;
+        padding: 40px 20px;
+        width: 1024px;
+        height:768px;
+        clip-path: polygon(0 0, 30% 0, 34% 5%, 100% 5%, 100% 100%, 0 100%);
+    }
+    #impress .step {
+        opacity:0.2;
+    }
+    #impress .step.active {
+        opacity: 1;
+    }
+    .step {
+        position: relative;
+        padding: 20px;
+        margin: 0 auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing:    border-box;
+        -ms-box-sizing:     border-box;
+        -o-box-sizing:      border-box;
+        box-sizing:         border-box;
+        line-height: 1.5;
+    }
+    .credits, .credits h2 {
+        padding-top: 0;
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+    .twocolumn {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        text-align: left;
+    }
+    .fitImage {
+        width:  90vw;
+        height: 90vh;
+        margin: 0; 
+        padding:0;
+        opacity: 1;
+        background: white;
+    }
+    .fitImage img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .iframe1 {
+        width:400%;
+        height:400%;
+        margin: 0;
+        padding:0;
+        opacity: 1;
+        background: white;
+        -moz-transform: scale(0.25, 0.25);
+        -webkit-transform: scale(0.25, 0.25);
+        -o-transform: scale(0.25, 0.25);
+        -ms-transform: scale(0.25, 0.25);
+        transform: scale(0.25, 0.25);
+        -moz-transform-origin: top left;
+        -webkit-transform-origin: top left;
+        -o-transform-origin: top left;
+        -ms-transform-origin: top left;
+        transform-origin: top left;
+    }
+        </style>
+    </head>
+
+    <body>
+        <div id="impress"
+             data-transition-duration="500"
+             data-width="1024"
+             data-height="768"
+             data-max-scale="8"
+             data-min-scale="0"
+             data-perspective="1000">
+            <!-- data-autoplay="7" -->
+            <!-- START OF SLIDES -->
+            <div class="step slide" data-x="-4563.12370202694" data-y="-3422.3427765202" data-z="-4563.12370202694" data-rotate-z="3.17815462080762" data-rotate-x="5.70273394603282" data.rotate.y="3.43458852963522" data-scale="1.09831615248695">
+                <h1>Digital global public health: learning from Pakistan</h1>
+                <i><p>Paul Cleary</p>
+                    <p>Epidemiologist & SME for Infectious Disease Surveillance</p>
+                    <p>UKHSA-Pakistan IHR Strengthening project</p></i>
+                <b><p>26 November 2021</p></b>
+            </div>
+
+            <div class="step slide container" data-x="-1521.04123400898" data-y="-3422.3427765202" data-z="-4563.12370202694" data-rotate-z="-0.37942099571228" data-rotate-x="-5.99189071683213" data.rotate.y="-3.90350757306442" data-scale="1.03506828013342">
+                <h2>Introduction</h2>
+                <p> Today I am going to talk about:
+                <ul>
+                    <li> What digital health is </li>
+                    <li> How we implemented a digital health intervention in Pakistan</li>
+                    <li> Share some learning which might be useful for other projects</li>
+                    <li> Invite you to consider what more UKHSA can offer in this area</li>
+
+                </ul>
+            </div>
+
+            <div class="step slide" data-x="1521.04123400898" data-y="-3422.3427765202" data-z="-4563.12370202694" data-rotate-z="3.45761391939595" data-rotate-x="3.22698566084728" data.rotate.y="2.32202410977334" data-scale="1.16258385707624">
+                <h2>Digital health</h2>
+                <ul>
+                    <li>Is a very broad term!<sup><a href='https://doi.org/10.3233/shti200696' target = "_blank"> (link&#8599;)</a></sup></li>
+                    <li>Meaning: any use of information and communications technologies (<b>ICT</b>) for improving <b>health and/or well-being</b></li>
+                    <ul>
+                        <li>By individuals e.g. mobile apps (COVID-19), wearables</li>
+                        <li>By healthcare providers e.g. remote consultation, diagnosis, treatment, monitoring</li>
+                        <li>For <b>health information management</b> e.g. EHR, imaging, diagnostics, omics, big data</li>
+                        <li>Use of analytics (e.g. AI) or algorithms with health data</li>
+                        <li>Research & development</li>
+                        <li>Personalised medicine, robotics, IoT, virtual reality, e-learning, e-pharmacy and any other emerging digital trend you care to mention...</li>
+                    </ul>
+                    <li>Similar/overlapping terms: eHealth, mHealth, telehealth, telemedicine, health IT/informatics</li>
+                </ul>
+            </div>
+            <div class="step fitImage" data-x="4563.12370202694" data-y="-3422.3427765202" data-z="-4563.12370202694" data-rotate-z="-4.16255589388311" data-rotate-x="-8.48561450466514" data.rotate.y="3.70924821635708" data-scale="1.09815287182573">
+                <img src="figure/potential1.png" alt="Potential">
+            </div>
+            <div class="step slide" data-x="4963.12370202694" data-y="-3722.3427765202" data-z="-4563.12370202694" data-rotate-z="-4.16255589388311" data-rotate-x="-8.48561450466514" data.rotate.y="3.70924821635708" data-scale=".05">
+                <h2>Digital health</h2>
+                <ul>
+                    <li>Potential benefits in LMIC include:</li>
+                    <ul>
+                        <li>Improved self-management of non-communicable diseases</li>
+                        <li>Improved access to healthcare/universal health coverage</li>
+                        <li>Improved healthcare and health outcomes</li>
+                        <li>Public health</li>
+                        <ul>
+                            <li>Greater opportunities for health promotion and prevention</li>
+                            <li> <b>Strengthened surveillance and outbreak response</b></li> </li>
+                        </ul>
+                    </ul>
+                    <li>Lots of digital health "buzz", initiatives, reports, strategies, pilots</li>
+                    <li>Evidence base growing but...</li>
+                </ul>
+                <q>"Yet, despite their potential, the myriad of digital health solutions often lack a clear strategy and purpose. Consequently, they struggle to progress beyond the pilot phase, to become financially viable and integrate into national health policies and systems."<sup><a href='https://broadbandcommission.org/wp-content/uploads/2021/02/WGDigitalHealth_Report2018.pdf' target = "_blank"> (link&#8599;)</a></sup></q>
+            </div>
+            <div class="step slide" data-x="-4563.12370202694" data-y="-1140.78092550673" data-z="-4563.12370202694" data-rotate-z="0.366696168668568" data-rotate-x="-2.05707069626078" data.rotate.y="4.60984912002459" data-scale="1.03611863269471">
+                <h2>Digital health</h2>
+                <p>Digital Health resolution passed by WHA in 2018</p>
+                <ul>
+                    <i><li> "... urging Member States to prioritize the development and greater use of digital technologies in health as a means of promoting Universal Health Coverage and advancing the Sustainable Development Goals" </li>
+                        <li> "...to build capacity for <b>rapid response to disease incidents and public health emergencies, leveraging the potential of digital information and communication technology</b> to enable multidirectional communications, feedback loops and data-driven "adaptive management"" </li>
+                        <li> "to develop, as appropriate, legislation and/or data protection policies around issues such as <b>data access, sharing, consent, security, privacy, interoperability and inclusivity</b> consistent with international human rights obligations" </li></i>
+                </ul>
+            </div>
+            <div class="step fitImage" data-x="-1521.04123400898" data-y="-1140.78092550673" data-z="-4563.12370202694" data-rotate-z="6.07902846252546" data-rotate-x="1.28867595875636" data.rotate.y="-4.77459791628644" data-scale="1.18038694760762">
+                <img src="figure/9789240020924-eng_Page_01.png" alt="whostrategy">
+            </div>
+            <div class="step slide" data-x="1521.04123400898" data-y="-1140.78092550673" data-z="-4563.12370202694" data-rotate-z="3.50563205732033" data-rotate-x="-0.921526211779565" data.rotate.y="-5.26902278512716" data-scale="1.13088584062643">
+                <h2>Evidence base</h2>
+                <p> Success factors for digital health interventions</p>
+                <div class="twocolumn">
+                    <div>
+                        <ul>
+                            <li>Leadership, governance, stakeholder/intersectoral collaboration</li>
+                            <li>Enabling public health/data protection <b>legislation</b></li>
+                            <li><b>Sustainability</b> (funding, technologies)</li>
+                            <li><b>Interoperability</b>, standards, common identifiers</li>
+                            <li><b><a href="https://www.askamanager.org/2016/12/how-to-appear-smart-in-meetings.html" target="_blank">Scalability</a></b></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><b>Integration</b> with existing systems/pilots, flows, linkages</li>
+                            <li><b>Information security and cybersecurity</b></li>
+                            <li><b>Connectivity</b> (Internet, mobile/SMS, computers)</li>
+                            <li><b>Functionality</b> of chosen platform</li>
+                            <li><b>User experience</b></li>
+                            <li>Workforce development (e.g. IT skills)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="step slide" data-x="4563.12370202694" data-y="-1140.78092550673" data-z="-4563.12370202694" data-rotate-z="0.649876106064767" data-rotate-x="-7.7571380068548" data.rotate.y="2.47404225775972" data-scale="1.04327642540447">
+                <h2>Principles for digital development</h2>
+                <div class="twocolumn">
+                    <div>
+                        <iframe class="iframe1" src="https://digitalprinciples.org/principles/" frameborder="0"></iframe>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Design with the user</li>
+                            <li>Understand the existing ecosystem</li>
+                            <li>Design for scale</li>
+                            <li>Build for sustainability</li>
+                            <li>Be data driven</li>
+                            <li>Use open standards, open data, open source and open innovation</li>
+                            <li>Reuse and improve</li>
+                            <li>Address privacy and security</li>
+                            <li>Be collaborative</li>
+                        </ul>
+                        <p><a href='https://digitalprinciples.org/principles/' target = "_blank"> (link&#8599;)</a><p>
+                    </div>
+                </div>
+            </div>
+            <div class="step fitImage" data-x="-4563.12370202694" data-y="1140.78092550673" data-z="-4563.12370202694" data-rotate-z="-7.38222525129095" data-rotate-x="-3.66158235725015" data.rotate.y="-1.13995540235192" data-scale="0.972150702401996">
+                <img src="figure/scoping_Page_02.png" alt="scoping">
+            </div>
+            <div class="step slide" data-x="-1521.04123400898" data-y="1140.78092550673" data-z="-4563.12370202694" data-rotate-z="-2.97323322342709" data-rotate-x="-1.37686183629557" data.rotate.y="6.10723119042814" data-scale="1.17456024596468">
+                <h2>Pakistan 2016</h2>
+                <div class="twocolumn">
+                    <div>
+                        <img src="figure/visit1.png" alt="visit1">
+                        <h4>The situation</h4>
+                        <ul>
+                            <li>Some existing infectious disease surveillance in Pakistan; fragmented across vertical programmes, military, provincial initiatives</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Previous DEWS system ended when WHO withdrew funding</li>
+                            <li>NIH Islamabad developing into full national PH institute but weak</li>
+                            <li>Little support from WHO at the time</li>
+                            <li>Devolution of health (but not IHR); divergence between provinces</li>
+                            <li>Lack of enabling public health legislation</li>
+                            <li>Most health care provided privately (some DH initiatives, e.g. pharmacy); no surveillance data shared</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="step slide" data-x="1521.04123400898" data-y="1140.78092550673" data-z="-4563.12370202694" data-rotate-z="2.35003579733893" data-rotate-x="6.28641215292737" data.rotate.y="-4.51745512895286" data-scale="1.18202354493551">
+                <h2>Pakistan 2016</h2>
+                <div class="twocolumn">
+                    <div>
+                        <img src="figure/whiteboard.png" alt="whiteboard">
+                        <h4>The situation (cont.)</h4>
+                        <ul>
+                            <li>Dependence on FELTP fellows</li>
+                            <li>Lack of infrastructure and equipment</li>
+                            <li>Limited information governance/security; previous major hacks</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <h4>The tasks</h4>
+                            <li>Re-establish basic surveillance processes in pilot districts of each province</li>
+                            <li>Establish "data flow" from selected districts to provincial and federal level</li>
+                            <li>Harmonise data collection and strengthen information security</li>
+                            <li>Create timely surveillance outputs</li>
+                            <li>Link surveillance outputs to action</li>
+                            <li>Build capacity in local teams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="step slide" data-x="4563.12370202694" data-y="1140.78092550673" data-z="-4563.12370202694" data-rotate-z="5.12244083359838" data-rotate-x="0.214990435168147" data.rotate.y="-8.48373573459685" data-scale="0.990513807442039">
+                <h2>A digital health intervention?</h2>
+                <div class="twocolumn">
+                    <div>
+                        <img src="figure/me2018-3.jpg" alt="meatnih">
+                        <ul>
+                            <li>Took some months and a few trips to understand the ecosystem</li>
+                            <li>Fragmented system; no secure communications; 
+<a href="https://index.digitalhealthindex.org/country_profile/PAK" target="_blank">no existing suitable digital platform</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Requirements</h4>
+                        <ul>
+                            <li>Sustainable - ideally open source (vs bespoke/commercial)</li>
+                            <li>Strong on data quality and information security</li>
+                            <li>Easy to use</li>
+                            <li>Key functionality including analytics and interoperability with other software</li>
+                            <li>Future-proof upgrade cycle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="step fitImage" data-x="-4563.12370202694" data-y="3422.3427765202" data-z="-4563.12370202694" data-rotate-z="0.638312914408743" data-rotate-x="3.60937605472282" data.rotate.y="-8.53672428661957" data-scale="0.982097751018591">
+                <span><h2>&nbsp;&nbsp;&nbsp;District Health Information System 2 (DHIS 2) <a href='https://dhis2.org/in-action' target = "_blank"> (link&#8599;)</a> </h2>
+                    <iframe src="https://dhis2.org/in-action#map" frameborder="0" style="width: 100%; height: 100%"></iframe>
+            </div>
+            <div class="step fitImage" data-x="-1521.04123400898" data-y="3422.3427765202" data-z="-4563.12370202694" data-rotate-z="3.08553689159453" data-rotate-x="-2.45825537061319" data.rotate.y="-0.623948126100004" data-scale="1.01960357315838">
+                <img src="figure/yed_diagram.png" alt="scoping">
+            </div>
+            <div class="step slide" data-x="1521.04123400898" data-y="3422.3427765202" data-z="-4563.12370202694" data-rotate-z="6.37737274216488" data-rotate-x="8.40508349239826" data.rotate.y="-2.42819617269561" data-scale="0.970620071608573">
+                <h2>DHIS 2</h2>
+                <div class="twocolumn">
+                    <div>
+                        <h3>Strengths</h3>
+                        <ul>
+                            <li>Open source: no licensing costs or restrictions on customisation</li>
+                            <li>Well documented; extensive training materials; easy to use</li>
+                            <li>Interoperability: use of standards (e.g. ADX data format), Application Programming Interface (API), Python/R integration</li>
+                            <li>Strong focus on cybersecurity and fine-grained permissions for users</li>
+                            <li>Highly scalable</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Flexible data collection, including mobile devices, SMS</li>
+                            <li>Extensive analytical functionality including GIS</li>
+                            <li>Enterprise-level database/data warehouse</li>
+                            <li>Developers can add new apps</li>
+                        </ul>
+                        <h3>Weaknesses</h3>
+                        <ul>
+                            <li>Technical skills required</li>
+                            <li>Set up time (NB: WHO metadata)</li>
+                            <li>Not suitable for all purposes e.g. LIMS, ? EBS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="step slide" data-x="4563.12370202694" data-y="3422.3427765202" data-z="-4563.12370202694" data-rotate-z="-0.855709379073232" data-rotate-x="5.57227251073346" data.rotate.y="3.17337912367657" data-scale="1.08785555493087">
+                <h2>Open source software</h2>
+                <div class="twocolumn">
+                    <div>
+                        <ul>
+                            <li>Distributed, shared, open software development</li>
+                            <li>No purchase/licensing costs</li>
+                            <ul>
+                                <li>Note that a single user licence for commercial software may far exceed the average national wage in LMIC</li>
+                                <li>OSS not cost-free: still need to pay for hosting, IT staff, training</li>
+                            </ul>
+                            <li><a href="https://digitalpublicgoods.net/" target="_blank">"Digital public goods"</a></li>
+                            <li>60% of the Web (and most email) runs on the open source Linux operating system</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Other examples of OSS</h3>
+                        <table>
+                            <tr>
+                                <td><a href="https://www.kobotoolbox.org/" target="_blank">KoBoToolbox</a></td>
+                                <td><a href="https://openelis-global.org/" target="_blank">OpenELIS</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://openmrs.org/" target="_blank">OpenMRS</a></td>
+                                <td><a href="https://dimagi.github.io/commcare-cloud/" target="_blank">CommCare</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://communityhealthtoolkit.org/" target="_blank">Community Health Toolkit</a></td>
+                                <td><a href="https://www.mhero.org/" target="_blank">mHero</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://smartregister.org/" target="_blank">OpenSRP</a></td>
+                                <td><a href="https://divoc.egov.org.in/" target="_blank">DIVOC</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.facilitymatch.net//" target="_blank">GOFR</a></td>
+                                <td><a href="https://sormas.org/" target="_blank">SORMAS</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://app.rapidpro.io/" target="_blank">RapidPro</a></td>
+                                <td><a href="https://getodk.org/" target="_blank">ODK</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.covidcreds.org/" target="_blank">COVID Credentials Initiative</a></td>
+                                <td><a href="https://landscape.lfph.io/" target="_blank">And many more ...</a></td>
+                            </tr>
+                        </table>
+                        <!--                        <img src="figure/InteroperabilityInfographic_Xlarge-1024x555.jpg" alt="interoperability" style="width:auto; height:20%;">-->
+                    </div>
+                </div>
+
+            </div>
+            <div class="step slide" data-x="-4563.12370202694" data-y="-3422.3427765202" data-z="0" data-rotate-z="-4.81459974450991" data-rotate-x="2.84551170654595" data.rotate.y="2.04949377849698" data-scale="1.23607657644898">
+                        <h2>Next steps for DHIS 2</h2>
+                        <ul>
+                            <li>Continue to scale up to further districts (training is the limiting step)</li>
+                            <li>Move towards more direct data entry by health facilities using app ? daily (exploring SMS gateways)</li>
+                            <li>Extend to capture other data</li>
+                            <li>Develop more complex deployments: disaster recovery; isolated instances for more sensitive data</li>
+                            <li>Develop data linkage and centralised dashboard function and other outputs</li>
+                        </ul>
+                        <p>&nbsp;</p>
+                <h2>What have we learned?</h2>
+            </div>
+            <div class="step slide" data-x="-1521.04123400898" data-y="-3422.3427765202" data-z="0" data-rotate-z="-3.15728664910421" data-rotate-x="3.74957102537155" data.rotate.y="1.42765312688425" data-scale="1.24738393649459">
+                <h3>Technology decision-making</h3>
+                <ul>
+                    <li>Assessment of needs, capabilities, connectivity etc is hard; scope creeps</li>
+                    <li>Sustainable software solutions: open source (under-used) vs. bespoke (over-used) vs. commercial (unaffordable)</li>
+                    <li>Interoperability, use of standards: important for future capability, but linkage is difficult</li>
+                    <li>Sustainable hosting: the cloud is cheap (but unclear data governance may hinder); hosting it yourselves requires kit, dependable power supply, people (+/-) IT training ...</li>
+                    <li>Metadata required for system configuration: master facility list (+ codes), denominator data, citizen ID system, GIS data</li>
+                    <li>Skills required for implementation team, e.g. Linux, networking, cybersecurity, Java, nginx, HTTPS/TLS, SSH, PostgreSQL, ufw, fail2ban, tripwire, SSH, virtualisation, Lynis, CloudFlare, Web development, <a href="https://github.com/prcleary/dhis2_scripts" target="_blank"> system administration/shell scripting</a>, (DHIS 2) - employ IT people! </li>
+                </ul>
+            </div>
+            <div class="step slide" data-x="1521.04123400898" data-y="-3422.3427765202" data-z="0" data-rotate-z="6.13877857429907" data-rotate-x="-8.75963761936873" data.rotate.y="-0.0828293384984136" data-scale="1.24801057281438">
+                <h3>Information governance/security and cybersecurity</h3>
+                <ul>
+                    <li>Lack of clear information governance may enable or hinder</li>
+                    <li>Much poor information security practice</li>
+                    <li>Default to basic principles (confidentiality, integrity, authenticity) or own organisational practices</li>
+                    <li>Key area to develop and strengthen, e.g. policy</li>
+                </ul>
+                <h3>Be lucky!</h3>
+                <ul>
+                    <li>Good colleagues and engaged IT</li>
+                    <li>TB program had done groundwork with DHIS 2 metadata</li>
+                    <li>CDC funded an entire data centre</li>
+                    <li>Bet on DHIS 2 came good</li>
+                </ul>
+                        <h3>Look out for unexpected competition!</h3>
+            </div>
+            <div class="step slide" data-x="4563.12370202694" data-y="-3422.3427765202" data-z="0" data-rotate-z="-7.19120814464986" data-rotate-x="-7.5681574428454" data.rotate.y="-4.05761539237574" data-scale="0.96011805201415">
+                <h3>Role of UKHSA</h3>
+                <ul>
+                    <li>UKHSA has skills and expertise in most of the areas relevant to digital health</li>
+                    <li>Has lots to contribute to development of information solutions</li>
+                    <li>Should promote, contribute to and use open source software</li>
+                </ul>
+                <p>&nbsp;</p>
+                <h2> Thanks for listening</h2>
+                <p><a href="mailto:paul.cleary@phe.gov.uk?Subject=I%20love%20digital%20health">paul.cleary@phe.gov.uk</a></p>
+            </div>
+        </div>
+        <div id="backgroundStatic" style="width:1024px; height:768;">
+            <img alt="gif" src="figure/image_processing20191005-22376-4jawmy.gif" class="center" />
+        </div>
+
+            <!--            <div class="step slide" data-x="-4563.12370202694" data-y="-1140.78092550673" data-z="0" data-rotate-z="7.68007993139327" data-rotate-x="6.33355404669419" data.rotate.y="-4.02437588665634" data-scale="1.1357321155956">-->
+<!--                 <h2>Slide 21</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 21</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-1521.04123400898" data-y="-1140.78092550673" data-z="0" data-rotate-z="5.41647000052035" data-rotate-x="2.52010412653908" data.rotate.y="-2.5001252903603" data-scale="0.963457750156522">--> 
+<!--                 <h2>Slide 22</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 22</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="1521.04123400898" data-y="-1140.78092550673" data-z="0" data-rotate-z="6.19399109249935" data-rotate-x="1.2063142969273" data.rotate.y="-6.33891029236838" data-scale="1.04552446000744">--> 
+<!--                 <h2>Slide 23</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 23</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="4563.12370202694" data-y="-1140.78092550673" data-z="0" data-rotate-z="-6.10238159727305" data-rotate-x="0.77776630455628" data.rotate.y="4.95381878083572" data-scale="1.04733196035959">--> 
+<!--                 <h2>Slide 24</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 24</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-4563.12370202694" data-y="1140.78092550673" data-z="0" data-rotate-z="3.88764926372096" data-rotate-x="-4.01205270783976" data.rotate.y="4.30467555066571" data-scale="1.20038711007219">--> 
+<!--                 <h2>Slide 25</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 25</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-1521.04123400898" data-y="1140.78092550673" data-z="0" data-rotate-z="1.60138299828395" data-rotate-x="-5.32346881600097" data.rotate.y="1.73380403034389" data-scale="1.17148480897304">--> 
+<!--                 <h2>Slide 26</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 26</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="1521.04123400898" data-y="1140.78092550673" data-z="0" data-rotate-z="7.39893275639042" data-rotate-x="-7.86288403859362" data.rotate.y="6.60779670439661" data-scale="1.17472236293834">--> 
+<!--                 <h2>Slide 27</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 27</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="4563.12370202694" data-y="1140.78092550673" data-z="0" data-rotate-z="6.25978376017883" data-rotate-x="-6.19731978094205" data.rotate.y="0.0373613736592233" data-scale="1.02777687660418">--> 
+<!--                 <h2>Slide 28</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 28</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-4563.12370202694" data-y="3422.3427765202" data-z="0" data-rotate-z="-5.03389873355627" data-rotate-x="-2.71072043152526" data.rotate.y="6.88018225925043" data-scale="1.08538734903559">--> 
+<!--                 <h2>Slide 29</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 29</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-1521.04123400898" data-y="3422.3427765202" data-z="0" data-rotate-z="-1.91949140746146" data-rotate-x="-2.11180899571627" data.rotate.y="3.57008302537724" data-scale="1.15083027544897">--> 
+<!--                 <h2>Slide 30</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 30</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="1521.04123400898" data-y="3422.3427765202" data-z="0" data-rotate-z="4.84920052159578" data-rotate-x="2.05518240435049" data.rotate.y="-3.85620156582445" data-scale="1.17588270443957">--> 
+<!--                 <h2>Slide 31</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 31</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="4563.12370202694" data-y="3422.3427765202" data-z="0" data-rotate-z="2.10651362361386" data-rotate-x="4.65289306780323" data.rotate.y="-1.66755996784195" data-scale="1.10584526238963">--> 
+<!--                 <h2>Slide 32</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 32</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-4563.12370202694" data-y="-3422.3427765202" data-z="4563.12370202694" data-rotate-z="-2.21295291837305" data-rotate-x="4.23713749833405" data.rotate.y="2.92139468947425" data-scale="1.20368387121707">--> 
+<!--                 <h2>Slide 33</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 33</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-1521.04123400898" data-y="-3422.3427765202" data-z="4563.12370202694" data-rotate-z="-4.80536918202415" data-rotate-x="5.42789583373815" data.rotate.y="8.99455759674311" data-scale="0.98487484108191">--> 
+<!--                 <h2>Slide 34</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 34</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="1521.04123400898" data-y="-3422.3427765202" data-z="4563.12370202694" data-rotate-z="7.84479437023401" data-rotate-x="-7.90121275512502" data.rotate.y="5.93702025571838" data-scale="0.99053514287807">--> 
+<!--                 <h2>Slide 35</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 35</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="4563.12370202694" data-y="-3422.3427765202" data-z="4563.12370202694" data-rotate-z="-2.12826712662354" data-rotate-x="-1.3349727219902" data.rotate.y="-0.460454234853387" data-scale="1.21961383933667">--> 
+<!--                 <h2>Slide 36</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 36</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-4563.12370202694" data-y="-1140.78092550673" data-z="4563.12370202694" data-rotate-z="7.43367370823398" data-rotate-x="-3.40641990769655" data.rotate.y="-8.50926704937592" data-scale="1.1781522575533">--> 
+<!--                 <h2>Slide 37</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 37</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-1521.04123400898" data-y="-1140.78092550673" data-z="4563.12370202694" data-rotate-z="8.71140109933913" data-rotate-x="-0.70330862654373" data.rotate.y="7.72524541430175" data-scale="1.05111752650701">--> 
+<!--                 <h2>Slide 38</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 38</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="1521.04123400898" data-y="-1140.78092550673" data-z="4563.12370202694" data-rotate-z="-5.48584750760347" data-rotate-x="8.49132871627808" data.rotate.y="4.19107868056744" data-scale="0.999145763879642">--> 
+<!--                 <h2>Slide 39</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 39</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="4563.12370202694" data-y="-1140.78092550673" data-z="4563.12370202694" data-rotate-z="0.169522621203214" data-rotate-x="-4.90952093806118" data.rotate.y="-1.10280293086544" data-scale="1.06885611214675">--> 
+<!--                 <h2>Slide 40</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 40</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-4563.12370202694" data-y="1140.78092550673" data-z="4563.12370202694" data-rotate-z="-3.01515902532265" data-rotate-x="-3.34787535667419" data.rotate.y="-7.71377589041367" data-scale="0.958539350726642">--> 
+<!--                 <h2>Slide 41</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 41</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-1521.04123400898" data-y="1140.78092550673" data-z="4563.12370202694" data-rotate-z="7.18240637518466" data-rotate-x="5.18683667387813" data.rotate.y="4.4855728042312" data-scale="1.05657927638385">--> 
+<!--                 <h2>Slide 42</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 42</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="1521.04123400898" data-y="1140.78092550673" data-z="4563.12370202694" data-rotate-z="2.26176291564479" data-rotate-x="8.26034214394167" data.rotate.y="4.31940567679703" data-scale="0.981978191412054">--> 
+<!--                 <h2>Slide 43</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 43</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="4563.12370202694" data-y="1140.78092550673" data-z="4563.12370202694" data-rotate-z="3.40688490634784" data-rotate-x="1.6542259901762" data.rotate.y="-4.75020146509632" data-scale="1.04222034709528">--> 
+<!--                 <h2>Slide 44</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 44</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-4563.12370202694" data-y="3422.3427765202" data-z="4563.12370202694" data-rotate-z="3.57511518895626" data-rotate-x="2.26049663638696" data.rotate.y="0.735028157941997" data-scale="1.09697464767378">--> 
+<!--                 <h2>Slide 45</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 45</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="-1521.04123400898" data-y="3422.3427765202" data-z="4563.12370202694" data-rotate-z="-7.41877718036994" data-rotate-x="2.34471037611365" data.rotate.y="-1.06231115106493" data-scale="1.24957603488583">--> 
+<!--                 <h2>Slide 46</h2>--> 
+<!--                 <ul>--> 
+<!--                     <li>Stuff</li>--> 
+<!--                     <li>More about Slide 46</li>--> 
+<!--                 </ul>--> 
+<!--             </div>--> 
+<!--             <div class="step slide" data-x="1521.04123400898" data-y="3422.3427765202" data-z="4563.12370202694" data-rotate-z="-0.513851584866643" data-rotate-x="-4.66769376536831" data.rotate.y="-5.23079190636054" data-scale="0.969206256256439">--> 
+<!--                 ...--> 
+<!--             </div>--> 
+<!--         </div>--> 
+        <!-- END OF SLIDES-->
+        </div>
+
+        <script src="js/impress.js"></script>
+        <script>impress().init();</script>
+
+    </body>
+</html>
+
+<!-- Created with: library(shiny): runGitHub("4Quant/shiny-impress.js") -->
