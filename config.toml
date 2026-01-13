@@ -29,7 +29,7 @@ index_format = "elasticlunr_json"
 
 
 [markdown]
-highlight_code = true
+highlighting = true
 bottom_footnotes = true
 # To use a Zola built-in theme, CSP needs to allow unsafe-inline for style-src.
 highlight_theme = "css"
