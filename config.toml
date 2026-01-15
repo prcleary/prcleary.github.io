@@ -39,7 +39,7 @@ render_emoji = true
 
 [markdown.highlighting]
 enabled = true
-theme = "css"
+theme = "monokai"
 
 [extra]
 # Check out the documentation (or the comments below) to learn how to customise tabi:
