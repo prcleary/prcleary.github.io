@@ -1,4 +1,4 @@
-base_url = "https://prcleary.github.io/zola/"
+base_url = "https://prcleary.github.io"
 title = "Wikipaulia"
 description = "An epidemiologist dabbles in statistics, coding, open source software, the cloud and AI."
 author = "Paul Cleary"
