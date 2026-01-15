@@ -32,7 +32,6 @@ index_format = "elasticlunr_json"
 
 
 [markdown]
-highlighting = true
 bottom_footnotes = true
 smart_punctuation = true
 external_links_class = "external"
