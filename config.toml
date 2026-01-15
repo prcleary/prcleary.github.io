@@ -72,7 +72,7 @@ default_theme = ""
 # Note: Bright colors may be ignored in dark mode.
 # More details: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
 # browser_theme_color = "#087e96"  # Example of single value.
-# browser_theme_color = ["#ffffff", "#000000"]  # Example of light/dark colours.
+browser_theme_color = ["#ffffff", "#000000"]  # Example of light/dark colours.
 
 # List additional stylesheets to load site-wide.
 # These stylesheets should be located in your site's `static` directory.
@@ -324,6 +324,10 @@ allowed_domains = [
     { directive = "script-src", domains = ["'self'", "https://cdn.jsdelivr.net"] },
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
     { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
+    { directive = "default-src", domains = ["'none'"] },
+    { directive = "base-uri", domains = ["'self'"] },
+    { directive = "form-action", domains = ["'self'"] },
+    { directive = "frame-ancestors", domains = ["'none'"] },
 ]
 
 # Enable the CSP directives configured (or default).
