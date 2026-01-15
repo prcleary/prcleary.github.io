@@ -5,7 +5,6 @@ author = "Paul Cleary"
 theme = "tabi"
 generate_feeds = true
 compile_sass = true
-highlight_theme = "css"
 minify_html = true
 build_search_index = true
 default_language = "en"
@@ -33,7 +32,8 @@ index_format = "elasticlunr_json"
 
 
 [markdown]
-highlighting = true
+highlight_code = true
+highlight_theme = "css"
 bottom_footnotes = true
 smart_punctuation = true
 external_links_class = "external"
