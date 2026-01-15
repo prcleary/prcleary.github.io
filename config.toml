@@ -37,6 +37,10 @@ smart_punctuation = true
 external_links_class = "external"
 render_emoji = true
 
+[markdown.highlighting]
+enabled = true
+theme = "css"
+
 [extra]
 # Check out the documentation (or the comments below) to learn how to customise tabi:
 # https://welpo.github.io/tabi/blog/mastering-tabi-settings/
