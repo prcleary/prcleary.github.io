@@ -146,7 +146,7 @@ You can add this to Task Scheduler.
     - Start a program
     - Program/script: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
     - Add arguments: `-NoProfile -ExecutionPolicy Bypass -File "C:\Users\your.name\full\path\to\folder\Send-OutlookCalendarEmail.ps1" -RecipientEmail "name@domain.tld"`
-    - Start in: `C:\Users\Paul.Cleary\OneDrive - UK Health Security Agency\Desktop`
+    - Start in: `C:\Users\your.name\full path\Desktop`
 - Conditions: Wake the computer to run this task
 - Settings: tick all except one about deleting it
 
