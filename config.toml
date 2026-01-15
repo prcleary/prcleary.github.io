@@ -32,13 +32,11 @@ index_format = "elasticlunr_json"
 
 
 [markdown]
+highlighting = { enabled = true }
 bottom_footnotes = true
 smart_punctuation = true
 external_links_class = "external"
 render_emoji = true
-
-[markdown.highlight_code]
-enabled = true
 
 [extra]
 # Check out the documentation (or the comments below) to learn how to customise tabi:
