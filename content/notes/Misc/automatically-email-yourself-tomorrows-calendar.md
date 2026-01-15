@@ -11,27 +11,58 @@ param (
     [Parameter(Mandatory = $true)]
     [string]$RecipientEmail,
 
-    [datetime]$Date = (Get-Date).Date.AddDays(1),
-
     [string]$EmailSubjectPrefix = "Calendar Events for"
 )
 
 # -----------------------------
-# CONNECT TO OUTLOOK
+# LOG START
 # -----------------------------
-$outlook = New-Object -ComObject Outlook.Application
-$namespace = $outlook.GetNamespace("MAPI")
-$calendar = $namespace.GetDefaultFolder(9) # olFolderCalendar
-$items = $calendar.Items
+$log = "$env:TEMP\calendar_task.log"
+Add-Content $log "$(Get-Date) - Script started"
 
-# Ensure correct behavior
+# -----------------------------
+# TARGET DATE (TOMORROW)
+# -----------------------------
+$Date = (Get-Date).Date.AddDays(1)
+
+# -----------------------------
+# ENSURE OUTLOOK IS RUNNING
+# -----------------------------
+$outlookProcess = Get-Process OUTLOOK -ErrorAction SilentlyContinue
+if (-not $outlookProcess) {
+    Start-Process "outlook.exe"
+}
+
+# Wait for Outlook MAPI session to be ready
+$maxWait = 30
+$waited = 0
+do {
+    Start-Sleep -Seconds 1
+    try {
+        $outlook = New-Object -ComObject Outlook.Application
+        $namespace = $outlook.GetNamespace("MAPI")
+        $null = $namespace.Folders.Count
+        $ready = $true
+    } catch {
+        $ready = $false
+    }
+    $waited++
+} until ($ready -or $waited -ge $maxWait)
+
+if (-not $ready) {
+    Add-Content $log "$(Get-Date) - Outlook MAPI not ready, exiting"
+    exit
+}
+
+# -----------------------------
+# ACCESS CALENDAR
+# -----------------------------
+$calendar = $namespace.GetDefaultFolder(9)
+$items = $calendar.Items
 $items.Sort("[Start]")
 $items.IncludeRecurrences = $true
 
-# -----------------------------
-# DATE RANGE
-# -----------------------------
-$startOfDay = $Date.Date
+$startOfDay = $Date
 $endOfDay   = $startOfDay.AddDays(1)
 
 $filter = "[Start] >= '" + $startOfDay.ToString("g") +
@@ -42,7 +73,8 @@ $appointments = $items.Restrict($filter)
 # -----------------------------
 # BUILD EMAIL BODY
 # -----------------------------
-$body = "Calendar events for " + $Date.ToString("dddd, MMMM dd, yyyy") + "`r`n`r`n"
+$body = "Calendar events for " +
+        $Date.ToString("dddd, MMMM dd, yyyy") + "`r`n`r`n"
 
 if ($appointments.Count -eq 0) {
 
@@ -52,14 +84,11 @@ if ($appointments.Count -eq 0) {
 
     foreach ($appt in $appointments) {
 
-        $start = $appt.Start
-        $end   = $appt.End
-
         $body += "- " + $appt.Subject + "`r`n"
         $body += "  Time: " +
-                 $start.ToString("hh:mm tt") +
+                 $appt.Start.ToString("hh:mm tt") +
                  " - " +
-                 $end.ToString("hh:mm tt") + "`r`n"
+                 $appt.End.ToString("hh:mm tt") + "`r`n"
 
         if ($appt.Location) {
             $body += "  Location: " + $appt.Location + "`r`n"
@@ -72,11 +101,13 @@ if ($appointments.Count -eq 0) {
 # -----------------------------
 # SEND EMAIL
 # -----------------------------
-$mail = $outlook.CreateItem(0) # olMailItem
+$mail = $outlook.CreateItem(0)
 $mail.To = $RecipientEmail
 $mail.Subject = "$EmailSubjectPrefix $($Date.ToString('MMMM dd, yyyy'))"
 $mail.Body = $body
 $mail.Send()
+
+Add-Content $log "$(Get-Date) - Mail.Send() called"
 
 # -----------------------------
 # CLEANUP
@@ -96,12 +127,26 @@ Enable it:
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
-Run it:
+Run it to check - you should get an email:
 
 ```powershell
-.\Send-OutlookCalendarEmail.ps1 `
-  -RecipientEmail "name@domain.tld" `
-  -Date (Get-Date).AddDays(1)
+.\Send-OutlookCalendarEmail.ps1 -RecipientEmail "name@domain.tld"
 ```
 
 You can add this to Task Scheduler.
+
+- Open Task Scheduler
+- Create Task
+- General
+    - Give task a descriptive name 
+    - Run whether user is logged on or not
+- Triggers
+    - Weekly, select Monday to Thursday, 5pm, enabled
+- Actions
+    - Start a program
+    - Program/script: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
+    - Add arguments: `-NoProfile -ExecutionPolicy Bypass -File "C:\Users\your.name\full\path\to\folder\Send-OutlookCalendarEmail.ps1" -RecipientEmail "name@domain.tld"`
+    - Start in: `C:\Users\Paul.Cleary\OneDrive - UK Health Security Agency\Desktop`
+- Conditions: Wake the computer to run this task
+- Settings: tick all except one about deleting it
+
