@@ -22,5 +22,5 @@ I am interested in too many things, including:
 
 Most of the content is esoteric technical notes - I use this blog/wiki mainly as a reference for myself. I will occasionally blog on my current interests and activities. 
 
-I used to have a different blog - you can still access it [here](/zola/oldblog.html). I am gradually moving any useful stuff over.
+I used to have a different blog - you can still access it [here](/oldblog.html). I am gradually moving any useful stuff over.
 
