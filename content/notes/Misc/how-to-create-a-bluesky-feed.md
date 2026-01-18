@@ -16,7 +16,7 @@ title = "How to create a Bluesky feed"
 	```
 	- Sort by: random
 
-You can see the result of mine here: [EpiNerd — Bluesky](https://bsky.app/profile/paulcleary.net/feed/aaadvpxlfawji) - it still includes some weird things but works mostly
+You can see the result of mine here: [EpiNerd — Bluesky](https://bsky.app/profile/paulcleary.net/feed/aaadvpxlfawji) - it still includes some weird things (mute or block them if they keep appearing) 
 
 
 
