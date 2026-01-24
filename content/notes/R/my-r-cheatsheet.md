@@ -2,6 +2,8 @@
 title = "My R cheatsheet"
 +++
 
+{{ toc() }}
+
 > Stuff I find myself Googling for the nth time
 
 

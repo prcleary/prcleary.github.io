@@ -5,6 +5,8 @@ title = "My Zola cheatsheet"
 mermaid = true
 +++
 
+{{ toc() }}
+
 Most Markdown works as expected, but here are some less obvious things you can do. You can also include HTML.
 
 ## Add a table of contents

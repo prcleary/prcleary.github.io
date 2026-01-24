@@ -3,6 +3,8 @@ title = "My Linux cheatsheet"
 toc = true
 +++
 
+{{ toc() }}
+
 > Stuff I find myself Googling for the nth time
 
 ### Check which ports are open

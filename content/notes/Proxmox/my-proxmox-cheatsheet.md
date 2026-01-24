@@ -2,6 +2,8 @@
 title = "My Proxmox cheatsheet"
 +++
 
+{{ toc() }}
+
 ### Set up Let's Encrypt with Cloudflare
 
 - as HTTP method didn't work (port 80 probably in use by Nginx Proxy Manager), let Cloudflare manage DNS
