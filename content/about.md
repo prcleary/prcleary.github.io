@@ -4,9 +4,7 @@ path = "about"
 template = "page.html"
 +++
 
-Hi! 👋  
-
-This is my blog, built with **Zola** and the **tabi** theme.
+Paul Cleary's blog, created with [Zola](https://www.getzola.org/) and [tabi](https://github.com/welpo/tabi), accessible [here](https://prcleary.github.io)
 
 I'm an epidemiologist working in UK public health and global health.  
 
