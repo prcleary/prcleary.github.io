@@ -8508,8 +8508,12 @@ path:Links/*
 
 <!-- Source: Links/2026-04-11.md -->
 <!-- URL: https://prcleary.github.io/Links/2026-04-11 -->
-<!-- Title: 2026-04-11 -->
+<!-- Title: Abandoned Liverpool; persona prompting -->
 <!-- Wikilinks: [[Links/2026-04-11]], [[2026-04-11]] -->
+
+---
+title: Abandoned Liverpool; persona prompting
+---
 
 ## Abandoned Liverpool
 
