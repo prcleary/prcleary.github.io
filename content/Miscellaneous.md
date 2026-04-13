@@ -1,3 +1,0 @@
-Index page for Miscellaneous
-
-

@@ -6,5 +6,5 @@ feed:
 > Books I read or am reading
 
 ```query
-path:Miscellaneous/Books/*
+path:Books/*
 ```

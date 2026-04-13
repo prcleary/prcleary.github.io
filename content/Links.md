@@ -6,5 +6,5 @@ feed:
 > Interesting links
 
 ```query 
-path:Miscellaneous/Links/*
+path:Links/*
 ```

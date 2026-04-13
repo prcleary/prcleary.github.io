@@ -6,5 +6,5 @@ feed:
 > Random thoughts
 
 ```query {.timeline}
-path:Miscellaneous/Thoughts/*
+path:Thoughts/*
 ```
