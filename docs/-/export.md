@@ -8855,6 +8855,25 @@ I have also got a standing desk (converter really) and a four computer KVM switc
 
 ===
 
+<!-- Source: Miscellaneous/Thoughts/2026-04-13.md -->
+<!-- URL: https://prcleary.github.io/Miscellaneous/Thoughts/2026-04-13 -->
+<!-- Title: New Emanote blog -->
+<!-- Wikilinks: [[Miscellaneous/Thoughts/2026-04-13]], [[Thoughts/2026-04-13]], [[2026-04-13]] -->
+
+---
+title: New Emanote blog
+date: 2026-04-13
+---
+
+## Emanote
+
+Yup, I've changed the blog software again. [Zola](https://www.getzola.org/) is really powerful, but as before with Quarto/Hugo/Jekyll/you name it, the default format is too basic, so you end up finding a template that is partly what you want and then fighting to get it to do everything you want, which means understanding enough of yet another templating language that you really don't want to learn, and which LLMs are not very good at. I wanted something that looked good to me with minimal work (and boring enough to deter visitors) and followed whatever structure of nested folders of Markdown files I had without having to specify much routing. This site is for me and rarely for others unless I have pointed someone to something specific. My content is so niche that no one should follow this site. I am a medic doing global health informatics, but am not sure that what I am interested in would interest medics or global health informatics folk. In related news I've also come off all social media, realising that I didn't know what I was doing there and had no reason to use it. 
+
+I think I will stick with [Emanote](https://emanote.srid.ca/) for a while. There are one or two things that aren't great about it, mainly that you have to install gigabytes of software to use it and have to generate the site locally and push it to GitHub yourself. But out of the box it does what I want and was easy to configure - I'll add my notes on setup here at some point.  
+
+
+===
+
 <!-- Source: Miscellaneous/Writing.md -->
 <!-- URL: https://prcleary.github.io/Miscellaneous/Writing -->
 <!-- Title: Writing -->
