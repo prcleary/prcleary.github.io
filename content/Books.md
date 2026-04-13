@@ -1,9 +1,10 @@
 ---
+title: Books
 feed:
   enable: true
 ---
 
-> Books I read or am reading
+> Index page for Books
 
 ```query
 path:Books/*

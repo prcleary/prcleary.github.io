@@ -15,11 +15,12 @@ The base URL is: https://prcleary.github.io
 <!-- Wikilinks: [[Books]] -->
 
 ---
+title: Books
 feed:
   enable: true
 ---
 
-> Books I read or am reading
+> Index page for Books
 
 ```query
 path:Books/*
@@ -927,7 +928,12 @@ The book covers Pearl's development (and later rejection) of Bayesian networks a
 <!-- Title: Knowledge -->
 <!-- Wikilinks: [[Knowledge]] -->
 
-Index page for Knowledge/
+---
+title: Knowledge
+order: -5
+---
+
+> Index page for Knowledge/
 
 ```query
 path:./*
@@ -8486,11 +8492,12 @@ I think this is my longest post by far! I will try to develop some of the above 
 <!-- Wikilinks: [[Links]] -->
 
 ---
+title: Links
 feed:
   enable: true
 ---
 
-> Interesting links
+> Index page for links
 
 ```query 
 path:Links/*
@@ -8525,11 +8532,12 @@ Part of a series of what cities might look like after the humans abandoned them
 <!-- Wikilinks: [[Thoughts]] -->
 
 ---
+title: Thoughts
 feed:
   enable: true
 ---
 
-> Random thoughts
+> Index page for thoughts
 
 ```query {.timeline}
 path:Thoughts/*
@@ -8868,14 +8876,15 @@ I think I will stick with [Emanote](https://emanote.srid.ca/) for a while. There
 <!-- Wikilinks: [[Writing]] -->
 
 ---
+title: Writing
 feed:
   enable: false
 ---
 
-> I occasionally write longer-form things
+> Index page for Writing
 
-```query
-path:Writing/*
+```query {.timeline}
+tag:writing
 ```
 
 
@@ -8898,18 +8907,19 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 - **Knowledge management**: notes in various stages of development as I learn in the open and gradually consolidate and structure my many technical notes from elsewhere
 - **Miscellaneous** [[Thoughts|thoughts]], [[Writing|writing]], interesting [[Links|links]] and [[Books|reading]]
 
-## Thoughts
-
-```query {.timeline}
-path:Thoughts/*
-```
-
 ## Links
 
 ```query {.timeline}
 path:Links/*
 
 ```
+
+## Thoughts
+
+```query {.timeline}
+path:Thoughts/*
+```
+
 [Email](mailto:blog@paulcleary.net) [GitHub](https://github.com/prcleary) [Letterboxd](https://letterboxd.com/rusticana/) [ORCID](https://orcid.org/0000-0001-9335-5422) [RSS feed for Links](https://prcleary.github.io/Links.xml) [RSS feed for Thoughts](https://prcleary.github.io/Thoughts.xml) [Strava](https://www.strava.com/athletes/9125693) [Zotero](https://www.zotero.org/drprcleary)
 
 [Old blog](static/oldblog.html)

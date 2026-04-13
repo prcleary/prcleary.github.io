@@ -1,9 +1,10 @@
 ---
+title: Thoughts
 feed:
   enable: true
 ---
 
-> Random thoughts
+> Index page for thoughts
 
 ```query {.timeline}
 path:Thoughts/*

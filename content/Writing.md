@@ -1,10 +1,11 @@
 ---
+title: Writing
 feed:
   enable: false
 ---
 
-> I occasionally write longer-form things
+> Index page for Writing
 
-```query
-path:Writing/*
+```query {.timeline}
+tag:writing
 ```

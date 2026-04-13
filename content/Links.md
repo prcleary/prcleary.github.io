@@ -1,9 +1,10 @@
 ---
+title: Links
 feed:
   enable: true
 ---
 
-> Interesting links
+> Index page for links
 
 ```query 
 path:Links/*
