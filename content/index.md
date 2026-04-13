@@ -8,7 +8,7 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 ## What you'll find here
 
 - **Knowledge management**: notes in various stages of development as I learn in the open and gradually consolidate and structure my many technical notes from elsewhere
-- **Miscellaneous** [[Thoughts]], [[Writing]], interesting [[Links|links]] and [[Books|reading]]
+- **Miscellaneous** [[Thoughts|thoughts]], [[Writing|writing]], interesting [[Links|links]] and [[Books|reading]]
 
 ## Thoughts
 
@@ -26,3 +26,4 @@ path:Links/*
 
 [Old blog](static/oldblog.html)
 
+<a href="https://prcleary.github.io">Wikipaulia</a> by <a href="https://example.com">Paul Cleary</a> is marked <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/zero.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
