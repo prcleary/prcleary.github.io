@@ -8512,7 +8512,7 @@ Part of a series of what cities might look like after the humans abandoned them
 
 ## Persona prompting considered harmful?
 
-"You are an expert epidemiologist and statistician" may not always be helping me it seems 
+"You are an expert epidemiologist and statistician" may not always be helping me with AI it seems 
 
 [Research Shows Where Persona Prompting Works And When It Backfires](https://www.searchenginejournal.com/research-you-are-an-expert-prompts-can-damage-factual-accuracy)
 
@@ -8896,7 +8896,7 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 ## What you'll find here
 
 - **Knowledge management**: notes in various stages of development as I learn in the open and gradually consolidate and structure my many technical notes from elsewhere
-- **Miscellaneous** thoughts, writing, interesting links, reading and other stuff
+- **Miscellaneous** [[Thoughts]], [[Writing]], interesting [[Links|links]] and [[Books|reading]]
 
 ## Thoughts
 

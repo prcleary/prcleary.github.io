@@ -8,7 +8,7 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 ## What you'll find here
 
 - **Knowledge management**: notes in various stages of development as I learn in the open and gradually consolidate and structure my many technical notes from elsewhere
-- **Miscellaneous** thoughts, writing, interesting links, reading and other stuff
+- **Miscellaneous** [[Thoughts]], [[Writing]], interesting [[Links|links]] and [[Books|reading]]
 
 ## Thoughts
 
