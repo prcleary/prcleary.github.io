@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+
+
+
+<!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>
+    SENAITE: customising laboratory report content – Wikipaulia
+  </title>
+  
+    
+      <meta property='og:description' content='senaite/senaite.patient: Patient handling for SENAITE is the add-on that adds the capability to SENAITE to manage patient data but unfortunately it does not include any patient information in lab reports (COA, or Certificates Of Analysis in SENAITE parlance) by default. The COA templates used are in the folder /home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.5.0-py2.7.egg/senaite/impress/templates/reports/ - you can create a Plone add-on which overrides these templates (hard if you don’t know Plone) or simply edit the templates in place (easier but your changes will disappear if you upgrade senaite.patient). Plone is pretty complex and it may be a while before I am creating my own add-ons, so I went with the easy option.' />
+      <meta property='og:site_name' content='Wikipaulia' />
+      <meta property='og:image' content='https://prcleary.github.io/' />
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content='SENAITE: customising laboratory report content' />
+      
+        <meta name='twitter:card' content='summary_large_image' />
+      
+    
+    
+      <base href='/' />
+      <link href='static/favicon.svg' rel='icon' />
+    
+    <meta name='generator' content='Emanote' />
+
+  
+  
+  <link href='tailwind.css?instanceId=e6329ec3-b686-4f94-afe0-499ee71546ac' rel='stylesheet' type='text/css' />
+
+  <link rel='stylesheet' href='_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
+  /* Refined typography with system font stack */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+</style>
+
+
+<style data-category='error'>
+  /* Heist error element */
+  strong.error {
+    color: lightcoral;
+    font-size: 90%;
+    font-family: monospace;
+  }
+</style>
+
+<style data-category='kbd'>
+  /* <kbd> styling */
+  kbd {
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.1),
+      0 2px 0 0 rgba(255, 255, 255, 0.8) inset;
+    display: inline-block;
+    line-height: 1.2;
+    padding: 3px 6px;
+    white-space: nowrap;
+    font-size: 0.9em;
+  }
+
+  /* Dark mode kbd styling */
+  .dark kbd {
+    background-color: #374151;
+    border: 1px solid #4b5563;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.4),
+      0 2px 0 0 rgba(255, 255, 255, 0.08) inset;
+    color: #f3f4f6;
+  }
+</style>
+
+<style data-category='callout'>
+  /* To prevent overemphasis of link styles in callout titles */
+  .callout .callout-title a {
+    color: inherit;
+    text-decoration: underline;
+  }
+</style>
+
+<style data-category='toc'>
+  a.--ema-toc {
+    background-color: transparent !important;
+  }
+
+  /* Active TOC item styling */
+  a.--ema-toc.toc-item-active {
+    font-weight: 600;
+    border-left: 3px solid #3b82f6;
+    padding-left: calc(0.5rem - 3px) !important;
+  }
+
+  /* Light mode active state */
+  a.--ema-toc.toc-item-active {
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+  }
+
+  /* Dark mode active state */
+  .dark a.--ema-toc.toc-item-active {
+    background-color: #172554 !important;
+    color: #93c5fd !important;
+    border-left-color: #3b82f6;
+  }
+</style>
+
+<style data-category='global-improvements'>
+  /* Link improvements */
+  a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  /* Focus states for accessibility */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Code block enhancements */
+  pre {
+    position: relative;
+  }
+
+  pre code {
+    display: block;
+    line-height: 1.6;
+  }
+
+  /* Copy button for code blocks */
+  .code-copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    color: #374151;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .code-copy-button svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dark .code-copy-button {
+    background: rgba(31, 41, 55, 0.9);
+    border-color: #4b5563;
+    color: #d1d5db;
+  }
+
+  pre:hover .code-copy-button {
+    opacity: 1;
+  }
+
+  .code-copy-button:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .dark .code-copy-button:hover {
+    background: rgba(31, 41, 55, 1);
+  }
+
+  .code-copy-button:active {
+    transform: scale(0.95);
+  }
+</style>
+
+<script>
+  // Add copy buttons to code blocks
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>';
+    const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>';
+
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      const pre = codeBlock.parentElement;
+
+      // Create copy button
+      const button = document.createElement('button');
+      button.className = 'code-copy-button';
+      button.innerHTML = copyIcon;
+      button.setAttribute('aria-label', 'Copy code to clipboard');
+      button.setAttribute('title', 'Copy code');
+
+      button.addEventListener('click', function() {
+        const text = codeBlock.textContent;
+        navigator.clipboard.writeText(text).then(function() {
+          button.innerHTML = checkIcon;
+          button.setAttribute('title', 'Copied!');
+          setTimeout(function() {
+            button.innerHTML = copyIcon;
+            button.setAttribute('title', 'Copy code');
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Copy failed:', err);
+          button.setAttribute('title', 'Copy failed');
+          setTimeout(function() {
+            button.innerHTML = copyIcon;
+            button.setAttribute('title', 'Copy code');
+          }, 2000);
+        });
+      });
+
+      pre.appendChild(button);
+    });
+  });
+</script>
+
+<style data-category='external-link'>
+  /* External link icon */
+  a[data-linkicon=""]::after {
+    content: ""
+  }
+
+  a[data-linkicon=none]::after {
+    content: ""
+  }
+
+  a[data-linkicon="external"] {
+    padding-right: 24px;
+  }
+
+  a[data-linkicon="external"]::after {
+    margin-right: -24px;
+    content: url('data:image/svg+xml,\
+      <svg xmlns="http://www.w3.org/2000/svg" height="0.7em" viewBox="0 0 20 20"> \
+        <g style="stroke:gray;stroke-width:1"> \
+          <line x1="5" y1="5" x2="5" y2="14" /> \
+          <line x1="14" y1="9" x2="14" y2="14" /> \
+          <line x1="5" y1="14" x2="14" y2="14" /> \
+          <line x1="5" y1="5" x2="9" y2="5"  /> \
+          <line x1="10" y1="2" x2="17" y2="2"  /> \
+          <line x1="17" y1="2" x2="17" y2="9" /> \
+          <line x1="10" y1="9" x2="17" y2="2" style="stroke-width:1.0" /> \
+        </g> \
+      </svg>');
+  }
+
+  .dark a[data-linkicon="external"]::after {
+    content: url('data:image/svg+xml,\
+      <svg xmlns="http://www.w3.org/2000/svg" height="0.7em" viewBox="0 0 20 20"> \
+        <g style="stroke:lightgray;stroke-width:1"> \
+          <line x1="5" y1="5" x2="5" y2="14" /> \
+          <line x1="14" y1="9" x2="14" y2="14" /> \
+          <line x1="5" y1="14" x2="14" y2="14" /> \
+          <line x1="5" y1="5" x2="9" y2="5"  /> \
+          <line x1="10" y1="2" x2="17" y2="2"  /> \
+          <line x1="17" y1="2" x2="17" y2="9" /> \
+          <line x1="10" y1="9" x2="17" y2="2" style="stroke-width:1.0" /> \
+        </g> \
+      </svg>');
+  }
+
+  a[data-linkicon="external"][href^="mailto:"]::after {
+    content: url('data:image/svg+xml,\
+        <svg \
+          xmlns="http://www.w3.org/2000/svg" \
+          height="0.7em" \
+          fill="none" \
+          viewBox="0 0 24 24" \
+          stroke="gray" \
+          stroke-width="2"> \
+          <path \
+            stroke-linecap="round" \
+            stroke-linejoin="round" \
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> \
+        </svg>');
+  }
+
+  .dark a[data-linkicon="external"][href^="mailto:"]::after {
+    content: url('data:image/svg+xml,\
+        <svg \
+          xmlns="http://www.w3.org/2000/svg" \
+          height="0.7em" \
+          fill="none" \
+          viewBox="0 0 24 24" \
+          stroke="lightgray" \
+          stroke-width="2"> \
+          <path \
+            stroke-linecap="round" \
+            stroke-linejoin="round" \
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> \
+        </svg>');
+  }
+</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
+
+  
+    <style>
+      /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
+      /* md:min-w-52  */
+      @media (min-width: 768px) {
+        #sidebar {
+          min-width: 13rem;
+        }
+      }
+
+      /* xl:min-w-72  */
+      @media (min-width: 1280px) {
+        #sidebar {
+          min-width: 18rem;
+        }
+      }
+    </style>
+
+    
+      <link rel='stylesheet' href='_emanote-static/inverted-tree.css' />
+    
+  
+  <!-- Custom Stork-search styling for Emanote --><link rel='stylesheet' href='_emanote-static/stork/edible.css' media='(prefers-color-scheme: light)' />
+<link rel='stylesheet' href='_emanote-static/stork/edible-dark.css' media='(prefers-color-scheme: dark)' />
+
+<style data-category='stork'>
+  #stork-search-container {
+    z-index: 1000;
+    background-color: rgb(15 23 42/.8);
+  }
+
+  .stork-overflow-hidden-important {
+    overflow: hidden !important;
+  }
+</style>
+
+
+<script src='_emanote-static/stork/stork.js'></script>
+
+  
+    <script id='emanote-stork' data-emanote-base-url='/'>
+      window.emanote = {};
+      window.emanote.stork = {
+        searchShown: false,
+        indexIsStale: false,
+        toggleSearch: function () {
+          window.emanote.stork.refreshIndex();
+          document.getElementById('stork-search-container').classList.toggle('hidden');
+          window.emanote.stork.searchShown = document.body.classList.toggle('stork-overflow-hidden-important');
+          if (window.emanote.stork.searchShown) {
+            document.getElementById('stork-search-input').focus();
+          }
+        },
+        clearSearch: function () {
+          document.getElementById('stork-search-container').classList.add('hidden');
+          document.body.classList.remove('stork-overflow-hidden-important');
+          window.emanote.stork.searchShown = false;
+        },
+
+        getBaseUrl: function () {
+          const baseUrl = document.getElementById("emanote-stork").getAttribute('data-emanote-base-url') || '/';
+          return baseUrl;
+        },
+
+        registerIndex: function (options) {
+          const indexName = 'emanote-search'; // used to match input[data-stork] attribute value
+          const indexUrl = window.emanote.stork.getBaseUrl() + '-/stork.st';
+          stork.register(
+            indexName,
+            indexUrl,
+            options);
+        },
+
+        init: function () {
+          if (document.readyState !== 'complete') {
+            window.addEventListener('load', function () {
+              stork.initialize(window.emanote.stork.getBaseUrl() + '_emanote-static/stork/stork.wasm');
+              window.emanote.stork.registerIndex();
+            });
+
+            document.addEventListener('keydown', event => {
+              if (window.emanote.stork.searchShown && event.key === 'Escape') {
+                window.emanote.stork.clearSearch();
+                event.preventDefault();
+              } else if ((event.key == 'k' || event.key == 'K') && (event.ctrlKey || event.metaKey)) {
+                window.emanote.stork.toggleSearch();
+                event.preventDefault();
+              }
+            });
+          } else {
+            // This section is called during Ema's hot reload.
+            //
+            // Mark the current index as stale, and refresh it *only when* the
+            // user actually invokes search.
+            //
+            // We do not refresh the index *right away*, as that will cause
+            // memory leaks in the browser. See
+            // https://github.com/srid/emanote/issues/411#issuecomment-1402056235
+            console.log("stork: Marking index as stale");
+            window.emanote.stork.markIndexAsStale();
+          }
+        },
+
+        markIndexAsStale: function () {
+          window.emanote.stork.indexIsStale = true;
+        },
+
+        refreshIndex: function () {
+          if (window.emanote.stork.indexIsStale) {
+            console.log("stork: Reloading index");
+            window.emanote.stork.indexIsStale = false;
+            // NOTE: This will leak memory. See the comment above.
+            window.emanote.stork.registerIndex({ forceOverwrite: true });
+          }
+        }
+
+      };
+
+      window.emanote.stork.init();
+    </script>
+  
+
+</head>
+
+<!-- DoNotFormat -->
+
+
+
+<!-- DoNotFormat -->
+
+<body class='bg-gray-200 dark:bg-black text-gray-900 dark:text-gray-50 overflow-y-scroll'>
+  
+    <div class='container mx-auto md:mt-8 '>
+      
+        <!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<nav id='uptree' class='flipped tree font-medium' style='transform-origin: 50%;'>
+  <ul class='root'>
+    <li>
+      
+        <ul>
+          
+            <li>
+
+  <a href='Knowledge/SENAITE'>
+    <div class='bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-teal-500 dark:hover:bg-teal-600 hover:text-white cursor-pointer transition-all duration-150 forest-link'>
+      SENAITE
+    </div>
+  </a>
+
+  
+    <ul>
+      
+        <li>
+
+  <a href='Knowledge'>
+    <div class='bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-teal-500 dark:hover:bg-teal-600 hover:text-white cursor-pointer transition-all duration-150 forest-link'>
+      Knowledge
+    </div>
+  </a>
+
+  
+    <ul>
+      
+        <li>
+
+  <a href='/'>
+    <div class='bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-teal-500 dark:hover:bg-teal-600 hover:text-white cursor-pointer transition-all duration-150 forest-link'>
+      Wikipaulia
+    </div>
+  </a>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+          
+        </ul>
+      
+    </li>
+  </ul>
+</nav>
+      
+
+      
+        <nav id='breadcrumbs' class='w-full text-gray-700 dark:text-gray-300 md:hidden'>
+  <div class='flex justify-left'>
+    <div class='w-full px-4 py-3 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800'>
+      <ul class='flex flex-wrap text-base'>
+        <li class='inline-flex items-center'>
+          
+            
+              <img style='width: 1rem;' src='static/favicon.svg' alt='Site Icon' />
+            
+          
+        </li>
+        
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='/'>
+                Wikipaulia
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400 dark:text-gray-500'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='Knowledge'>
+                Knowledge
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400 dark:text-gray-500'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='Knowledge/SENAITE'>
+                SENAITE
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400 dark:text-gray-500'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+        
+      </ul>
+    </div>
+    <button class='inline px-3 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 outline-none cursor-pointer focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
+      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+ fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+</svg>
+    </button>
+    <button class='inline px-3 py-2 text-white bg-teal-600 dark:bg-teal-700 outline-none cursor-pointer focus:outline-none hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
+      </svg>
+    </button>
+    <script>
+      function toggleHidden(elemId) {
+        document.getElementById(elemId).classList.toggle("hidden");
+      }
+    </script>
+  </div>
+</nav>
+      
+
+      
+        <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-white dark:bg-gray-900 md:shadow-md md:rounded-lg md:mb-8 md:border md:border-gray-200 dark:md:border-gray-800'>
+          <!-- Sidebar column -->
+          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-52 xl:w-72 bg-gray-50 dark:bg-gray-950 border-r border-gray-200 dark:border-gray-800'>
+  <div class='px-4 py-5 text-gray-800 dark:text-gray-200'>
+    <div class='flex items-center justify-between mb-4'>
+      <div id='site-logo' class='flex items-center space-x-2.5 min-w-0'>
+        
+          
+            <a href='/' title='Go to Home' class='flex-shrink-0'>
+              <!-- The style width attribute here is to prevent huge
+                      icon from displaying at those rare occasions when Tailwind
+                      hasn't kicked in immediately on page load
+                      -->
+              <img style='width: 1.25rem;' class='transition transform hover:scale-110 hover:opacity-80' src='static/favicon.svg' alt='Site Icon' />
+            </a>
+            <a class='font-semibold text-base truncate hover:text-teal-600 dark:hover:text-teal-400 transition-colors' title='Go to Home' href='/'>
+              Home
+            </a>
+          
+        
+      </div>
+
+      <div id='indexing-links' class='flex flex-row space-x-2 text-gray-500 dark:text-gray-400 flex-shrink-0'>
+        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+          <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+            </path>
+          </svg>
+        </a>
+        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+          <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+            </path>
+          </svg>
+        </a>
+        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+ fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+</svg>
+        </button>
+      </div>
+    </div>
+
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+    
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
+      </svg>
+      
+  
+        
+    </span>
+    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
+      Knowledge
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/AI' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='AI' href='Knowledge/AI'>
+      AI
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='1 children inside'>
+          1
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Blogging' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Blogging' href='Knowledge/Blogging'>
+      Blogging
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='3 children inside'>
+          3
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/DHIS%202' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2' href='Knowledge/DHIS%202'>
+      DHIS 2
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='5 children inside'>
+          5
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Docker' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Docker' href='Knowledge/Docker'>
+      Docker
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='1 children inside'>
+          1
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Linux' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Linux' href='Knowledge/Linux'>
+      Linux
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='3 children inside'>
+          3
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Other' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Other' href='Knowledge/Other'>
+      Other
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='10 children inside'>
+          10
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Proxmox' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Proxmox' href='Knowledge/Proxmox'>
+      Proxmox
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='5 children inside'>
+          5
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Python' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Python' href='Knowledge/Python'>
+      Python
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='1 children inside'>
+          1
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/R' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='R' href='Knowledge/R'>
+      R
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='9 children inside'>
+          9
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Rust' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Rust' href='Knowledge/Rust'>
+      Rust
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='1 children inside'>
+          1
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+    
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
+      </svg>
+      
+  
+        
+    </span>
+    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE' href='Knowledge/SENAITE'>
+      SENAITE
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Convenience R functions for querying the SENAITE API' href='Knowledge/SENAITE/convenience-r-functions-for-querying-the-senaite-api'>
+      Convenience R functions for querying the SENAITE API
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Installation · SENAITE' href='Knowledge/SENAITE/installation-senaite'>
+      Installation · SENAITE
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Installing SENAITE laboratory information management system on Ubuntu' href='Knowledge/SENAITE/installing-senaite-laboratory-information-management-system-on-ubuntu'>
+      Installing SENAITE laboratory information management system on Ubuntu
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Modifying a SENAITE add-on' href='Knowledge/SENAITE/modifying-a-senaite-add-on'>
+      Modifying a SENAITE add-on
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Post-installation checklist for SENAITE' href='Knowledge/SENAITE/post-installation-checklist-for-senaite'>
+      Post-installation checklist for SENAITE
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Quick start with SENAITE laboratory information management system configuration' href='Knowledge/SENAITE/quick-start-with-senaite-laboratory-information-management-system-configuration'>
+      Quick start with SENAITE laboratory information management system configuration
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+  
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        </path>
+      </svg>
+      
+  
+        
+    </span>
+    <a class='font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE: customising laboratory report content' href='Knowledge/SENAITE/senaite-customising-laboratory-report-content'>
+      SENAITE: customising laboratory report content
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE setup data diagram' href='Knowledge/SENAITE/senaite-setup-data-diagram'>
+      SENAITE setup data diagram
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Update on progress with SENAITE laboratory information management system configuration' href='Knowledge/SENAITE/update-on-progress-with-senaite-laboratory-information-management-system-configuration'>
+      Update on progress with SENAITE laboratory information management system configuration
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Self-hosting' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Self-hosting' href='Knowledge/Self-hosting'>
+      Self-hosting
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='3 children inside'>
+          3
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Statistics' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistics' href='Knowledge/Statistics'>
+      Statistics
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='3 children inside'>
+          3
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Miscellaneous' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Miscellaneous' href='Miscellaneous'>
+      Miscellaneous
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='4 children inside'>
+          4
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+
+  </div>
+</nav>
+          <!-- Main body column -->
+          <div class='flex-1 w-full bg-white dark:bg-gray-800'>
+  <main class='px-6 py-8 max-w-7xl mx-auto'>
+    <h1 class='mb-10 px-8 py-5 bg-teal-600 dark:bg-teal-800 text-5xl font-bold text-white text-center rounded-2xl'>
+  SENAITE: customising laboratory report content
+</h1>
+    
+      <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  
+
+
+
+
+
+
+
+
+
+
+    <p class='mb-4 leading-relaxed'>
+      <a href='https://github.com/senaite/senaite.patient' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>senaite/senaite.patient: Patient handling for SENAITE</a> is the add-on that adds the capability to SENAITE to manage patient data but unfortunately it does not include any patient information in lab reports (COA, or Certificates Of Analysis in SENAITE parlance) by default. The COA templates used are in the folder <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>/home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.5.0-py2.7.egg/senaite/impress/templates/reports/</code> - you can create a Plone add-on which overrides these templates (hard if you don’t know Plone) or simply edit the templates in place (easier but your changes will disappear if you upgrade <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>senaite.patient</code>). Plone is pretty complex and it may be a while before I am creating my own add-ons, so I went with the easy option.
+    </p>
+  
+    <p class='mb-4 leading-relaxed'>
+      The COA templates are written in something called <a href='https://en.wikipedia.org/wiki/Template_Attribute_Language' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>TALES</a>, or Template Attribute Language. This consists of HTML elements (which do not change) and XML elements (which reflect the dynamic parts) - it is a bit like RMarkdown, where the Markdown does not change but the R code chunks are converted to something else when the document is created. Here Python does the converting - you can even reference Python functions or use Python code. Beyond that I don’t claim to understand TALES much yet, but with a little bit of HTML knowledge and the help of the convenient <a href='https://github.com/senaite/senaite.app.supermodel' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SENAITE SuperModel</a> I was able to create my own COA template from one of the existing ones (<code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>MultiDefault.pt</code>) to include the lab and patient information I wanted, as well as the logo of the lab.
+    </p>
+  
+    <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
+      
+        <li>
+          Including <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>&lt;tal:report define="model python:view.model;"&gt;</code> at the start indicates that I want to use the SENAITE SuperModel - this is a “content wrapper” which allows you to reference data through a unified interface.
+        </li>
+      
+        <li>
+          You can see this in use with <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>&lt;a tal:content="model/getPatientFullName"/&gt;</code> - I found the names of the elements by rooting through the source code (there is probably a better way).
+        </li>
+      
+        <li>
+          With a bit of trial and error and fiddling with the CSS I changed the header of the report, as in the section beginning <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>NEW REPORT HEADER</code>. I had already uploaded the logo image file using the instructions here: <a href='https://www.bikalims.org/manual/introduction-and-overview/client-facing-lab-portal/replace-you-lims-banner' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>1.4.1 Replace the LIMS logo, banner, title and favicon — LIMS Collective</a>
+        </li>
+      
+        <li>
+          The section beginning <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>NEW PATIENT INFO</code> is the main other bit I added, showing patient information in a tabular format. To format Age I used a bit of Python code; to format Sex I used a bit of TALES logic.
+        </li>
+      
+    </ul>
+  
+    <p class='mb-4 leading-relaxed'>
+      The result looks good. A generic version of my final code is shown below.
+    </p>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='html'><span class='dt'>&lt;</span><span class='kw'>tal:report</span><span class='ot'> define</span><span class='op'>=</span><span class='st'>"model python:view.model;"</span><span class='dt'>&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT CONTROLS --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_controls(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT JS --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_js(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT CSS --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_css(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- NEW REPORT HEADER --&gt;</span>
+  <span class='co'>&lt;!-- Header Table --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>div</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"row section-header no-gutters"</span><span class='dt'>&gt;</span>
+  <span class='co'>&lt;!-- Header Left --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>div</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"col-2 text-left"</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>img</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"logo image-fluid"</span><span class='ot'> style</span><span class='op'>=</span><span class='st'>"object-fit:contain; height:60px; margin-top:0px; margin-left:15px"</span><span class='ot'> src</span><span class='op'>=</span><span class='st'>"https://senaite.example.com/senaite/your_logo.jpg"</span><span class='ot'> alt</span><span class='op'>=</span><span class='st'>"Logo"</span><span class='ot'> title</span><span class='op'>=</span><span class='st'>"Logo"</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>img</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>div</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"col-10 text-left"</span><span class='dt'>&gt;</span>
+  <span class='co'>&lt;!-- Header Right --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>h1</span><span class='dt'>&gt;&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>Name of Laboratory<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;&lt;/</span><span class='kw'>h1</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>h1</span><span class='dt'>&gt;</span>Analysis Report<span class='dt'>&lt;/</span><span class='kw'>h1</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT INFO --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_info(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT ALERTS --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_alerts(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- NEW PATIENT INFO --&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>div</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"row section-summary no-gutters"</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>div</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"w-100"</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>h1</span><span class='dt'>&gt;</span>Patient Information<span class='dt'>&lt;/</span><span class='kw'>h1</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>table</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"table table-sm table-condensed"</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"label"</span><span class='ot'> i18n:translate</span><span class='op'>=</span><span class='st'>""</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>div</span><span class='dt'>&gt;</span>Patient MRN<span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:on-error</span><span class='op'>=</span><span class='st'>"nothing"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"model/MedicalRecordNumber/value"</span><span class='dt'>/&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"label"</span><span class='ot'> i18n:translate</span><span class='op'>=</span><span class='st'>""</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>div</span><span class='dt'>&gt;</span>Patient Full Name<span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:on-error</span><span class='op'>=</span><span class='st'>"nothing"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"model/getPatientFullName"</span><span class='dt'>/&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"label"</span><span class='ot'> i18n:translate</span><span class='op'>=</span><span class='st'>""</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>div</span><span class='dt'>&gt;</span>Age<span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:on-error</span><span class='op'>=</span><span class='st'>"nothing"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"python: '%s years, %s months' % (model.getAge().years, model.getAge().months)"</span><span class='dt'>/&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"label"</span><span class='ot'> i18n:translate</span><span class='op'>=</span><span class='st'>""</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>div</span><span class='dt'>&gt;</span>Patient Date Of Birth<span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:on-error</span><span class='op'>=</span><span class='st'>"nothing"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"python: model.getDateOfBirth()[0].strftime('%d/%m/%Y')"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:on-error</span><span class='op'>=</span><span class='st'>"nothing"</span><span class='ot'> tal:condition</span><span class='op'>=</span><span class='st'>"python: model.getDateOfBirthEstimated()"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"python: '(NB: estimated from age)'"</span><span class='dt'>/&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"label"</span><span class='ot'> i18n:translate</span><span class='op'>=</span><span class='st'>""</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>div</span><span class='dt'>&gt;</span>Patient Sex<span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:condition</span><span class='op'>=</span><span class='st'>"python: model.Sex == 'm'"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"python: 'Male'"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:condition</span><span class='op'>=</span><span class='st'>"python: model.Sex == 'f'"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"python: 'Female'"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:condition</span><span class='op'>=</span><span class='st'>"python: model.Sex == ''"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"python: 'Unspecified'"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='ot'> class</span><span class='op'>=</span><span class='st'>"label"</span><span class='ot'> i18n:translate</span><span class='op'>=</span><span class='st'>""</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>div</span><span class='dt'>&gt;</span>Patient Address<span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+    <span class='dt'>&lt;</span><span class='kw'>a</span><span class='ot'> tal:on-error</span><span class='op'>=</span><span class='st'>"nothing"</span><span class='ot'> tal:content</span><span class='op'>=</span><span class='st'>"model/PatientAddress"</span><span class='dt'>/&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>td</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>tr</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>table</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+  <span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT RESULTS --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_results(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- RESULTS INTERPRETATION --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_interpretations(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- SAMPLE REMARKS --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_remarks(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT SUMMARY --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_summary(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT ATTACHMENTS --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_attachments(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT SIGNATURES --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_signatures(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT DISCREETER --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_discreeter(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+  <span class='co'>&lt;!-- REPORT FOOTER --&gt;</span>
+  <span class='dt'>&lt;</span><span class='kw'>tal:t</span><span class='ot'> replace</span><span class='op'>=</span><span class='st'>"structure python:view.render_footer(context, **options)"</span><span class='ot'> </span><span class='dt'>/&gt;</span>
+
+ <span class='dt'>&lt;</span><span class='kw'>div</span><span class='ot'> style</span><span class='op'>=</span><span class='st'>"font-size: 0.8em; color: #555; line-height: 1.4; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px;"</span><span class='dt'>&gt;</span>
+      <span class='dt'>&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>Disclaimer:<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;</span> This laboratory report is intended for use by healthcare professionals. All results should be interpreted in conjunction with the patient's clinical history, symptoms, and other diagnostic information.
+      <span class='dt'>&lt;</span><span class='kw'>br</span><span class='dt'>&gt;&lt;</span><span class='kw'>br</span><span class='dt'>&gt;</span>
+      <span class='dt'>&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>Limitations and Accuracy:<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;</span> While every effort is made to ensure the accuracy of test results, laboratory testing is subject to potential <span class='dt'>&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>pre-analytical, analytical, and post-analytical errors<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;</span>. These may include sample collection or handling issues, analytical variability, or reporting inaccuracies.
+      <span class='dt'>&lt;</span><span class='kw'>br</span><span class='dt'>&gt;&lt;</span><span class='kw'>br</span><span class='dt'>&gt;</span>
+      <span class='dt'>&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>False Results:<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;</span> The presence of false positive or false negative results is a recognized limitation of laboratory testing. Such occurrences are inherent risks of complex diagnostic procedures and should not be interpreted as negligence.
+      <span class='dt'>&lt;</span><span class='kw'>br</span><span class='dt'>&gt;&lt;</span><span class='kw'>br</span><span class='dt'>&gt;</span>
+      <span class='dt'>&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>Repeat Testing:<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;</span> If test results are unclear, unexpected, or inconclusive, a repeat test can be requested within <span class='dt'>&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>24 hours<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;</span> at no additional cost. Repeat testing requests must be accompanied by relevant clinical notes and details of the clinical ambiguity or suspected discordance.
+      <span class='dt'>&lt;</span><span class='kw'>br</span><span class='dt'>&gt;&lt;</span><span class='kw'>br</span><span class='dt'>&gt;</span>
+      <span class='dt'>&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>Clinical Correlation:<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;</span> Laboratory results are only part of the diagnostic process. They must be interpreted alongside the patient's clinical presentation, medical history, and other diagnostic investigations.
+      <span class='dt'>&lt;</span><span class='kw'>br</span><span class='dt'>&gt;&lt;</span><span class='kw'>br</span><span class='dt'>&gt;</span>
+      <span class='dt'>&lt;</span><span class='kw'>strong</span><span class='dt'>&gt;</span>Confidentiality and Data Protection:<span class='dt'>&lt;/</span><span class='kw'>strong</span><span class='dt'>&gt;</span> This report contains confidential patient information. It is intended solely for the authorized recipient. Unauthorized use, disclosure, or distribution is prohibited.
+  <span class='dt'>&lt;/</span><span class='kw'>div</span><span class='dt'>&gt;</span>
+	
+<span class='dt'>&lt;/</span><span class='kw'>tal:report</span><span class='dt'>&gt;</span>
+</code></pre></div>
+  <!-- What goes in this file will appear below the note body-->
+</article>
+    
+    <div class='flex flex-col lg:flex-row lg:space-x-4 mt-8'>
+      
+  <div class='p-5 mt-8 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-sm flex-1'>
+    <header class='mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400' title='Links to this page from daily notes'>🗓️ Timeline</header>
+    <ul class='space-y-2'>
+      
+        <li>
+          <a class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900 inline-block' href='Miscellaneous/Thoughts/2024-10-27'>
+            SENAITE rabbithole; Python mon amour; Alles was du wissen muss; causal inferencing; better blogging; Bayesian and other shiny new things
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500 dark:text-gray-300'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-teal-200 dark:border-teal-600 hover:border-teal-500 dark:hover:border-teal-400'>
+      <div><p>When I was previously tasked with implementing <a href='Knowledge/DHIS%202' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>DHIS 2</a> for surveillance I must have spend hundreds of hours learning about it and playing with it, both in work and in my own time; the last several months I have been going through a similar process with <a href='Knowledge/SENAITE' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>SENAITE</a> the laboratory information management system; I have been documenting things here as I go, such as <a href='Knowledge/SENAITE/installation-senaite' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>installation</a>, <a href='Knowledge/SENAITE/modifying-a-senaite-add-on' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>modifying functionality</a>, <a href='Knowledge/SENAITE/senaite-customising-laboratory-report-content' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>styling printed reports</a> and the <a href='Knowledge/SENAITE/post-installation-checklist-for-senaite' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>myriad other steps</a> involved in implementation; this week we should be “soft launching” it at the lab we are working with to see what they think and make any further changes required; I am confident we have chosen the best open source option, but there is further work to do around microbiology/AMR reporting, SMS reporting and integration of the data with DHIS 2.</p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+      
+    </div>
+    
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+    <!-- What goes in this file will at the very end of the main div -->
+  </main>
+</div>
+        </div>
+        
+      <footer class='flex items-center justify-center mt-10 mb-10'>
+  <div class='inline-flex items-center justify-center space-x-6 px-8 py-4 bg-gray-50 dark:bg-gray-900 rounded-lg'>
+    
+  <div>
+    
+      
+        <a href='/' title='Go to Home'>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
+          </svg>
+        </a>
+      
+    
+  </div>
+  <div>
+    <a href='-/all' title='View Index'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.1'>
+      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
+    </a>
+  </div>
+  <div>
+    <a href='-/tags' title='View tags'>
+      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/tasks' title='View tasks'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+      </svg>
+    </a>
+  </div>
+  </div>
+</footer>
+    </div>
+  
+  <div id='stork-search-container' class='hidden fixed w-screen h-screen inset-0 backdrop-filter backdrop-blur-sm'>
+  <div class='fixed w-screen h-screen inset-0' onclick='window.emanote.stork.toggleSearch()'></div>
+
+  <div class='container mx-auto p-10 mt-10'>
+    <div id='stork-wrapper' class='container mx-auto'>
+      <input id='stork-search-input' data-stork='emanote-search' class='stork-input' placeholder='Search (Ctrl+K) ...' />
+      <div data-stork='emanote-search-output' class='stork-output'></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const wrapper = document.getElementById('stork-wrapper');
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
+    wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+  });
+</script>
+  
+    <!-- mermaid.js --><script type='module'>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+  import elkLayouts from 'https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0/dist/mermaid-layout-elk.esm.min.mjs';
+  mermaid.registerLayoutLoaders(elkLayouts);
+  const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: isDarkMode ? 'dark' : 'base'
+  });
+  mermaid.init(undefined, document.querySelectorAll(".mermaid"));
+  
+  // Listen for theme changes and reload page (simple approach)
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    window.location.reload();
+  });
+</script>
+ 
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css' integrity='sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV' crossorigin='anonymous' />
+<script defer
+ src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js' integrity='sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8' crossorigin='anonymous'></script>
+<script defer
+ src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js' integrity='sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05' crossorigin='anonymous' onload='renderMathInElement(document.body);'></script>
+
+
+  
+</body>
+
+</html>

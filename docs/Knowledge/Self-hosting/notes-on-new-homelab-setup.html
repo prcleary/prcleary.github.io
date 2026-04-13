@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+
+
+
+<!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>
+    Notes on new homelab setup – Wikipaulia
+  </title>
+  
+    
+      <meta property='og:description' content='Bullet point notes on recent acquisition of home server and set up so far:' />
+      <meta property='og:site_name' content='Wikipaulia' />
+      <meta property='og:image' content='https://prcleary.github.io/' />
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content='Notes on new homelab setup' />
+      
+        <meta name='twitter:card' content='summary_large_image' />
+      
+    
+    
+      <base href='/' />
+      <link href='static/favicon.svg' rel='icon' />
+    
+    <meta name='generator' content='Emanote' />
+
+  
+  
+  <link href='tailwind.css?instanceId=e6329ec3-b686-4f94-afe0-499ee71546ac' rel='stylesheet' type='text/css' />
+
+  <link rel='stylesheet' href='_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
+  /* Refined typography with system font stack */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+</style>
+
+
+<style data-category='error'>
+  /* Heist error element */
+  strong.error {
+    color: lightcoral;
+    font-size: 90%;
+    font-family: monospace;
+  }
+</style>
+
+<style data-category='kbd'>
+  /* <kbd> styling */
+  kbd {
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.1),
+      0 2px 0 0 rgba(255, 255, 255, 0.8) inset;
+    display: inline-block;
+    line-height: 1.2;
+    padding: 3px 6px;
+    white-space: nowrap;
+    font-size: 0.9em;
+  }
+
+  /* Dark mode kbd styling */
+  .dark kbd {
+    background-color: #374151;
+    border: 1px solid #4b5563;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.4),
+      0 2px 0 0 rgba(255, 255, 255, 0.08) inset;
+    color: #f3f4f6;
+  }
+</style>
+
+<style data-category='callout'>
+  /* To prevent overemphasis of link styles in callout titles */
+  .callout .callout-title a {
+    color: inherit;
+    text-decoration: underline;
+  }
+</style>
+
+<style data-category='toc'>
+  a.--ema-toc {
+    background-color: transparent !important;
+  }
+
+  /* Active TOC item styling */
+  a.--ema-toc.toc-item-active {
+    font-weight: 600;
+    border-left: 3px solid #3b82f6;
+    padding-left: calc(0.5rem - 3px) !important;
+  }
+
+  /* Light mode active state */
+  a.--ema-toc.toc-item-active {
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+  }
+
+  /* Dark mode active state */
+  .dark a.--ema-toc.toc-item-active {
+    background-color: #172554 !important;
+    color: #93c5fd !important;
+    border-left-color: #3b82f6;
+  }
+</style>
+
+<style data-category='global-improvements'>
+  /* Link improvements */
+  a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  /* Focus states for accessibility */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Code block enhancements */
+  pre {
+    position: relative;
+  }
+
+  pre code {
+    display: block;
+    line-height: 1.6;
+  }
+
+  /* Copy button for code blocks */
+  .code-copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    color: #374151;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .code-copy-button svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dark .code-copy-button {
+    background: rgba(31, 41, 55, 0.9);
+    border-color: #4b5563;
+    color: #d1d5db;
+  }
+
+  pre:hover .code-copy-button {
+    opacity: 1;
+  }
+
+  .code-copy-button:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .dark .code-copy-button:hover {
+    background: rgba(31, 41, 55, 1);
+  }
+
+  .code-copy-button:active {
+    transform: scale(0.95);
+  }
+</style>
+
+<script>
+  // Add copy buttons to code blocks
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>';
+    const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>';
+
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      const pre = codeBlock.parentElement;
+
+      // Create copy button
+      const button = document.createElement('button');
+      button.className = 'code-copy-button';
+      button.innerHTML = copyIcon;
+      button.setAttribute('aria-label', 'Copy code to clipboard');
+      button.setAttribute('title', 'Copy code');
+
+      button.addEventListener('click', function() {
+        const text = codeBlock.textContent;
+        navigator.clipboard.writeText(text).then(function() {
+          button.innerHTML = checkIcon;
+          button.setAttribute('title', 'Copied!');
+          setTimeout(function() {
+            button.innerHTML = copyIcon;
+            button.setAttribute('title', 'Copy code');
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Copy failed:', err);
+          button.setAttribute('title', 'Copy failed');
+          setTimeout(function() {
+            button.innerHTML = copyIcon;
+            button.setAttribute('title', 'Copy code');
+          }, 2000);
+        });
+      });
+
+      pre.appendChild(button);
+    });
+  });
+</script>
+
+<style data-category='external-link'>
+  /* External link icon */
+  a[data-linkicon=""]::after {
+    content: ""
+  }
+
+  a[data-linkicon=none]::after {
+    content: ""
+  }
+
+  a[data-linkicon="external"] {
+    padding-right: 24px;
+  }
+
+  a[data-linkicon="external"]::after {
+    margin-right: -24px;
+    content: url('data:image/svg+xml,\
+      <svg xmlns="http://www.w3.org/2000/svg" height="0.7em" viewBox="0 0 20 20"> \
+        <g style="stroke:gray;stroke-width:1"> \
+          <line x1="5" y1="5" x2="5" y2="14" /> \
+          <line x1="14" y1="9" x2="14" y2="14" /> \
+          <line x1="5" y1="14" x2="14" y2="14" /> \
+          <line x1="5" y1="5" x2="9" y2="5"  /> \
+          <line x1="10" y1="2" x2="17" y2="2"  /> \
+          <line x1="17" y1="2" x2="17" y2="9" /> \
+          <line x1="10" y1="9" x2="17" y2="2" style="stroke-width:1.0" /> \
+        </g> \
+      </svg>');
+  }
+
+  .dark a[data-linkicon="external"]::after {
+    content: url('data:image/svg+xml,\
+      <svg xmlns="http://www.w3.org/2000/svg" height="0.7em" viewBox="0 0 20 20"> \
+        <g style="stroke:lightgray;stroke-width:1"> \
+          <line x1="5" y1="5" x2="5" y2="14" /> \
+          <line x1="14" y1="9" x2="14" y2="14" /> \
+          <line x1="5" y1="14" x2="14" y2="14" /> \
+          <line x1="5" y1="5" x2="9" y2="5"  /> \
+          <line x1="10" y1="2" x2="17" y2="2"  /> \
+          <line x1="17" y1="2" x2="17" y2="9" /> \
+          <line x1="10" y1="9" x2="17" y2="2" style="stroke-width:1.0" /> \
+        </g> \
+      </svg>');
+  }
+
+  a[data-linkicon="external"][href^="mailto:"]::after {
+    content: url('data:image/svg+xml,\
+        <svg \
+          xmlns="http://www.w3.org/2000/svg" \
+          height="0.7em" \
+          fill="none" \
+          viewBox="0 0 24 24" \
+          stroke="gray" \
+          stroke-width="2"> \
+          <path \
+            stroke-linecap="round" \
+            stroke-linejoin="round" \
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> \
+        </svg>');
+  }
+
+  .dark a[data-linkicon="external"][href^="mailto:"]::after {
+    content: url('data:image/svg+xml,\
+        <svg \
+          xmlns="http://www.w3.org/2000/svg" \
+          height="0.7em" \
+          fill="none" \
+          viewBox="0 0 24 24" \
+          stroke="lightgray" \
+          stroke-width="2"> \
+          <path \
+            stroke-linecap="round" \
+            stroke-linejoin="round" \
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> \
+        </svg>');
+  }
+</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
+
+  
+    <style>
+      /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
+      /* md:min-w-52  */
+      @media (min-width: 768px) {
+        #sidebar {
+          min-width: 13rem;
+        }
+      }
+
+      /* xl:min-w-72  */
+      @media (min-width: 1280px) {
+        #sidebar {
+          min-width: 18rem;
+        }
+      }
+    </style>
+
+    
+      <link rel='stylesheet' href='_emanote-static/inverted-tree.css' />
+    
+  
+  <!-- Custom Stork-search styling for Emanote --><link rel='stylesheet' href='_emanote-static/stork/edible.css' media='(prefers-color-scheme: light)' />
+<link rel='stylesheet' href='_emanote-static/stork/edible-dark.css' media='(prefers-color-scheme: dark)' />
+
+<style data-category='stork'>
+  #stork-search-container {
+    z-index: 1000;
+    background-color: rgb(15 23 42/.8);
+  }
+
+  .stork-overflow-hidden-important {
+    overflow: hidden !important;
+  }
+</style>
+
+
+<script src='_emanote-static/stork/stork.js'></script>
+
+  
+    <script id='emanote-stork' data-emanote-base-url='/'>
+      window.emanote = {};
+      window.emanote.stork = {
+        searchShown: false,
+        indexIsStale: false,
+        toggleSearch: function () {
+          window.emanote.stork.refreshIndex();
+          document.getElementById('stork-search-container').classList.toggle('hidden');
+          window.emanote.stork.searchShown = document.body.classList.toggle('stork-overflow-hidden-important');
+          if (window.emanote.stork.searchShown) {
+            document.getElementById('stork-search-input').focus();
+          }
+        },
+        clearSearch: function () {
+          document.getElementById('stork-search-container').classList.add('hidden');
+          document.body.classList.remove('stork-overflow-hidden-important');
+          window.emanote.stork.searchShown = false;
+        },
+
+        getBaseUrl: function () {
+          const baseUrl = document.getElementById("emanote-stork").getAttribute('data-emanote-base-url') || '/';
+          return baseUrl;
+        },
+
+        registerIndex: function (options) {
+          const indexName = 'emanote-search'; // used to match input[data-stork] attribute value
+          const indexUrl = window.emanote.stork.getBaseUrl() + '-/stork.st';
+          stork.register(
+            indexName,
+            indexUrl,
+            options);
+        },
+
+        init: function () {
+          if (document.readyState !== 'complete') {
+            window.addEventListener('load', function () {
+              stork.initialize(window.emanote.stork.getBaseUrl() + '_emanote-static/stork/stork.wasm');
+              window.emanote.stork.registerIndex();
+            });
+
+            document.addEventListener('keydown', event => {
+              if (window.emanote.stork.searchShown && event.key === 'Escape') {
+                window.emanote.stork.clearSearch();
+                event.preventDefault();
+              } else if ((event.key == 'k' || event.key == 'K') && (event.ctrlKey || event.metaKey)) {
+                window.emanote.stork.toggleSearch();
+                event.preventDefault();
+              }
+            });
+          } else {
+            // This section is called during Ema's hot reload.
+            //
+            // Mark the current index as stale, and refresh it *only when* the
+            // user actually invokes search.
+            //
+            // We do not refresh the index *right away*, as that will cause
+            // memory leaks in the browser. See
+            // https://github.com/srid/emanote/issues/411#issuecomment-1402056235
+            console.log("stork: Marking index as stale");
+            window.emanote.stork.markIndexAsStale();
+          }
+        },
+
+        markIndexAsStale: function () {
+          window.emanote.stork.indexIsStale = true;
+        },
+
+        refreshIndex: function () {
+          if (window.emanote.stork.indexIsStale) {
+            console.log("stork: Reloading index");
+            window.emanote.stork.indexIsStale = false;
+            // NOTE: This will leak memory. See the comment above.
+            window.emanote.stork.registerIndex({ forceOverwrite: true });
+          }
+        }
+
+      };
+
+      window.emanote.stork.init();
+    </script>
+  
+
+</head>
+
+<!-- DoNotFormat -->
+
+
+
+<!-- DoNotFormat -->
+
+<body class='bg-gray-200 dark:bg-black text-gray-900 dark:text-gray-50 overflow-y-scroll'>
+  
+    <div class='container mx-auto md:mt-8 '>
+      
+        <!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<nav id='uptree' class='flipped tree font-medium' style='transform-origin: 50%;'>
+  <ul class='root'>
+    <li>
+      
+        <ul>
+          
+            <li>
+
+  <a href='Knowledge/Self-hosting'>
+    <div class='bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-teal-500 dark:hover:bg-teal-600 hover:text-white cursor-pointer transition-all duration-150 forest-link'>
+      Self-hosting
+    </div>
+  </a>
+
+  
+    <ul>
+      
+        <li>
+
+  <a href='Knowledge'>
+    <div class='bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-teal-500 dark:hover:bg-teal-600 hover:text-white cursor-pointer transition-all duration-150 forest-link'>
+      Knowledge
+    </div>
+  </a>
+
+  
+    <ul>
+      
+        <li>
+
+  <a href='/'>
+    <div class='bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-teal-500 dark:hover:bg-teal-600 hover:text-white cursor-pointer transition-all duration-150 forest-link'>
+      Wikipaulia
+    </div>
+  </a>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+          
+        </ul>
+      
+    </li>
+  </ul>
+</nav>
+      
+
+      
+        <nav id='breadcrumbs' class='w-full text-gray-700 dark:text-gray-300 md:hidden'>
+  <div class='flex justify-left'>
+    <div class='w-full px-4 py-3 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800'>
+      <ul class='flex flex-wrap text-base'>
+        <li class='inline-flex items-center'>
+          
+            
+              <img style='width: 1rem;' src='static/favicon.svg' alt='Site Icon' />
+            
+          
+        </li>
+        
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='/'>
+                Wikipaulia
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400 dark:text-gray-500'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='Knowledge'>
+                Knowledge
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400 dark:text-gray-500'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='Knowledge/Self-hosting'>
+                Self-hosting
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400 dark:text-gray-500'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+        
+      </ul>
+    </div>
+    <button class='inline px-3 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 outline-none cursor-pointer focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
+      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+ fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+</svg>
+    </button>
+    <button class='inline px-3 py-2 text-white bg-teal-600 dark:bg-teal-700 outline-none cursor-pointer focus:outline-none hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
+      </svg>
+    </button>
+    <script>
+      function toggleHidden(elemId) {
+        document.getElementById(elemId).classList.toggle("hidden");
+      }
+    </script>
+  </div>
+</nav>
+      
+
+      
+        <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-white dark:bg-gray-900 md:shadow-md md:rounded-lg md:mb-8 md:border md:border-gray-200 dark:md:border-gray-800'>
+          <!-- Sidebar column -->
+          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-52 xl:w-72 bg-gray-50 dark:bg-gray-950 border-r border-gray-200 dark:border-gray-800'>
+  <div class='px-4 py-5 text-gray-800 dark:text-gray-200'>
+    <div class='flex items-center justify-between mb-4'>
+      <div id='site-logo' class='flex items-center space-x-2.5 min-w-0'>
+        
+          
+            <a href='/' title='Go to Home' class='flex-shrink-0'>
+              <!-- The style width attribute here is to prevent huge
+                      icon from displaying at those rare occasions when Tailwind
+                      hasn't kicked in immediately on page load
+                      -->
+              <img style='width: 1.25rem;' class='transition transform hover:scale-110 hover:opacity-80' src='static/favicon.svg' alt='Site Icon' />
+            </a>
+            <a class='font-semibold text-base truncate hover:text-teal-600 dark:hover:text-teal-400 transition-colors' title='Go to Home' href='/'>
+              Home
+            </a>
+          
+        
+      </div>
+
+      <div id='indexing-links' class='flex flex-row space-x-2 text-gray-500 dark:text-gray-400 flex-shrink-0'>
+        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+          <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+            </path>
+          </svg>
+        </a>
+        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+          <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+            </path>
+          </svg>
+        </a>
+        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+ fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+</svg>
+        </button>
+      </div>
+    </div>
+
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+    
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
+      </svg>
+      
+  
+        
+    </span>
+    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
+      Knowledge
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/AI' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='AI' href='Knowledge/AI'>
+      AI
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='1 children inside'>
+          1
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Blogging' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Blogging' href='Knowledge/Blogging'>
+      Blogging
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='3 children inside'>
+          3
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/DHIS%202' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2' href='Knowledge/DHIS%202'>
+      DHIS 2
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='5 children inside'>
+          5
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Docker' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Docker' href='Knowledge/Docker'>
+      Docker
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='1 children inside'>
+          1
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Linux' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Linux' href='Knowledge/Linux'>
+      Linux
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='3 children inside'>
+          3
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Other' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Other' href='Knowledge/Other'>
+      Other
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='10 children inside'>
+          10
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Proxmox' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Proxmox' href='Knowledge/Proxmox'>
+      Proxmox
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='5 children inside'>
+          5
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Python' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Python' href='Knowledge/Python'>
+      Python
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='1 children inside'>
+          1
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/R' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='R' href='Knowledge/R'>
+      R
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='9 children inside'>
+          9
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Rust' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Rust' href='Knowledge/Rust'>
+      Rust
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='1 children inside'>
+          1
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/SENAITE' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE' href='Knowledge/SENAITE'>
+      SENAITE
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='9 children inside'>
+          9
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+    
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
+      </svg>
+      
+  
+        
+    </span>
+    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Self-hosting' href='Knowledge/Self-hosting'>
+      Self-hosting
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Backing up servers and desktops with borgmatic' href='Knowledge/Self-hosting/backing-up-servers-and-desktops-with-borgmatic'>
+      Backing up servers and desktops with borgmatic
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='How to install PeerTube on Ubuntu' href='Knowledge/Self-hosting/how-to-install-peertube-on-ubuntu'>
+      How to install PeerTube on Ubuntu
+    </a>
+    
+      
+        
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+  
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+    
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        </path>
+      </svg>
+      
+  
+        
+    </span>
+    <a class='font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Notes on new homelab setup' href='Knowledge/Self-hosting/notes-on-new-homelab-setup'>
+      Notes on new homelab setup
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Knowledge/Statistics' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistics' href='Knowledge/Statistics'>
+      Statistics
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='3 children inside'>
+          3
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
+      
+        
+          <a href='Miscellaneous' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
+            
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      </svg>
+    
+  
+          </a>
+          
+      
+    </span>
+    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Miscellaneous' href='Miscellaneous'>
+      Miscellaneous
+    </a>
+    
+      
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='4 children inside'>
+          4
+        </span>
+      
+    
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+</div>
+    
+
+  </div>
+</nav>
+          <!-- Main body column -->
+          <div class='flex-1 w-full bg-white dark:bg-gray-800'>
+  <main class='px-6 py-8 max-w-7xl mx-auto'>
+    <h1 class='mb-10 px-8 py-5 bg-teal-600 dark:bg-teal-800 text-5xl font-bold text-white text-center rounded-2xl'>
+  Notes on new homelab setup
+</h1>
+    
+      <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  
+
+
+
+
+
+
+
+
+
+
+    <p class='mb-4 leading-relaxed'>
+      Bullet point notes on recent acquisition of home server and set up so far:
+    </p>
+  
+    <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      Aim was to consolidate my various servers and perhaps save some money
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I had a (somewhat underused) dedicated <a href='https://www.hetzner.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Hetzner</a> auction server running mostly dispensable health information system and other experiments, plus a large VM for <a href='https://github.com/paperless-ngx/paperless-ngx' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>paperless-ngx</a>, the super-useful tool for managing your PDFs.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I also had a few cloud VMs with Hetzner; the main one ran <a href='https://caprover.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CapRover</a> as a Platform-as-a-Service for <a href='https://nextcloud.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Nextcloud</a>, my wife’s blog, several other Docker containers and my various app experiments. CapRover is great and served me well for a long time, but I feel I’ve outgrown it a bit. The other two VMs run <a href='https://mailinabox.email./' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Mail-in-a-Box</a> as the mail server for a local sports club and <a href='https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>RustDesk</a> to enable me to remotely fix my mum’s laptop - I don’t plan to touch those at the moment.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I treated myself to a <a href='https://store.minisforum.com/products/minisforum-ms-01' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Minisforum MS-01</a> (Intel® Core™ i9-12900H / 32GB RAM+1TB SSD / UK) just before Xmas.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      My plan was to install <a href='https://www.proxmox.com/en/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Proxmox</a> as a virtualisation environment and then deploy virtual machines/containers to provide my various online services. I use Nextcloud for tasks/notes/miscellaneous files, <a href='https://github.com/crocodilestick/Calibre-Web-Automated' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Calibre-Web-Automated</a> for ebooks and Paperless NGX for my large collection of PDFs. I wanted at least those services to be in separate VMs/containers for greater flexibility. I also wanted to have the flexibility of CapRover (though not necessarily CapRover) for running various services that don’t really deserve their own VM/container as well as my own web apps. I also wanted the option to play with <a href='https://kubernetes.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Kubernetes</a> a bit if possible.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I downloaded Proxmox 8.3.1 and flashed the OS image to a USB drive with <a href='https://etcher.balena.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>balenaEtcher</a>.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      After fiddling with the boot options on the server I installed Proxmox onto the server and configured the network (static IP address and gateway). I connected the server to the home router and then hid it, as I could do everything else via the LAN. Didn’t bother with RAID or any fancy file systems, though I might come back to this.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      Ran the Proxmox Post Install script from <a href='https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Proxmox VE Helper-Scripts</a>, copied over my SSH keys (<code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>ssh-copy-id</code>) and set the locale.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      Set up <a href='https://github.com/BassT23/Proxmox' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>BassT23/Proxmox: Update your Proxmox VE</a> to help with updates.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      Apart from multifactor authentication, I haven’t done much else to secure the server or configure remote backups yet, but I will come back to that. I might use a separate VLAN and set up Google Drive for backups.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I experimented with the Nextcloud options from <a href='https://community-scripts.github.io/ProxmoxVE/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Proxmox VE Helper-Scripts</a> but eventually decided to go for <a href='https://github.com/nextcloud/all-in-one' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>nextcloud/all-in-one: 📦 The official Nextcloud installation method. Provides easy deployment and maintenance with most features included in this one Nextcloud instance.</a>.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I initially experimented with <a href='https://tailscale.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tailscale</a> for secure access, but as I needed to be able to access things from my work computer I decided it was simpler to go with <a href='https://github.com/cloudflare/cloudflared' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Cloudflare Tunnels</a>. Not all features of Nextcloud All-In-One will work behind a Cloudflare Tunnel apparently, but I haven’t had any issues with the features I need.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I installed an <a href='https://community-scripts.github.io/ProxmoxVE/scripts?id=ubuntu2404-vm' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ubuntu 24.04 VM</a> for Nextcloud, and used <a href='https://github.com/community-scripts/ProxmoxVE/discussions/272' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this</a> to set up Cloud-Init, resize the disk (after I had allocated it more space) and install other things including Docker and Docker Compose.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I initially started Nextcloud with the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>docker run</code> command given, but then decided to use Docker Compose instead (after cleaning up images, containers, volumes etc first), using this from <a href='https://github.com/nextcloud/all-in-one/discussions/2845#discussioncomment-6423237' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>(Solved)AIO working with Cloudflare? · nextcloud/all-in-one · Discussion #2845</a>:
+    </p>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code>version: "3.8"
+
+services:
+	nextcloud:
+		image: nextcloud/all-in-one:latest
+		restart: always
+		container_name: nextcloud-aio-mastercontainer 
+		volumes:
+			- nextcloud_aio_mastercontainer:/mnt/docker-aio-config 
+			- /var/run/docker.sock:/var/run/docker.sock:ro 
+		ports:
+			- 80:80 
+			- 8080:8080
+		environment: 
+			- APACHE_PORT=11000 
+			- APACHE_IP_BINDING=0.0.0.0
+			- SKIP_DOMAIN_VALIDATION=true
+
+volumes:
+	nextcloud_aio_mastercontainer:
+		name: nextcloud_aio_mastercontainer</code></pre></div>
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      After <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>docker compose up -d</code>, it soon shows a <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>/setup</code> page where you get a passphrase to log in to the system. After that you go to a <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>/containers</code> page where you can select which additional options you want (I chose most of them).
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      Then you wait while it sets up. It then gives you an initial admin password which you should change. Nextcloud was then accessible on my local network.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I configured my profile and set up email via the football club mailserver. I then installed all the Nextcloud apps I have used previously, plus some exciting new ones. I even got Nextcloud Office to work! However the Tables app still seems a bit flaky. I used the “OCCWeb” app to run commands like <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>maintenance:repair</code> to check/fix things. I also tweaked the config file for my phone region - I still have no idea why this can’t be done in the GUI.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I logged into Cloudflare and created a tunnel - it is ridiculously easy. Name your tunnel, copy the code provided into the VM console, specify the port and you’re done. I could now access my Nextcloud login page on the public Internet.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I use the <a href='https://github.com/nextcloud/desktop' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>nextcloud/desktop: 💻 Desktop sync client for Nextcloud</a> to synchronise files to my desktop machine, so I paused that, removed the connection and then connected it to the new Nextcloud instance.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I use <a href='https://tasks.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tasks.org</a> Android mobile app to synchronise my tasks with Nextcloud. On the mobile app, I moved all my tasks into local lists, connected it to the new Nextcloud instance and then moved my tasks back into their original lists.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I also use Nextcloud as backup/sync location for various mobile apps such as <a href='https://www.moondownload.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Moon+ Reader for Android</a> ebook reader (which I use a lot) and <a href='https://github.com/XilinJia/Podcini' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>XilinJia/Podcini: Open source podcast instrument for Android supporting contents from YouTube and YT Music as well as normal podcasts.</a>, so reconfigured those.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      Next I installed an Ubuntu 24.04 VM (from a template) and installed <a href='https://ghost.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ghost: The best open source blog & newsletter platform</a> from scratch for my wife’s blog, which has only one post so I just copied and pasted it over.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I backed up all my VMs/containers on my old Proxmox and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>scp</code>’d them to the new server, which took ages. Restoring them taught me a few things.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      Firstly, I think I only had storage called <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>local</code> on my old Proxmox, whereas my new one has both <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>local</code> and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>local-lvm</code>. I should have restored things to the flexible storage <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>local-lvm</code> not the root file system <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>local</code>, as <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>local</code> soon filled up. Proxmox did tried to warn me but I changed the settings of <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>local</code> to allow container directories. But once I realised what I was doing I backed them up and restored them in the right location.
+    </p>
+  
+    <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
+      
+        <li>
+          Restoring VMs: e.g. <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>qmrestore /var/lib/vz/dump/vzdump-qemu-100-2025_02_16-13_59_09.vma.zst 100 --storage local-lvm</code>
+        </li>
+      
+        <li>
+          Restoring LXC containers: e.g. <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>pct restore 103 /var/lib/vz/dump/vzdump-lxc-104-2025_02_16-13_55_14.tar.zst --storage local-lvm</code>
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      Secondly you have to reconfigure network settings for each VM/container. For LXC containers this is done on the host (any changes to <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>/etc/network/interfaces</code> in the container will be overwritten at reboot), e.g. <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>vim /etc/pve/lxc/103.conf</code>. For Ubuntu VMs you configure network settings in the VM with e.g. <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>sudo vim /etc/netplan/00-installer-config.yaml</code>. Restart after any changes.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I was able to restore all of my backups on the new server.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      After restoring my Paperless NGX LXC, I added the new public URL to the config file and created a Cloudflare Tunnel. I also reconfigured the mobile app and set up integration with Nextcloud - now I can send files from my phone camera or from Nextcloud.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      For my ebooks I then set up a Docker VM with <a href='https://community-scripts.github.io/ProxmoxVE/scripts?id=docker-vm' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Proxmox VE Helper-Scripts</a>. I increased the disk size and then grew the file system in the VM using <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>growpart</code> and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>resize2fs</code>. I created the folders required for volumes, amended the Docker Compose script for Calibre Web Automated, <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>docker compose up -d</code>’d it up, <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>scp</code>’d my ebooks into the ingest folder, checked the settings and made it accessible with a Cloudflare Tunnel.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I cancelled the Hetzner server as I had no further need for it. I still have a few things running behind CapRover but I will get to those soon.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      I then set up an LXC container with <a href='https://vikunja.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Vikunja: The open-source, self-hostable to-do app</a> as it’s something I’ve been interested in playing with for task management. I’m not convinced it is worth moving from Nextcloud Tasks at this point.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-4 leading-relaxed'>
+      CapRover isn’t intended to be run behind a Cloudflare Tunnel, though I think you can do it. So I decided to try out <a href='https://casaos.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CasaOS - A simple, easy-to-use, elegant open-source personal cloud system</a> to give me at least some of the flexibility of CapRover for trying out apps or arbitrary Docker containers. There is a handy script to automate most installation (as an LXC) here: <a href='https://community-scripts.github.io/ProxmoxVE/scripts?id=casaos' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Proxmox VE Helper-Scripts</a>. CasaOS looks very nice and has a small but useful app store. I’ve set up the Cloudflared app as per here: <a href='https://community.zimaspace.com/t/how-to-use-cloudflare-tunnel-in-casaos/131' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>How to use Cloudflare Tunnel in CasaOS? - CasaOS / CasaOS - Tutorials - IceWhale Community Forum</a>. This is where I am up to, installing various apps and seeing what I can do with this.
+    </p>
+  
+        </li>
+      
+    </ul>
+  
+  <!-- What goes in this file will appear below the note body-->
+</article>
+    
+    <div class='flex flex-col lg:flex-row lg:space-x-4 mt-8'>
+      
+  <div class='p-5 mt-8 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-sm flex-1'>
+    <header class='mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400' title='Links to this page from daily notes'>🗓️ Timeline</header>
+    <ul class='space-y-2'>
+      
+        <li>
+          <a class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900 inline-block' href='Miscellaneous/Thoughts/2025-03-11'>
+            SENAITE progress; Bluesky; home server; AOC; Shiny app; Python apps from R; old blog; LibreELEC; Pop! OS Linux distro and new desktop computer; causal inference course
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500 dark:text-gray-300'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-teal-200 dark:border-teal-600 hover:border-teal-500 dark:hover:border-teal-400'>
+      <div><p>I have set up my own <a href='Knowledge/Self-hosting/notes-on-new-homelab-setup' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>home server</a> now; I like the Nextcloud All-In-One version; it does use a lot of RAM but it is great for updates and backups (I am now using <a href='https://www.borgbase.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>BorgBase</a> as my offsite backup)</p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+      
+    </div>
+    
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+    <!-- What goes in this file will at the very end of the main div -->
+  </main>
+</div>
+        </div>
+        
+      <footer class='flex items-center justify-center mt-10 mb-10'>
+  <div class='inline-flex items-center justify-center space-x-6 px-8 py-4 bg-gray-50 dark:bg-gray-900 rounded-lg'>
+    
+  <div>
+    
+      
+        <a href='/' title='Go to Home'>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
+          </svg>
+        </a>
+      
+    
+  </div>
+  <div>
+    <a href='-/all' title='View Index'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.1'>
+      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
+    </a>
+  </div>
+  <div>
+    <a href='-/tags' title='View tags'>
+      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/tasks' title='View tasks'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+      </svg>
+    </a>
+  </div>
+  </div>
+</footer>
+    </div>
+  
+  <div id='stork-search-container' class='hidden fixed w-screen h-screen inset-0 backdrop-filter backdrop-blur-sm'>
+  <div class='fixed w-screen h-screen inset-0' onclick='window.emanote.stork.toggleSearch()'></div>
+
+  <div class='container mx-auto p-10 mt-10'>
+    <div id='stork-wrapper' class='container mx-auto'>
+      <input id='stork-search-input' data-stork='emanote-search' class='stork-input' placeholder='Search (Ctrl+K) ...' />
+      <div data-stork='emanote-search-output' class='stork-output'></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const wrapper = document.getElementById('stork-wrapper');
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
+    wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+  });
+</script>
+  
+    <!-- mermaid.js --><script type='module'>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+  import elkLayouts from 'https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0/dist/mermaid-layout-elk.esm.min.mjs';
+  mermaid.registerLayoutLoaders(elkLayouts);
+  const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: isDarkMode ? 'dark' : 'base'
+  });
+  mermaid.init(undefined, document.querySelectorAll(".mermaid"));
+  
+  // Listen for theme changes and reload page (simple approach)
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    window.location.reload();
+  });
+</script>
+ 
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css' integrity='sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV' crossorigin='anonymous' />
+<script defer
+ src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js' integrity='sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8' crossorigin='anonymous'></script>
+<script defer
+ src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js' integrity='sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05' crossorigin='anonymous' onload='renderMathInElement(document.body);'></script>
+
+
+  
+</body>
+
+</html>
