@@ -1,6 +1,6 @@
 ---
 feed:
-  enable: false
+  enable: true
 ---
 
 > Interesting links
