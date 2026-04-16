@@ -5282,7 +5282,7 @@ title: "Notes on the data.table package"
   DT <- read_excel(datafile.xlsx) |>
     setDT()
   ```
-- Workaround for reading in Parquet files: [fread feather · Issue #2026 · Rdatatable/data.table · GitHub](https://github.com/Rdatatable/data.table/issues/2026#issuecomment-1408551244)
+- Workaround for reading in Parquet files: [fread feather · Issue \#2026 · Rdatatable/data.table · GitHub](https://github.com/Rdatatable/data.table/issues/2026#issuecomment-1408551244)
   - only works if a `data.table` is saved as Parquet
 - Creating a `data.table` from vectors
   ```{r}
