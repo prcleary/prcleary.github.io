@@ -1,5 +1,7 @@
 ---
 title: "Statistical practice in field epidemiology: so many problems, so many solutions"
+tags:
+  - writing
 ---
 
 Some colleagues and I have recently been having an interesting discussion about how we should be taking account of recent statistical criticisms of p values and practices such as stepwise model selection.

@@ -35,7 +35,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=018c12bc-a9dd-49ba-8429-dbfb14562b1d' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ce01609-cb59-4255-9bed-c6471d26f9b4' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -3519,6 +3519,15 @@
     </div>
     
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
+        Perhaps Emanote should inject tagMetas with urls.
+      -->
+      <a title='Tag' class='px-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-teal-500' href='-/tags/writing'>
+        <!-- DoNotFormat -->
+        #writing
+        <!-- DoNotFormat -->
+      </a>
     
   </section>
 
