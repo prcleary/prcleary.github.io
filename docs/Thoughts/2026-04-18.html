@@ -35,7 +35,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=5223f15d-8db3-40f8-b055-f8e129c59c14' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=d749bccb-39bf-43a8-89cc-790f276dbae7' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -1256,11 +1256,16 @@
   <span class='bu'>local</span> <span class='va'>DATE</span>
   <span class='va'>DATE</span><span class='op'>=</span><span class='va'>$(</span><span class='fu'>date</span> +%F<span class='va'>)</span>   <span class='co'># YYYY-MM-DD format</span>
   <span class='bu'>local</span> <span class='va'>FILE</span><span class='op'>=</span><span class='st'>"</span><span class='va'>$BLOG_DIR</span><span class='st'>/</span><span class='va'>$DATE</span><span class='st'>.md"</span>
-
-  <span class='fu'>mkdir</span> <span class='at'>-p</span> <span class='st'>"</span><span class='va'>$BLOG_DIR</span><span class='st'>"</span>
   <span class='ex'>vim</span> <span class='st'>"</span><span class='va'>$FILE</span><span class='st'>"</span>
 <span class='kw'>}</span>
-<span class='bu'>alias</span> publish=<span class='st'>'emanote -L ~/prcleary.github.io/content/ gen ~/prcleary.github.io/docs/; cd ~/prcleary.github.io; git add .; git commit -m "Add content"; git push; cd -'</span>
+<span class='fu'>publish()</span> <span class='kw'>{</span>
+  <span class='ex'>emanote</span> <span class='at'>-L</span> ~/prcleary.github.io/content/ gen ~/prcleary.github.io/docs/
+  <span class='bu'>cd</span> ~/prcleary.github.io
+  <span class='fu'>git</span> add .
+  <span class='fu'>git</span> commit <span class='at'>-m</span> <span class='st'>"Add content"</span>
+  <span class='fu'>git</span> push
+  <span class='bu'>cd</span> <span class='at'>-</span>
+<span class='kw'>}</span>
 </code></pre></div>
   <!-- What goes in this file will appear below the note body-->
 </article>

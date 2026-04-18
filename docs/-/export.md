@@ -8881,11 +8881,16 @@ blog() {
   local DATE
   DATE=$(date +%F)   # YYYY-MM-DD format
   local FILE="$BLOG_DIR/$DATE.md"
-
-  mkdir -p "$BLOG_DIR"
   vim "$FILE"
 }
-alias publish='emanote -L ~/prcleary.github.io/content/ gen ~/prcleary.github.io/docs/; cd ~/prcleary.github.io; git add .; git commit -m "Add content"; git push; cd -'
+publish() {
+  emanote -L ~/prcleary.github.io/content/ gen ~/prcleary.github.io/docs/
+  cd ~/prcleary.github.io
+  git add .
+  git commit -m "Add content"
+  git push
+  cd -
+}
 ```
 
 
