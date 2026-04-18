@@ -8856,6 +8856,29 @@ I think I will stick with [Emanote](https://emanote.srid.ca/) for a while. There
 
 ===
 
+<!-- Source: Thoughts/2026-04-18.md -->
+<!-- URL: https://prcleary.github.io/Thoughts/2026-04-18 -->
+<!-- Title: 2026-04-18 -->
+<!-- Wikilinks: [[Thoughts/2026-04-18]], [[2026-04-18]] -->
+
+---
+title: 
+---
+
+A quiet weekend. Was supposed to be in Pakistan but Iran got first dibs. Up to over 9,000 words for textbook chapter I am writing. Nothing much else going on.
+
+## Pop!\_OS upgrade
+
+Upgraded my home Linux box to Pop!\_OS 24.04 without major issues: [Upgrade Pop!\_OS - System76 Support](https://support.system76.com/articles/upgrade-pop/). Won't be able to use [RustDesk](https://rustdesk.com/) to access my computer because the new Pop!\_OS uses Wayland, but I don't really need it. Had to reinstall [borgmatic](https://torsion.org/borgmatic/how-to/install-borgmatic/) and  [apt-fast](https://github.com/ilikenwf/apt-fast), and rebuild all my R packages but that is it so far. 
+
+## Blog development
+
+Still playing with the blog format - added a list of interesting [[Links|links]].
+
+
+
+===
+
 <!-- Source: Writing.md -->
 <!-- URL: https://prcleary.github.io/Writing -->
 <!-- Title: Writing -->
