@@ -1,5 +1,6 @@
 ---
 title: "Statistical practice in field epidemiology: so many problems, so many solutions"
+date: 2023-10-01
 tags:
   - writing
 ---
