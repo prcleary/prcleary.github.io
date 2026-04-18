@@ -8858,11 +8858,11 @@ I think I will stick with [Emanote](https://emanote.srid.ca/) for a while. There
 
 <!-- Source: Thoughts/2026-04-18.md -->
 <!-- URL: https://prcleary.github.io/Thoughts/2026-04-18 -->
-<!-- Title: 2026-04-18 -->
+<!-- Title: Pop!\_OS upgrade; blog development -->
 <!-- Wikilinks: [[Thoughts/2026-04-18]], [[2026-04-18]] -->
 
 ---
-title: 
+title: Pop!\_OS upgrade; blog development
 ---
 
 A quiet weekend. Was supposed to be in Pakistan but Iran got first dibs. Up to over 9,000 words for textbook chapter I am writing. Nothing much else going on.
