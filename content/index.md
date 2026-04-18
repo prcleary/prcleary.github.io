@@ -8,7 +8,7 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 ## What you'll find here
 
 - **Knowledge management**: notes in various stages of development as I learn in the open and gradually consolidate and structure my many technical notes from elsewhere
-- **Miscellaneous** [[Thoughts|thoughts]], [[Writing|writing]], interesting [[Links|links]] and [[Books|reading]]
+- **Miscellaneous** [[Thoughts|thoughts,]] [[Writing|writing,]] interesting [[Links|links]] and [[Books|reading]]
 
 [Email](mailto:blog@paulcleary.net) [GitHub](https://github.com/prcleary) [Letterboxd](https://letterboxd.com/rusticana/) [ORCID](https://orcid.org/0000-0001-9335-5422) [Strava](https://www.strava.com/athletes/9125693) [Zotero](https://www.zotero.org/drprcleary)
 
