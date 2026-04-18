@@ -8510,30 +8510,6 @@ feed:
 
 ===
 
-<!-- Source: Links/2026-04-11.md -->
-<!-- URL: https://prcleary.github.io/Links/2026-04-11 -->
-<!-- Title: Abandoned Liverpool; persona prompting -->
-<!-- Wikilinks: [[Links/2026-04-11]], [[2026-04-11]] -->
-
----
-title: Abandoned Liverpool; persona prompting
----
-
-## Abandoned Liverpool
-
-Part of a series of what cities might look like after the humans abandoned them 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yOrIPU13Gfc?si=ID2P7INK8AYb3XL6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## Persona prompting considered harmful?
-
-"You are an expert epidemiologist and statistician" may not always be helping me with AI it seems 
-
-[Research Shows Where Persona Prompting Works And When It Backfires](https://www.searchenginejournal.com/research-you-are-an-expert-prompts-can-damage-factual-accuracy)
-
-
-===
-
 <!-- Source: Thoughts.md -->
 <!-- URL: https://prcleary.github.io/Thoughts -->
 <!-- Title: Thoughts -->
