@@ -8871,8 +8871,6 @@ A quiet weekend. Was supposed to be in Pakistan but Iran got first dibs. Up to o
 
 Upgraded my home Linux box to Pop!\_OS 24.04 without major issues: [Upgrade Pop!\_OS - System76 Support](https://support.system76.com/articles/upgrade-pop/). Won't be able to use [RustDesk](https://rustdesk.com/) to access my computer because the new Pop!\_OS uses Wayland, but I don't really need it. Had to reinstall [borgmatic](https://torsion.org/borgmatic/how-to/install-borgmatic/), [apt-fast](https://github.com/ilikenwf/apt-fast) and R, and rebuild all my R packages, but that is it so far. 
 
-[r-lib/rig: The R Installation Manager](https://github.com/r-lib/rig#id-usage) seems like the best way to install R on Linux currently.
-
 ## Blog development
 
 Still playing with the blog format - added a list of interesting [[Links|links]] using [Karakeep](https://karakeep.app/). 
