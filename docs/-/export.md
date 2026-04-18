@@ -8873,8 +8873,7 @@ Upgraded my home Linux box to Pop!\_OS 24.04 without major issues: [Upgrade Pop!
 
 ## Blog development
 
-Still playing with the blog format - added a list of interesting [[Links|links]].
-
+Still playing with the blog format - added a list of interesting [[Links|links]] using [Karakeep](https://karakeep.app/).
 
 
 ===
