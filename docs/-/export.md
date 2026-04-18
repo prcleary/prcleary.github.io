@@ -8869,11 +8869,25 @@ A quiet weekend. Was supposed to be in Pakistan but Iran got first dibs. Up to o
 
 ## Pop!\_OS upgrade
 
-Upgraded my home Linux box to Pop!\_OS 24.04 without major issues: [Upgrade Pop!\_OS - System76 Support](https://support.system76.com/articles/upgrade-pop/). Won't be able to use [RustDesk](https://rustdesk.com/) to access my computer because the new Pop!\_OS uses Wayland, but I don't really need it. Had to reinstall [borgmatic](https://torsion.org/borgmatic/how-to/install-borgmatic/), [apt-fast](https://github.com/ilikenwf/apt-fast) and R, as well as rebuilding all my R packages. Also had to uninstall `xclip` and install `wl-clipboard` instead, to get the planner app working in my [prcleary/paulmisc: Miscellaneous R functions that Paul uses](https://github.com/prcleary/paulmisc/) package.
+Upgraded my home Linux box to Pop!\_OS 24.04 without major issues: [Upgrade Pop!\_OS - System76 Support](https://support.system76.com/articles/upgrade-pop/). Won't be able to use [RustDesk](https://rustdesk.com/) to access my computer because the new Pop!\_OS uses Wayland, but I don't really need it. Had to reinstall [borgmatic](https://torsion.org/borgmatic/how-to/install-borgmatic/), [apt-fast](https://github.com/ilikenwf/apt-fast) and R, as well as rebuilding all my R packages. Also had to uninstall `xclip` and install `wl-clipboard` instead, to get the daily planner Shiny app working in my [prcleary/paulmisc: Miscellaneous R functions that Paul uses](https://github.com/prcleary/paulmisc/) package.
 
 ## Blog development
 
-Still playing with the blog format - added a list of interesting [[Links|links]] using [Karakeep](https://karakeep.app/). 
+Still playing with the blog format - added a list of interesting [[Links|links]] using [Karakeep](https://karakeep.app/). Added a couple of shortcuts to `~/.bashrc` to help with blogging.
+
+```bash
+blog() {
+  local BLOG_DIR="$HOME/prcleary.github.io/content/Thoughts"
+  local DATE
+  DATE=$(date +%F)   # YYYY-MM-DD format
+  local FILE="$BLOG_DIR/$DATE.md"
+
+  mkdir -p "$BLOG_DIR"
+  vim "$FILE"
+}
+alias publish='emanote -L ~/prcleary.github.io/content/ gen ~/prcleary.github.io/docs/; cd ~/prcleary.github.io; git add .; git commit -m "Add content"; git push; cd -'
+```
+
 
 
 ===
