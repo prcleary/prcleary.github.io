@@ -9394,14 +9394,7 @@ blog() {
   local FILE="$BLOG_DIR/$DATE.md"
   vim "$FILE"
 }
-publish() {
-  emanote -L ~/prcleary.github.io/content/ gen ~/prcleary.github.io/docs/
-  cd ~/prcleary.github.io
-  git add .
-  git commit -m "Add content"
-  git push
-  cd -
-}
+alias publish='cd ~/prcleary.github.io; emanote -L content/ gen docs/; git add .; git commit -m "Add content"; git push; cd -'
 ```
 
 

@@ -48,14 +48,13 @@
   --color-primary-900: var(--color-teal-900);
   --color-primary-950: var(--color-teal-950);
 }
-</style><link href='tailwind.css?instanceId=cee63c23-bf6f-4be2-87d0-f45fdc644ca8' rel='stylesheet' type='text/css' />
+</style><link href='tailwind.css?instanceId=8f36f750-5f42-4e95-9eb0-44f97465780a' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
 <link rel='preconnect' href='https://fonts.googleapis.com' />
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-<link href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap' rel='stylesheet' />
-
+    <link href='https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Fira+Mono:wght@400;500;700&amp;family=Fira+Sans:wght@400;500;600;700&amp;display=swap' rel='stylesheet' />
 <link rel='stylesheet' href='/static/custom.css' />
 <script defer src='/static/copy-button.js'></script>
 
@@ -1172,14 +1171,7 @@
   <span class='bu'>local</span> <span class='va'>FILE</span><span class='op'>=</span><span class='st'>"</span><span class='va'>$BLOG_DIR</span><span class='st'>/</span><span class='va'>$DATE</span><span class='st'>.md"</span>
   <span class='ex'>vim</span> <span class='st'>"</span><span class='va'>$FILE</span><span class='st'>"</span>
 <span class='kw'>}</span>
-<span class='fu'>publish()</span> <span class='kw'>{</span>
-  <span class='ex'>emanote</span> <span class='at'>-L</span> ~/prcleary.github.io/content/ gen ~/prcleary.github.io/docs/
-  <span class='bu'>cd</span> ~/prcleary.github.io
-  <span class='fu'>git</span> add .
-  <span class='fu'>git</span> commit <span class='at'>-m</span> <span class='st'>"Add content"</span>
-  <span class='fu'>git</span> push
-  <span class='bu'>cd</span> <span class='at'>-</span>
-<span class='kw'>}</span>
+<span class='bu'>alias</span> publish=<span class='st'>'cd ~/prcleary.github.io; emanote -L content/ gen docs/; git add .; git commit -m "Add content"; git push; cd -'</span>
 </code></pre></div>
   <!-- What goes in this file will appear below the note body-->
 </article>
