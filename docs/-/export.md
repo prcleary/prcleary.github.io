@@ -5127,6 +5127,206 @@ isowkend <- function(mydate)  {
 
 ===
 
+<!-- Source: Knowledge/R/how-to-learn-r.md -->
+<!-- URL: https://prcleary.github.io/Knowledge/R/how-to-learn-r -->
+<!-- Title: How to learn R (an opinionated view) -->
+<!-- Wikilinks: [[Knowledge/R/how-to-learn-r]], [[R/how-to-learn-r]], [[how-to-learn-r]] -->
+
+---
+title: How to learn R (an opinionated view)
+date: 2023-02-27
+tags:
+  - writing
+---
+
+So you would like to learn the statistical programming language R. You have decided this entirely of your own free will and without any undue coercion, conscious or unconscious, from me.
+
+I applaud your decision. 
+
+### Should you learn R?
+
+R is widely used but is not not your only option. 
+
+Reasons to learn and use R include:
+
+- it has a broad range of statistical methods (probably unparalleled)
+- it is free and open source software: R will always be available to you for free, wherever your career takes you; thousands of add-on packages are made available by other users
+- it is very useful for public health and provides everything you need for outbreak investigation, surveillance, research, data science and your other analytical needs
+- it has excellent data visualisation capabilities (including mapping)
+- it can be used to generate excellent flexible and automatable reports of various types
+- you can write Web apps in R code (called Shiny apps)
+- it plays well with other open standards-based or open source software (and there is an extensive open source software ecosystem)
+- it has a wide community of mutually supportive users and a vast amount of online learning material
+- being good at a language like R feels like a kind of superpower
+
+If your need is more for general purpose programming, machine learning or data engineering then you should perhaps learn Python instead (or as well). Python is also great and I will do some more on that at some point.
+
+If your work is mainly with databases then you should focus on SQL (and probably more than one SQL dialect). R users would do well to learn at least some SQL. 
+
+Depending on the industry or area you work in, or the languages that your collaborators use, there may be other languages that you should consider. Commercial statistical software such as SPSS, Stata or SAS often lags open source software in terms of development of capability, and it can be very expensive, but if you can already do everything you need with those tools and if your employer will pay for them then you need feel no pressure to learn R. 
+
+### How hard is R to learn?
+
+You must remember that R is a language rather than just software. 
+You need to retain vocabulary, follow grammatical rules, appreciate semantics, and in return you gain richness and expressiveness.
+And that all comes with time and practice.
+
+R has a famously steep learning curve in the early stages, as in addition to learning the language you may also need to master concepts of statistics and computing. 
+If your main aim is report production then it is possible to become a productive user of R without knowing much statistics, but you will still need to understand some basic computing concepts, as with any programming language.
+
+Learning R is a process, not an event, and we are all just at different stages in that process. 
+
+### How long does it take to learn R?
+
+After approaching 20 years of using R there are still some aspects of R where my understanding remains superficial. I constantly have to look up solutions for things I have done previously in e.g. `ggplot2` or `data.table` - hence my growing cheatsheets. I have "learned R" only in that I now have the confidence that I can do just about everything I need to do with R, either from memory or by Googling things. But I will probably be learning R for the remainder of my career.
+
+If you have experience of coding and apply yourself, focussing on the aspects of R that are most relevant to you, you can be productive in R within weeks or months. If you meet more than one of the following criteria:
+
+- you are new to coding
+- you only need to code infrequently (less than two hours per week on average)
+- you don't really need R but you think it would be handy to know it
+- you don't really want to learn R but think that you should
+- you are waiting to be taught it
+- you can do everything you need with other analytical tools
+
+then it could take years. 
+
+I always thought it would be helpful to have some knowledge of JavaScript, to be able to make Web pages more interactive etc, but after several online courses and reading one or more books over the years (and almost no real need to use it) I still couldn't sit down and write any useful JavaScript code from scratch.
+
+### Which R should I learn?
+
+Like any language, R has diversified into dialects: 
+
+- base R (the basic R language that comes out of the box before any additional packages have been installed)
+- the `tidyverse` of packages with consistent syntax, championed by RStudio/Posit and popular with beginners
+- the `data.table` package, which enables you to write concise and super-fast running code
+
+Base R is the equivalent of French with its clarity, subtlety and elegance, but also its difficulties and inconsistencies. In French "l'amour" is masculine in the singular ("l'amour fou"), but can be feminine in the plural ("les amours tarifées"). In R, the function to choose a directory is `choose.dir`, but the function to choose a file is `file.choose`. 
+
+The `tidyverse` is the German of R: business-like, practical, verbose and fond of concatenation.
+
+```r
+mydata %>%
+    do_this() %>%
+    do_that() %>%
+    do_something_else() %>%
+    ad_infinitum() 
+```
+
+The German for "motor vehicle indemnity insurance" is `Kraft %>% fahrzeug %>% haftpflicht %>% versicherung`.
+
+`data.table` is the [Toki Pona](https://en.wikipedia.org/wiki/Toki_Pona) of R: a linguistic experiment in concision, conceptually profound, with a minimal vocabulary (added to base R). This is how you do a left join in `data.table`:
+
+```r
+x[y]
+```
+
+To strain the metaphor further, Python is the English of R: easy to learn as a second language (to R), though complex in advanced use; idiomatic and used everywhere. 
+
+You should regard any assertion that you only need one dialect with suspicion. Both the `tidyverse` and `data.table` are built on base R and complement it, which makes the things you occasionally hear from `tidyverse` overenthusiasts sound ridiculous (*We don't use base R* -> *Really? You don't use functions or vectors??*). See [here](https://github.com/matloff/TidyverseSkeptic) for much more on this. 
+
+### The actual matter of learning R
+
+In reality most people these days start off learning a mixture of base R, `tidyverse` and RMarkdown, probably also falling back frequently on analytical tools they used previously. At some point (possibly much later) it might become useful for them to learn some SQL, `data.table` and/or Python for more complex data tasks.
+
+Your learning of R should in general be driven by what you need to do and what the people around you are doing. R can be overwhelming at first, but there are some basic capabilities that will be needed for pretty much anything you do, and you should focus on these first. I will try to outline these in a dialect-agnostic way below. 
+
+In my view, it is helpful initially to learn these by way of a time-limited but non-business critical personal project that you can work on, ideally with some experienced supervision. This would ideally be done in parallel with any course you are undertaking. 
+
+At first you will write a lot of terrible code, perhaps with lots of copying and pasting from Google, [Stack Overflow](https://stackoverflow.com/questions/tagged/r) or random Web pages, lots of repetition, excessive use of packages, poor formatting, no version control (apart from multiplication of files with a nomenclature that made sense at the time) and numerous other deviations from best practice. 
+Don't beat yourself up about it. 
+The real learning is by doing and making mistakes. 
+
+Allow the pain points of this first project to determine what other learning materials you need to access. 
+There are too many free resources on the Web for learning R for me to list here, but by honing your Web searching skills during this phase you should aim to learn the following first:
+
+- How to install R and RStudio (assuming you will be running this all locally, that is on the machine in front of you, as opposed to in the cloud)
+- How to run or close RStudio
+- How to open and read R help files
+- Where you type R code to run it interactively (e.g. `cat("I am cool!")`)
+- How to create and save an R script in RStudio
+- What the "working directory" concept means
+- What relative and absolute paths are
+
+Explore the menus and settings in RStudio during this phase - you are unlikely to break anything. Find some blogs, newsletters, social media or YouTubers with useful R content and follow the good ones. Learn how to ask good questions on forums. 
+
+Most analytical code involves applying functions to data, that is, taking some data and making some calculations with it to derive something that is more useful than the data alone. In the next phase you should aim to learn the following through exploration of the openly available resources:
+
+- What a *variable* is and how to create a variable (*assignment*)
+- Which variable names are valid in R
+- What the simplest data structures are in R (start with *vectors*), and how to create them
+- The basic types of data that R can represent: numeric, character, date, logical; what a *factor* is; how to convert between data types; how R represents missing data and other special values
+- How to use an R function
+- The basic calculating functions that are available in base R; here are some to start with: `abs`, `sqrt`, `round`, `exp`, `log`, `cos`, `sin`, `tan`, `all`, `any`, `sum`, `min`, `max`, `range`
+- What function arguments are and what default values are
+- What an operator is; here are some to start with: `+`, `-`, `*`, `/`, `^`, `%%`, `&`, `|`, `!`, `==`, `!=`, `<`, `<=`, `>=`, `>`; understand operator precedence
+- What the difference between a *statement* and an *expression* is
+- How to combine functions and/or operators in a statement or expression
+- How to read a comma-separated values (CSV) file of data into R
+- How to filter your data to records meeting certain conditions
+- Ways of viewing, summarising and checking data you have read into R
+- How to create a simple frequency table
+- How to run an R script containing several statements
+- How to add comments to R scripts
+- Understanding common error messages in R
+
+Some of the above may vary depending on which dialect/s you are focussing on, e.g. the simple `data.frame` data structure in base R is replaced by a modified version in the other dialects. By the end of this phase you should aim to be able to replicate in R many of the basic calculations you can probably already do in a spreadsheet like Excel. 
+
+From this point on things will often be done differently in different dialects, so at this point it is worth learning the following about R packages, which bring additional user-written functions and other goodness into R:
+
+- How to install R packages
+- How to include R packages in your code
+- How to list the functions provided by a package
+- How to update R packages
+
+One of the most useful packages you will use irrespective of dialect is the `ggplot2` data visualisation package, so at this point you could start to learn how to create basic bar charts as a minimum.
+
+Once you can create some basic tables and charts from data, it is time to start working on the quality and efficiency of your code by learning: 
+
+- How to style R code in RStudio (check out the Ctrl-Shift-A keyboard combo in particular)
+- How to write R functions: aim to write each function to do one thing well
+- How to control the flow of your code using loops, `if`/`else` conditional statements and the like
+- How to create and use RStudio Projects
+
+At this point you should be ready to start to work with other coders. Working in a supportive team with other coders can be incredibly valuable and a time for accelerated learning. If you are required to run code for the team, make sure you have read that code and asked lots of stupid questions. 
+
+Working in a team may mean you now need to learn the use of Git for version control and collaboration. Git can be hard to set up for a complete beginner, so seek help. Once Git is set up, you should first learn how to *clone* a Git repository and how to *pull* the latest changes from a Git repository. This is how you get the code and is often all you need until you become an active contributor to the project.
+
+If you have reached this point and can say with confidence that you can do most of the things above (either from memory or with the help of Google), then congratulations! You are no longer a beginner. You can do more with R than I can do with JavaScript. You can start to teach others how to code. As an intermediate coder you can next learn whichever of the following are most useful to you:
+
+- More complex data manipulations e.g. grouping, aggregating, converting between long and wide formats, joins/merges, using lookup files
+- Running SQL queries on databases from R
+- More complex data visualisations e.g. small multiples, maps, interactivity (e.g. `htmlwidgets`)
+- Learning Markdown, as a preliminary step to learning RMarkdown
+- Learning RMarkdown (a combination of R, Markdown and YAML) for creating documents in HTML or Microsoft Word formats, including simple dashboards
+- Classical statistical tests: start with Student's $t$ test, the chi-squared test, Fisher's exact test, correlations, basic non-parametric tests, linear and logistic regression; sample size estimation can also be useful
+- Debugging R code: useful commands such as `browser` and `debug`
+- More advanced uses of Git: committing and pushing code changes, branching, fixing merge conflicts
+
+Other more advanced areas you could then consider include:
+
+- Creating an R package (with documentation and tests) and deploying it via GitLab/GitHub
+- Creating more complex dashboards e.g. Shiny apps or using HTML/CSS/JavaScript directly
+- More advanced statistical methods: multivariable models of different types; time series and forecasting; or, most advanced of all, Bayesian methods!
+- Working with different types of data e.g. spatial, whole genome sequencing data, network data
+- Running R in the cloud, perhaps in a container (Docker or podman) or a virtual machine (typically a Linux one), perhaps on a cloud platform like OpenShift (or Proxmox)
+- Working with data APIs and pipelines
+- Regular expressions to extract patterns from text
+- If mastery is your goal, deepen your understanding of core R programming concepts: scope, environments, namespaces, non-standard evaluation, object-oriented and functional coding paradigms; learn about other languages and technologies
+- If career progression is your goal, develop your broader skill set: technical leadership, management, soft skills; get a technical mentor
+
+As well as doing more and more with R, you should also learn as much as you can about best practices which can help you produce robust, safe, maintainable, reusable, efficient code. 
+
+R is always evolving and you will need to stay up to date. Save yourself time by collating useful snippets of code, your own cheatsheets, Web links and other helpful reference material. You could even write a blog and try to share useful stuff there. 
+
+The best of luck to you.
+
+
+
+
+
+===
+
 <!-- Source: Knowledge/R/my-devtools-cheatsheet.md -->
 <!-- URL: https://prcleary.github.io/Knowledge/R/my-devtools-cheatsheet -->
 <!-- Title: My devtools cheatsheet -->
@@ -8531,6 +8731,314 @@ feed:
 ```query {.timeline}
 path:Thoughts/*
 ```
+
+
+===
+
+<!-- Source: Thoughts/2023-02-26.md -->
+<!-- URL: https://prcleary.github.io/Thoughts/2023-02-26 -->
+<!-- Title: Most frequently bookmarked -->
+<!-- Wikilinks: [[Thoughts/2023-02-26]], [[2023-02-26]] -->
+
+---
+title: Most frequently bookmarked
+---
+
+I follow more than 4,500 blogs or other Web sites at the moment and have bookmarked over 15,500 pages in recent years. My rule is no feeds before 6pm, even at weekends (reading, Anki, guitar practice and either a run or pull-ups take priority in leisure time), but I can skim through a lot quite quickly, bookmarking those that might come in useful later and reading only those that are relevant to what I am doing now. 
+
+I have listed my most frequently bookmarked sites of all time (excluding scientific journals, which I should be adding to Zotero) below, in decreasing order, with some comments on each (WIP):
+
+- [GitHub](https://github.com/): lots of interesting or relevant repos, gists, issues etc, often discovered via [Track Awesome List - Track your Favorite Github Awesome List Daily](https://www.trackawesomelist.com/)
+- [DEV Community ??????????](https://dev.to/): site for posting pretty much anything relating to coding or software development, but mainly about web development and the cloud in my experience
+- [R-bloggers](https://www.r-bloggers.com/): aggregator for R blogs
+- [Explore / Twitter](https://twitter.com/): I used to try to keep up to date via Twitter (and sometimes Reddit), but now prefer the much better signal-to-noise ratio of RSS feeds; people put more thought into blog posts than Tweets (or Toots as they are called on Mastodon I think); following someone on Twitter means you can read the things they say that interest you, but can also read what they think about politics, religion, sport or other wedge issues - no thanks
+- [Reddit - Dive into anything](https://www.reddit.com/): I don't have to choose between RSS feeds and Reddit, as I can follow some Reddit communities (mainly about self-hosting) via RSS feeds
+- [Stack Overflow - Where Developers Learn, Share, & Build Careers](https://stackoverflow.com/): another biggie; mainly bookmarked after I have Googled how to do something (i.e. a lot)
+- [ROBERT Stéphane - Devops](https://blog.stephane-robert.info/): prolific French blogger who does a lot on open source cloud automation
+- [YouTube](https://www.youtube.com/):  you can follow YouTube channels via RSS feeds; I admit I bookmark a lot of YouTube stuff but rarely/never go back to it; I would rather read a blog
+- [Opensource.com](https://opensource.com/): Red Hat-funded site with a lot of articles on Linux, programming and the cloud
+- [DHIS2 Community](https://community.dhis2.org/): helpful forum where I have occasionally posted; more useful than the documentation for obscure [DHIS 2](#DHIS2) issues
+- [vegibit](https://vegibit.com/): a massive resource of articles on Python, web development and the cloud
+- [Towards Data Science](https://towardsdatascience.com/): a Medium community focussing on machine learning
+- [The Comprehensive R Archive Network](https://cran.r-project.org/): I seem to bookmark a lot of R package documentation
+- [DigitalOcean | The Cloud for Builders](https://www.digitalocean.com/): very beginner-friendly cloud hosting tutorials
+- [Cross Validated](https://stats.stackexchange.com/): Stack Overflow for statistics
+- [Analytics Vidhya | Learn everything about Data Science, Artificial Intelligence and Web 3.0](https://www.analyticsvidhya.com/): good blog mainly focussed on machine learning and related areas
+- [Data Science, Machine Learning, AI & Analytics - KDnuggets](https://www.kdnuggets.com/): many articles about machine learning etc, but also SQL, Python and data engineering
+- [Medium – Where good ideas find you.](https://medium.com/): Medium (like Substack) is now where a lot of interesting people host their blogs
+- [Linux Hint](https://linuxhint.com/): lots of short tutorials related to Linux
+- [Rob J Hyndman](https://robjhyndman.com/): blog on time series analysis and forecasting in R
+- [Tecmint: Linux Howtos, Tutorials & Guides](https://www.tecmint.com/): another sponsored site churning out Linux articles
+- [Python Tutorials – Real Python](https://realpython.com/): Python training; the free articles are good
+- [Yi's Knowledge Base - Yi's Knowledge Base](https://www.y1zhou.com/): articles spanning statistics, machine learning, bioinformatics, Linux, R and Python
+- [Home - Documentation - OpenMRS Wiki](https://wiki.openmrs.org/): community wiki on the OpenMRS open source electronic medical record system
+- [Modern BI Powered by Open Source Apache Superset™ | Preset](https://preset.io/): lots of articles on Apache Superset, the open source business intelligence dashboard (which is very good)
+- [Statistical Modeling, Causal Inference, and Social Science](https://statmodeling.stat.columbia.edu/): Bayesian statistics blog specialising in dodgy statistics and science fraud
+- [Home | RWeekly.org - Blogs to Learn R from the Community](https://rweekly.org/): more R blogs
+- [sleeplessbeastie's notes](https://sleeplessbeastie.eu/): wide-ranging on notes on Linux and open source software
+- [DZone: Programming & DevOps news, tutorials & tools](https://dzone.com/): good articles on machine learning, the cloud, data engineering and Java
+- [Home - DHIS2 Documentation](https://docs.dhis2.org/en/home.html): the main DHIS 2 documentation; unfortunately many of my bookmarks are now dead links since they switched platform
+- [Linux.com - News For Open Source Professionals](https://www.linux.com/): general Linux articles
+- [Swizec Teller](https://swizec.com/): articles on web development
+- [Red Hat - We make open source technologies for the enterprise](https://www.redhat.com/en): excellent resources on Linux and the cloud
+- [nixCraft - Linux Tips, Hacks, Tutorials, And Ideas In Blog](https://www.cyberciti.biz/): sponsored Linux tips site
+- [John Myles White](https://www.johnmyleswhite.com/): statistical blogger who may not be be blogging any more
+- [InfoSec Write-ups](https://infosecwriteups.com/?gi=47bc8d709fdf): fascinating accounts of ethical hacking 
+- [Datamethods Discussion Forum - Data-related methods](https://discourse.datamethods.org/): Stack Overflow for epidemiology and practical data analysis
+- [Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Main_Page): I spend a lot of time on Wikipedia
+- [SENAITE Community](https://community.senaite.org/): the forum for the SENAITE open source laboratory information management system
+- [Learn How To Code by Envato Tuts+](https://code.tutsplus.com/): free software development tutorials
+- [HackerNoon - read, write and learn about any technology](https://hackernoon.com/): articles on data science and other areas of tech
+- [DevOps and Cloud tutorials | DevCoops](https://devcoops.com/): anonymous site with lots of articles mainly on the cloud
+- [It's FOSS](https://itsfoss.com/): a newsletter about free and open source software i.e. Linux and Android apps 
+- [Home - DHIS2](https://dhis2.org/): the home page for DHIS 2 
+- [Python-bloggers](https://python-bloggers.com/): aggregator for Python blogs
+- [R Shiny | Enterprise R Shiny Dashboards | R Consulting](https://appsilon.com/): company producing various packages for Shiny apps, with tutorials 
+- [World Health Organization (WHO)](https://www.who.int/): lots of useful resources about digital health 
+- [Home | Bookdown](https://bookdown.org/): RMarkdown package for making books 
+- [Heimdal Security](https://heimdalsecurity.com/): cybersecurity articles 
+- [Talk TW - Community discussion forum about TiddlyWiki](https://talk.tiddlywiki.org/): forum for Tiddlywiki users 
+- [Yihui Xie | ???](https://yihui.org/): blog of author of various useful R packages 
+- [Checklists - Linux Security Expert](https://linuxsecurity.expert/checklists/): useful Linux security resources 
+- [SERious EPI | A podcast from the Society for Epidemiologic Research](https://seriousepi.blubrry.net/): excellent podcast on epidemiological methodology 
+- [Linux Audit - The Linux security blog about Auditing, Hardening, and Compliance](https://linux-audit.com/): Linux security blog 
+- [OpenMRS Talk](https://talk.openmrs.org/): forum for OpenMRS implementers 
+- [rOpenSci - open tools for open science](https://ropensci.org/): initiative doing peer reviews of R packages 
+- [SitePoint – Learn HTML, CSS, JavaScript, PHP, UX & Responsive Design](https://www.sitepoint.com/): free and paid articles and courses on Web development and Python 
+- [CSS-Tricks - Tips, Tricks, and Techniques on using Cascading Style Sheets.](https://css-tricks.com/): sponsored site on Cascading Style Sheets, i.e what you format Web pages with; followed this a lot while in a Web developer phase, but not so much now 
+- [LowEndBox - Cheap VPS, Dedicated Servers and Hosting Deals](https://lowendbox.com/): articles on cloud hosting plus cheap hosting deals 
+- [FlowingData | Data Visualization and Statistics](https://flowingdata.com/): data visualisation blog, partly free 
+- [Learn to Code — For Free — Coding Courses for Busy People](https://www.freecodecamp.org/): thousands of free tutorials on many aspects of coding 
+- [Find the best online Programming courses and Tutorials - Hackr.io](https://hackr.io/): tutorials on many aspects of coding, some free 
+- [Essential Programming Books](https://www.programming-books.io/): free books on many programming languages 
+- [R Views](https://rviews.rstudio.com/): blog about R packages from Posit/RStudio 
+- [Win Vector LLC – Data science advising, consulting, and training](https://win-vector.com/): great little blog about R and Python 
+- [Expert consulting in applied mathematics & data privacy](https://www.johndcook.com/blog/services-2/): blog about maths and sometimes coding 
+- [InfoWorld - Technology insight for the enterprise](https://www.infoworld.com/uk/): IT blog with wide ranging articles 
+- [How-To Geek - We Explain Technology](https://www.howtogeek.com/): articles to make you more computer savvy 
+- [Journal of Statistical Software](https://www.jstatsoft.org/index): in-depth articles on statistical software, mostly R and Python related 
+- [RPubs](https://rpubs.com/): publish any RMarkdown document for free 
+- [Stack Abuse](https://stackabuse.com/): useful articles on Python, JavaScript, Web development, data science, Linux 
+- [Count Bayesie - A Probability Blog](https://www.countbayesie.com/): good Bayesian blog 
+- [Learn Data Science - Tutorials, Books, Courses, and More – LearnDataSci](https://www.learndatasci.com/): tutorials on data science, Python, SQL; maps out a useful curriculum 
+- [MDN Web Docs](https://developer.mozilla.org/en-US/): one of the best Web development resources 
+- [Self-Hosted](https://selfhosted.show/): podcast to follow once the cloud hosting bug has bitten you 
+- [Tidyverse](https://www.tidyverse.org/): information on tidyverse packages, plus a blog 
+- [Bayesian Spectacles – Powered by JASP](https://www.bayesianspectacles.org/): good Bayesian blog, from the people bringing you JASP, the easy to use statistical software based on R
+- [The DevSecOps Platform | GitLab](https://about.gitlab.com/): useful information on Git and GitLab 
+- [DHIS2 Trainingland](https://dhis2trainingland.com/): used to be an odd assortment of sometimes quite useful DHIS 2 stuff, but now revamped for DHIS 2 courses 
+- [learnbyexample](https://learnbyexample.github.io/): programming blog on Python, JavaScript, Vim; some of his books are available for free 
+- [Becoming Human: Artificial Intelligence Magazine](https://becominghuman.ai/): data science and artificial intelligence blog
+- [rstudio.github.io](https://rstudio.github.io/): nothing there now 
+- [Hacker News](https://news.ycombinator.com/): the best feed for geeks of any stripe, but follow the more specialised subfeeds rather than the main "drinking from the firehose" feed
+- [dlford.io](https://www.dlford.io/): useful IT blog
+- [Vim Newsletter - VimTricks](https://vimtricks.com/): weekly [Vim](<#https://prcleary.github.io/#My%20Vim%20configuration%20file>) newsletter 
+- [demographeR’s notes | Ilya Kashnitsky](https://ikashnitsky.github.io/): infrequent but excellent R blogger 
+- [Noobunbox - Tutoriels : NAS, Serveur, Sécurité, NGinx, Apache, Vmware, Virtualisation tout y est :)](https://www.noobunbox.net/): articles in French related to cloud hosting 
+- [Spatial Galaxy](https://spatialgalaxy.net/): long running blog about QGIS, your open source mapping tool 
+- [Posit | The Open-Source Data Science Company](https://posit.co/): information and articles on RStudio 
+- [Notes from a data witch](https://blog.djnavarro.net/): phenomenal blog, posts usually somehow related to R but exploring lots of other technologies; maybe one day my blog will be this good 
+- [Jumping Rivers](https://www.jumpingrivers.com/): great blog on R, Python and other useful things 
+- [Big Data, Cloud, DevOps and container orchestration | Adaltas](https://www.adaltas.com/en/): blog mainly on the IT side of data science 
+- [Open Health News | The Voice for the Open Health Community](https://www.openhealthnews.com/): news on interesting developments in the intersection between digital health and open source, open data etc
+- [DevOps by How-To Geek](https://www.howtogeek.com/devops/): articles on DevOps (the collaboration between those writing code and those delivering/deploying the product; sometimes now extended to DevSecOps to bring in the cybersecurity angle) 
+- [Home - Rtask](https://rtask.thinkr.fr/): some interesting articles on R (in English and French) by an consultancy outfit 
+- [Lazybear](https://lazybear.io/): blog about Vim, other open source tools, sometimes other things
+- [Ansible is Simple IT Automation](https://www.ansible.com/): Ansible is a great tool from Red Hat for automating all the things, e.g. deployment of software on a server; I have played with it but want to learn more; some good articles
+- [Learn X in Y Minutes: Scenic Programming Language Tours](https://learnxinyminutes.com/): very concise summaries of many programming languages (or things that can be scripted)
+- [Collaborative data platform and canvas | Observable](https://observablehq.com/): cutting edge Web-based data visualisation; partly motivates my intermittent attempts to learn JavaScript
+- [Machine Learning Mastery](https://machinelearningmastery.com/): interesting articles on data science, focussing on the code more than the maths
+- [Shiny](https://shiny.rstudio.com/): lots of resources on Shiny (for writing Web apps in R); was really interested in Shiny at one time (my interests are currently more down the technology stack)
+- [Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Vim_Tips_Wiki): a wiki with lots of tips on [Vim](<#https://prcleary.github.io/#My%20Vim%20configuration%20file>), the text editor that you can spend a lifetime learning
+- [Garrick Aden-Buie](https://www.garrickadenbuie.com/): blogs on R, Shiny, RMarkdown, RStudio - also creates some useful packages
+- [Proxmox Support Forum](https://forum.proxmox.com/): using Proxmox as the virtualisation environment (i.e. where I can create virtual machines and containers) for my open source experimentation; bit of a learning curve but I am comfortable with it now
+- [The Hacker News | #1 Trusted Cybersecurity News Site](https://thehackernews.com/): articles mainly about cybersecurity; different from Hacker News as mentioned above (which is of more general geek interest)
+- [SQLServerCentral – The #1 SQL Server community](https://www.sqlservercentral.com/): not just articles on SQL, but also on broader/related areas such as data management and PowerBI
+- [Linux Tips, Tricks and Tutorials | Linuxize](https://linuxize.com/): simple articles on how to do various things on various distributions of Linux
+- [Econometrics and Free Software](https://www.brodrigues.co/): blog on open source software, with a big focus on R; not that much about econometrics actually
+- [Tom's Blog](https://tomaugspurger.github.io/): Python/data science blog
+- [Ask Ubuntu](https://askubuntu.com/): StackOverflow for Ubuntu users; Ubuntu is the version of Linux I would recommend to new Linux users
+- [Let's Encrypt Community Support](https://community.letsencrypt.org/): free service (something to do with the excellent Electronic Frontier Foundation I think) allowing you to set up your Web sites with an https://... URL for free; basically anything you put on the Web should use HTTPS (the encrypted Web protocol) for security and authentication (assurance that the Web site is what it says it is); useful forum for queries, which I have needed at times
+- [Michael's and Christian's Blog – R and Python, Machine Learning and Actuarial Topics](https://lorentzen.ch/): says it all really
+- [R Package Documentation](https://rdrr.io/): search for help on any R packages
+- [Posit Forum (formerly RStudio Community)](https://community.rstudio.com/): forum for queries on RStudio, tidyverse, Shiny and lots more
+- [Practical Business Python -](https://pbpython.com/): great Python articles with a business focus
+- [coolbutuseless](https://coolbutuseless.github.io/): blog mainly on R
+- [rud.is](https://rud.is/): data science blog with a big R focus
+- [TechRepublic: News, Tips & Advice for Technology Professionals](https://www.techrepublic.com/): general IT news
+- [Le Courrier du hacker, la newsletter du Logiciel Libre et de l'Open Source](https://lecourrierduhacker.com/): French open source software newsletter, with links to various blogs
+- [Snyk | Developer security | Develop fast. Stay secure.](https://snyk.io/): blog on open source security and sometimes Snyk products
+- [Scala, Java, Unix, MacOS tutorials (page 1) | alvinalexander.com](https://alvinalexander.com/): prolific blogger, recently focussing on functional programming
+- [DevOps - The Web's Largest Collection of DevOps Content](https://devops.com/): articles and news on DevOps (see above)
+- [Home - Hacker Bits](https://hackerbits.com/): newsletter collating links to a variety of articles, also covering issues like productivity and work-life balance
+- [Leanpub: Publish Early, Publish Often](https://leanpub.com/): self-publishing site with many cheap e-books on all things data science and computing; you can often choose what you pay
+- [edX | Free Online Courses by Harvard, MIT, & more | edX](https://www.edx.org/): thousands of courses that I would like to do (and a few I have done); often free (but you pay for the certificate/qualification)
+- [Server Fault](https://serverfault.com/): StackOverflow for system administrators
+- [Git](https://git-scm.com/): downloads and other useful resources
+- [Programming with R](https://www.programmingwithr.com/): R blog
+- [Le blog technique de Microlinux – Unix est long et la vie est brève](https://blog.microlinux.fr/): French Linux blog
+- [Welcome to the DHIS2 Developer Portal | DHIS2 Developer Portal](https://developers.dhis2.org/): good for keeping up with the latest DHIS 2 developments
+- [Le blog de Seboss666 – Les divagations d'un pseudo-geek curieux](https://blog.seboss666.info/): French Linux blog
+- [Cloud Computing Services - Amazon Web Services (AWS)](https://aws.amazon.com/): AWS is a big cloud provider; some useful articles
+- [JustDjango | The Definitive Django Learning Platform](https://justdjango.com/): Django is a very comprehensive Web app framework for Python coders; learning Django is a medium-term objective of mine; this is a good place to start
+- [Analytics4All – An Analytics Education for All. Unraveling the Mystery Behind Big Data and Analytics](https://analytics4all.org/): useful data science blog
+- [NHS-R Community – Promoting the use of R in the NHS](https://nhsrcommunity.com/): "Promoting the Use of R in the UK Health & Care System"; I follow the blog
+- [Free Fonts! Legit Free & Quality » Font Squirrel](https://www.fontsquirrel.com/): good place to find interesting fonts for those interested in typography
+- [Erik Marsja - Erik Marsja](https://www.marsja.se/): Python and R blog
+- [All Code No Brain - Colin Fay](https://colinfay.me/): blog on R (and sometimes other things)
+- [H2S Media: Technology News, Gadgets, Howto, Reviews & More](https://www.how2shout.com/): tech news (some good Linux stuff)
+- [Julia Evans](https://jvns.ca/): wide-ranging geek blog
+- [Linux Systems Analyst | Hayden James](https://haydenjames.io/): Linux blog
+- [Home Page - I Love Free Software](https://www.ilovefreesoftware.com/): free/open source software blog
+- [miku86](https://miku86.com/): blog about personal philosophy and tech 
+- [Home - ratfactor](https://ratfactor.com/): general geek blog
+- [ouR data generation - ouR data generation](https://www.rdatagen.net/): blog on R, statistics and simulating data
+- [The Intersection - Philipp Muens](https://philippmuens.com/): blog with various thoughts relevant to data science
+- [Technology, Design, and Inspiration - Hongkiat](https://www.hongkiat.com/blog/): tech news and tips
+- [Álvaro Ramírez](https://xenodium.com/): blog sharing various geek stuff (and occasional recipes)
+- [unixsheikh.com](https://unixsheikh.com/): opinions and tips/tricks on open source tools
+
+A lot of the other things I bookmark most often are individual blogs - check out the following if you have time:
+
+- [flaviocopes.com](https://flaviocopes.com/)
+- [Microsoft Learn: Build skills that open doors in your career](https://learn.microsoft.com/en-gb/)
+- [Super User](https://superuser.com/)
+- [Graham King](https://darkcoding.net/)
+- [LIMSWiki](https://www.limswiki.org/index.php/Main_Page)
+- [Codementor | Get live 1:1 coding help, hire a developer, & more](https://www.codementor.io/)
+- [Paged.js —](https://pagedjs.org/)
+- [DjangoTricks](https://djangotricks.blogspot.com/)
+- [The R Journal: Overview](https://journal.r-project.org/)
+- [Unix & Linux Stack Exchange](https://unix.stackexchange.com/)
+- [Little Miss Data](https://www.littlemissdata.com/)
+- [The Geek Stuff](https://www.thegeekstuff.com/)
+- [apalrd's adventures](https://www.apalrd.net/)
+- [SmartHomeBeginner | Smart Home, Media, Server, and Technology](https://www.smarthomebeginner.com/)
+- [Rgraphs – deliver a compelling message with your data](https://rgraphs.com/)
+- [Noted - Self Hosted App Reviews](https://noted.lol/)
+- [TiddlyWiki — a non-linear personal web notebook](https://tiddlywiki.com/)
+- [World's #1 Digital Cloud Certification Course & Training Provider | A Cloud Guru](https://acloudguru.com/)
+- [Hund - My personal weblog](https://hunden.linuxkompis.se/)
+- [From Development to Production — Nick Janetakis](https://nickjanetakis.com/)
+- [Personal weblog about programming, linux, life, the universe and everything](https://zignar.net/)
+- [Hynek Schlawack](https://hynek.me/)
+- [Gruntwork](https://blog.gruntwork.io/)
+- [The New Stack | DevOps, Open Source, and Cloud Native News](https://thenewstack.io/)
+- [Simon Willison’s Weblog](https://simonwillison.net/)
+- [?? DJ?RFY ??](https://xorhak.io/)
+- [Jake Trent](https://jaketrent.com/)
+- [Terence Eden’s Blog](https://shkspr.mobi/blog/)
+- [Homepage - LinuxRocks PeerTube](https://peertube.linuxrocks.online/)
+- [Dirk Eddelbuettel](https://dirk.eddelbuettel.com/)
+- [Matt Rickard](https://matt-rickard.com/)
+- [Michael Betancourt, PhD - betanalpha.github.io](https://betanalpha.github.io/)
+- [NCSC - NCSC.GOV.UK](https://www.ncsc.gov.uk/)
+- [Webmasters Stack Exchange](https://webmasters.stackexchange.com/)
+- [Statistics by Jim - Statistics By Jim](https://statisticsbyjim.com/)
+- [Ars Technica](https://arstechnica.com/)
+- [R-hub blog](https://blog.r-hub.io/)
+- [Dev Genius](https://blog.devgenius.io/)
+- [Smashing Magazine — For Web Designers And Developers](https://www.smashingmagazine.com/)
+- [PyPI · The Python Package Index](https://pypi.org/)
+- [Darren Wilkinson's blog – Statistics, computing, functional programming, data science, Bayes, stochastic modelling, systems biology and bioinformatics](https://darrenjw.wordpress.com/)
+- [Test-Driven Development, Microservices, Web Development Courses | TestDriven.io](https://testdriven.io/)
+- [Jozef's Rblog](https://jozef.io/)
+- [JavaScript in Plain English](https://javascript.plainenglish.io/)
+- [Nextcloud community - Keep your data safe!](https://help.nextcloud.com/)
+- [World Wide Web Consortium (W3C)](https://www.w3.org/)
+- [r-spatial](https://r-spatial.org/)
+- [RapidSMS Documentation — RapidSMS 2.0.0 documentation](https://rapidsms.readthedocs.io/en/latest/)
+- [OSTechNix - Open Source | Technology | Linux And Unix](https://ostechnix.com/)
+- [Karl Broman](https://kbroman.org/)
+- [Free and open training resources to respond to outbreaks, health emergencies and humanitarian crises](https://www.reconlearn.org/)
+
+You can follow some or all of the above via their RSS feeds - the software I use for this is mentioned [[my-tech-march-2024|here]]. I would share my OPML file (a file format allowing you to import/export a "blogroll" of multiple RSS feeds) but since I imported a number of OPML files shared by others, I've had to exclude quite a few blogs because of extreme politics, manga, gaming, fetishism, religiosity, wrong language (accidentally imported a ton of Dutch and Chinese blogs) and other reasons, and I am not sure I have extirpated all of these just yet. 
+
+
+===
+
+<!-- Source: Thoughts/2023-02-27.md -->
+<!-- URL: https://prcleary.github.io/Thoughts/2023-02-27 -->
+<!-- Title: Holiday reading; learning R; most frequently bookmarked -->
+<!-- Wikilinks: [[Thoughts/2023-02-27]], [[2023-02-27]] -->
+
+---
+title: Holiday reading; learning R; most frequently bookmarked
+---
+
+- Yet another holiday (still using up leave carried over from the pandemic) and time to read[[Reading|more books]]. But too soon going back to the *anomie* of the public health world.
+- Gathered my thoughts on [[how-to-learn-r|how to learn R]]. I've recently been accused of "forcing" trainees to learn R. That's just not true - I'd be just as happy if they learned Python. 
+- I collate my public bookmarks on [Pinboard](https://pinboard.in/u:prcleary). The tagging system is currently a mess, which I need to sort out (and yes, [there's an R package for that](https://github.com/RMHogervorst/pinboardr)), but I have done a quick summary of [the sites I tend to bookmark most frequently](Most frequently bookmarked) as a metric of utility. 
+
+
+===
+
+<!-- Source: Thoughts/2023-03-01.md -->
+<!-- URL: https://prcleary.github.io/Thoughts/2023-03-01 -->
+<!-- Title: My tech March 2024 -->
+<!-- Wikilinks: [[Thoughts/2023-03-01]], [[2023-03-01]] -->
+
+---
+title: My tech March 2024
+---
+
+Recently there has been a flurry of "my tech" articles on the blogs I follow, so I thought I would list some of the more interesting software I've been using recently. 
+
+- I was having some issues with Manjaro Linux on my home Linux box (Intel NUC from Entroware) so I decided to try out Elementary OS: [The thoughtful, capable, and ethical replacement for Windows and macOS ⋅ elementary OS](https://elementary.io/)
+
+  ![](https://elementary.io/images/screenshots/desktop.jpg)
+
+  - It looks really nice; I paid a donation of £10 before realising I could also legitimately get it for free
+  - The only problem I have had is that I mainly use Firefox, and both versions on Elementary OS (installed via Snap or `apt`) tended to crash frequently (which was no good as I basically live in my browser). 
+  - In the end I used a version of Firefox called Waterfox which seems to work better, and is compatible with the Firefox Extensions I use: [Fast and Private Web Browser | Waterfox](https://www.waterfox.net/)
+
+- My current Firefox Extensions are:
+  - uBlock Origin to block ads: [uBlock Origin - Free, open-source ad content blocker.](https://ublockorigin.com/)
+  - Privacy Badger to stop tracking: [Privacy Badger](https://privacybadger.org/)
+  - the Zotero plugin (rarely used these days)
+  - Tab Stash for keeping track of tabs - it syncs across machines via my Mozilla account and is really useful: [Tab Stash – Get this Extension for 🦊 Firefox (en-GB)](https://addons.mozilla.org/en-GB/firefox/addon/tab-stash/)
+  - "Add custom search engine": if you run your own search engine (I do - sort of) then you will probably want to be able to search it from your browser address bar: [Add custom search engine – Get this Extension for 🦊 Firefox (en-GB)](https://addons.mozilla.org/en-GB/firefox/addon/add-custom-search-engine/)
+  - Bitwarden for password management: recently switched from LastPass (as my subscription was expiring) to self-hosted Vaultwarden; so far I think it is better than LastPass; the Android app is also good but can't yet handle the new passkeys (though will do soon apparently); links below
+	  - [The password manager trusted by millions | Bitwarden](https://bitwarden.com/)
+    - [dani-garcia/vaultwarden: Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs](https://github.com/dani-garcia/vaultwarden)
+  - Other useful Firefox Extensions
+    - [deathau/markdownload: A Firefox and Google Chrome extension to clip websites and download them into a readable markdown file.](https://github.com/deathau/markdownload): save web pages as Markdown (e.g. in Nextcloud Notes)
+    - [Dark Reader – Get this Extension for 🦊 Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/darkreader/): dark mode on any web site
+- I am using my cloud-hosted Nextcloud more and more: [Nextcloud - Open source content collaboration platform](https://nextcloud.com/)
+  - Nextcloud is like an app you are forced to use at work, and dislike initially, but later you discover all sorts of things it can do, grow to love it and eventually couldn't live without it. 
+  - I sync all my Nextcloud files with my Linux desktop. 
+  - On my Android phone (Motorola Moto G7; five or six years old and a bit crashy but not slow, and the battery still seems fine, so I haven't replaced it yet) I use the Nextcloud app (for file management), and also the Notes and Cookbook apps, both syncing with my cloud instance. I've started writing a lot more notes to organise myself, instead of adding everything to my to-do list.
+  - I have grown to absolutely love the Tasks.org app, which syncs with Nextcloud Tasks, and I am convinced it has made more productive: [Tasks.org | Tasks.org](https://tasks.org/)
+- Other interesting apps I use on my Android phone (in no particular order):
+  - Bitwarden as mentioned above
+  - [8x3: bodyweight fitness – Apps on Google Play](https://play.google.com/store/apps/details?id=com.eightxthree.app&pli=1): an app to do a particular fitness routine I found on Reddit; reminds me of the Canadian Air Force exercises I discovered in my teens and continued (with variations) for many years
+  - [Aegis Authenticator - Secure 2FA app for Android](https://getaegis.app/): recently replaced Google Authenticator with this (surprisingly easily); more flexible in terms of backups and the user interface is nicer
+  - [DocMarty84/miniflutt: Another Miniflux client.](https://github.com/DocMarty84/miniflutt): syncs with my Miniflux RSS aggregator ([Miniflux - Minimalist and Opinionated Feed Reader](https://miniflux.app/)); if you see me doomscrolling this is probably what I am looking at
+  - [F-Droid - Free and Open Source Android App Repository](https://f-droid.org/): for installing apps without involving Google
+  - [FairEmail - Fully featured, privacy oriented email app](https://email.faircode.eu/): very flexible email client
+  - [Moon+ Reader for Android](https://moondownload.com/): still the best e-reader I have found; syncs with my self-hosted Calibre Web ([janeczku/calibre-web: :books: Web app for browsing, reading and downloading eBooks stored in a Calibre database](https://github.com/janeczku/calibre-web))
+  - [OsmAnd | OsmAnd](https://osmand.net/): for fellwalking navigation
+  - [fibelatti/pinboard-kotlin: Unofficial Android client for Pinboard](https://github.com/fibelatti/pinboard-kotlin): for saving bookmarks to [Pinboard: bookmarks for prcleary](https://pinboard.in/u:prcleary)
+- I am self-hosting the following (and some others) in the cloud:
+  - Calibre Web as mentioned above
+  - Miniflux as mentioned 
+  - Nextcloud as mentioned
+  - My old Tiddlywiki: [TiddlyWiki — a non-linear personal web notebook](https://tiddlywiki.com/)
+  - [searxng/searxng: SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.](https://github.com/searxng/searxng): it basically searches other search engines and aggregates them for you
+  - Vaultwarden as mentioned above
+	
+I am currently thinking about getting a new Android phone, if I can find one that fits the following criteria:
+
+- Latest version of Android and at least four years of upgrades
+- Long battery life
+- 8GB RAM and good performance
+- More storage than my current phone
+- 5G compatible
+- Rugged/water-resistant if possible
+- Dual SIM would be nice
+- Don't care about camera, weight, aesthetics
+- Budget price (my last one cost £120)
+
 
 
 ===
