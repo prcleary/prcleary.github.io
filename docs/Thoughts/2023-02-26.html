@@ -48,7 +48,7 @@
   --color-primary-900: var(--color-teal-900);
   --color-primary-950: var(--color-teal-950);
 }
-</style><link href='tailwind.css?instanceId=926c90ce-6cb9-4657-8077-b81107afce2f' rel='stylesheet' type='text/css' />
+</style><link href='tailwind.css?instanceId=048de191-cf96-4b4b-b9dd-a109d4f2e26c' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -1111,7 +1111,15 @@
 </h1>
     
       <article class='overflow-auto'>
-  <!-- What goes in this file will appear on top of note body-->
+  <div class='flex items-center justify-center mt-2'>
+  
+    <span id='notedate' class='mr-2 text-right text-gray-600'>
+      2023-02-26
+    </span>
+  
+  <script>if (notedate.innerText.includes('error')) notedate.innerText = ''</script>
+</div>
+
   
 
 
@@ -1947,15 +1955,7 @@
       You can follow some or all of the above via their RSS feeds - the software I use for this is mentioned <a href='Knowledge/Other/my-tech-march-2024' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900' data-wikilink-type='WikiLinkNormal'>here</a>. I would share my OPML file (a file format allowing you to import/export a “blogroll” of multiple RSS feeds) but since I imported a number of OPML files shared by others, I’ve had to exclude quite a few blogs because of extreme politics, manga, gaming, fetishism, religiosity, wrong language (accidentally imported a ton of Dutch and Chinese blogs) and other reasons, and I am not sure I have extirpated all of these just yet.
     </p>
   
-  <div class='flex items-center justify-center mt-2'>
-  
-    <span id='notedate' class='mr-2 text-right text-gray-600'>
-      2023-02-26
-    </span>
-  
-  <script>if (notedate.innerText.includes('error')) notedate.innerText = ''</script>
-</div>
-
+  <!-- What goes in this file will appear below the note body-->
 </article>
     
     <div class='flex flex-col lg:flex-row lg:space-x-4 mt-8'>
