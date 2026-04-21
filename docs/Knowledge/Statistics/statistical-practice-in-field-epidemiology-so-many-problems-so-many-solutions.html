@@ -48,7 +48,7 @@
   --color-primary-900: var(--color-teal-900);
   --color-primary-950: var(--color-teal-950);
 }
-</style><link href='tailwind.css?instanceId=f50eebf7-e30e-4dcd-ace0-6a1d2fc7feeb' rel='stylesheet' type='text/css' />
+</style><link href='tailwind.css?instanceId=59336a17-bb59-4022-bbed-759225a52f15' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -2711,11 +2711,14 @@
     </svg>
   </a>
 </div>
-
-  <span class='mr-2 text-right text-gray-600'>
-    2023-10-01
-  </span>
-
+<div class='flex items-center justify-center mt-2'>
+  
+    <span id='notedate' class='mr-2 text-right text-gray-600'>
+      2023-10-01
+    </span>
+  
+  <script>if (notedate.innerText.includes('error')) notedate.innerText = ''</script>
+</div>
 
 </article>
         </div>
