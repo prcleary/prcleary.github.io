@@ -35,7 +35,20 @@
 
   
   
-  <link href='tailwind.css?instanceId=34ee1daa-ad87-4804-a956-700a32e670e0' rel='stylesheet' type='text/css' />
+  <style id='emanote-theme-remap'>:root {
+  --color-primary-50: var(--color-teal-50);
+  --color-primary-100: var(--color-teal-100);
+  --color-primary-200: var(--color-teal-200);
+  --color-primary-300: var(--color-teal-300);
+  --color-primary-400: var(--color-teal-400);
+  --color-primary-500: var(--color-teal-500);
+  --color-primary-600: var(--color-teal-600);
+  --color-primary-700: var(--color-teal-700);
+  --color-primary-800: var(--color-teal-800);
+  --color-primary-900: var(--color-teal-900);
+  --color-primary-950: var(--color-teal-950);
+}
+</style><link href='tailwind.css?instanceId=a558e053-b344-4023-b195-93f95297ae83' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -316,7 +329,7 @@
   <!-- What goes in this file will appear on near the end of <head>-->
 
   
-    <style>
+    <style id='emanote-sidebar-sizing'>
       /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
       /* md:min-w-52  */
       @media (min-width: 768px) {
@@ -527,12 +540,12 @@
       </ul>
     </div>
     <button class='inline px-3 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 outline-none cursor-pointer focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
-      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
     </button>
-    <button class='inline px-3 py-2 text-white bg-teal-600 dark:bg-teal-700 outline-none cursor-pointer focus:outline-none hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+    <button class='inline px-3 py-2 text-white bg-primary-600 dark:bg-primary-700 outline-none cursor-pointer focus:outline-none hover:bg-primary-700 dark:hover:bg-primary-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
       <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
       </svg>
@@ -562,7 +575,7 @@
                       -->
               <img style='width: 1.25rem;' class='transition transform hover:scale-110 hover:opacity-80' src='static/favicon.svg' alt='Site Icon' />
             </a>
-            <a class='font-semibold text-base truncate hover:text-teal-600 dark:hover:text-teal-400 transition-colors' title='Go to Home' href='/'>
+            <a class='font-semibold text-base truncate hover:text-primary-600 dark:hover:text-primary-400 transition-colors' title='Go to Home' href='/'>
               Home
             </a>
           
@@ -570,20 +583,20 @@
       </div>
 
       <div id='indexing-links' class='flex flex-row space-x-2 text-gray-500 dark:text-gray-400 flex-shrink-0'>
-        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
             </path>
           </svg>
         </a>
-        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
             </path>
           </svg>
         </a>
-        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
-          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
@@ -620,7 +633,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
       Knowledge
     </a>
     
@@ -666,7 +679,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Books' href='Books'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Books' href='Books'>
       Books
     </a>
     
@@ -712,7 +725,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Thoughts' href='Thoughts'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Thoughts' href='Thoughts'>
       Thoughts
     </a>
     
@@ -749,7 +762,7 @@
   
         
     </span>
-    <a class='font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Most frequently bookmarked' href='Thoughts/2023-02-26'>
+    <a class='font-semibold bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Most frequently bookmarked' href='Thoughts/2023-02-26'>
       Most frequently bookmarked
     </a>
     
@@ -791,7 +804,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Holiday reading; learning R; most frequently bookmarked' href='Thoughts/2023-02-27'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Holiday reading; learning R; most frequently bookmarked' href='Thoughts/2023-02-27'>
       Holiday reading; learning R; most frequently bookmarked
     </a>
     
@@ -833,7 +846,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='My tech March 2024' href='Thoughts/2023-03-01'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='My tech March 2024' href='Thoughts/2023-03-01'>
       My tech March 2024
     </a>
     
@@ -875,7 +888,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Back to blogging; RSS feed; p values; SENAITE; 2024 reading' href='Thoughts/2024-02-03'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Back to blogging; RSS feed; p values; SENAITE; 2024 reading' href='Thoughts/2024-02-03'>
       Back to blogging; RSS feed; p values; SENAITE; 2024 reading
     </a>
     
@@ -917,7 +930,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE rabbithole; Python mon amour; Alles was du wissen muss; causal inferencing; better blogging; Bayesian and other shiny new things' href='Thoughts/2024-10-27'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE rabbithole; Python mon amour; Alles was du wissen muss; causal inferencing; better blogging; Bayesian and other shiny new things' href='Thoughts/2024-10-27'>
       SENAITE rabbithole; Python mon amour; Alles was du wissen muss; causal inferencing; better blogging; Bayesian and other shiny new things
     </a>
     
@@ -959,7 +972,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE progress; Bluesky; home server; AOC; Shiny app; Python apps from R; old blog; LibreELEC; Pop! OS Linux distro and new desktop computer; causal inference course' href='Thoughts/2025-03-11'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE progress; Bluesky; home server; AOC; Shiny app; Python apps from R; old blog; LibreELEC; Pop! OS Linux distro and new desktop computer; causal inference course' href='Thoughts/2025-03-11'>
       SENAITE progress; Bluesky; home server; AOC; Shiny app; Python apps from R; old blog; LibreELEC; Pop! OS Linux distro and new desktop computer; causal inference course
     </a>
     
@@ -1001,7 +1014,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2 indicators for incidence; a good webinar; backing up servers' href='Thoughts/2025-04-10'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2 indicators for incidence; a good webinar; backing up servers' href='Thoughts/2025-04-10'>
       DHIS 2 indicators for incidence; a good webinar; backing up servers
     </a>
     
@@ -1043,7 +1056,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Karakeep; Paperless GPT; vibe coding; PeerTube; Kodi; Proxmox upgrade' href='Thoughts/2025-09-11'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Karakeep; Paperless GPT; vibe coding; PeerTube; Kodi; Proxmox upgrade' href='Thoughts/2025-09-11'>
       Karakeep; Paperless GPT; vibe coding; PeerTube; Kodi; Proxmox upgrade
     </a>
     
@@ -1085,7 +1098,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Out with the old, in with the new; updates, plans and aspirations' href='Thoughts/2025-12-31'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Out with the old, in with the new; updates, plans and aspirations' href='Thoughts/2025-12-31'>
       Out with the old, in with the new; updates, plans and aspirations
     </a>
     
@@ -1127,7 +1140,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='New Zola blog; Dashboard Reports; integration teaser; most-used tech' href='Thoughts/2026-01-06'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='New Zola blog; Dashboard Reports; integration teaser; most-used tech' href='Thoughts/2026-01-06'>
       New Zola blog; Dashboard Reports; integration teaser; most-used tech
     </a>
     
@@ -1169,7 +1182,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='New Emanote blog' href='Thoughts/2026-04-13'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='New Emanote blog' href='Thoughts/2026-04-13'>
       New Emanote blog
     </a>
     
@@ -1211,7 +1224,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Pop!_OS upgrade; blog development' href='Thoughts/2026-04-18'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Pop!_OS upgrade; blog development' href='Thoughts/2026-04-18'>
       Pop!_OS upgrade; blog development
     </a>
     
@@ -1253,7 +1266,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='The scope of this blog' href='Thoughts/2026-04-20'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='The scope of this blog' href='Thoughts/2026-04-20'>
       The scope of this blog
     </a>
     
@@ -1298,7 +1311,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Links' href='Links'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Links' href='Links'>
       Links
     </a>
     
@@ -1340,7 +1353,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Writing' href='Writing'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Writing' href='Writing'>
       Writing
     </a>
     
@@ -1361,7 +1374,7 @@
           <!-- Main body column -->
           <div class='flex-1 w-full bg-white dark:bg-gray-800'>
   <main class='px-6 py-8 max-w-7xl mx-auto'>
-    <h1 class='mb-10 px-8 py-5 bg-teal-600 dark:bg-teal-800 text-5xl font-bold text-white text-center rounded-2xl'>
+    <h1 class='mb-10 px-8 py-5 bg-primary-600 dark:bg-primary-800 text-5xl font-bold text-white text-center rounded-2xl'>
   Most frequently bookmarked
 </h1>
     
@@ -1389,599 +1402,599 @@
     <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
       
         <li>
-          <a href='https://github.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>GitHub</a>: lots of interesting or relevant repos, gists, issues etc, often discovered via <a href='https://www.trackawesomelist.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Track Awesome List - Track your Favorite Github Awesome List Daily</a>
+          <a href='https://github.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>GitHub</a>: lots of interesting or relevant repos, gists, issues etc, often discovered via <a href='https://www.trackawesomelist.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Track Awesome List - Track your Favorite Github Awesome List Daily</a>
         </li>
       
         <li>
-          <a href='https://dev.to/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DEV Community ??????????</a>: site for posting pretty much anything relating to coding or software development, but mainly about web development and the cloud in my experience
+          <a href='https://dev.to/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DEV Community ??????????</a>: site for posting pretty much anything relating to coding or software development, but mainly about web development and the cloud in my experience
         </li>
       
         <li>
-          <a href='https://www.r-bloggers.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R-bloggers</a>: aggregator for R blogs
+          <a href='https://www.r-bloggers.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R-bloggers</a>: aggregator for R blogs
         </li>
       
         <li>
-          <a href='https://twitter.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Explore / Twitter</a>: I used to try to keep up to date via Twitter (and sometimes Reddit), but now prefer the much better signal-to-noise ratio of RSS feeds; people put more thought into blog posts than Tweets (or Toots as they are called on Mastodon I think); following someone on Twitter means you can read the things they say that interest you, but can also read what they think about politics, religion, sport or other wedge issues - no thanks
+          <a href='https://twitter.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Explore / Twitter</a>: I used to try to keep up to date via Twitter (and sometimes Reddit), but now prefer the much better signal-to-noise ratio of RSS feeds; people put more thought into blog posts than Tweets (or Toots as they are called on Mastodon I think); following someone on Twitter means you can read the things they say that interest you, but can also read what they think about politics, religion, sport or other wedge issues - no thanks
         </li>
       
         <li>
-          <a href='https://www.reddit.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Reddit - Dive into anything</a>: I don’t have to choose between RSS feeds and Reddit, as I can follow some Reddit communities (mainly about self-hosting) via RSS feeds
+          <a href='https://www.reddit.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Reddit - Dive into anything</a>: I don’t have to choose between RSS feeds and Reddit, as I can follow some Reddit communities (mainly about self-hosting) via RSS feeds
         </li>
       
         <li>
-          <a href='https://stackoverflow.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Stack Overflow - Where Developers Learn, Share, & Build Careers</a>: another biggie; mainly bookmarked after I have Googled how to do something (i.e. a lot)
+          <a href='https://stackoverflow.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Stack Overflow - Where Developers Learn, Share, & Build Careers</a>: another biggie; mainly bookmarked after I have Googled how to do something (i.e. a lot)
         </li>
       
         <li>
-          <a href='https://blog.stephane-robert.info/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>ROBERT Stéphane - Devops</a>: prolific French blogger who does a lot on open source cloud automation
+          <a href='https://blog.stephane-robert.info/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>ROBERT Stéphane - Devops</a>: prolific French blogger who does a lot on open source cloud automation
         </li>
       
         <li>
-          <a href='https://www.youtube.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>YouTube</a>: you can follow YouTube channels via RSS feeds; I admit I bookmark a lot of YouTube stuff but rarely/never go back to it; I would rather read a blog
+          <a href='https://www.youtube.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>YouTube</a>: you can follow YouTube channels via RSS feeds; I admit I bookmark a lot of YouTube stuff but rarely/never go back to it; I would rather read a blog
         </li>
       
         <li>
-          <a href='https://opensource.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Opensource.com</a>: Red Hat-funded site with a lot of articles on Linux, programming and the cloud
+          <a href='https://opensource.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Opensource.com</a>: Red Hat-funded site with a lot of articles on Linux, programming and the cloud
         </li>
       
         <li>
-          <a href='https://community.dhis2.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DHIS2 Community</a>: helpful forum where I have occasionally posted; more useful than the documentation for obscure <a href='#DHIS2' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900'>DHIS 2</a> issues
+          <a href='https://community.dhis2.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DHIS2 Community</a>: helpful forum where I have occasionally posted; more useful than the documentation for obscure <a href='#DHIS2' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900'>DHIS 2</a> issues
         </li>
       
         <li>
-          <a href='https://vegibit.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>vegibit</a>: a massive resource of articles on Python, web development and the cloud
+          <a href='https://vegibit.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>vegibit</a>: a massive resource of articles on Python, web development and the cloud
         </li>
       
         <li>
-          <a href='https://towardsdatascience.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Towards Data Science</a>: a Medium community focussing on machine learning
+          <a href='https://towardsdatascience.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Towards Data Science</a>: a Medium community focussing on machine learning
         </li>
       
         <li>
-          <a href='https://cran.r-project.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Comprehensive R Archive Network</a>: I seem to bookmark a lot of R package documentation
+          <a href='https://cran.r-project.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Comprehensive R Archive Network</a>: I seem to bookmark a lot of R package documentation
         </li>
       
         <li>
-          <a href='https://www.digitalocean.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DigitalOcean | The Cloud for Builders</a>: very beginner-friendly cloud hosting tutorials
+          <a href='https://www.digitalocean.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DigitalOcean | The Cloud for Builders</a>: very beginner-friendly cloud hosting tutorials
         </li>
       
         <li>
-          <a href='https://stats.stackexchange.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Cross Validated</a>: Stack Overflow for statistics
+          <a href='https://stats.stackexchange.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Cross Validated</a>: Stack Overflow for statistics
         </li>
       
         <li>
-          <a href='https://www.analyticsvidhya.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Analytics Vidhya | Learn everything about Data Science, Artificial Intelligence and Web 3.0</a>: good blog mainly focussed on machine learning and related areas
+          <a href='https://www.analyticsvidhya.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Analytics Vidhya | Learn everything about Data Science, Artificial Intelligence and Web 3.0</a>: good blog mainly focussed on machine learning and related areas
         </li>
       
         <li>
-          <a href='https://www.kdnuggets.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Data Science, Machine Learning, AI & Analytics - KDnuggets</a>: many articles about machine learning etc, but also SQL, Python and data engineering
+          <a href='https://www.kdnuggets.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Data Science, Machine Learning, AI & Analytics - KDnuggets</a>: many articles about machine learning etc, but also SQL, Python and data engineering
         </li>
       
         <li>
-          <a href='https://medium.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Medium – Where good ideas find you.</a>: Medium (like Substack) is now where a lot of interesting people host their blogs
+          <a href='https://medium.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Medium – Where good ideas find you.</a>: Medium (like Substack) is now where a lot of interesting people host their blogs
         </li>
       
         <li>
-          <a href='https://linuxhint.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux Hint</a>: lots of short tutorials related to Linux
+          <a href='https://linuxhint.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux Hint</a>: lots of short tutorials related to Linux
         </li>
       
         <li>
-          <a href='https://robjhyndman.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Rob J Hyndman</a>: blog on time series analysis and forecasting in R
+          <a href='https://robjhyndman.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Rob J Hyndman</a>: blog on time series analysis and forecasting in R
         </li>
       
         <li>
-          <a href='https://www.tecmint.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tecmint: Linux Howtos, Tutorials & Guides</a>: another sponsored site churning out Linux articles
+          <a href='https://www.tecmint.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tecmint: Linux Howtos, Tutorials & Guides</a>: another sponsored site churning out Linux articles
         </li>
       
         <li>
-          <a href='https://realpython.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Python Tutorials – Real Python</a>: Python training; the free articles are good
+          <a href='https://realpython.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Python Tutorials – Real Python</a>: Python training; the free articles are good
         </li>
       
         <li>
-          <a href='https://www.y1zhou.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Yi’s Knowledge Base - Yi’s Knowledge Base</a>: articles spanning statistics, machine learning, bioinformatics, Linux, R and Python
+          <a href='https://www.y1zhou.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Yi’s Knowledge Base - Yi’s Knowledge Base</a>: articles spanning statistics, machine learning, bioinformatics, Linux, R and Python
         </li>
       
         <li>
-          <a href='https://wiki.openmrs.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - Documentation - OpenMRS Wiki</a>: community wiki on the OpenMRS open source electronic medical record system
+          <a href='https://wiki.openmrs.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - Documentation - OpenMRS Wiki</a>: community wiki on the OpenMRS open source electronic medical record system
         </li>
       
         <li>
-          <a href='https://preset.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Modern BI Powered by Open Source Apache Superset™ | Preset</a>: lots of articles on Apache Superset, the open source business intelligence dashboard (which is very good)
+          <a href='https://preset.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Modern BI Powered by Open Source Apache Superset™ | Preset</a>: lots of articles on Apache Superset, the open source business intelligence dashboard (which is very good)
         </li>
       
         <li>
-          <a href='https://statmodeling.stat.columbia.edu/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Statistical Modeling, Causal Inference, and Social Science</a>: Bayesian statistics blog specialising in dodgy statistics and science fraud
+          <a href='https://statmodeling.stat.columbia.edu/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Statistical Modeling, Causal Inference, and Social Science</a>: Bayesian statistics blog specialising in dodgy statistics and science fraud
         </li>
       
         <li>
-          <a href='https://rweekly.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home | RWeekly.org - Blogs to Learn R from the Community</a>: more R blogs
+          <a href='https://rweekly.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home | RWeekly.org - Blogs to Learn R from the Community</a>: more R blogs
         </li>
       
         <li>
-          <a href='https://sleeplessbeastie.eu/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>sleeplessbeastie’s notes</a>: wide-ranging on notes on Linux and open source software
+          <a href='https://sleeplessbeastie.eu/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>sleeplessbeastie’s notes</a>: wide-ranging on notes on Linux and open source software
         </li>
       
         <li>
-          <a href='https://dzone.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DZone: Programming & DevOps news, tutorials & tools</a>: good articles on machine learning, the cloud, data engineering and Java
+          <a href='https://dzone.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DZone: Programming & DevOps news, tutorials & tools</a>: good articles on machine learning, the cloud, data engineering and Java
         </li>
       
         <li>
-          <a href='https://docs.dhis2.org/en/home.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - DHIS2 Documentation</a>: the main DHIS 2 documentation; unfortunately many of my bookmarks are now dead links since they switched platform
+          <a href='https://docs.dhis2.org/en/home.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - DHIS2 Documentation</a>: the main DHIS 2 documentation; unfortunately many of my bookmarks are now dead links since they switched platform
         </li>
       
         <li>
-          <a href='https://www.linux.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux.com - News For Open Source Professionals</a>: general Linux articles
+          <a href='https://www.linux.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux.com - News For Open Source Professionals</a>: general Linux articles
         </li>
       
         <li>
-          <a href='https://swizec.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Swizec Teller</a>: articles on web development
+          <a href='https://swizec.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Swizec Teller</a>: articles on web development
         </li>
       
         <li>
-          <a href='https://www.redhat.com/en' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Red Hat - We make open source technologies for the enterprise</a>: excellent resources on Linux and the cloud
+          <a href='https://www.redhat.com/en' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Red Hat - We make open source technologies for the enterprise</a>: excellent resources on Linux and the cloud
         </li>
       
         <li>
-          <a href='https://www.cyberciti.biz/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>nixCraft - Linux Tips, Hacks, Tutorials, And Ideas In Blog</a>: sponsored Linux tips site
+          <a href='https://www.cyberciti.biz/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>nixCraft - Linux Tips, Hacks, Tutorials, And Ideas In Blog</a>: sponsored Linux tips site
         </li>
       
         <li>
-          <a href='https://www.johnmyleswhite.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>John Myles White</a>: statistical blogger who may not be be blogging any more
+          <a href='https://www.johnmyleswhite.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>John Myles White</a>: statistical blogger who may not be be blogging any more
         </li>
       
         <li>
-          <a href='https://infosecwriteups.com/?gi=47bc8d709fdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>InfoSec Write-ups</a>: fascinating accounts of ethical hacking
+          <a href='https://infosecwriteups.com/?gi=47bc8d709fdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>InfoSec Write-ups</a>: fascinating accounts of ethical hacking
         </li>
       
         <li>
-          <a href='https://discourse.datamethods.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Datamethods Discussion Forum - Data-related methods</a>: Stack Overflow for epidemiology and practical data analysis
+          <a href='https://discourse.datamethods.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Datamethods Discussion Forum - Data-related methods</a>: Stack Overflow for epidemiology and practical data analysis
         </li>
       
         <li>
-          <a href='https://en.wikipedia.org/wiki/Main_Page' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Wikipedia, the free encyclopedia</a>: I spend a lot of time on Wikipedia
+          <a href='https://en.wikipedia.org/wiki/Main_Page' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Wikipedia, the free encyclopedia</a>: I spend a lot of time on Wikipedia
         </li>
       
         <li>
-          <a href='https://community.senaite.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SENAITE Community</a>: the forum for the SENAITE open source laboratory information management system
+          <a href='https://community.senaite.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SENAITE Community</a>: the forum for the SENAITE open source laboratory information management system
         </li>
       
         <li>
-          <a href='https://code.tutsplus.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Learn How To Code by Envato Tuts+</a>: free software development tutorials
+          <a href='https://code.tutsplus.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Learn How To Code by Envato Tuts+</a>: free software development tutorials
         </li>
       
         <li>
-          <a href='https://hackernoon.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>HackerNoon - read, write and learn about any technology</a>: articles on data science and other areas of tech
+          <a href='https://hackernoon.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>HackerNoon - read, write and learn about any technology</a>: articles on data science and other areas of tech
         </li>
       
         <li>
-          <a href='https://devcoops.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DevOps and Cloud tutorials | DevCoops</a>: anonymous site with lots of articles mainly on the cloud
+          <a href='https://devcoops.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DevOps and Cloud tutorials | DevCoops</a>: anonymous site with lots of articles mainly on the cloud
         </li>
       
         <li>
-          <a href='https://itsfoss.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>It’s FOSS</a>: a newsletter about free and open source software i.e. Linux and Android apps
+          <a href='https://itsfoss.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>It’s FOSS</a>: a newsletter about free and open source software i.e. Linux and Android apps
         </li>
       
         <li>
-          <a href='https://dhis2.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - DHIS2</a>: the home page for DHIS 2
+          <a href='https://dhis2.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - DHIS2</a>: the home page for DHIS 2
         </li>
       
         <li>
-          <a href='https://python-bloggers.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Python-bloggers</a>: aggregator for Python blogs
+          <a href='https://python-bloggers.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Python-bloggers</a>: aggregator for Python blogs
         </li>
       
         <li>
-          <a href='https://appsilon.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R Shiny | Enterprise R Shiny Dashboards | R Consulting</a>: company producing various packages for Shiny apps, with tutorials
+          <a href='https://appsilon.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R Shiny | Enterprise R Shiny Dashboards | R Consulting</a>: company producing various packages for Shiny apps, with tutorials
         </li>
       
         <li>
-          <a href='https://www.who.int/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>World Health Organization (WHO)</a>: lots of useful resources about digital health
+          <a href='https://www.who.int/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>World Health Organization (WHO)</a>: lots of useful resources about digital health
         </li>
       
         <li>
-          <a href='https://bookdown.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home | Bookdown</a>: RMarkdown package for making books
+          <a href='https://bookdown.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home | Bookdown</a>: RMarkdown package for making books
         </li>
       
         <li>
-          <a href='https://heimdalsecurity.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Heimdal Security</a>: cybersecurity articles
+          <a href='https://heimdalsecurity.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Heimdal Security</a>: cybersecurity articles
         </li>
       
         <li>
-          <a href='https://talk.tiddlywiki.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Talk TW - Community discussion forum about TiddlyWiki</a>: forum for Tiddlywiki users
+          <a href='https://talk.tiddlywiki.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Talk TW - Community discussion forum about TiddlyWiki</a>: forum for Tiddlywiki users
         </li>
       
         <li>
-          <a href='https://yihui.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Yihui Xie | ???</a>: blog of author of various useful R packages
+          <a href='https://yihui.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Yihui Xie | ???</a>: blog of author of various useful R packages
         </li>
       
         <li>
-          <a href='https://linuxsecurity.expert/checklists/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Checklists - Linux Security Expert</a>: useful Linux security resources
+          <a href='https://linuxsecurity.expert/checklists/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Checklists - Linux Security Expert</a>: useful Linux security resources
         </li>
       
         <li>
-          <a href='https://seriousepi.blubrry.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SERious EPI | A podcast from the Society for Epidemiologic Research</a>: excellent podcast on epidemiological methodology
+          <a href='https://seriousepi.blubrry.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SERious EPI | A podcast from the Society for Epidemiologic Research</a>: excellent podcast on epidemiological methodology
         </li>
       
         <li>
-          <a href='https://linux-audit.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux Audit - The Linux security blog about Auditing, Hardening, and Compliance</a>: Linux security blog
+          <a href='https://linux-audit.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux Audit - The Linux security blog about Auditing, Hardening, and Compliance</a>: Linux security blog
         </li>
       
         <li>
-          <a href='https://talk.openmrs.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>OpenMRS Talk</a>: forum for OpenMRS implementers
+          <a href='https://talk.openmrs.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>OpenMRS Talk</a>: forum for OpenMRS implementers
         </li>
       
         <li>
-          <a href='https://ropensci.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>rOpenSci - open tools for open science</a>: initiative doing peer reviews of R packages
+          <a href='https://ropensci.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>rOpenSci - open tools for open science</a>: initiative doing peer reviews of R packages
         </li>
       
         <li>
-          <a href='https://www.sitepoint.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SitePoint – Learn HTML, CSS, JavaScript, PHP, UX & Responsive Design</a>: free and paid articles and courses on Web development and Python
+          <a href='https://www.sitepoint.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SitePoint – Learn HTML, CSS, JavaScript, PHP, UX & Responsive Design</a>: free and paid articles and courses on Web development and Python
         </li>
       
         <li>
-          <a href='https://css-tricks.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CSS-Tricks - Tips, Tricks, and Techniques on using Cascading Style Sheets.</a>: sponsored site on Cascading Style Sheets, i.e what you format Web pages with; followed this a lot while in a Web developer phase, but not so much now
+          <a href='https://css-tricks.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CSS-Tricks - Tips, Tricks, and Techniques on using Cascading Style Sheets.</a>: sponsored site on Cascading Style Sheets, i.e what you format Web pages with; followed this a lot while in a Web developer phase, but not so much now
         </li>
       
         <li>
-          <a href='https://lowendbox.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>LowEndBox - Cheap VPS, Dedicated Servers and Hosting Deals</a>: articles on cloud hosting plus cheap hosting deals
+          <a href='https://lowendbox.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>LowEndBox - Cheap VPS, Dedicated Servers and Hosting Deals</a>: articles on cloud hosting plus cheap hosting deals
         </li>
       
         <li>
-          <a href='https://flowingdata.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>FlowingData | Data Visualization and Statistics</a>: data visualisation blog, partly free
+          <a href='https://flowingdata.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>FlowingData | Data Visualization and Statistics</a>: data visualisation blog, partly free
         </li>
       
         <li>
-          <a href='https://www.freecodecamp.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Learn to Code — For Free — Coding Courses for Busy People</a>: thousands of free tutorials on many aspects of coding
+          <a href='https://www.freecodecamp.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Learn to Code — For Free — Coding Courses for Busy People</a>: thousands of free tutorials on many aspects of coding
         </li>
       
         <li>
-          <a href='https://hackr.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Find the best online Programming courses and Tutorials - Hackr.io</a>: tutorials on many aspects of coding, some free
+          <a href='https://hackr.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Find the best online Programming courses and Tutorials - Hackr.io</a>: tutorials on many aspects of coding, some free
         </li>
       
         <li>
-          <a href='https://www.programming-books.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Essential Programming Books</a>: free books on many programming languages
+          <a href='https://www.programming-books.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Essential Programming Books</a>: free books on many programming languages
         </li>
       
         <li>
-          <a href='https://rviews.rstudio.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R Views</a>: blog about R packages from Posit/RStudio
+          <a href='https://rviews.rstudio.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R Views</a>: blog about R packages from Posit/RStudio
         </li>
       
         <li>
-          <a href='https://win-vector.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Win Vector LLC – Data science advising, consulting, and training</a>: great little blog about R and Python
+          <a href='https://win-vector.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Win Vector LLC – Data science advising, consulting, and training</a>: great little blog about R and Python
         </li>
       
         <li>
-          <a href='https://www.johndcook.com/blog/services-2/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Expert consulting in applied mathematics & data privacy</a>: blog about maths and sometimes coding
+          <a href='https://www.johndcook.com/blog/services-2/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Expert consulting in applied mathematics & data privacy</a>: blog about maths and sometimes coding
         </li>
       
         <li>
-          <a href='https://www.infoworld.com/uk/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>InfoWorld - Technology insight for the enterprise</a>: IT blog with wide ranging articles
+          <a href='https://www.infoworld.com/uk/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>InfoWorld - Technology insight for the enterprise</a>: IT blog with wide ranging articles
         </li>
       
         <li>
-          <a href='https://www.howtogeek.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>How-To Geek - We Explain Technology</a>: articles to make you more computer savvy
+          <a href='https://www.howtogeek.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>How-To Geek - We Explain Technology</a>: articles to make you more computer savvy
         </li>
       
         <li>
-          <a href='https://www.jstatsoft.org/index' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Journal of Statistical Software</a>: in-depth articles on statistical software, mostly R and Python related
+          <a href='https://www.jstatsoft.org/index' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Journal of Statistical Software</a>: in-depth articles on statistical software, mostly R and Python related
         </li>
       
         <li>
-          <a href='https://rpubs.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>RPubs</a>: publish any RMarkdown document for free
+          <a href='https://rpubs.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>RPubs</a>: publish any RMarkdown document for free
         </li>
       
         <li>
-          <a href='https://stackabuse.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Stack Abuse</a>: useful articles on Python, JavaScript, Web development, data science, Linux
+          <a href='https://stackabuse.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Stack Abuse</a>: useful articles on Python, JavaScript, Web development, data science, Linux
         </li>
       
         <li>
-          <a href='https://www.countbayesie.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Count Bayesie - A Probability Blog</a>: good Bayesian blog
+          <a href='https://www.countbayesie.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Count Bayesie - A Probability Blog</a>: good Bayesian blog
         </li>
       
         <li>
-          <a href='https://www.learndatasci.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Learn Data Science - Tutorials, Books, Courses, and More – LearnDataSci</a>: tutorials on data science, Python, SQL; maps out a useful curriculum
+          <a href='https://www.learndatasci.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Learn Data Science - Tutorials, Books, Courses, and More – LearnDataSci</a>: tutorials on data science, Python, SQL; maps out a useful curriculum
         </li>
       
         <li>
-          <a href='https://developer.mozilla.org/en-US/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>MDN Web Docs</a>: one of the best Web development resources
+          <a href='https://developer.mozilla.org/en-US/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>MDN Web Docs</a>: one of the best Web development resources
         </li>
       
         <li>
-          <a href='https://selfhosted.show/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Self-Hosted</a>: podcast to follow once the cloud hosting bug has bitten you
+          <a href='https://selfhosted.show/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Self-Hosted</a>: podcast to follow once the cloud hosting bug has bitten you
         </li>
       
         <li>
-          <a href='https://www.tidyverse.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tidyverse</a>: information on tidyverse packages, plus a blog
+          <a href='https://www.tidyverse.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tidyverse</a>: information on tidyverse packages, plus a blog
         </li>
       
         <li>
-          <a href='https://www.bayesianspectacles.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Spectacles – Powered by JASP</a>: good Bayesian blog, from the people bringing you JASP, the easy to use statistical software based on R
+          <a href='https://www.bayesianspectacles.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Spectacles – Powered by JASP</a>: good Bayesian blog, from the people bringing you JASP, the easy to use statistical software based on R
         </li>
       
         <li>
-          <a href='https://about.gitlab.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The DevSecOps Platform | GitLab</a>: useful information on Git and GitLab
+          <a href='https://about.gitlab.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The DevSecOps Platform | GitLab</a>: useful information on Git and GitLab
         </li>
       
         <li>
-          <a href='https://dhis2trainingland.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DHIS2 Trainingland</a>: used to be an odd assortment of sometimes quite useful DHIS 2 stuff, but now revamped for DHIS 2 courses
+          <a href='https://dhis2trainingland.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DHIS2 Trainingland</a>: used to be an odd assortment of sometimes quite useful DHIS 2 stuff, but now revamped for DHIS 2 courses
         </li>
       
         <li>
-          <a href='https://learnbyexample.github.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>learnbyexample</a>: programming blog on Python, JavaScript, Vim; some of his books are available for free
+          <a href='https://learnbyexample.github.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>learnbyexample</a>: programming blog on Python, JavaScript, Vim; some of his books are available for free
         </li>
       
         <li>
-          <a href='https://becominghuman.ai/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Becoming Human: Artificial Intelligence Magazine</a>: data science and artificial intelligence blog
+          <a href='https://becominghuman.ai/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Becoming Human: Artificial Intelligence Magazine</a>: data science and artificial intelligence blog
         </li>
       
         <li>
-          <a href='https://rstudio.github.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>rstudio.github.io</a>: nothing there now
+          <a href='https://rstudio.github.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>rstudio.github.io</a>: nothing there now
         </li>
       
         <li>
-          <a href='https://news.ycombinator.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Hacker News</a>: the best feed for geeks of any stripe, but follow the more specialised subfeeds rather than the main “drinking from the firehose” feed
+          <a href='https://news.ycombinator.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Hacker News</a>: the best feed for geeks of any stripe, but follow the more specialised subfeeds rather than the main “drinking from the firehose” feed
         </li>
       
         <li>
-          <a href='https://www.dlford.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>dlford.io</a>: useful IT blog
+          <a href='https://www.dlford.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>dlford.io</a>: useful IT blog
         </li>
       
         <li>
-          <a href='https://vimtricks.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Vim Newsletter - VimTricks</a>: weekly <a href='#https://prcleary.github.io/#My%20Vim%20configuration%20file' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' target='_blank' rel='noopener'>Vim</a> newsletter
+          <a href='https://vimtricks.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Vim Newsletter - VimTricks</a>: weekly <a href='#https://prcleary.github.io/#My%20Vim%20configuration%20file' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' target='_blank' rel='noopener'>Vim</a> newsletter
         </li>
       
         <li>
-          <a href='https://ikashnitsky.github.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>demographeR’s notes | Ilya Kashnitsky</a>: infrequent but excellent R blogger
+          <a href='https://ikashnitsky.github.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>demographeR’s notes | Ilya Kashnitsky</a>: infrequent but excellent R blogger
         </li>
       
         <li>
-          <a href='https://www.noobunbox.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Noobunbox - Tutoriels : NAS, Serveur, Sécurité, NGinx, Apache, Vmware, Virtualisation tout y est :)</a>: articles in French related to cloud hosting
+          <a href='https://www.noobunbox.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Noobunbox - Tutoriels : NAS, Serveur, Sécurité, NGinx, Apache, Vmware, Virtualisation tout y est :)</a>: articles in French related to cloud hosting
         </li>
       
         <li>
-          <a href='https://spatialgalaxy.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Spatial Galaxy</a>: long running blog about QGIS, your open source mapping tool
+          <a href='https://spatialgalaxy.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Spatial Galaxy</a>: long running blog about QGIS, your open source mapping tool
         </li>
       
         <li>
-          <a href='https://posit.co/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Posit | The Open-Source Data Science Company</a>: information and articles on RStudio
+          <a href='https://posit.co/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Posit | The Open-Source Data Science Company</a>: information and articles on RStudio
         </li>
       
         <li>
-          <a href='https://blog.djnavarro.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Notes from a data witch</a>: phenomenal blog, posts usually somehow related to R but exploring lots of other technologies; maybe one day my blog will be this good
+          <a href='https://blog.djnavarro.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Notes from a data witch</a>: phenomenal blog, posts usually somehow related to R but exploring lots of other technologies; maybe one day my blog will be this good
         </li>
       
         <li>
-          <a href='https://www.jumpingrivers.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Jumping Rivers</a>: great blog on R, Python and other useful things
+          <a href='https://www.jumpingrivers.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Jumping Rivers</a>: great blog on R, Python and other useful things
         </li>
       
         <li>
-          <a href='https://www.adaltas.com/en/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Big Data, Cloud, DevOps and container orchestration | Adaltas</a>: blog mainly on the IT side of data science
+          <a href='https://www.adaltas.com/en/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Big Data, Cloud, DevOps and container orchestration | Adaltas</a>: blog mainly on the IT side of data science
         </li>
       
         <li>
-          <a href='https://www.openhealthnews.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Open Health News | The Voice for the Open Health Community</a>: news on interesting developments in the intersection between digital health and open source, open data etc
+          <a href='https://www.openhealthnews.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Open Health News | The Voice for the Open Health Community</a>: news on interesting developments in the intersection between digital health and open source, open data etc
         </li>
       
         <li>
-          <a href='https://www.howtogeek.com/devops/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DevOps by How-To Geek</a>: articles on DevOps (the collaboration between those writing code and those delivering/deploying the product; sometimes now extended to DevSecOps to bring in the cybersecurity angle)
+          <a href='https://www.howtogeek.com/devops/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DevOps by How-To Geek</a>: articles on DevOps (the collaboration between those writing code and those delivering/deploying the product; sometimes now extended to DevSecOps to bring in the cybersecurity angle)
         </li>
       
         <li>
-          <a href='https://rtask.thinkr.fr/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - Rtask</a>: some interesting articles on R (in English and French) by an consultancy outfit
+          <a href='https://rtask.thinkr.fr/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - Rtask</a>: some interesting articles on R (in English and French) by an consultancy outfit
         </li>
       
         <li>
-          <a href='https://lazybear.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Lazybear</a>: blog about Vim, other open source tools, sometimes other things
+          <a href='https://lazybear.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Lazybear</a>: blog about Vim, other open source tools, sometimes other things
         </li>
       
         <li>
-          <a href='https://www.ansible.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ansible is Simple IT Automation</a>: Ansible is a great tool from Red Hat for automating all the things, e.g. deployment of software on a server; I have played with it but want to learn more; some good articles
+          <a href='https://www.ansible.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ansible is Simple IT Automation</a>: Ansible is a great tool from Red Hat for automating all the things, e.g. deployment of software on a server; I have played with it but want to learn more; some good articles
         </li>
       
         <li>
-          <a href='https://learnxinyminutes.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Learn X in Y Minutes: Scenic Programming Language Tours</a>: very concise summaries of many programming languages (or things that can be scripted)
+          <a href='https://learnxinyminutes.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Learn X in Y Minutes: Scenic Programming Language Tours</a>: very concise summaries of many programming languages (or things that can be scripted)
         </li>
       
         <li>
-          <a href='https://observablehq.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Collaborative data platform and canvas | Observable</a>: cutting edge Web-based data visualisation; partly motivates my intermittent attempts to learn JavaScript
+          <a href='https://observablehq.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Collaborative data platform and canvas | Observable</a>: cutting edge Web-based data visualisation; partly motivates my intermittent attempts to learn JavaScript
         </li>
       
         <li>
-          <a href='https://machinelearningmastery.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Machine Learning Mastery</a>: interesting articles on data science, focussing on the code more than the maths
+          <a href='https://machinelearningmastery.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Machine Learning Mastery</a>: interesting articles on data science, focussing on the code more than the maths
         </li>
       
         <li>
-          <a href='https://shiny.rstudio.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Shiny</a>: lots of resources on Shiny (for writing Web apps in R); was really interested in Shiny at one time (my interests are currently more down the technology stack)
+          <a href='https://shiny.rstudio.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Shiny</a>: lots of resources on Shiny (for writing Web apps in R); was really interested in Shiny at one time (my interests are currently more down the technology stack)
         </li>
       
         <li>
-          <a href='https://vim.fandom.com/wiki/Vim_Tips_Wiki' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Vim Tips Wiki | Fandom</a>: a wiki with lots of tips on <a href='#https://prcleary.github.io/#My%20Vim%20configuration%20file' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' target='_blank' rel='noopener'>Vim</a>, the text editor that you can spend a lifetime learning
+          <a href='https://vim.fandom.com/wiki/Vim_Tips_Wiki' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Vim Tips Wiki | Fandom</a>: a wiki with lots of tips on <a href='#https://prcleary.github.io/#My%20Vim%20configuration%20file' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' target='_blank' rel='noopener'>Vim</a>, the text editor that you can spend a lifetime learning
         </li>
       
         <li>
-          <a href='https://www.garrickadenbuie.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Garrick Aden-Buie</a>: blogs on R, Shiny, RMarkdown, RStudio - also creates some useful packages
+          <a href='https://www.garrickadenbuie.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Garrick Aden-Buie</a>: blogs on R, Shiny, RMarkdown, RStudio - also creates some useful packages
         </li>
       
         <li>
-          <a href='https://forum.proxmox.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Proxmox Support Forum</a>: using Proxmox as the virtualisation environment (i.e. where I can create virtual machines and containers) for my open source experimentation; bit of a learning curve but I am comfortable with it now
+          <a href='https://forum.proxmox.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Proxmox Support Forum</a>: using Proxmox as the virtualisation environment (i.e. where I can create virtual machines and containers) for my open source experimentation; bit of a learning curve but I am comfortable with it now
         </li>
       
         <li>
-          <a href='https://thehackernews.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Hacker News | <span class='font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 py-1 px-3 rounded-lg shadow-sm emanote:inline-tag:1' title='Tag' data-tag='1'><a href='-/tags/1' title='Tag' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900'>#1</a></span> Trusted Cybersecurity News Site</a>: articles mainly about cybersecurity; different from Hacker News as mentioned above (which is of more general geek interest)
+          <a href='https://thehackernews.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Hacker News | <span class='font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 py-1 px-3 rounded-lg shadow-sm emanote:inline-tag:1' title='Tag' data-tag='1'><a href='-/tags/1' title='Tag' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900'>#1</a></span> Trusted Cybersecurity News Site</a>: articles mainly about cybersecurity; different from Hacker News as mentioned above (which is of more general geek interest)
         </li>
       
         <li>
-          <a href='https://www.sqlservercentral.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SQLServerCentral – The <span class='font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 py-1 px-3 rounded-lg shadow-sm emanote:inline-tag:1' title='Tag' data-tag='1'><a href='-/tags/1' title='Tag' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900'>#1</a></span> SQL Server community</a>: not just articles on SQL, but also on broader/related areas such as data management and PowerBI
+          <a href='https://www.sqlservercentral.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SQLServerCentral – The <span class='font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 py-1 px-3 rounded-lg shadow-sm emanote:inline-tag:1' title='Tag' data-tag='1'><a href='-/tags/1' title='Tag' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900'>#1</a></span> SQL Server community</a>: not just articles on SQL, but also on broader/related areas such as data management and PowerBI
         </li>
       
         <li>
-          <a href='https://linuxize.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux Tips, Tricks and Tutorials | Linuxize</a>: simple articles on how to do various things on various distributions of Linux
+          <a href='https://linuxize.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux Tips, Tricks and Tutorials | Linuxize</a>: simple articles on how to do various things on various distributions of Linux
         </li>
       
         <li>
-          <a href='https://www.brodrigues.co/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Econometrics and Free Software</a>: blog on open source software, with a big focus on R; not that much about econometrics actually
+          <a href='https://www.brodrigues.co/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Econometrics and Free Software</a>: blog on open source software, with a big focus on R; not that much about econometrics actually
         </li>
       
         <li>
-          <a href='https://tomaugspurger.github.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tom’s Blog</a>: Python/data science blog
+          <a href='https://tomaugspurger.github.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tom’s Blog</a>: Python/data science blog
         </li>
       
         <li>
-          <a href='https://askubuntu.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ask Ubuntu</a>: StackOverflow for Ubuntu users; Ubuntu is the version of Linux I would recommend to new Linux users
+          <a href='https://askubuntu.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ask Ubuntu</a>: StackOverflow for Ubuntu users; Ubuntu is the version of Linux I would recommend to new Linux users
         </li>
       
         <li>
-          <a href='https://community.letsencrypt.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Let’s Encrypt Community Support</a>: free service (something to do with the excellent Electronic Frontier Foundation I think) allowing you to set up your Web sites with an https://… URL for free; basically anything you put on the Web should use HTTPS (the encrypted Web protocol) for security and authentication (assurance that the Web site is what it says it is); useful forum for queries, which I have needed at times
+          <a href='https://community.letsencrypt.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Let’s Encrypt Community Support</a>: free service (something to do with the excellent Electronic Frontier Foundation I think) allowing you to set up your Web sites with an https://… URL for free; basically anything you put on the Web should use HTTPS (the encrypted Web protocol) for security and authentication (assurance that the Web site is what it says it is); useful forum for queries, which I have needed at times
         </li>
       
         <li>
-          <a href='https://lorentzen.ch/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Michael’s and Christian’s Blog – R and Python, Machine Learning and Actuarial Topics</a>: says it all really
+          <a href='https://lorentzen.ch/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Michael’s and Christian’s Blog – R and Python, Machine Learning and Actuarial Topics</a>: says it all really
         </li>
       
         <li>
-          <a href='https://rdrr.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R Package Documentation</a>: search for help on any R packages
+          <a href='https://rdrr.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R Package Documentation</a>: search for help on any R packages
         </li>
       
         <li>
-          <a href='https://community.rstudio.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Posit Forum (formerly RStudio Community)</a>: forum for queries on RStudio, tidyverse, Shiny and lots more
+          <a href='https://community.rstudio.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Posit Forum (formerly RStudio Community)</a>: forum for queries on RStudio, tidyverse, Shiny and lots more
         </li>
       
         <li>
-          <a href='https://pbpython.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Practical Business Python -</a>: great Python articles with a business focus
+          <a href='https://pbpython.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Practical Business Python -</a>: great Python articles with a business focus
         </li>
       
         <li>
-          <a href='https://coolbutuseless.github.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>coolbutuseless</a>: blog mainly on R
+          <a href='https://coolbutuseless.github.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>coolbutuseless</a>: blog mainly on R
         </li>
       
         <li>
-          <a href='https://rud.is/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>rud.is</a>: data science blog with a big R focus
+          <a href='https://rud.is/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>rud.is</a>: data science blog with a big R focus
         </li>
       
         <li>
-          <a href='https://www.techrepublic.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>TechRepublic: News, Tips & Advice for Technology Professionals</a>: general IT news
+          <a href='https://www.techrepublic.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>TechRepublic: News, Tips & Advice for Technology Professionals</a>: general IT news
         </li>
       
         <li>
-          <a href='https://lecourrierduhacker.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Le Courrier du hacker, la newsletter du Logiciel Libre et de l’Open Source</a>: French open source software newsletter, with links to various blogs
+          <a href='https://lecourrierduhacker.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Le Courrier du hacker, la newsletter du Logiciel Libre et de l’Open Source</a>: French open source software newsletter, with links to various blogs
         </li>
       
         <li>
-          <a href='https://snyk.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Snyk | Developer security | Develop fast. Stay secure.</a>: blog on open source security and sometimes Snyk products
+          <a href='https://snyk.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Snyk | Developer security | Develop fast. Stay secure.</a>: blog on open source security and sometimes Snyk products
         </li>
       
         <li>
-          <a href='https://alvinalexander.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Scala, Java, Unix, MacOS tutorials (page 1) | alvinalexander.com</a>: prolific blogger, recently focussing on functional programming
+          <a href='https://alvinalexander.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Scala, Java, Unix, MacOS tutorials (page 1) | alvinalexander.com</a>: prolific blogger, recently focussing on functional programming
         </li>
       
         <li>
-          <a href='https://devops.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DevOps - The Web’s Largest Collection of DevOps Content</a>: articles and news on DevOps (see above)
+          <a href='https://devops.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DevOps - The Web’s Largest Collection of DevOps Content</a>: articles and news on DevOps (see above)
         </li>
       
         <li>
-          <a href='https://hackerbits.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - Hacker Bits</a>: newsletter collating links to a variety of articles, also covering issues like productivity and work-life balance
+          <a href='https://hackerbits.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - Hacker Bits</a>: newsletter collating links to a variety of articles, also covering issues like productivity and work-life balance
         </li>
       
         <li>
-          <a href='https://leanpub.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Leanpub: Publish Early, Publish Often</a>: self-publishing site with many cheap e-books on all things data science and computing; you can often choose what you pay
+          <a href='https://leanpub.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Leanpub: Publish Early, Publish Often</a>: self-publishing site with many cheap e-books on all things data science and computing; you can often choose what you pay
         </li>
       
         <li>
-          <a href='https://www.edx.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>edX | Free Online Courses by Harvard, MIT, & more | edX</a>: thousands of courses that I would like to do (and a few I have done); often free (but you pay for the certificate/qualification)
+          <a href='https://www.edx.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>edX | Free Online Courses by Harvard, MIT, & more | edX</a>: thousands of courses that I would like to do (and a few I have done); often free (but you pay for the certificate/qualification)
         </li>
       
         <li>
-          <a href='https://serverfault.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Server Fault</a>: StackOverflow for system administrators
+          <a href='https://serverfault.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Server Fault</a>: StackOverflow for system administrators
         </li>
       
         <li>
-          <a href='https://git-scm.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Git</a>: downloads and other useful resources
+          <a href='https://git-scm.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Git</a>: downloads and other useful resources
         </li>
       
         <li>
-          <a href='https://www.programmingwithr.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Programming with R</a>: R blog
+          <a href='https://www.programmingwithr.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Programming with R</a>: R blog
         </li>
       
         <li>
-          <a href='https://blog.microlinux.fr/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Le blog technique de Microlinux – Unix est long et la vie est brève</a>: French Linux blog
+          <a href='https://blog.microlinux.fr/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Le blog technique de Microlinux – Unix est long et la vie est brève</a>: French Linux blog
         </li>
       
         <li>
-          <a href='https://developers.dhis2.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Welcome to the DHIS2 Developer Portal | DHIS2 Developer Portal</a>: good for keeping up with the latest DHIS 2 developments
+          <a href='https://developers.dhis2.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Welcome to the DHIS2 Developer Portal | DHIS2 Developer Portal</a>: good for keeping up with the latest DHIS 2 developments
         </li>
       
         <li>
-          <a href='https://blog.seboss666.info/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Le blog de Seboss666 – Les divagations d’un pseudo-geek curieux</a>: French Linux blog
+          <a href='https://blog.seboss666.info/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Le blog de Seboss666 – Les divagations d’un pseudo-geek curieux</a>: French Linux blog
         </li>
       
         <li>
-          <a href='https://aws.amazon.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Cloud Computing Services - Amazon Web Services (AWS)</a>: AWS is a big cloud provider; some useful articles
+          <a href='https://aws.amazon.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Cloud Computing Services - Amazon Web Services (AWS)</a>: AWS is a big cloud provider; some useful articles
         </li>
       
         <li>
-          <a href='https://justdjango.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>JustDjango | The Definitive Django Learning Platform</a>: Django is a very comprehensive Web app framework for Python coders; learning Django is a medium-term objective of mine; this is a good place to start
+          <a href='https://justdjango.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>JustDjango | The Definitive Django Learning Platform</a>: Django is a very comprehensive Web app framework for Python coders; learning Django is a medium-term objective of mine; this is a good place to start
         </li>
       
         <li>
-          <a href='https://analytics4all.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Analytics4All – An Analytics Education for All. Unraveling the Mystery Behind Big Data and Analytics</a>: useful data science blog
+          <a href='https://analytics4all.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Analytics4All – An Analytics Education for All. Unraveling the Mystery Behind Big Data and Analytics</a>: useful data science blog
         </li>
       
         <li>
-          <a href='https://nhsrcommunity.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>NHS-R Community – Promoting the use of R in the NHS</a>: “Promoting the Use of R in the UK Health & Care System”; I follow the blog
+          <a href='https://nhsrcommunity.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>NHS-R Community – Promoting the use of R in the NHS</a>: “Promoting the Use of R in the UK Health & Care System”; I follow the blog
         </li>
       
         <li>
-          <a href='https://www.fontsquirrel.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Free Fonts! Legit Free & Quality » Font Squirrel</a>: good place to find interesting fonts for those interested in typography
+          <a href='https://www.fontsquirrel.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Free Fonts! Legit Free & Quality » Font Squirrel</a>: good place to find interesting fonts for those interested in typography
         </li>
       
         <li>
-          <a href='https://www.marsja.se/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Erik Marsja - Erik Marsja</a>: Python and R blog
+          <a href='https://www.marsja.se/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Erik Marsja - Erik Marsja</a>: Python and R blog
         </li>
       
         <li>
-          <a href='https://colinfay.me/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>All Code No Brain - Colin Fay</a>: blog on R (and sometimes other things)
+          <a href='https://colinfay.me/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>All Code No Brain - Colin Fay</a>: blog on R (and sometimes other things)
         </li>
       
         <li>
-          <a href='https://www.how2shout.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>H2S Media: Technology News, Gadgets, Howto, Reviews & More</a>: tech news (some good Linux stuff)
+          <a href='https://www.how2shout.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>H2S Media: Technology News, Gadgets, Howto, Reviews & More</a>: tech news (some good Linux stuff)
         </li>
       
         <li>
-          <a href='https://jvns.ca/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Julia Evans</a>: wide-ranging geek blog
+          <a href='https://jvns.ca/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Julia Evans</a>: wide-ranging geek blog
         </li>
       
         <li>
-          <a href='https://haydenjames.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux Systems Analyst | Hayden James</a>: Linux blog
+          <a href='https://haydenjames.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Linux Systems Analyst | Hayden James</a>: Linux blog
         </li>
       
         <li>
-          <a href='https://www.ilovefreesoftware.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home Page - I Love Free Software</a>: free/open source software blog
+          <a href='https://www.ilovefreesoftware.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home Page - I Love Free Software</a>: free/open source software blog
         </li>
       
         <li>
-          <a href='https://miku86.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>miku86</a>: blog about personal philosophy and tech
+          <a href='https://miku86.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>miku86</a>: blog about personal philosophy and tech
         </li>
       
         <li>
-          <a href='https://ratfactor.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - ratfactor</a>: general geek blog
+          <a href='https://ratfactor.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Home - ratfactor</a>: general geek blog
         </li>
       
         <li>
-          <a href='https://www.rdatagen.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>ouR data generation - ouR data generation</a>: blog on R, statistics and simulating data
+          <a href='https://www.rdatagen.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>ouR data generation - ouR data generation</a>: blog on R, statistics and simulating data
         </li>
       
         <li>
-          <a href='https://philippmuens.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Intersection - Philipp Muens</a>: blog with various thoughts relevant to data science
+          <a href='https://philippmuens.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Intersection - Philipp Muens</a>: blog with various thoughts relevant to data science
         </li>
       
         <li>
-          <a href='https://www.hongkiat.com/blog/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Technology, Design, and Inspiration - Hongkiat</a>: tech news and tips
+          <a href='https://www.hongkiat.com/blog/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Technology, Design, and Inspiration - Hongkiat</a>: tech news and tips
         </li>
       
         <li>
-          <a href='https://xenodium.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Álvaro Ramírez</a>: blog sharing various geek stuff (and occasional recipes)
+          <a href='https://xenodium.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Álvaro Ramírez</a>: blog sharing various geek stuff (and occasional recipes)
         </li>
       
         <li>
-          <a href='https://unixsheikh.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>unixsheikh.com</a>: opinions and tips/tricks on open source tools
+          <a href='https://unixsheikh.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>unixsheikh.com</a>: opinions and tips/tricks on open source tools
         </li>
       
     </ul>
@@ -1993,213 +2006,213 @@
     <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
       
         <li>
-          <a href='https://flaviocopes.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>flaviocopes.com</a>
+          <a href='https://flaviocopes.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>flaviocopes.com</a>
         </li>
       
         <li>
-          <a href='https://learn.microsoft.com/en-gb/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Microsoft Learn: Build skills that open doors in your career</a>
+          <a href='https://learn.microsoft.com/en-gb/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Microsoft Learn: Build skills that open doors in your career</a>
         </li>
       
         <li>
-          <a href='https://superuser.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Super User</a>
+          <a href='https://superuser.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Super User</a>
         </li>
       
         <li>
-          <a href='https://darkcoding.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Graham King</a>
+          <a href='https://darkcoding.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Graham King</a>
         </li>
       
         <li>
-          <a href='https://www.limswiki.org/index.php/Main_Page' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>LIMSWiki</a>
+          <a href='https://www.limswiki.org/index.php/Main_Page' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>LIMSWiki</a>
         </li>
       
         <li>
-          <a href='https://www.codementor.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Codementor | Get live 1:1 coding help, hire a developer, & more</a>
+          <a href='https://www.codementor.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Codementor | Get live 1:1 coding help, hire a developer, & more</a>
         </li>
       
         <li>
-          <a href='https://pagedjs.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Paged.js —</a>
+          <a href='https://pagedjs.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Paged.js —</a>
         </li>
       
         <li>
-          <a href='https://djangotricks.blogspot.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DjangoTricks</a>
+          <a href='https://djangotricks.blogspot.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>DjangoTricks</a>
         </li>
       
         <li>
-          <a href='https://journal.r-project.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The R Journal: Overview</a>
+          <a href='https://journal.r-project.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The R Journal: Overview</a>
         </li>
       
         <li>
-          <a href='https://unix.stackexchange.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Unix & Linux Stack Exchange</a>
+          <a href='https://unix.stackexchange.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Unix & Linux Stack Exchange</a>
         </li>
       
         <li>
-          <a href='https://www.littlemissdata.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Little Miss Data</a>
+          <a href='https://www.littlemissdata.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Little Miss Data</a>
         </li>
       
         <li>
-          <a href='https://www.thegeekstuff.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Geek Stuff</a>
+          <a href='https://www.thegeekstuff.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Geek Stuff</a>
         </li>
       
         <li>
-          <a href='https://www.apalrd.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>apalrd’s adventures</a>
+          <a href='https://www.apalrd.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>apalrd’s adventures</a>
         </li>
       
         <li>
-          <a href='https://www.smarthomebeginner.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SmartHomeBeginner | Smart Home, Media, Server, and Technology</a>
+          <a href='https://www.smarthomebeginner.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SmartHomeBeginner | Smart Home, Media, Server, and Technology</a>
         </li>
       
         <li>
-          <a href='https://rgraphs.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Rgraphs – deliver a compelling message with your data</a>
+          <a href='https://rgraphs.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Rgraphs – deliver a compelling message with your data</a>
         </li>
       
         <li>
-          <a href='https://noted.lol/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Noted - Self Hosted App Reviews</a>
+          <a href='https://noted.lol/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Noted - Self Hosted App Reviews</a>
         </li>
       
         <li>
-          <a href='https://tiddlywiki.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>TiddlyWiki — a non-linear personal web notebook</a>
+          <a href='https://tiddlywiki.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>TiddlyWiki — a non-linear personal web notebook</a>
         </li>
       
         <li>
-          <a href='https://acloudguru.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>World’s <span class='font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 py-1 px-3 rounded-lg shadow-sm emanote:inline-tag:1' title='Tag' data-tag='1'><a href='-/tags/1' title='Tag' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900'>#1</a></span> Digital Cloud Certification Course & Training Provider | A Cloud Guru</a>
+          <a href='https://acloudguru.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>World’s <span class='font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 py-1 px-3 rounded-lg shadow-sm emanote:inline-tag:1' title='Tag' data-tag='1'><a href='-/tags/1' title='Tag' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900'>#1</a></span> Digital Cloud Certification Course & Training Provider | A Cloud Guru</a>
         </li>
       
         <li>
-          <a href='https://hunden.linuxkompis.se/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Hund - My personal weblog</a>
+          <a href='https://hunden.linuxkompis.se/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Hund - My personal weblog</a>
         </li>
       
         <li>
-          <a href='https://nickjanetakis.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>From Development to Production — Nick Janetakis</a>
+          <a href='https://nickjanetakis.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>From Development to Production — Nick Janetakis</a>
         </li>
       
         <li>
-          <a href='https://zignar.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Personal weblog about programming, linux, life, the universe and everything</a>
+          <a href='https://zignar.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Personal weblog about programming, linux, life, the universe and everything</a>
         </li>
       
         <li>
-          <a href='https://hynek.me/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Hynek Schlawack</a>
+          <a href='https://hynek.me/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Hynek Schlawack</a>
         </li>
       
         <li>
-          <a href='https://blog.gruntwork.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Gruntwork</a>
+          <a href='https://blog.gruntwork.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Gruntwork</a>
         </li>
       
         <li>
-          <a href='https://thenewstack.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The New Stack | DevOps, Open Source, and Cloud Native News</a>
+          <a href='https://thenewstack.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The New Stack | DevOps, Open Source, and Cloud Native News</a>
         </li>
       
         <li>
-          <a href='https://simonwillison.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Simon Willison’s Weblog</a>
+          <a href='https://simonwillison.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Simon Willison’s Weblog</a>
         </li>
       
         <li>
-          <a href='https://xorhak.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>?? DJ?RFY ??</a>
+          <a href='https://xorhak.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>?? DJ?RFY ??</a>
         </li>
       
         <li>
-          <a href='https://jaketrent.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Jake Trent</a>
+          <a href='https://jaketrent.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Jake Trent</a>
         </li>
       
         <li>
-          <a href='https://shkspr.mobi/blog/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Terence Eden’s Blog</a>
+          <a href='https://shkspr.mobi/blog/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Terence Eden’s Blog</a>
         </li>
       
         <li>
-          <a href='https://peertube.linuxrocks.online/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Homepage - LinuxRocks PeerTube</a>
+          <a href='https://peertube.linuxrocks.online/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Homepage - LinuxRocks PeerTube</a>
         </li>
       
         <li>
-          <a href='https://dirk.eddelbuettel.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Dirk Eddelbuettel</a>
+          <a href='https://dirk.eddelbuettel.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Dirk Eddelbuettel</a>
         </li>
       
         <li>
-          <a href='https://matt-rickard.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Matt Rickard</a>
+          <a href='https://matt-rickard.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Matt Rickard</a>
         </li>
       
         <li>
-          <a href='https://betanalpha.github.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Michael Betancourt, PhD - betanalpha.github.io</a>
+          <a href='https://betanalpha.github.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Michael Betancourt, PhD - betanalpha.github.io</a>
         </li>
       
         <li>
-          <a href='https://www.ncsc.gov.uk/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>NCSC - NCSC.GOV.UK</a>
+          <a href='https://www.ncsc.gov.uk/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>NCSC - NCSC.GOV.UK</a>
         </li>
       
         <li>
-          <a href='https://webmasters.stackexchange.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Webmasters Stack Exchange</a>
+          <a href='https://webmasters.stackexchange.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Webmasters Stack Exchange</a>
         </li>
       
         <li>
-          <a href='https://statisticsbyjim.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Statistics by Jim - Statistics By Jim</a>
+          <a href='https://statisticsbyjim.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Statistics by Jim - Statistics By Jim</a>
         </li>
       
         <li>
-          <a href='https://arstechnica.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ars Technica</a>
+          <a href='https://arstechnica.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ars Technica</a>
         </li>
       
         <li>
-          <a href='https://blog.r-hub.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R-hub blog</a>
+          <a href='https://blog.r-hub.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>R-hub blog</a>
         </li>
       
         <li>
-          <a href='https://blog.devgenius.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Dev Genius</a>
+          <a href='https://blog.devgenius.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Dev Genius</a>
         </li>
       
         <li>
-          <a href='https://www.smashingmagazine.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Smashing Magazine — For Web Designers And Developers</a>
+          <a href='https://www.smashingmagazine.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Smashing Magazine — For Web Designers And Developers</a>
         </li>
       
         <li>
-          <a href='https://pypi.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>PyPI · The Python Package Index</a>
+          <a href='https://pypi.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>PyPI · The Python Package Index</a>
         </li>
       
         <li>
-          <a href='https://darrenjw.wordpress.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Darren Wilkinson’s blog – Statistics, computing, functional programming, data science, Bayes, stochastic modelling, systems biology and bioinformatics</a>
+          <a href='https://darrenjw.wordpress.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Darren Wilkinson’s blog – Statistics, computing, functional programming, data science, Bayes, stochastic modelling, systems biology and bioinformatics</a>
         </li>
       
         <li>
-          <a href='https://testdriven.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Test-Driven Development, Microservices, Web Development Courses | TestDriven.io</a>
+          <a href='https://testdriven.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Test-Driven Development, Microservices, Web Development Courses | TestDriven.io</a>
         </li>
       
         <li>
-          <a href='https://jozef.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Jozef’s Rblog</a>
+          <a href='https://jozef.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Jozef’s Rblog</a>
         </li>
       
         <li>
-          <a href='https://javascript.plainenglish.io/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>JavaScript in Plain English</a>
+          <a href='https://javascript.plainenglish.io/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>JavaScript in Plain English</a>
         </li>
       
         <li>
-          <a href='https://help.nextcloud.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Nextcloud community - Keep your data safe!</a>
+          <a href='https://help.nextcloud.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Nextcloud community - Keep your data safe!</a>
         </li>
       
         <li>
-          <a href='https://www.w3.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>World Wide Web Consortium (W3C)</a>
+          <a href='https://www.w3.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>World Wide Web Consortium (W3C)</a>
         </li>
       
         <li>
-          <a href='https://r-spatial.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>r-spatial</a>
+          <a href='https://r-spatial.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>r-spatial</a>
         </li>
       
         <li>
-          <a href='https://rapidsms.readthedocs.io/en/latest/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>RapidSMS Documentation — RapidSMS 2.0.0 documentation</a>
+          <a href='https://rapidsms.readthedocs.io/en/latest/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>RapidSMS Documentation — RapidSMS 2.0.0 documentation</a>
         </li>
       
         <li>
-          <a href='https://ostechnix.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>OSTechNix - Open Source | Technology | Linux And Unix</a>
+          <a href='https://ostechnix.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>OSTechNix - Open Source | Technology | Linux And Unix</a>
         </li>
       
         <li>
-          <a href='https://kbroman.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Karl Broman</a>
+          <a href='https://kbroman.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Karl Broman</a>
         </li>
       
         <li>
-          <a href='https://www.reconlearn.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Free and open training resources to respond to outbreaks, health emergencies and humanitarian crises</a>
+          <a href='https://www.reconlearn.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Free and open training resources to respond to outbreaks, health emergencies and humanitarian crises</a>
         </li>
       
     </ul>
   
     <p class='mb-4 leading-relaxed'>
-      You can follow some or all of the above via their RSS feeds - the software I use for this is mentioned <a href='Knowledge/Other/my-tech-march-2024' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>here</a>. I would share my OPML file (a file format allowing you to import/export a “blogroll” of multiple RSS feeds) but since I imported a number of OPML files shared by others, I’ve had to exclude quite a few blogs because of extreme politics, manga, gaming, fetishism, religiosity, wrong language (accidentally imported a ton of Dutch and Chinese blogs) and other reasons, and I am not sure I have extirpated all of these just yet.
+      You can follow some or all of the above via their RSS feeds - the software I use for this is mentioned <a href='Knowledge/Other/my-tech-march-2024' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900' data-wikilink-type='WikiLinkNormal'>here</a>. I would share my OPML file (a file format allowing you to import/export a “blogroll” of multiple RSS feeds) but since I imported a number of OPML files shared by others, I’ve had to exclude quite a few blogs because of extreme politics, manga, gaming, fetishism, religiosity, wrong language (accidentally imported a ton of Dutch and Chinese blogs) and other reasons, and I am not sure I have extirpated all of these just yet.
     </p>
   
   <!-- What goes in this file will appear below the note body-->
@@ -2212,14 +2225,14 @@
     <ul class='space-y-2'>
       
         <li>
-          <a class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900 inline-block' href='Thoughts/2023-02-27'>
+          <a class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900 inline-block' href='Thoughts/2023-02-27'>
             Holiday reading; learning R; most frequently bookmarked
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500 dark:text-gray-300'>
   
-    <div class='pl-2 mt-2 border-l-2 border-teal-200 dark:border-teal-600 hover:border-teal-500 dark:hover:border-teal-400'>
-      <div>I collate my public bookmarks on <a href='https://pinboard.in/u:prcleary' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Pinboard</a>. The tagging system is currently a mess, which I need to sort out (and yes, <a href='https://github.com/RMHogervorst/pinboardr' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>there’s an R package for that</a>), but I have done a quick summary of<a href='Thoughts/2023-02-26' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>the sites I tend to bookmark most frequently</a> as a metric of utility.</div>
+    <div class='pl-2 mt-2 border-l-2 border-primary-200 dark:border-primary-600 hover:border-primary-500 dark:hover:border-primary-400'>
+      <div>I collate my public bookmarks on <a href='https://pinboard.in/u:prcleary' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Pinboard</a>. The tagging system is currently a mess, which I need to sort out (and yes, <a href='https://github.com/RMHogervorst/pinboardr' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>there’s an R package for that</a>), but I have done a quick summary of<a href='Thoughts/2023-02-26' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900' data-wikilink-type='WikiLinkNormal'>the sites I tend to bookmark most frequently</a> as a metric of utility.</div>
     </div>
   
 </div>
@@ -2237,7 +2250,7 @@
       <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
         Perhaps Emanote should inject tagMetas with urls.
       -->
-      <a title='Tag' class='px-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-teal-500' href='-/tags/1'>
+      <a title='Tag' class='px-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-primary-500' href='-/tags/1'>
         <!-- DoNotFormat -->
         #1
         <!-- DoNotFormat -->
@@ -2246,7 +2259,7 @@
       <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
         Perhaps Emanote should inject tagMetas with urls.
       -->
-      <a title='Tag' class='px-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-teal-500' href='-/tags/calendar/2023/02'>
+      <a title='Tag' class='px-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-primary-500' href='-/tags/calendar/2023/02'>
         <!-- DoNotFormat -->
         #calendar/2023/02
         <!-- DoNotFormat -->
@@ -2266,7 +2279,7 @@
     
       
         <a href='/' title='Go to Home'>
-          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
           </svg>
         </a>
@@ -2275,19 +2288,19 @@
   </div>
   <div>
     <a href='-/all' title='View Index'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path>
       </svg>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.1'>
-      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.6.0.0'>
+      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>
   <div>
     <a href='-/tags' title='View tags'>
-      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
         </path>
       </svg>
@@ -2295,7 +2308,7 @@
   </div>
   <div>
     <a href='-/tasks' title='View tasks'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
       </svg>
     </a>
@@ -2316,14 +2329,18 @@
 </div>
 
 <script>
-  const wrapper = document.getElementById('stork-wrapper');
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+  // Block-scoped so Ema's reloadScripts can re-execute on route switches
+  // without hitting "Identifier 'wrapper' has already been declared".
+  {
+    const wrapper = document.getElementById('stork-wrapper');
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
-    wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
-  });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
+      wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+    });
+  }
 </script>
   
     <!-- mermaid.js --><script type='module'>

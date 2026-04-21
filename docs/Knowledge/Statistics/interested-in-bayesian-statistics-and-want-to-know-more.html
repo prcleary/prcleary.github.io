@@ -35,7 +35,20 @@
 
   
   
-  <link href='tailwind.css?instanceId=34ee1daa-ad87-4804-a956-700a32e670e0' rel='stylesheet' type='text/css' />
+  <style id='emanote-theme-remap'>:root {
+  --color-primary-50: var(--color-teal-50);
+  --color-primary-100: var(--color-teal-100);
+  --color-primary-200: var(--color-teal-200);
+  --color-primary-300: var(--color-teal-300);
+  --color-primary-400: var(--color-teal-400);
+  --color-primary-500: var(--color-teal-500);
+  --color-primary-600: var(--color-teal-600);
+  --color-primary-700: var(--color-teal-700);
+  --color-primary-800: var(--color-teal-800);
+  --color-primary-900: var(--color-teal-900);
+  --color-primary-950: var(--color-teal-950);
+}
+</style><link href='tailwind.css?instanceId=a558e053-b344-4023-b195-93f95297ae83' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -316,7 +329,7 @@
   <!-- What goes in this file will appear on near the end of <head>-->
 
   
-    <style>
+    <style id='emanote-sidebar-sizing'>
       /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
       /* md:min-w-52  */
       @media (min-width: 768px) {
@@ -551,12 +564,12 @@
       </ul>
     </div>
     <button class='inline px-3 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 outline-none cursor-pointer focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
-      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
     </button>
-    <button class='inline px-3 py-2 text-white bg-teal-600 dark:bg-teal-700 outline-none cursor-pointer focus:outline-none hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+    <button class='inline px-3 py-2 text-white bg-primary-600 dark:bg-primary-700 outline-none cursor-pointer focus:outline-none hover:bg-primary-700 dark:hover:bg-primary-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
       <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
       </svg>
@@ -586,7 +599,7 @@
                       -->
               <img style='width: 1.25rem;' class='transition transform hover:scale-110 hover:opacity-80' src='static/favicon.svg' alt='Site Icon' />
             </a>
-            <a class='font-semibold text-base truncate hover:text-teal-600 dark:hover:text-teal-400 transition-colors' title='Go to Home' href='/'>
+            <a class='font-semibold text-base truncate hover:text-primary-600 dark:hover:text-primary-400 transition-colors' title='Go to Home' href='/'>
               Home
             </a>
           
@@ -594,20 +607,20 @@
       </div>
 
       <div id='indexing-links' class='flex flex-row space-x-2 text-gray-500 dark:text-gray-400 flex-shrink-0'>
-        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
             </path>
           </svg>
         </a>
-        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
             </path>
           </svg>
         </a>
-        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
-          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
@@ -644,7 +657,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
       Knowledge
     </a>
     
@@ -684,7 +697,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='AI' href='Knowledge/AI'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='AI' href='Knowledge/AI'>
       AI
     </a>
     
@@ -730,7 +743,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Blogging' href='Knowledge/Blogging'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Blogging' href='Knowledge/Blogging'>
       Blogging
     </a>
     
@@ -776,7 +789,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2' href='Knowledge/DHIS%202'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2' href='Knowledge/DHIS%202'>
       DHIS 2
     </a>
     
@@ -822,7 +835,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Docker' href='Knowledge/Docker'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Docker' href='Knowledge/Docker'>
       Docker
     </a>
     
@@ -868,7 +881,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Linux' href='Knowledge/Linux'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Linux' href='Knowledge/Linux'>
       Linux
     </a>
     
@@ -914,7 +927,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Other' href='Knowledge/Other'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Other' href='Knowledge/Other'>
       Other
     </a>
     
@@ -960,7 +973,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Proxmox' href='Knowledge/Proxmox'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Proxmox' href='Knowledge/Proxmox'>
       Proxmox
     </a>
     
@@ -1006,7 +1019,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Python' href='Knowledge/Python'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Python' href='Knowledge/Python'>
       Python
     </a>
     
@@ -1052,7 +1065,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='R' href='Knowledge/R'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='R' href='Knowledge/R'>
       R
     </a>
     
@@ -1098,7 +1111,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Rust' href='Knowledge/Rust'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Rust' href='Knowledge/Rust'>
       Rust
     </a>
     
@@ -1144,7 +1157,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE' href='Knowledge/SENAITE'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE' href='Knowledge/SENAITE'>
       SENAITE
     </a>
     
@@ -1190,7 +1203,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Self-hosting' href='Knowledge/Self-hosting'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Self-hosting' href='Knowledge/Self-hosting'>
       Self-hosting
     </a>
     
@@ -1236,7 +1249,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistics' href='Knowledge/Statistics'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistics' href='Knowledge/Statistics'>
       Statistics
     </a>
     
@@ -1273,7 +1286,7 @@
   
         
     </span>
-    <a class='font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Interested in Bayesian statistics and want to know more?' href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more'>
+    <a class='font-semibold bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Interested in Bayesian statistics and want to know more?' href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more'>
       Interested in Bayesian statistics and want to know more?
     </a>
     
@@ -1315,7 +1328,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Notes on using Bayesian statistics in outbreak investigation' href='Knowledge/Statistics/notes-on-using-bayesian-statistics-in-outbreak-investigation'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Notes on using Bayesian statistics in outbreak investigation' href='Knowledge/Statistics/notes-on-using-bayesian-statistics-in-outbreak-investigation'>
       Notes on using Bayesian statistics in outbreak investigation
     </a>
     
@@ -1357,7 +1370,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistical practice in field epidemiology: so many problems, so many solutions' href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistical practice in field epidemiology: so many problems, so many solutions' href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions'>
       Statistical practice in field epidemiology: so many problems, so many solutions
     </a>
     
@@ -1406,7 +1419,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Books' href='Books'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Books' href='Books'>
       Books
     </a>
     
@@ -1452,7 +1465,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Thoughts' href='Thoughts'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Thoughts' href='Thoughts'>
       Thoughts
     </a>
     
@@ -1497,7 +1510,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Links' href='Links'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Links' href='Links'>
       Links
     </a>
     
@@ -1539,7 +1552,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Writing' href='Writing'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Writing' href='Writing'>
       Writing
     </a>
     
@@ -1560,7 +1573,7 @@
           <!-- Main body column -->
           <div class='flex-1 w-full bg-white dark:bg-gray-800'>
   <main class='px-6 py-8 max-w-7xl mx-auto'>
-    <h1 class='mb-10 px-8 py-5 bg-teal-600 dark:bg-teal-800 text-5xl font-bold text-white text-center rounded-2xl'>
+    <h1 class='mb-10 px-8 py-5 bg-primary-600 dark:bg-primary-800 text-5xl font-bold text-white text-center rounded-2xl'>
   Interested in Bayesian statistics and want to know more?
 </h1>
     
@@ -1588,7 +1601,7 @@
   Problems with p values, confidence intervals and stepwise methods
   
   <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more#problems-with-p-values-confidence-intervals-and-stepwise-methods' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1600,67 +1613,67 @@
     <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
       
         <li>
-          <a href='https://www.nature.com/articles/d41586-019-00857-9' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Scientists rise up against statistical significance</a> - a short article outlining some of the issues
+          <a href='https://www.nature.com/articles/d41586-019-00857-9' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Scientists rise up against statistical significance</a> - a short article outlining some of the issues
         </li>
       
         <li>
-          <a href='https://www.nature.com/articles/533452a' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>1,500 scientists lift the lid on reproducibility </a> - the reproducibility crisis
+          <a href='https://www.nature.com/articles/533452a' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>1,500 scientists lift the lid on reproducibility </a> - the reproducibility crisis
         </li>
       
         <li>
-          <a href='https://royalsocietypublishing.org/doi/10.1098/rsos.140216' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>An investigation of the false discovery rate and the misinterpretation of p-values</a> - excellent article by David Colquhoun, who is not a Bayesian but clearly explains the problems with p values - probably the best long article to read, but for a shorter more accessible version see he has done a more accessible version <a href='https://aeon.co/essays/it-s-time-for-science-to-abandon-the-term-statistically-significant' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
+          <a href='https://royalsocietypublishing.org/doi/10.1098/rsos.140216' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>An investigation of the false discovery rate and the misinterpretation of p-values</a> - excellent article by David Colquhoun, who is not a Bayesian but clearly explains the problems with p values - probably the best long article to read, but for a shorter more accessible version see he has done a more accessible version <a href='https://aeon.co/essays/it-s-time-for-science-to-abandon-the-term-statistically-significant' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
         </li>
       
         <li>
-          <a href='https://www.fharrell.com/post/journey' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Statistical Thinking - My Journey from Frequentist to Bayesian Statistics</a> - worth reading if you think frequentist statistics is “objective” and Bayesian statistics is “subjective”
+          <a href='https://www.fharrell.com/post/journey' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Statistical Thinking - My Journey from Frequentist to Bayesian Statistics</a> - worth reading if you think frequentist statistics is “objective” and Bayesian statistics is “subjective”
         </li>
       
         <li>
-          <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2016.1154108' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The ASA Statement on p-Values: Context, Process, and Purpose</a> - if you still want to use p values then do read this to understand best practices.
+          <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2016.1154108' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The ASA Statement on p-Values: Context, Process, and Purpose</a> - if you still want to use p values then do read this to understand best practices.
         </li>
       
         <li>
-          <a href='https://link.springer.com/article/10.1007/s11136-013-0437-2' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Significance, truth and proof of p values: reminders about common misconceptions regarding null hypothesis significance testing</a> - we all need reminding
+          <a href='https://link.springer.com/article/10.1007/s11136-013-0437-2' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Significance, truth and proof of p values: reminders about common misconceptions regarding null hypothesis significance testing</a> - we all need reminding
         </li>
       
         <li>
-          <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6532382/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The P Value and Statistical Significance: Misunderstandings, Explanations, Challenges, and Alternatives - PMC</a> - interpret your p value as a continuous variable and don’t use thresholds
+          <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6532382/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The P Value and Statistical Significance: Misunderstandings, Explanations, Challenges, and Alternatives - PMC</a> - interpret your p value as a continuous variable and don’t use thresholds
         </li>
       
         <li>
-          <a href='https://www.cambridge.org/core/journals/journal-of-pacific-rim-psychology/article/beyond-psychology-prevalence-of-p-value-and-confidence-interval-misinterpretation-across-different-fields/D1520CFBFEB2C282E93484057D84B6C6' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Beyond psychology: prevalence of p value and confidence interval misinterpretation across different fields </a> - it’s endemic
+          <a href='https://www.cambridge.org/core/journals/journal-of-pacific-rim-psychology/article/beyond-psychology-prevalence-of-p-value-and-confidence-interval-misinterpretation-across-different-fields/D1520CFBFEB2C282E93484057D84B6C6' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Beyond psychology: prevalence of p value and confidence interval misinterpretation across different fields </a> - it’s endemic
         </li>
       
         <li>
-          <a href='https://www.tandfonline.com/doi/full/10.1080/10691898.2009.11889514' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>How Confident are Students in their Misconceptions about Hypothesis Tests?</a> - strangely worded title; some students thought that a significant p value was <em>mathematical proof</em>
+          <a href='https://www.tandfonline.com/doi/full/10.1080/10691898.2009.11889514' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>How Confident are Students in their Misconceptions about Hypothesis Tests?</a> - strangely worded title; some students thought that a significant p value was <em>mathematical proof</em>
         </li>
       
         <li>
-          <a href='https://www.nature.com/articles/s41562-017-0189-z' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Redefine statistical significance</a> - a proposal to change the p value threshold
+          <a href='https://www.nature.com/articles/s41562-017-0189-z' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Redefine statistical significance</a> - a proposal to change the p value threshold
         </li>
       
         <li>
-          <a href='https://journals.sagepub.com/doi/10.1207/s15327957pspr0203_4' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>HARKing: Hypothesizing After the Results are Known </a> - why you should publish your analytical protocol to give confidence that your results were not due to data dredging
+          <a href='https://journals.sagepub.com/doi/10.1207/s15327957pspr0203_4' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>HARKing: Hypothesizing After the Results are Known </a> - why you should publish your analytical protocol to give confidence that your results were not due to data dredging
         </li>
       
         <li>
-          <a href='https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002106' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Extent and Consequences of P-Hacking in Science</a> - “p hacking”, selective reporting and publication bias
+          <a href='https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002106' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Extent and Consequences of P-Hacking in Science</a> - “p hacking”, selective reporting and publication bias
         </li>
       
         <li>
-          <a href='https://link.springer.com/article/10.3758/s13423-015-0947-8' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The fallacy of placing confidence in confidence intervals</a> - “Frequentist CI theory says nothing at all about the probability that a particular, observed confidence interval contains the true value; it is either 0 (if the interval does not contain the parameter) or 1 (if the interval does contain the true value).”
+          <a href='https://link.springer.com/article/10.3758/s13423-015-0947-8' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The fallacy of placing confidence in confidence intervals</a> - “Frequentist CI theory says nothing at all about the probability that a particular, observed confidence interval contains the true value; it is either 0 (if the interval does not contain the parameter) or 1 (if the interval does contain the true value).”
         </li>
       
         <li>
-          <a href='https://journalofbigdata.springeropen.com/articles/10.1186/s40537-018-0143-6' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Step away from stepwise</a> - “standard statistical tests assume a single test of a pre-specified model and are not appropriate when a sequence of steps is used to choose the explanatory variables”
+          <a href='https://journalofbigdata.springeropen.com/articles/10.1186/s40537-018-0143-6' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Step away from stepwise</a> - “standard statistical tests assume a single test of a pre-specified model and are not appropriate when a sequence of steps is used to choose the explanatory variables”
         </li>
       
         <li>
-          <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Moving to a World Beyond “p &lt; 0.05”</a> - don’t say “statistically significant”
+          <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Moving to a World Beyond “p &lt; 0.05”</a> - don’t say “statistically significant”
         </li>
       
         <li>
-          <a href='https://amstat.tandfonline.com/doi/full/10.1080/00031305.2018.1527253' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Abandon Statistical Significance</a>- “We recommend dropping the NHST paradigm - and the p-value thresholds intrinsic to it - as the default statistical paradigm for research, publication, and discovery in the biomedical and social sciences.”
+          <a href='https://amstat.tandfonline.com/doi/full/10.1080/00031305.2018.1527253' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Abandon Statistical Significance</a>- “We recommend dropping the NHST paradigm - and the p-value thresholds intrinsic to it - as the default statistical paradigm for research, publication, and discovery in the biomedical and social sciences.”
         </li>
       
     </ul>
@@ -1670,7 +1683,7 @@
   Bayesian concepts, methods and software
   
   <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more#bayesian-concepts-methods-and-software' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1682,111 +1695,111 @@
     <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
       
         <li>
-          <a href='https://www.bbc.co.uk/programmes/p09g10xn' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>BBC Radio 4 - More or Less: Behind the Stats, Bayes: the clergyman whose maths changed the world</a> - story of Thomas Bayes
+          <a href='https://www.bbc.co.uk/programmes/p09g10xn' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>BBC Radio 4 - More or Less: Behind the Stats, Bayes: the clergyman whose maths changed the world</a> - story of Thomas Bayes
         </li>
       
         <li>
-          <a href='https://3quarksdaily.com/3quarksdaily/2022/04/bayes-theorem-the-geometry-of-changing-beliefs.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayes theorem, the geometry of changing beliefs</a> - an introductory video re understanding Bayes’ theorem
+          <a href='https://3quarksdaily.com/3quarksdaily/2022/04/bayes-theorem-the-geometry-of-changing-beliefs.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayes theorem, the geometry of changing beliefs</a> - an introductory video re understanding Bayes’ theorem
         </li>
       
         <li>
-          <a href='https://seriousepi.blubrry.net/2020/10/15/7-the-bread-and-butter-of-bayes-with-ghassan-hamra/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Bread and Butter of Bayes with Ghassan Hamra | SERious EPI</a> - a podcast episode on Bayesian statistics
+          <a href='https://seriousepi.blubrry.net/2020/10/15/7-the-bread-and-butter-of-bayes-with-ghassan-hamra/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Bread and Butter of Bayes with Ghassan Hamra | SERious EPI</a> - a podcast episode on Bayesian statistics
         </li>
       
         <li>
-          <a href='https://link.springer.com/article/10.3758/s13423-017-1266-z' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Four reasons to prefer Bayesian analyses over significance testing</a> - four scenarios where Bayesian methods offer more
+          <a href='https://link.springer.com/article/10.3758/s13423-017-1266-z' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Four reasons to prefer Bayesian analyses over significance testing</a> - four scenarios where Bayesian methods offer more
         </li>
       
         <li>
-          <a href='https://michael-franke.github.io/intro-data-analysis/index.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>An Introduction to Data Analysis</a> - one of the gentler introductions to Bayesian methods, which are introduced alongside frequentist statistics for beginners (which is probably the best way to learn statistics)
+          <a href='https://michael-franke.github.io/intro-data-analysis/index.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>An Introduction to Data Analysis</a> - one of the gentler introductions to Bayesian methods, which are introduced alongside frequentist statistics for beginners (which is probably the best way to learn statistics)
         </li>
       
         <li>
-          <a href='https://easystats.github.io/bayestestR/articles/bayestestR.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Get Started with Bayesian Analysis</a> - why you should consider the Bayesian approach and an R package to help
+          <a href='https://easystats.github.io/bayestestR/articles/bayestestR.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Get Started with Bayesian Analysis</a> - why you should consider the Bayesian approach and an R package to help
         </li>
       
         <li>
-          <a href='https://academic.oup.com/ije/article/35/3/765/735529?login=false' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian perspectives for epidemiological research: I. Foundations and basic methods</a> - anything by Sander Greenland is worth reading but this is good on concepts and the misconceptions about Bayesian statistics which may discourage their use.
+          <a href='https://academic.oup.com/ije/article/35/3/765/735529?login=false' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian perspectives for epidemiological research: I. Foundations and basic methods</a> - anything by Sander Greenland is worth reading but this is good on concepts and the misconceptions about Bayesian statistics which may discourage their use.
         </li>
       
         <li>
-          <a href='https://www.y1zhou.com/series/bayesian-stat/bayesian-stat-introduction' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Introduction to Bayesian Statistics - Yi’s Knowledge Base</a> - lots of R code, though it gets increasingly mathematical
+          <a href='https://www.y1zhou.com/series/bayesian-stat/bayesian-stat-introduction' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Introduction to Bayesian Statistics - Yi’s Knowledge Base</a> - lots of R code, though it gets increasingly mathematical
         </li>
       
         <li>
-          <a href='https://m-clark.github.io/bayesian-basics/preface.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Basics</a> - possibly not the first thing you should read about Bayesian statistics, but a good practical intro once you are starting to get the basic ideas.
+          <a href='https://m-clark.github.io/bayesian-basics/preface.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Basics</a> - possibly not the first thing you should read about Bayesian statistics, but a good practical intro once you are starting to get the basic ideas.
         </li>
       
         <li>
-          <a href='https://bookdown.org/kevin_davisross/bayesian-reasoning-and-methods' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>An Introduction to Bayesian Reasoning and Methods</a> - online book covering Bayesian methods - lots of exercises
+          <a href='https://bookdown.org/kevin_davisross/bayesian-reasoning-and-methods' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>An Introduction to Bayesian Reasoning and Methods</a> - online book covering Bayesian methods - lots of exercises
         </li>
       
         <li>
-          <a href='https://www.nicebread.de/what-does-a-bayes-factor-feel-like/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>What does a Bayes factor feel like?</a> - if you Google Bayesian statistics you will find a lot about Bayes factors, but I haven’t yet decided what place they have
+          <a href='https://www.nicebread.de/what-does-a-bayes-factor-feel-like/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>What does a Bayes factor feel like?</a> - if you Google Bayesian statistics you will find a lot about Bayes factors, but I haven’t yet decided what place they have
         </li>
       
         <li>
-          <a href='https://www.bayesrulesbook.com' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayes Rules! An Introduction to Applied Bayesian Modeling</a> - a whole online book going through a lot of the foundations of Bayesian statistics
+          <a href='https://www.bayesrulesbook.com' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayes Rules! An Introduction to Applied Bayesian Modeling</a> - a whole online book going through a lot of the foundations of Bayesian statistics
         </li>
       
         <li>
-          <a href='https://stats.stackexchange.com/questions/156093/stepwise-regression-for-bayesian-models' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Stepwise regression for Bayesian models - Cross Validated</a> - why Bayesians don’t use stepwise regression.
+          <a href='https://stats.stackexchange.com/questions/156093/stepwise-regression-for-bayesian-models' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Stepwise regression for Bayesian models - Cross Validated</a> - why Bayesians don’t use stepwise regression.
         </li>
       
         <li>
-          <a href='https://arxiv.org/abs/2011.01808' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Workflow</a> - a very general approach to fitting Bayesian models
+          <a href='https://arxiv.org/abs/2011.01808' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Workflow</a> - a very general approach to fitting Bayesian models
         </li>
       
         <li>
-          <a href='https://mc-stan.org/rstanarm' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>rstanarm: Bayesian Applied Regression Modeling via Stan </a> - the package you should use for Bayesian multivariable regression
+          <a href='https://mc-stan.org/rstanarm' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>rstanarm: Bayesian Applied Regression Modeling via Stan </a> - the package you should use for Bayesian multivariable regression
         </li>
       
         <li>
-          <a href='https://journal.r-project.org/archive/2021/RJ-2021-081/RJ-2021-081.pdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>A Shiny app for fitting Bayesian regression models</a> - intended for econometrics, not so useful for epidemiology - perhaps adoption of Bayesian methods would increase if someone developed a Shiny app for Bayesian epidemiological model fitting (it has been on my list of ideas for a long time)
+          <a href='https://journal.r-project.org/archive/2021/RJ-2021-081/RJ-2021-081.pdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>A Shiny app for fitting Bayesian regression models</a> - intended for econometrics, not so useful for epidemiology - perhaps adoption of Bayesian methods would increase if someone developed a Shiny app for Bayesian epidemiological model fitting (it has been on my list of ideas for a long time)
         </li>
       
         <li>
-          <a href='https://www.tqmp.org/RegularArticles/vol14-2/p099/p099.pdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>User-friendly Bayesian regression modeling: A tutorial with rstanarm and shinystan</a> - the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>shinystan</code> Shiny app allows you to explore and check a fitted Bayesian regression model
+          <a href='https://www.tqmp.org/RegularArticles/vol14-2/p099/p099.pdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>User-friendly Bayesian regression modeling: A tutorial with rstanarm and shinystan</a> - the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>shinystan</code> Shiny app allows you to explore and check a fitted Bayesian regression model
         </li>
       
         <li>
-          <a href='https://biostat.app.vumc.org/wiki/pub/Main/StatisticalComputingSeries/bayes_reg_rstanarm.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Introduction to Bayesian Regression Modeling in R using rstanarm</a> - another example of using the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>rstanarm</code> package
+          <a href='https://biostat.app.vumc.org/wiki/pub/Main/StatisticalComputingSeries/bayes_reg_rstanarm.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Introduction to Bayesian Regression Modeling in R using rstanarm</a> - another example of using the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>rstanarm</code> package
         </li>
       
         <li>
-          <a href='https://strengejacke.files.wordpress.com/2017/12/bayesian-regression-models.pdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Regression Models: Choosing informative priors in rstanarm</a> - good presentation with examples of code and use of priors, e.g. for Bayesian logistic regression
+          <a href='https://strengejacke.files.wordpress.com/2017/12/bayesian-regression-models.pdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Regression Models: Choosing informative priors in rstanarm</a> - good presentation with examples of code and use of priors, e.g. for Bayesian logistic regression
         </li>
       
         <li>
-          <a href='https://github.com/avehtari/BDA_R_demos' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Data Analysis demos for R</a> - lots of example Bayesian analyses with R code
+          <a href='https://github.com/avehtari/BDA_R_demos' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayesian Data Analysis demos for R</a> - lots of example Bayesian analyses with R code
         </li>
       
         <li>
-          <a href='http://mjskay.github.io/tidybayes' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tidy Data and Geoms for Bayesian Models</a> - the Bayesian tidyverse
+          <a href='http://mjskay.github.io/tidybayes' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Tidy Data and Geoms for Bayesian Models</a> - the Bayesian tidyverse
         </li>
       
         <li>
-          <a href='https://jasp-stats.org' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>JASP - A Fresh Way to Do Statistics</a> - easy to use statistical software (based on R) that can do most commonly-used frequentist and Bayesian statistical methods (unfortunately no Bayesian logistic regression yet, though they were apparently working on it and this would be a killer feature)
+          <a href='https://jasp-stats.org' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>JASP - A Fresh Way to Do Statistics</a> - easy to use statistical software (based on R) that can do most commonly-used frequentist and Bayesian statistical methods (unfortunately no Bayesian logistic regression yet, though they were apparently working on it and this would be a killer feature)
         </li>
       
         <li>
-          <a href='https://facebook.github.io/prophet' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Prophet</a> - a Bayesian time series forecasting tool useful if you have seasonal data from over several years - created by Facebook
+          <a href='https://facebook.github.io/prophet' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Prophet</a> - a Bayesian time series forecasting tool useful if you have seasonal data from over several years - created by Facebook
         </li>
       
         <li>
-          <a href='https://google.github.io/CausalImpact/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>causalimpact</a> - an R package estimating the causal effect of an intervention on a time series using Bayesian methods - created by Google
+          <a href='https://google.github.io/CausalImpact/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>causalimpact</a> - an R package estimating the causal effect of an intervention on a time series using Bayesian methods - created by Google
         </li>
       
         <li>
-          <a href='https://smallareahealthstatisticsunit.github.io/rapidInquiryFacility/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Rapid Inquiry Facility</a> was a tool for fitting Bayesian spatial models - it is now an ArcGIS plugin
+          <a href='https://smallareahealthstatisticsunit.github.io/rapidInquiryFacility/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Rapid Inquiry Facility</a> was a tool for fitting Bayesian spatial models - it is now an ArcGIS plugin
         </li>
       
         <li>
-          <a href='https://www.ibm.com/products/spss-statistics' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SPSS Statistics</a> - even SPSS has Bayesian methods nowadays
+          <a href='https://www.ibm.com/products/spss-statistics' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>SPSS Statistics</a> - even SPSS has Bayesian methods nowadays
         </li>
       
         <li>
-          <a href='https://open.hpi.de/courses/bayesian-statistics2023' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Introduction to Bayesian Data Analysis | openHPI</a> - this course looks good
+          <a href='https://open.hpi.de/courses/bayesian-statistics2023' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Introduction to Bayesian Data Analysis | openHPI</a> - this course looks good
         </li>
       
     </ul>
@@ -1802,7 +1815,7 @@
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='Problems with p values, confidence intervals and stepwise methods'>
-              <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more#problems-with-p-values-confidence-intervals-and-stepwise-methods' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more#problems-with-p-values-confidence-intervals-and-stepwise-methods' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Problems with p values, confidence intervals and stepwise methods
               </a>
               
@@ -1813,7 +1826,7 @@
             </li>
           
             <li class='truncate' title='Bayesian concepts, methods and software'>
-              <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more#bayesian-concepts-methods-and-software' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more#bayesian-concepts-methods-and-software' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Bayesian concepts, methods and software
               </a>
               
@@ -1891,14 +1904,14 @@
     <ul class='space-y-2'>
       
         <li>
-          <a class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900 inline-block' href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions'>
+          <a class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900 inline-block' href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions'>
             Statistical practice in field epidemiology: so many problems, so many solutions
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500 dark:text-gray-300'>
   
-    <div class='pl-2 mt-2 border-l-2 border-teal-200 dark:border-teal-600 hover:border-teal-500 dark:hover:border-teal-400'>
-      <div><p>The problems with p values have been discussed at length in the scientific and statistical literature. I’ve listed various useful papers on this and related issues <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>here</a> and there may be some more relevant links <a href='https://pinboard.in/u:prcleary/t:pvalue' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.</p></div>
+    <div class='pl-2 mt-2 border-l-2 border-primary-200 dark:border-primary-600 hover:border-primary-500 dark:hover:border-primary-400'>
+      <div><p>The problems with p values have been discussed at length in the scientific and statistical literature. I’ve listed various useful papers on this and related issues <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900' data-wikilink-type='WikiLinkNormal'>here</a> and there may be some more relevant links <a href='https://pinboard.in/u:prcleary/t:pvalue' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.</p></div>
     </div>
   
 </div>
@@ -1926,7 +1939,7 @@
     
       
         <a href='/' title='Go to Home'>
-          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
           </svg>
         </a>
@@ -1935,19 +1948,19 @@
   </div>
   <div>
     <a href='-/all' title='View Index'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path>
       </svg>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.1'>
-      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.6.0.0'>
+      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>
   <div>
     <a href='-/tags' title='View tags'>
-      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
         </path>
       </svg>
@@ -1955,7 +1968,7 @@
   </div>
   <div>
     <a href='-/tasks' title='View tasks'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
       </svg>
     </a>
@@ -1976,14 +1989,18 @@
 </div>
 
 <script>
-  const wrapper = document.getElementById('stork-wrapper');
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+  // Block-scoped so Ema's reloadScripts can re-execute on route switches
+  // without hitting "Identifier 'wrapper' has already been declared".
+  {
+    const wrapper = document.getElementById('stork-wrapper');
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
-    wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
-  });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
+      wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+    });
+  }
 </script>
   
     <!-- mermaid.js --><script type='module'>

@@ -35,7 +35,20 @@
 
   
   
-  <link href='tailwind.css?instanceId=34ee1daa-ad87-4804-a956-700a32e670e0' rel='stylesheet' type='text/css' />
+  <style id='emanote-theme-remap'>:root {
+  --color-primary-50: var(--color-teal-50);
+  --color-primary-100: var(--color-teal-100);
+  --color-primary-200: var(--color-teal-200);
+  --color-primary-300: var(--color-teal-300);
+  --color-primary-400: var(--color-teal-400);
+  --color-primary-500: var(--color-teal-500);
+  --color-primary-600: var(--color-teal-600);
+  --color-primary-700: var(--color-teal-700);
+  --color-primary-800: var(--color-teal-800);
+  --color-primary-900: var(--color-teal-900);
+  --color-primary-950: var(--color-teal-950);
+}
+</style><link href='tailwind.css?instanceId=a558e053-b344-4023-b195-93f95297ae83' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -316,7 +329,7 @@
   <!-- What goes in this file will appear on near the end of <head>-->
 
   
-    <style>
+    <style id='emanote-sidebar-sizing'>
       /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
       /* md:min-w-52  */
       @media (min-width: 768px) {
@@ -551,12 +564,12 @@
       </ul>
     </div>
     <button class='inline px-3 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 outline-none cursor-pointer focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
-      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
     </button>
-    <button class='inline px-3 py-2 text-white bg-teal-600 dark:bg-teal-700 outline-none cursor-pointer focus:outline-none hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+    <button class='inline px-3 py-2 text-white bg-primary-600 dark:bg-primary-700 outline-none cursor-pointer focus:outline-none hover:bg-primary-700 dark:hover:bg-primary-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
       <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
       </svg>
@@ -586,7 +599,7 @@
                       -->
               <img style='width: 1.25rem;' class='transition transform hover:scale-110 hover:opacity-80' src='static/favicon.svg' alt='Site Icon' />
             </a>
-            <a class='font-semibold text-base truncate hover:text-teal-600 dark:hover:text-teal-400 transition-colors' title='Go to Home' href='/'>
+            <a class='font-semibold text-base truncate hover:text-primary-600 dark:hover:text-primary-400 transition-colors' title='Go to Home' href='/'>
               Home
             </a>
           
@@ -594,20 +607,20 @@
       </div>
 
       <div id='indexing-links' class='flex flex-row space-x-2 text-gray-500 dark:text-gray-400 flex-shrink-0'>
-        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
             </path>
           </svg>
         </a>
-        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
             </path>
           </svg>
         </a>
-        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
-          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
@@ -644,7 +657,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
       Knowledge
     </a>
     
@@ -684,7 +697,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='AI' href='Knowledge/AI'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='AI' href='Knowledge/AI'>
       AI
     </a>
     
@@ -730,7 +743,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Blogging' href='Knowledge/Blogging'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Blogging' href='Knowledge/Blogging'>
       Blogging
     </a>
     
@@ -776,7 +789,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2' href='Knowledge/DHIS%202'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2' href='Knowledge/DHIS%202'>
       DHIS 2
     </a>
     
@@ -822,7 +835,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Docker' href='Knowledge/Docker'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Docker' href='Knowledge/Docker'>
       Docker
     </a>
     
@@ -868,7 +881,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Linux' href='Knowledge/Linux'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Linux' href='Knowledge/Linux'>
       Linux
     </a>
     
@@ -914,7 +927,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Other' href='Knowledge/Other'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Other' href='Knowledge/Other'>
       Other
     </a>
     
@@ -953,7 +966,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Advent of Code 2024: days 1-5' href='Knowledge/Other/advent-of-code-2024-days-1-5'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Advent of Code 2024: days 1-5' href='Knowledge/Other/advent-of-code-2024-days-1-5'>
       Advent of Code 2024: days 1-5
     </a>
     
@@ -995,7 +1008,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Advent of Code 2024: days 6-9' href='Knowledge/Other/advent-of-code-2024-days-6-9'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Advent of Code 2024: days 6-9' href='Knowledge/Other/advent-of-code-2024-days-6-9'>
       Advent of Code 2024: days 6-9
     </a>
     
@@ -1037,7 +1050,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title="Automatically email yourself tomorrow's calendar" href='Knowledge/Other/automatically-email-yourself-tomorrows-calendar'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title="Automatically email yourself tomorrow's calendar" href='Knowledge/Other/automatically-email-yourself-tomorrows-calendar'>
       Automatically email yourself tomorrow's calendar
     </a>
     
@@ -1079,7 +1092,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Automating Bitwarden Send' href='Knowledge/Other/automating-bitwarden-send'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Automating Bitwarden Send' href='Knowledge/Other/automating-bitwarden-send'>
       Automating Bitwarden Send
     </a>
     
@@ -1121,7 +1134,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='How to create a Bluesky feed' href='Knowledge/Other/how-to-create-a-bluesky-feed'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='How to create a Bluesky feed' href='Knowledge/Other/how-to-create-a-bluesky-feed'>
       How to create a Bluesky feed
     </a>
     
@@ -1163,7 +1176,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MOOCs' href='Knowledge/Other/moocs'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MOOCs' href='Knowledge/Other/moocs'>
       MOOCs
     </a>
     
@@ -1205,7 +1218,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='My tech March 2024' href='Knowledge/Other/my-tech-march-2024'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='My tech March 2024' href='Knowledge/Other/my-tech-march-2024'>
       My tech March 2024
     </a>
     
@@ -1245,7 +1258,7 @@
   
         
     </span>
-    <a class='font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Stuff I found from years ago when I was going down a Web development/Print CSS rabbithole' href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole'>
+    <a class='font-semibold bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Stuff I found from years ago when I was going down a Web development/Print CSS rabbithole' href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole'>
       Stuff I found from years ago when I was going down a Web development/Print CSS rabbithole
     </a>
     
@@ -1287,7 +1300,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Timezones' href='Knowledge/Other/timezones'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Timezones' href='Knowledge/Other/timezones'>
       Timezones
     </a>
     
@@ -1329,7 +1342,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Useful JavaScript snippets' href='Knowledge/Other/useful-javascript-snippets'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Useful JavaScript snippets' href='Knowledge/Other/useful-javascript-snippets'>
       Useful JavaScript snippets
     </a>
     
@@ -1375,7 +1388,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Proxmox' href='Knowledge/Proxmox'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Proxmox' href='Knowledge/Proxmox'>
       Proxmox
     </a>
     
@@ -1421,7 +1434,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Python' href='Knowledge/Python'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Python' href='Knowledge/Python'>
       Python
     </a>
     
@@ -1467,7 +1480,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='R' href='Knowledge/R'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='R' href='Knowledge/R'>
       R
     </a>
     
@@ -1513,7 +1526,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Rust' href='Knowledge/Rust'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Rust' href='Knowledge/Rust'>
       Rust
     </a>
     
@@ -1559,7 +1572,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE' href='Knowledge/SENAITE'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE' href='Knowledge/SENAITE'>
       SENAITE
     </a>
     
@@ -1605,7 +1618,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Self-hosting' href='Knowledge/Self-hosting'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Self-hosting' href='Knowledge/Self-hosting'>
       Self-hosting
     </a>
     
@@ -1651,7 +1664,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistics' href='Knowledge/Statistics'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistics' href='Knowledge/Statistics'>
       Statistics
     </a>
     
@@ -1700,7 +1713,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Books' href='Books'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Books' href='Books'>
       Books
     </a>
     
@@ -1746,7 +1759,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Thoughts' href='Thoughts'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Thoughts' href='Thoughts'>
       Thoughts
     </a>
     
@@ -1791,7 +1804,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Links' href='Links'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Links' href='Links'>
       Links
     </a>
     
@@ -1833,7 +1846,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Writing' href='Writing'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Writing' href='Writing'>
       Writing
     </a>
     
@@ -1854,7 +1867,7 @@
           <!-- Main body column -->
           <div class='flex-1 w-full bg-white dark:bg-gray-800'>
   <main class='px-6 py-8 max-w-7xl mx-auto'>
-    <h1 class='mb-10 px-8 py-5 bg-teal-600 dark:bg-teal-800 text-5xl font-bold text-white text-center rounded-2xl'>
+    <h1 class='mb-10 px-8 py-5 bg-primary-600 dark:bg-primary-800 text-5xl font-bold text-white text-center rounded-2xl'>
   Stuff I found from years ago when I was going down a Web development/Print CSS rabbithole
 </h1>
     
@@ -1884,7 +1897,7 @@
   New blog
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#new-blog' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1894,11 +1907,11 @@
     </h2>
   
     <p class='mb-4 leading-relaxed'>
-      I have never tried blogging before, though I have often considered it. I showed a few interesting things to a colleague recently, who asked me if I had a blog. So I have just spent half a day (of annual leave) setting up a blog with the R package <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>blogdown</code> (which uses Hugo), GitHub and Netlify. Kudos to <a href='https://github.com/ojroques' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/ojroques</a> who created and shared the theme I am using. I am using <a href='https://forwardemail.net/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>ForwardEmail</a> to forward email from the email address below to my own personal email. So it has all cost me nothing except time (OK I have to pay for the domain name), which was part of the challenge.
+      I have never tried blogging before, though I have often considered it. I showed a few interesting things to a colleague recently, who asked me if I had a blog. So I have just spent half a day (of annual leave) setting up a blog with the R package <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>blogdown</code> (which uses Hugo), GitHub and Netlify. Kudos to <a href='https://github.com/ojroques' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/ojroques</a> who created and shared the theme I am using. I am using <a href='https://forwardemail.net/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>ForwardEmail</a> to forward email from the email address below to my own personal email. So it has all cost me nothing except time (OK I have to pay for the domain name), which was part of the challenge.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      This occasional blog is just for me to share things that might be useful to others, like training materials in draft, or where I have managed to help someone with a problem and learnt something in the process, or how to do things, or useful collated resources, and also for me to clarify my thinking in some areas by writing it down. It is not for self-promotion and I am not looking for another job, so I won’t be tweeting about it or otherwise advertising it - if you are reading this, you are a member of a very select set that I have shared this with. Check out the RSS feed below if you are interested in following the blog. I probably won’t post more than weekly. I follow a lot of blogs (too many) using a self-hosted instance of <a href='https://miniflux.app' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Miniflux</a> which I read on my phone with <a href='https://play.google.com/store/apps/details?id=com.seazon.feedme' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>FeedMe</a>.
+      This occasional blog is just for me to share things that might be useful to others, like training materials in draft, or where I have managed to help someone with a problem and learnt something in the process, or how to do things, or useful collated resources, and also for me to clarify my thinking in some areas by writing it down. It is not for self-promotion and I am not looking for another job, so I won’t be tweeting about it or otherwise advertising it - if you are reading this, you are a member of a very select set that I have shared this with. Check out the RSS feed below if you are interested in following the blog. I probably won’t post more than weekly. I follow a lot of blogs (too many) using a self-hosted instance of <a href='https://miniflux.app' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Miniflux</a> which I read on my phone with <a href='https://play.google.com/store/apps/details?id=com.seazon.feedme' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>FeedMe</a>.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -1912,7 +1925,7 @@
   First define your terms
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#first-define-your-terms' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1930,11 +1943,11 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      So I think there is a rich multi/interdisciplinary area which could be called epidemiology data science (or epidemiological data science). <a href='https://hdsr.mitpress.mit.edu/pub/twqhhlhr/release/2' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>I am certainly not the first to think this</a> or to consider the implications for traditional skill sets and career pathways. How do we define epidemiology data science (at least for the purposes of this blog)?
+      So I think there is a rich multi/interdisciplinary area which could be called epidemiology data science (or epidemiological data science). <a href='https://hdsr.mitpress.mit.edu/pub/twqhhlhr/release/2' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>I am certainly not the first to think this</a> or to consider the implications for traditional skill sets and career pathways. How do we define epidemiology data science (at least for the purposes of this blog)?
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      Epidemiology is <a href='https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0208442&amp;type=printable#:~:text=Epidemiology%20is%20defined%20as%20the,the%20control%20of%20health%20problems' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>variously defined</a>, e.g. as the (soft) basic science of public health practice, or the discipline of asking what/how many/where/when/who/why questions about the health of populations. Data science is similarly tricky to pin down, as the data science skill set varies according to the domain of application, but at its broadest it could be defined as a discipline that learns from data using any of a wide range of (typically quantitative) analytical methods, sometimes in combination with elements of informatics/data engineering, software development and/or use of information and communication technologies (i.e. computers and networks).
+      Epidemiology is <a href='https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0208442&amp;type=printable#:~:text=Epidemiology%20is%20defined%20as%20the,the%20control%20of%20health%20problems' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>variously defined</a>, e.g. as the (soft) basic science of public health practice, or the discipline of asking what/how many/where/when/who/why questions about the health of populations. Data science is similarly tricky to pin down, as the data science skill set varies according to the domain of application, but at its broadest it could be defined as a discipline that learns from data using any of a wide range of (typically quantitative) analytical methods, sometimes in combination with elements of informatics/data engineering, software development and/or use of information and communication technologies (i.e. computers and networks).
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -1960,7 +1973,7 @@
   In which I start to do something practical
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#in-which-i-start-to-do-something-practical' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1978,23 +1991,23 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      There is only so much you can do with basic RMarkdown. But <a href='https://www.w3schools.com/html/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>HTML</a>^[HyperText Markup Language] (the markup language behind Web pages) is much more flexible. Markdown was originally conceived as a simplified way of writing Web pages, so if you understand some Markdown you can easily understand basic HTML. I would recommend all epidemiology data scientists to at least do the basic W3Schools HTML course.
+      There is only so much you can do with basic RMarkdown. But <a href='https://www.w3schools.com/html/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>HTML</a>^[HyperText Markup Language] (the markup language behind Web pages) is much more flexible. Markdown was originally conceived as a simplified way of writing Web pages, so if you understand some Markdown you can easily understand basic HTML. I would recommend all epidemiology data scientists to at least do the basic W3Schools HTML course.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      HTML is even more flexible when combined with <a href='https://www.w3schools.com/Css/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CSS</a>^[Cascading Style Sheets] (which is a way of defining the styles, such as size, colour, font, etc, for each part of a Web page and/or for the page overall). You can do a lot with some understanding of CSS, so doing enough of the W3Schools course to get the general idea should be enough for most epidemiology data scientists. CSS does get very complex beyond a certain level.
+      HTML is even more flexible when combined with <a href='https://www.w3schools.com/Css/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CSS</a>^[Cascading Style Sheets] (which is a way of defining the styles, such as size, colour, font, etc, for each part of a Web page and/or for the page overall). You can do a lot with some understanding of CSS, so doing enough of the W3Schools course to get the general idea should be enough for most epidemiology data scientists. CSS does get very complex beyond a certain level.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      The problem with creating a report as a Web page is that it may not look very good once printed, either to paper or PDF. You have little control on where pages begin and end. A few years ago I came across a solution to this called <a href='https://pagedjs.org' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>paged.js</a>, a JavaScript library “… that paginates any HTML content to produce beautiful print-ready PDF”. JavaScript is the programming language of the Web, which runs in your browser to give your Web pages interactivity and other functionality. A library is a collection of code which allows a Web page to do something, and it is most often downloaded from the Web at the same time as the Web page using it. Pagination simply means breaking into pages (in a way that is under your control). At the time I didn’t know enough about JavaScript to know where to start with paged.js, though you could clearly do <a href='https://pagedjs.org/made-with-paged.js.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>beautiful things</a> with it.
+      The problem with creating a report as a Web page is that it may not look very good once printed, either to paper or PDF. You have little control on where pages begin and end. A few years ago I came across a solution to this called <a href='https://pagedjs.org' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>paged.js</a>, a JavaScript library “… that paginates any HTML content to produce beautiful print-ready PDF”. JavaScript is the programming language of the Web, which runs in your browser to give your Web pages interactivity and other functionality. A library is a collection of code which allows a Web page to do something, and it is most often downloaded from the Web at the same time as the Web page using it. Pagination simply means breaking into pages (in a way that is under your control). At the time I didn’t know enough about JavaScript to know where to start with paged.js, though you could clearly do <a href='https://pagedjs.org/made-with-paged.js.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>beautiful things</a> with it.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      I did play with a self-hosted instance of <a href='https://jsreport.net' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>jsreport</a> for a while, which is a very nice platform allowing you to create Web pages which are already paginated nicely for printing. It did allow me to create the more complex format that I was looking for. But in the end I realised it would not be easily integrated with my RMarkdown workflow.
+      I did play with a self-hosted instance of <a href='https://jsreport.net' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>jsreport</a> for a while, which is a very nice platform allowing you to create Web pages which are already paginated nicely for printing. It did allow me to create the more complex format that I was looking for. But in the end I realised it would not be easily integrated with my RMarkdown workflow.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      Fortunately in recent years someone produced an R package which allows you to use paged.js: the <a href='https://pagedown.rbind.io' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>pagedown</a> package. This (and related packages) provide templates for various documents such as reports and business cards. So if I can create my own custom pagedown template (using HTML and CSS) I can integrate this nicely into my workflow. If I can make the template generic enough and build it into an R package, it can be used for other similar reports by colleagues.
+      Fortunately in recent years someone produced an R package which allows you to use paged.js: the <a href='https://pagedown.rbind.io' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>pagedown</a> package. This (and related packages) provide templates for various documents such as reports and business cards. So if I can create my own custom pagedown template (using HTML and CSS) I can integrate this nicely into my workflow. If I can make the template generic enough and build it into an R package, it can be used for other similar reports by colleagues.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2008,7 +2021,7 @@
   In which I become a Web developer
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#in-which-i-become-a-web-developer' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2024,19 +2037,19 @@
     <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
       
         <li>
-          <a href='https://pagedown.rbind.io' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>pagedown</a>: the main package
+          <a href='https://pagedown.rbind.io' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>pagedown</a>: the main package
         </li>
       
         <li>
-          <a href='https://pagedreport.rfortherestofus.com' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>pagedreport</a>: a few more additional templates
+          <a href='https://pagedreport.rfortherestofus.com' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>pagedreport</a>: a few more additional templates
         </li>
       
         <li>
-          <a href='https://github.com/tvroylandt/sgdf_pagedown' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>sgdf_pagedown</a>: a template for youth paramilitary organisations
+          <a href='https://github.com/tvroylandt/sgdf_pagedown' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>sgdf_pagedown</a>: a template for youth paramilitary organisations
     <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
       
         <li>
-          another template derived from sgdf_pagedown: <a href='https://github.com/SebastienBoutry/INRAE_pagedown_template' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>INRAE_pagedown_template</a>
+          another template derived from sgdf_pagedown: <a href='https://github.com/SebastienBoutry/INRAE_pagedown_template' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>INRAE_pagedown_template</a>
         </li>
       
     </ul>
@@ -2044,15 +2057,15 @@
         </li>
       
         <li>
-          <a href='https://github.com/kbodwin/templates' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>another poster style</a>
+          <a href='https://github.com/kbodwin/templates' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>another poster style</a>
         </li>
       
         <li>
-          <a href='https://github.com/nstrayer/cv' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>another CV/résumé style</a>
+          <a href='https://github.com/nstrayer/cv' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>another CV/résumé style</a>
         </li>
       
         <li>
-          <a href='https://github.com/openvolley/ovpaged' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>another derivative one here</a>
+          <a href='https://github.com/openvolley/ovpaged' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>another derivative one here</a>
         </li>
       
     </ul>
@@ -2062,7 +2075,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      The next thing I realised is that you don’t need the pagedown package to use paged.js. It provides some convenience functions but you can manage just fine without it. I started off with an existing pagedown template, aiming to modify it for my own needs, <a href='https://github.com/rstudio/pagedown/pull/81/files' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>as others have done</a>, and ended up with something that worked but which I didn’t fully understand. So I became interested to see if I could start with nothing and create my own template from scratch, without using the pagedown package.
+      The next thing I realised is that you don’t need the pagedown package to use paged.js. It provides some convenience functions but you can manage just fine without it. I started off with an existing pagedown template, aiming to modify it for my own needs, <a href='https://github.com/rstudio/pagedown/pull/81/files' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>as others have done</a>, and ended up with something that worked but which I didn’t fully understand. So I became interested to see if I could start with nothing and create my own template from scratch, without using the pagedown package.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2116,7 +2129,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      One important piece of metadata for the Web page is what character encoding system is in use. Computers use numbers to represent (or, to put it more technically, encode) characters (such as letters, numbers or punctuation) and there are different ways of doing that. When the computer sees a number, if you haven’t told it which system to use, it might show the wrong character. The <a href='https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/#utf-8-to-the-rescue' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>UTF-8 system</a> is widely used because it compactly represents over 100,000 characters, including those from foreign languages, mathematical symbols etc etc. <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>&lt;meta charset="UTF-8"&gt;</code> is telling the browser to use the UTF-8 system.
+      One important piece of metadata for the Web page is what character encoding system is in use. Computers use numbers to represent (or, to put it more technically, encode) characters (such as letters, numbers or punctuation) and there are different ways of doing that. When the computer sees a number, if you haven’t told it which system to use, it might show the wrong character. The <a href='https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/#utf-8-to-the-rescue' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>UTF-8 system</a> is widely used because it compactly represents over 100,000 characters, including those from foreign languages, mathematical symbols etc etc. <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>&lt;meta charset="UTF-8"&gt;</code> is telling the browser to use the UTF-8 system.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2210,7 +2223,7 @@
   Cascading Style Sheets for Epidemiology Data Scientists
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#cascading-style-sheets-for-epidemiology-data-scientists' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2224,7 +2237,7 @@
   CSS is easy
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#css-is-easy' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2244,7 +2257,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      There are many such simple properties that you can set for your Web page, and tons of reference material where you can look them up, such as <a href='https://htmlcheatsheet.com/css/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this</a>.
+      There are many such simple properties that you can set for your Web page, and tons of reference material where you can look them up, such as <a href='https://htmlcheatsheet.com/css/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this</a>.
     </p>
   
     <h3 id='css-is-difficult' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
@@ -2252,7 +2265,7 @@
   CSS is difficult
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#css-is-difficult' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2278,11 +2291,11 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      You can write CSS which caters to different browsers by having different rules for each type of browser (using something called <a href='https://divi.space/divi-tutorials/browser-prefixes-explained/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'><em>browser prefixes</em></a>), which is a faff.
+      You can write CSS which caters to different browsers by having different rules for each type of browser (using something called <a href='https://divi.space/divi-tutorials/browser-prefixes-explained/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'><em>browser prefixes</em></a>), which is a faff.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      You can try to stick to CSS which is supported by “modern browsers” (<a href='https://caniuse.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>which usually means not old versions of anything and in particular not old versions of Internet Explorer</a>) and tell users which browsers to use, which may only work if you have a captive audience.
+      You can try to stick to CSS which is supported by “modern browsers” (<a href='https://caniuse.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>which usually means not old versions of anything and in particular not old versions of Internet Explorer</a>) and tell users which browsers to use, which may only work if you have a captive audience.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2290,7 +2303,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      In my template I have used a CSS reset called <a href='https://necolas.github.io/normalize.css/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Normalize.css</a>. I have managed not to use a CSS framework, though I was sorely tempted.
+      In my template I have used a CSS reset called <a href='https://necolas.github.io/normalize.css/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Normalize.css</a>. I have managed not to use a CSS framework, though I was sorely tempted.
     </p>
   
         </li>
@@ -2302,11 +2315,11 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      You have to grasp a number of concepts and models to understand how to lay out a web page with CSS, including the <a href='https://www.w3schools.com/Css/css_boxmodel.asp' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>box model</a>, the <a href='https://www.w3schools.com/CSSref/pr_class_display.asp' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>display</a> property, <a href='https://www.w3schools.com/Css/css_positioning.asp' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>absolute and relative positioning</a>, <a href='https://www.w3schools.com/csS/css_float.asp' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>floats</a> and the various <a href='https://www.w3schools.com/Css/css_units.asp' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>units</a> used for sizing things, which are all beyond the scope of this blog post. In addition there are newer layout models called <a href='https://www.w3schools.com/csS/css3_flexbox.asp' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Flexbox</a> and <a href='https://www.w3schools.com/css/css_grid.asp' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Grid</a>, which (though powerful) I tried to avoid using/learning as they didn’t seem to help much with print layout and <a href='https://thinkdrastic.net/journal/2022/02/07/paged-js-and-css-flex-grid/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>may actually break it</a>. I recommend the <a href='https://www.internetingishard.com/html-and-css/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Interneting is Hard</a> site if you want to learn more about CSS layout.
+      You have to grasp a number of concepts and models to understand how to lay out a web page with CSS, including the <a href='https://www.w3schools.com/Css/css_boxmodel.asp' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>box model</a>, the <a href='https://www.w3schools.com/CSSref/pr_class_display.asp' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>display</a> property, <a href='https://www.w3schools.com/Css/css_positioning.asp' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>absolute and relative positioning</a>, <a href='https://www.w3schools.com/csS/css_float.asp' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>floats</a> and the various <a href='https://www.w3schools.com/Css/css_units.asp' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>units</a> used for sizing things, which are all beyond the scope of this blog post. In addition there are newer layout models called <a href='https://www.w3schools.com/csS/css3_flexbox.asp' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Flexbox</a> and <a href='https://www.w3schools.com/css/css_grid.asp' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Grid</a>, which (though powerful) I tried to avoid using/learning as they didn’t seem to help much with print layout and <a href='https://thinkdrastic.net/journal/2022/02/07/paged-js-and-css-flex-grid/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>may actually break it</a>. I recommend the <a href='https://www.internetingishard.com/html-and-css/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Interneting is Hard</a> site if you want to learn more about CSS layout.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      I wanted a header section showing the title, institution and a couple of logos. I wanted the main body of the document to be a mixture of one or two columns, with some images fitting within a column and some taking the whole width of the document. I wanted the possibility of text boxes at various locations. This was all tricky; for example, it was easy to create a two-column section, but how do I stop the contents of a column flowing into the next page rather than into the second column on the same page? This was probably the most difficult part of all of it. There are developing areas of CSS such as <a href='https://www.hongkiat.com/blog/css3-regions/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CSS Regions</a> which may make similar print layout/flow tasks easier in future.
+      I wanted a header section showing the title, institution and a couple of logos. I wanted the main body of the document to be a mixture of one or two columns, with some images fitting within a column and some taking the whole width of the document. I wanted the possibility of text boxes at various locations. This was all tricky; for example, it was easy to create a two-column section, but how do I stop the contents of a column flowing into the next page rather than into the second column on the same page? This was probably the most difficult part of all of it. There are developing areas of CSS such as <a href='https://www.hongkiat.com/blog/css3-regions/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CSS Regions</a> which may make similar print layout/flow tasks easier in future.
     </p>
   
         </li>
@@ -2346,7 +2359,7 @@
   Resources for print CSS
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#resources-for-print-css' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2360,11 +2373,11 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      The closest I could find was was <a href='https://thomaspark.co/2015/01/pubcss-formatting-academic-publications-in-html-css/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>PubCSS</a>, which are HTML/CSS templates providing standard academic conference proceedings as printable HTML (there is something similar <a href='https://css4.pub/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>). It was quite useful for the example code (though I wanted something less academic), but it relies on using some non-open source software called <a href='https://www.princexml.com/samples/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Prince</a> for printing, which wouldn’t have fitted into the workflow I was imagining. There is an open source tool called <a href='https://vivliostyle.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Vivliostyle</a> for creating PDF using HTML and CSS, which looks promising and which I will come back to at some point. I have some previous experience of using another tool called <a href='https://weasyprint.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Weasyprint</a> and another tool called <a href='https://wkhtmltopdf.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>wkhtmltopdf</a>. But I wanted something that could be printed from any modern browser without external tools.
+      The closest I could find was was <a href='https://thomaspark.co/2015/01/pubcss-formatting-academic-publications-in-html-css/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>PubCSS</a>, which are HTML/CSS templates providing standard academic conference proceedings as printable HTML (there is something similar <a href='https://css4.pub/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>). It was quite useful for the example code (though I wanted something less academic), but it relies on using some non-open source software called <a href='https://www.princexml.com/samples/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Prince</a> for printing, which wouldn’t have fitted into the workflow I was imagining. There is an open source tool called <a href='https://vivliostyle.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Vivliostyle</a> for creating PDF using HTML and CSS, which looks promising and which I will come back to at some point. I have some previous experience of using another tool called <a href='https://weasyprint.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Weasyprint</a> and another tool called <a href='https://wkhtmltopdf.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>wkhtmltopdf</a>. But I wanted something that could be printed from any modern browser without external tools.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      Code examples from the Prince and Vivliostyle documentation were useful. The old <a href='https://www.pagedmedia.org/paged-js/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Paged Media</a> site is still useful, though the documentation at <a href='https://pagedjs.org/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>pagedjs.org</a> now probably covers all or most of that. I found a couple of free books such as <a href='https://www.antennahouse.com/hubfs/PDFS/CSS%20for%20Paged%20Media/CSS-Print-en-2019-02-15.pdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this one from a company called Antenna House</a>. There are a <a href='https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>few</a> <a href='http://alistapart.com/article/building-books-with-css3/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>good</a> <a href='https://suntoucher.de/typesetting-a-novel-for-print-with-html-css-paged-media/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>articles</a> but usually focussing on book creation without going into more complex layouts.
+      Code examples from the Prince and Vivliostyle documentation were useful. The old <a href='https://www.pagedmedia.org/paged-js/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Paged Media</a> site is still useful, though the documentation at <a href='https://pagedjs.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>pagedjs.org</a> now probably covers all or most of that. I found a couple of free books such as <a href='https://www.antennahouse.com/hubfs/PDFS/CSS%20for%20Paged%20Media/CSS-Print-en-2019-02-15.pdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this one from a company called Antenna House</a>. There are a <a href='https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>few</a> <a href='http://alistapart.com/article/building-books-with-css3/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>good</a> <a href='https://suntoucher.de/typesetting-a-novel-for-print-with-html-css-paged-media/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>articles</a> but usually focussing on book creation without going into more complex layouts.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2378,7 +2391,7 @@
   The perils of perfectionism
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-perils-of-perfectionism' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2404,15 +2417,15 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      It isn’t what I intended, but it looks OK for a first try. I was aiming for something like a parish newsletter, with minimal white space, but after playing with CSS and Google Fonts a lot ended up with this. You may recognise the content - if you don’t, check <a href='https://www.gutenberg.org/ebooks/376' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this</a> out.
+      It isn’t what I intended, but it looks OK for a first try. I was aiming for something like a parish newsletter, with minimal white space, but after playing with CSS and Google Fonts a lot ended up with this. You may recognise the content - if you don’t, check <a href='https://www.gutenberg.org/ebooks/376' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this</a> out.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      The RMarkdown is below. The first thing to note is the YAML at the top, delimited by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>---</code>. Any values you supply here will be slotted into the template that Pandoc uses when your final document is created. In the Pandoc template, the placeholders for these values are indicated by dollar signs. For example, the value for <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>author</code> in the YAML will replace the placeholder <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>$author$</code> in the template. This is all documented <a href='https://pandoc.org/MANUAL.html#templates' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>. By including the CSS in my template (when it could have been a separate file) I could allow users to specify formatting options, such as fonts, in the YAML.
+      The RMarkdown is below. The first thing to note is the YAML at the top, delimited by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>---</code>. Any values you supply here will be slotted into the template that Pandoc uses when your final document is created. In the Pandoc template, the placeholders for these values are indicated by dollar signs. For example, the value for <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>author</code> in the YAML will replace the placeholder <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>$author$</code> in the template. This is all documented <a href='https://pandoc.org/MANUAL.html#templates' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>. By including the CSS in my template (when it could have been a separate file) I could allow users to specify formatting options, such as fonts, in the YAML.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      The next thing to notice is that I am using Pandoc <a href='https://pandoc.org/MANUAL.html#extension-fenced_divs' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>fenced divs</a> to apply CSS classes (i.e. specific formatting) to sections of text. This allows you to do things like create fancy boxes, or change between single and double column formatting.
+      The next thing to notice is that I am using Pandoc <a href='https://pandoc.org/MANUAL.html#extension-fenced_divs' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>fenced divs</a> to apply CSS classes (i.e. specific formatting) to sections of text. This allows you to do things like create fancy boxes, or change between single and double column formatting.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2430,11 +2443,11 @@
         </li>
       
         <li>
-          It uses <a href='https://fonts.google.com/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Google Fonts</a>. I played with different combinations for too long. You can change these in the YAML, though not all seemed to work for me.
+          It uses <a href='https://fonts.google.com/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Google Fonts</a>. I played with different combinations for too long. You can change these in the YAML, though not all seemed to work for me.
         </li>
       
         <li>
-          The CSS is embedded in the HTML. It makes some limited use of <a href='https://www.w3schools.com/css/css3_variables.asp' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CSS variables</a> to avoid retyping things. A lot of the CSS is only relevant to <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>paged.js</code>. I don’t entirely understand the use of <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>string-set</code> for setting values that appear in the running footer.
+          The CSS is embedded in the HTML. It makes some limited use of <a href='https://www.w3schools.com/css/css3_variables.asp' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>CSS variables</a> to avoid retyping things. A lot of the CSS is only relevant to <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>paged.js</code>. I don’t entirely understand the use of <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>string-set</code> for setting values that appear in the running footer.
         </li>
       
     </ul>
@@ -2448,7 +2461,7 @@
   The RMarkdown
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-rmarkdown' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2616,7 +2629,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
   The HTML template
   
   <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-html-template' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2908,7 +2921,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='New blog'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#new-blog' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#new-blog' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 New blog
               </a>
               
@@ -2919,7 +2932,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
             </li>
           
             <li class='truncate' title='First define your terms'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#first-define-your-terms' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#first-define-your-terms' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 First define your terms
               </a>
               
@@ -2930,7 +2943,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
             </li>
           
             <li class='truncate' title='In which I start to do something practical'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#in-which-i-start-to-do-something-practical' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#in-which-i-start-to-do-something-practical' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 In which I start to do something practical
               </a>
               
@@ -2941,7 +2954,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
             </li>
           
             <li class='truncate' title='In which I become a Web developer'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#in-which-i-become-a-web-developer' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#in-which-i-become-a-web-developer' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 In which I become a Web developer
               </a>
               
@@ -2952,14 +2965,14 @@ There is no room to doubt but the misery of those that gave suck was in proporti
             </li>
           
             <li class='truncate' title='Cascading Style Sheets for Epidemiology Data Scientists'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#cascading-style-sheets-for-epidemiology-data-scientists' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#cascading-style-sheets-for-epidemiology-data-scientists' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Cascading Style Sheets for Epidemiology Data Scientists
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='CSS is easy'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#css-is-easy' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#css-is-easy' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 CSS is easy
               </a>
               
@@ -2970,7 +2983,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
             </li>
           
             <li class='truncate' title='CSS is difficult'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#css-is-difficult' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#css-is-difficult' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 CSS is difficult
               </a>
               
@@ -2981,7 +2994,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
             </li>
           
             <li class='truncate' title='Resources for print CSS'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#resources-for-print-css' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#resources-for-print-css' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Resources for print CSS
               </a>
               
@@ -2996,14 +3009,14 @@ There is no room to doubt but the misery of those that gave suck was in proporti
             </li>
           
             <li class='truncate' title='The perils of perfectionism'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-perils-of-perfectionism' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-perils-of-perfectionism' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The perils of perfectionism
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='The RMarkdown'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-rmarkdown' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-rmarkdown' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The RMarkdown
               </a>
               
@@ -3014,7 +3027,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
             </li>
           
             <li class='truncate' title='The HTML template'>
-              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-html-template' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole#the-html-template' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The HTML template
               </a>
               
@@ -3095,14 +3108,14 @@ There is no room to doubt but the misery of those that gave suck was in proporti
     <ul class='space-y-2'>
       
         <li>
-          <a class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900 inline-block' href='Thoughts/2025-03-11'>
+          <a class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900 inline-block' href='Thoughts/2025-03-11'>
             SENAITE progress; Bluesky; home server; AOC; Shiny app; Python apps from R; old blog; LibreELEC; Pop! OS Linux distro and new desktop computer; causal inference course
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500 dark:text-gray-300'>
   
-    <div class='pl-2 mt-2 border-l-2 border-teal-200 dark:border-teal-600 hover:border-teal-500 dark:hover:border-teal-400'>
-      <div><p>Also uploaded the text of an <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>abortive previous blog</a>.</p></div>
+    <div class='pl-2 mt-2 border-l-2 border-primary-200 dark:border-primary-600 hover:border-primary-500 dark:hover:border-primary-400'>
+      <div><p>Also uploaded the text of an <a href='Knowledge/Other/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900' data-wikilink-type='WikiLinkNormal'>abortive previous blog</a>.</p></div>
     </div>
   
 </div>
@@ -3131,7 +3144,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
     
       
         <a href='/' title='Go to Home'>
-          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
           </svg>
         </a>
@@ -3140,19 +3153,19 @@ There is no room to doubt but the misery of those that gave suck was in proporti
   </div>
   <div>
     <a href='-/all' title='View Index'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path>
       </svg>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.1'>
-      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.6.0.0'>
+      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>
   <div>
     <a href='-/tags' title='View tags'>
-      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
         </path>
       </svg>
@@ -3160,7 +3173,7 @@ There is no room to doubt but the misery of those that gave suck was in proporti
   </div>
   <div>
     <a href='-/tasks' title='View tasks'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
       </svg>
     </a>
@@ -3181,14 +3194,18 @@ There is no room to doubt but the misery of those that gave suck was in proporti
 </div>
 
 <script>
-  const wrapper = document.getElementById('stork-wrapper');
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+  // Block-scoped so Ema's reloadScripts can re-execute on route switches
+  // without hitting "Identifier 'wrapper' has already been declared".
+  {
+    const wrapper = document.getElementById('stork-wrapper');
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
-    wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
-  });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
+      wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+    });
+  }
 </script>
   
     <!-- mermaid.js --><script type='module'>

@@ -35,7 +35,20 @@
 
   
   
-  <link href='tailwind.css?instanceId=34ee1daa-ad87-4804-a956-700a32e670e0' rel='stylesheet' type='text/css' />
+  <style id='emanote-theme-remap'>:root {
+  --color-primary-50: var(--color-teal-50);
+  --color-primary-100: var(--color-teal-100);
+  --color-primary-200: var(--color-teal-200);
+  --color-primary-300: var(--color-teal-300);
+  --color-primary-400: var(--color-teal-400);
+  --color-primary-500: var(--color-teal-500);
+  --color-primary-600: var(--color-teal-600);
+  --color-primary-700: var(--color-teal-700);
+  --color-primary-800: var(--color-teal-800);
+  --color-primary-900: var(--color-teal-900);
+  --color-primary-950: var(--color-teal-950);
+}
+</style><link href='tailwind.css?instanceId=a558e053-b344-4023-b195-93f95297ae83' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -316,7 +329,7 @@
   <!-- What goes in this file will appear on near the end of <head>-->
 
   
-    <style>
+    <style id='emanote-sidebar-sizing'>
       /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
       /* md:min-w-52  */
       @media (min-width: 768px) {
@@ -551,12 +564,12 @@
       </ul>
     </div>
     <button class='inline px-3 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 outline-none cursor-pointer focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
-      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
     </button>
-    <button class='inline px-3 py-2 text-white bg-teal-600 dark:bg-teal-700 outline-none cursor-pointer focus:outline-none hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+    <button class='inline px-3 py-2 text-white bg-primary-600 dark:bg-primary-700 outline-none cursor-pointer focus:outline-none hover:bg-primary-700 dark:hover:bg-primary-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
       <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
       </svg>
@@ -586,7 +599,7 @@
                       -->
               <img style='width: 1.25rem;' class='transition transform hover:scale-110 hover:opacity-80' src='static/favicon.svg' alt='Site Icon' />
             </a>
-            <a class='font-semibold text-base truncate hover:text-teal-600 dark:hover:text-teal-400 transition-colors' title='Go to Home' href='/'>
+            <a class='font-semibold text-base truncate hover:text-primary-600 dark:hover:text-primary-400 transition-colors' title='Go to Home' href='/'>
               Home
             </a>
           
@@ -594,20 +607,20 @@
       </div>
 
       <div id='indexing-links' class='flex flex-row space-x-2 text-gray-500 dark:text-gray-400 flex-shrink-0'>
-        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
             </path>
           </svg>
         </a>
-        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors'>
+        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
             </path>
           </svg>
         </a>
-        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
-          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-teal-700' f
+        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
@@ -644,7 +657,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Knowledge' href='Knowledge'>
       Knowledge
     </a>
     
@@ -684,7 +697,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='AI' href='Knowledge/AI'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='AI' href='Knowledge/AI'>
       AI
     </a>
     
@@ -730,7 +743,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Blogging' href='Knowledge/Blogging'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Blogging' href='Knowledge/Blogging'>
       Blogging
     </a>
     
@@ -776,7 +789,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2' href='Knowledge/DHIS%202'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DHIS 2' href='Knowledge/DHIS%202'>
       DHIS 2
     </a>
     
@@ -822,7 +835,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Docker' href='Knowledge/Docker'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Docker' href='Knowledge/Docker'>
       Docker
     </a>
     
@@ -868,7 +881,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Linux' href='Knowledge/Linux'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Linux' href='Knowledge/Linux'>
       Linux
     </a>
     
@@ -914,7 +927,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Other' href='Knowledge/Other'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Other' href='Knowledge/Other'>
       Other
     </a>
     
@@ -960,7 +973,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Proxmox' href='Knowledge/Proxmox'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Proxmox' href='Knowledge/Proxmox'>
       Proxmox
     </a>
     
@@ -1006,7 +1019,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Python' href='Knowledge/Python'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Python' href='Knowledge/Python'>
       Python
     </a>
     
@@ -1052,7 +1065,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='R' href='Knowledge/R'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='R' href='Knowledge/R'>
       R
     </a>
     
@@ -1098,7 +1111,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Rust' href='Knowledge/Rust'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Rust' href='Knowledge/Rust'>
       Rust
     </a>
     
@@ -1144,7 +1157,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE' href='Knowledge/SENAITE'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='SENAITE' href='Knowledge/SENAITE'>
       SENAITE
     </a>
     
@@ -1190,7 +1203,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Self-hosting' href='Knowledge/Self-hosting'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Self-hosting' href='Knowledge/Self-hosting'>
       Self-hosting
     </a>
     
@@ -1236,7 +1249,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistics' href='Knowledge/Statistics'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistics' href='Knowledge/Statistics'>
       Statistics
     </a>
     
@@ -1275,7 +1288,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Interested in Bayesian statistics and want to know more?' href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Interested in Bayesian statistics and want to know more?' href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more'>
       Interested in Bayesian statistics and want to know more?
     </a>
     
@@ -1317,7 +1330,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Notes on using Bayesian statistics in outbreak investigation' href='Knowledge/Statistics/notes-on-using-bayesian-statistics-in-outbreak-investigation'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Notes on using Bayesian statistics in outbreak investigation' href='Knowledge/Statistics/notes-on-using-bayesian-statistics-in-outbreak-investigation'>
       Notes on using Bayesian statistics in outbreak investigation
     </a>
     
@@ -1357,7 +1370,7 @@
   
         
     </span>
-    <a class='font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistical practice in field epidemiology: so many problems, so many solutions' href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions'>
+    <a class='font-semibold bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Statistical practice in field epidemiology: so many problems, so many solutions' href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions'>
       Statistical practice in field epidemiology: so many problems, so many solutions
     </a>
     
@@ -1406,7 +1419,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Books' href='Books'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Books' href='Books'>
       Books
     </a>
     
@@ -1452,7 +1465,7 @@
           
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Thoughts' href='Thoughts'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Thoughts' href='Thoughts'>
       Thoughts
     </a>
     
@@ -1497,7 +1510,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Links' href='Links'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Links' href='Links'>
       Links
     </a>
     
@@ -1539,7 +1552,7 @@
         
       
     </span>
-    <a class='hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Writing' href='Writing'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Writing' href='Writing'>
       Writing
     </a>
     
@@ -1560,7 +1573,7 @@
           <!-- Main body column -->
           <div class='flex-1 w-full bg-white dark:bg-gray-800'>
   <main class='px-6 py-8 max-w-7xl mx-auto'>
-    <h1 class='mb-10 px-8 py-5 bg-teal-600 dark:bg-teal-800 text-5xl font-bold text-white text-center rounded-2xl'>
+    <h1 class='mb-10 px-8 py-5 bg-primary-600 dark:bg-primary-800 text-5xl font-bold text-white text-center rounded-2xl'>
   Statistical practice in field epidemiology: so many problems, so many solutions
 </h1>
     
@@ -1588,7 +1601,7 @@
   How we currently do things
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#how-we-currently-do-things' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1614,7 +1627,7 @@
   Context and constraints
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#context-and-constraints' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1632,7 +1645,7 @@
   Analytical variation in practice
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#analytical-variation-in-practice' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1650,7 +1663,7 @@
   How we interpret results
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#how-we-interpret-results' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1672,7 +1685,7 @@
   Growing doubts
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#growing-doubts' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1702,7 +1715,7 @@
   The role of epidemiological evidence
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-role-of-epidemiological-evidence' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1724,7 +1737,7 @@
   The problems with p values
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-problems-with-p-values' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1734,15 +1747,15 @@
     </h2>
   
     <p class='mb-4 leading-relaxed'>
-      The problems with p values have been discussed at length in the scientific and statistical literature. I’ve listed various useful papers on this and related issues <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>here</a> and there may be some more relevant links <a href='https://pinboard.in/u:prcleary/t:pvalue' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
+      The problems with p values have been discussed at length in the scientific and statistical literature. I’ve listed various useful papers on this and related issues <a href='Knowledge/Statistics/interested-in-bayesian-statistics-and-want-to-know-more' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900' data-wikilink-type='WikiLinkNormal'>here</a> and there may be some more relevant links <a href='https://pinboard.in/u:prcleary/t:pvalue' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      Basically p values are a flawed criterion for identifying true effects/associations in your data, partly due to the way they are used and (mis)interpreted, and often result in <a href='https://web.stat.tamu.edu/~brani/isyebayes/bank/pvalue.pdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>spurious or exaggerated findings</a>. A lot of people don’t realise that even if your result is statistically significant, there can still be a very high probability that your null hypothesis is true, though they do usually realise that statistical significance does not necessarily mean real-world significance. And results that aren’t statistically significant can be ignored or not published or assumed to indicate that there is no association (despite the saying <a href='https://www.bmj.com/content/311/7003/485' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“absence of evidence is not evidence of absence”</a>).
+      Basically p values are a flawed criterion for identifying true effects/associations in your data, partly due to the way they are used and (mis)interpreted, and often result in <a href='https://web.stat.tamu.edu/~brani/isyebayes/bank/pvalue.pdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>spurious or exaggerated findings</a>. A lot of people don’t realise that even if your result is statistically significant, there can still be a very high probability that your null hypothesis is true, though they do usually realise that statistical significance does not necessarily mean real-world significance. And results that aren’t statistically significant can be ignored or not published or assumed to indicate that there is no association (despite the saying <a href='https://www.bmj.com/content/311/7003/485' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“absence of evidence is not evidence of absence”</a>).
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.wmbriggs.com/post/22317/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>As statistician William Briggs summarises it rather damningly:</a>:
+      <a href='https://www.wmbriggs.com/post/22317/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>As statistician William Briggs summarises it rather damningly:</a>:
     </p>
   
     <blockquote class='py-3 px-6 mb-6 italic border-l-4 bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 quote rounded-r-lg'>
@@ -1754,7 +1767,7 @@
     </blockquote>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4877414/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This article</a> enumerates over 20 fallacies or misinterpretations related to p values.
+      <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4877414/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This article</a> enumerates over 20 fallacies or misinterpretations related to p values.
     </p>
   
     <h3 id='the-case-for-and-against-p005' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
@@ -1762,7 +1775,7 @@
   The case for and against p&lt;0.05
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-case-for-and-against-p005' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1772,11 +1785,11 @@
     </h3>
   
     <p class='mb-4 leading-relaxed'>
-      I came across <a href='https://psyarxiv.com/af9by/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this interesting paper defending the p&lt;0.05 approach</a>. I think the argument here is that while p&lt;0.05 is clearly an arbitrary convention, the fact that it has persisted and spread so widely must be evidence of utility. It also argues that the development of scientific knowledge requires conjecture and refutation, claim and counter-claim, and that to make a scientific claim you will often need to come down on yes or no/maybe based on your statistical analysis. You may have to accept getting the wrong answer several times before you get the right (or better) answer. That’s not littering the literature with false-positive studies - that is just how science works. Your p value of 0.04 might just spur someone to do the bigger more conclusive study. I encourage you to read the full paper.
+      I came across <a href='https://psyarxiv.com/af9by/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this interesting paper defending the p&lt;0.05 approach</a>. I think the argument here is that while p&lt;0.05 is clearly an arbitrary convention, the fact that it has persisted and spread so widely must be evidence of utility. It also argues that the development of scientific knowledge requires conjecture and refutation, claim and counter-claim, and that to make a scientific claim you will often need to come down on yes or no/maybe based on your statistical analysis. You may have to accept getting the wrong answer several times before you get the right (or better) answer. That’s not littering the literature with false-positive studies - that is just how science works. Your p value of 0.04 might just spur someone to do the bigger more conclusive study. I encourage you to read the full paper.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      On the other hand <a href='https://www.researchgate.net/profile/Frank-Schmidt-2/publication/285020701_What_if_there_were_no_significance_tests/links/570bd5e208ae8883a1ffdc0c/What-if-there-were-no-significance-tests.pdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this paper</a> examines a range of justifications for significance testing, finding logical flaws in each, and ultimately concluding that use of significance testing “retards the growth of scientific knowledge”.
+      On the other hand <a href='https://www.researchgate.net/profile/Frank-Schmidt-2/publication/285020701_What_if_there_were_no_significance_tests/links/570bd5e208ae8883a1ffdc0c/What-if-there-were-no-significance-tests.pdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this paper</a> examines a range of justifications for significance testing, finding logical flaws in each, and ultimately concluding that use of significance testing “retards the growth of scientific knowledge”.
     </p>
   
     <h2 id='the-problem-with-stepwise-model-selection' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
@@ -1784,7 +1797,7 @@
   The problem with stepwise model selection
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-problem-with-stepwise-model-selection' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1794,7 +1807,7 @@
     </h2>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://journalofbigdata.springeropen.com/articles/10.1186/s40537-018-0143-6' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Stepwise model selection</a> with a backward or forward approach is another issue because it can simply select the most biased or randomly extreme estimates in your data rather than the true effects (particularly if there are no true effects). A model selected in this way also has p values which are difficult or impossible to interpret. <a href='https://en.wikipedia.org/wiki/Ronald_Fisher' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ronald Fisher</a> popularised the use of the p value for simple agricultural experiments at a time when you used a calculator for the trickier parts of your analysis - I wonder what the old grump would have made of what we are doing now.
+      <a href='https://journalofbigdata.springeropen.com/articles/10.1186/s40537-018-0143-6' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Stepwise model selection</a> with a backward or forward approach is another issue because it can simply select the most biased or randomly extreme estimates in your data rather than the true effects (particularly if there are no true effects). A model selected in this way also has p values which are difficult or impossible to interpret. <a href='https://en.wikipedia.org/wiki/Ronald_Fisher' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Ronald Fisher</a> popularised the use of the p value for simple agricultural experiments at a time when you used a calculator for the trickier parts of your analysis - I wonder what the old grump would have made of what we are doing now.
     </p>
   
     <h2 id='the-garden-of-forking-paths' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
@@ -1802,7 +1815,7 @@
   The garden of forking paths
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-garden-of-forking-paths' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1812,11 +1825,11 @@
     </h2>
   
     <p class='mb-4 leading-relaxed'>
-      Our third big issue is that making data analysis decisions as you go along greatly increases the chances of spurious findings - see e.g. <a href='https://journals.sagepub.com/doi/10.1177/0956797611417632' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant”</a>. This has been called the <a href='http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“garden of forking paths fallacy”</a>.
+      Our third big issue is that making data analysis decisions as you go along greatly increases the chances of spurious findings - see e.g. <a href='https://journals.sagepub.com/doi/10.1177/0956797611417632' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant”</a>. This has been called the <a href='http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“garden of forking paths fallacy”</a>.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      A related issue is our use of a hypothesis-testing approach when we don’t have any prior hypotheses, allowing the (signal or noise in our) data to decide which hypotheses are tested (sometimes pejoratively called <a href='https://ebm.bmj.com/content/27/4/209.long' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“data dredging”</a>).
+      A related issue is our use of a hypothesis-testing approach when we don’t have any prior hypotheses, allowing the (signal or noise in our) data to decide which hypotheses are tested (sometimes pejoratively called <a href='https://ebm.bmj.com/content/27/4/209.long' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“data dredging”</a>).
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -1828,7 +1841,7 @@
   The inertia of current practice
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-inertia-of-current-practice' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1842,7 +1855,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      I don’t know how much non-statistical colleagues perceive our approach to be problematic. And it is not straightforward to present a more robust approach, because there isn’t exactly unanimity in the statistical profession on alternative approaches. The American Statistical Association has taken a cautious joint <a href='https://amstat.tandfonline.com/doi/full/10.1080/00031305.2016.1154108#.W-sCjhBRceY' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>position</a> (at least on p values):
+      I don’t know how much non-statistical colleagues perceive our approach to be problematic. And it is not straightforward to present a more robust approach, because there isn’t exactly unanimity in the statistical profession on alternative approaches. The American Statistical Association has taken a cautious joint <a href='https://amstat.tandfonline.com/doi/full/10.1080/00031305.2016.1154108#.W-sCjhBRceY' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>position</a> (at least on p values):
     </p>
   
     <blockquote class='py-3 px-6 mb-6 italic border-l-4 bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 quote rounded-r-lg'>
@@ -1886,7 +1899,7 @@
   The practitioner’s dilemma
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-practitioners-dilemma' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1912,7 +1925,7 @@
   Alternative approaches considered
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#alternative-approaches-considered' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1938,7 +1951,7 @@
   Keep doing what we are doing now
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#keep-doing-what-we-are-doing-now' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -1972,7 +1985,7 @@
   Keep doing what we are doing but be highly sceptical
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#keep-doing-what-we-are-doing-but-be-highly-sceptical' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2002,7 +2015,7 @@
   Adhere to the ASA principles
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#adhere-to-the-asa-principles' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2024,7 +2037,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      They have been rephrased <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a> as a list of <em>don’ts</em>:
+      They have been rephrased <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a> as a list of <em>don’ts</em>:
     </p>
   
     <blockquote class='py-3 px-6 mb-6 italic border-l-4 bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 quote rounded-r-lg'>
@@ -2068,7 +2081,7 @@
   Improve our use and interpretation of p values
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#improve-our-use-and-interpretation-of-p-values' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2086,11 +2099,11 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      As described in the paper <a href='https://journals.sagepub.com/doi/full/10.1177/1745691620958012' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“The Practical Alternative to the p Value Is the Correctly Used p Value”</a>, we could decide that classic null hypothesis testing is not the be-all and and end-all of statistics and work on improving our research questions, still using p values where appropriate but improving our use and understanding of them.
+      As described in the paper <a href='https://journals.sagepub.com/doi/full/10.1177/1745691620958012' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“The Practical Alternative to the p Value Is the Correctly Used p Value”</a>, we could decide that classic null hypothesis testing is not the be-all and and end-all of statistics and work on improving our research questions, still using p values where appropriate but improving our use and understanding of them.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      It is difficult to argue with the proposition that we should do things better. We could review the questions we ask - for example, I doubt the question that the epidemiologist really wants to ask is “is the odds ratio exactly one with infinite precision or <em>absolutely any other conceivable value</em>?”, which is what our current statistical approach is assessing. We could use <a href='https://lakens.github.io/statistical_inferences/09-equivalencetest.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>interval hypothesis tests</a> or <a href='https://psycnet.apa.org/record/1999-13895-007' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>minimal effect tests</a> instead.
+      It is difficult to argue with the proposition that we should do things better. We could review the questions we ask - for example, I doubt the question that the epidemiologist really wants to ask is “is the odds ratio exactly one with infinite precision or <em>absolutely any other conceivable value</em>?”, which is what our current statistical approach is assessing. We could use <a href='https://lakens.github.io/statistical_inferences/09-equivalencetest.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>interval hypothesis tests</a> or <a href='https://psycnet.apa.org/record/1999-13895-007' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>minimal effect tests</a> instead.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2102,11 +2115,11 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      It seems implicit in this paper that some of the criticism of p values and the seeking of alternatives is overplayed - p values are not the only game in town, but sometimes they can be appropriate, in which case you should use them right. The famous epidemiologist/statistician <a href='https://en.wikipedia.org/wiki/Sander_Greenland' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Sander Greenland</a> also points out <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1529625' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a> that some criticisms of p values are not issues inherent to p values and are more related to misuse or misinterpretation.
+      It seems implicit in this paper that some of the criticism of p values and the seeking of alternatives is overplayed - p values are not the only game in town, but sometimes they can be appropriate, in which case you should use them right. The famous epidemiologist/statistician <a href='https://en.wikipedia.org/wiki/Sander_Greenland' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Sander Greenland</a> also points out <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1529625' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a> that some criticisms of p values are not issues inherent to p values and are more related to misuse or misinterpretation.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      To take this more considered approach we would need to raise the level of understanding by our practitioners and (ideally) their audience. Note that the author of the “Practical Alternative” paper has also done a number of interesting massive open online courses (MOOCs) such as <a href='https://www.coursera.org/learn/improving-statistical-questions' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this one</a>. Some related materials are <a href='https://lakens.github.io/statistical_inferences/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
+      To take this more considered approach we would need to raise the level of understanding by our practitioners and (ideally) their audience. Note that the author of the “Practical Alternative” paper has also done a number of interesting massive open online courses (MOOCs) such as <a href='https://www.coursera.org/learn/improving-statistical-questions' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this one</a>. Some related materials are <a href='https://lakens.github.io/statistical_inferences/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
     </p>
   
         </li>
@@ -2118,7 +2131,7 @@
   Redefine statistical significance
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#redefine-statistical-significance' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2136,7 +2149,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.nature.com/articles/s41562-017-0189-z' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>It has been argued</a> that using p&lt;0.005 as our new threshold would reduce non-replicability of new research findings in psychology and economics, perhaps by half (note that not all non-replicability of research can be blamed on p values - some is due to other issues such as poor study design). p&lt;0.001 <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3845140/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>has also been suggested</a> as a new critical threshold for decision-making.
+      <a href='https://www.nature.com/articles/s41562-017-0189-z' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>It has been argued</a> that using p&lt;0.005 as our new threshold would reduce non-replicability of new research findings in psychology and economics, perhaps by half (note that not all non-replicability of research can be blamed on p values - some is due to other issues such as poor study design). p&lt;0.001 <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3845140/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>has also been suggested</a> as a new critical threshold for decision-making.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2152,7 +2165,7 @@
   Drop the significance threshold and use p values as a continuous measure
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#drop-the-significance-threshold-and-use-p-values-as-a-continuous-measure' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2170,7 +2183,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      This approach is recommended in <a href='https://www.sciencedirect.com/science/article/pii/S0169534721002846' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Rewriting results sections in the language of evidence</a>. According to this paper we should avoid binary language when interpreting continuous p values, such as “statistically significant” (or not), moving closer to how p values were originally used.
+      This approach is recommended in <a href='https://www.sciencedirect.com/science/article/pii/S0169534721002846' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Rewriting results sections in the language of evidence</a>. According to this paper we should avoid binary language when interpreting continuous p values, such as “statistically significant” (or not), moving closer to how p values were originally used.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2178,7 +2191,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/cem.3240' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Neyman and Pearson</a> took the p value and p&lt;0.05 and built the machinery around it that we use/misuse today to reject the null hypothesis or not, introducing related concepts such as power or type I/II errors. The authors of the “language of evidence” paper recommend a modification of this approach to move away from binary interpretations towards a more continuous/loosely categorical interpretation as shown in the picture below:
+      <a href='https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/cem.3240' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Neyman and Pearson</a> took the p value and p&lt;0.05 and built the machinery around it that we use/misuse today to reject the null hypothesis or not, introducing related concepts such as power or type I/II errors. The authors of the “language of evidence” paper recommend a modification of this approach to move away from binary interpretations towards a more continuous/loosely categorical interpretation as shown in the picture below:
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2194,7 +2207,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      There have been various objections to this approach, such as whether p values can really be regarded as evidence. Basically, if the null hypothesis is true then the p value is <a href='https://stats.stackexchange.com/questions/10613/why-are-p-values-uniformly-distributed-under-the-null-hypothesis' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>just a random number</a>, with small values just as likely as large values.
+      There have been various objections to this approach, such as whether p values can really be regarded as evidence. Basically, if the null hypothesis is true then the p value is <a href='https://stats.stackexchange.com/questions/10613/why-are-p-values-uniformly-distributed-under-the-null-hypothesis' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>just a random number</a>, with small values just as likely as large values.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2210,7 +2223,7 @@
   Focus on effect sizes and confidence intervals
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#focus-on-effect-sizes-and-confidence-intervals' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2232,7 +2245,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://journals.sagepub.com/doi/full/10.1177/0956797613504966' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper recommending an approach dubbed “The New Statistics”</a> provides guidelines (for psychological research, but just as applicable to us), including:
+      <a href='https://journals.sagepub.com/doi/full/10.1177/0956797613504966' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper recommending an approach dubbed “The New Statistics”</a> provides guidelines (for psychological research, but just as applicable to us), including:
     </p>
   
     <blockquote class='py-3 px-6 mb-6 italic border-l-4 bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 quote rounded-r-lg'>
@@ -2292,7 +2305,7 @@
   Magnitude-based inference
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#magnitude-based-inference' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2302,7 +2315,7 @@
     </h4>
   
     <p class='mb-4 leading-relaxed'>
-      This sort of approach gets us closer to another approach called <a href='https://www.researchgate.net/publication/325217813_Magnitude-based_inference_What_is_it_How_does_it_work_and_is_it_appropriate' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“Magnitude Based Inference”</a>, where you ignore the null value in your interpretation of the confidence interval, but instead define two other limits which define the range of effects thought to be trivial. This would allow you to interpret a confidence interval in the ways shown in the diagram:
+      This sort of approach gets us closer to another approach called <a href='https://www.researchgate.net/publication/325217813_Magnitude-based_inference_What_is_it_How_does_it_work_and_is_it_appropriate' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>“Magnitude Based Inference”</a>, where you ignore the null value in your interpretation of the confidence interval, but instead define two other limits which define the range of effects thought to be trivial. This would allow you to interpret a confidence interval in the ways shown in the diagram:
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2310,11 +2323,11 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      Magnitude-based inference (MBI) could be an improvement on our practice, and it has been widely used in sports science. It has been presented as the sort of procedure I am looking for, a method that non-statisticians can use without understanding statistics, but with confidence that if they follow the rules they can make valid interpretations and won’t be undermined by devastating critiques of what they are doing in the statistical literature. Unfortunately there are issues with MBI, both theoretical and practical, and there is now at least one <a href='https://fivethirtyeight.com/features/how-shoddy-statistics-found-a-home-in-sports-research/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>devastating statistical critique of MBI</a>.
+      Magnitude-based inference (MBI) could be an improvement on our practice, and it has been widely used in sports science. It has been presented as the sort of procedure I am looking for, a method that non-statisticians can use without understanding statistics, but with confidence that if they follow the rules they can make valid interpretations and won’t be undermined by devastating critiques of what they are doing in the statistical literature. Unfortunately there are issues with MBI, both theoretical and practical, and there is now at least one <a href='https://fivethirtyeight.com/features/how-shoddy-statistics-found-a-home-in-sports-research/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>devastating statistical critique of MBI</a>.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      It’s been argued that MBI is based on a common subtle misconception of confidence intervals: that the true value has a 95% probability of being in your 95% confidence interval. The 95% probability statement only relates to the procedure in the long run - if I repeat this whole procedure many times then I expect that 95% of all those confidence intervals would include the true value. But the one confidence interval you do have simply either does or does not include the true value. MBI has also been <a href='https://onlinelibrary.wiley.com/doi/10.1111/sms.13491' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>accused of pretending to be Bayesian</a>. There is a true Bayesian version which defines a “region of practical equivalence” (and so the method is called “ROPE”) which is explained <a href='https://osf.io/s5vdy/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a> and which may be more robust.
+      It’s been argued that MBI is based on a common subtle misconception of confidence intervals: that the true value has a 95% probability of being in your 95% confidence interval. The 95% probability statement only relates to the procedure in the long run - if I repeat this whole procedure many times then I expect that 95% of all those confidence intervals would include the true value. But the one confidence interval you do have simply either does or does not include the true value. MBI has also been <a href='https://onlinelibrary.wiley.com/doi/10.1111/sms.13491' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>accused of pretending to be Bayesian</a>. There is a true Bayesian version which defines a “region of practical equivalence” (and so the method is called “ROPE”) which is explained <a href='https://osf.io/s5vdy/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a> and which may be more robust.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2326,7 +2339,7 @@
   Stop using p values altogether
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#stop-using-p-values-altogether' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2360,7 +2373,7 @@
   Use alternative statistics to the p value
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-alternative-statistics-to-the-p-value' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2382,11 +2395,11 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1537893' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper</a> suggests that we use “second generation p values” where our null hypothesis is not just the exact null effect, but also the full range of unimportant effects. This is very similar to the “minimal effect test” idea above.
+      <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1537893' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper</a> suggests that we use “second generation p values” where our null hypothesis is not just the exact null effect, but also the full range of unimportant effects. This is very similar to the “minimal effect test” idea above.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1529625' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>S values</a> were proposed by Sander Greenland. An S, or “surprisal”, value is calculated from a p value using the formula <span class='math inline'>\(S=-\log_2({p})\)</span>. An S value of x means that the probability of your result is the same as the probability of getting all heads when you flip a coin x times (for p=0.05 S is 4.3). While Sander Greenland has probably done more thinking about all these issues than anyone alive, I am not yet convinced that this would be much more intuitive to non-statisticians than p values (except perhaps to coin-based gamblers) or would address all their issues in itself.
+      <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1529625' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>S values</a> were proposed by Sander Greenland. An S, or “surprisal”, value is calculated from a p value using the formula <span class='math inline'>\(S=-\log_2({p})\)</span>. An S value of x means that the probability of your result is the same as the probability of getting all heads when you flip a coin x times (for p=0.05 S is 4.3). While Sander Greenland has probably done more thinking about all these issues than anyone alive, I am not yet convinced that this would be much more intuitive to non-statisticians than p values (except perhaps to coin-based gamblers) or would address all their issues in itself.
     </p>
   
         </li>
@@ -2398,7 +2411,7 @@
   Adjust p values or present them with additional information
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#adjust-p-values-or-present-them-with-additional-information' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2420,7 +2433,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.tandfonline.com/doi/epdf/10.1198/000313001300339950' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper</a> recommends “calibration” of p values, but it is not open access so I couldn’t read it.
+      <a href='https://www.tandfonline.com/doi/epdf/10.1198/000313001300339950' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper</a> recommends “calibration” of p values, but it is not open access so I couldn’t read it.
     </p>
   
         </li>
@@ -2432,7 +2445,7 @@
   False-positive risk
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#false-positive-risk' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2442,7 +2455,7 @@
     </h4>
   
     <p class='mb-4 leading-relaxed'>
-      Colquhoun (a major critic of p values and not a Bayesian, in case you were thinking that this is all just a pile-on by Bayesians) recommends presenting p values and confidence intervals alongside the <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1529622' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>false-positive risk (FPR)</a>, estimated from your p value and the prior probability of a real effect. He even provides a <a href='http://fpr-calc.ucl.ac.uk/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Shiny app to calculate FPR</a>, though unfortunately only for comparing means.
+      Colquhoun (a major critic of p values and not a Bayesian, in case you were thinking that this is all just a pile-on by Bayesians) recommends presenting p values and confidence intervals alongside the <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1529622' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>false-positive risk (FPR)</a>, estimated from your p value and the prior probability of a real effect. He even provides a <a href='http://fpr-calc.ucl.ac.uk/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Shiny app to calculate FPR</a>, though unfortunately only for comparing means.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2458,7 +2471,7 @@
   Bayes factors
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#bayes-factors' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2468,11 +2481,11 @@
     </h4>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.tandfonline.com/doi/epdf/10.1080/01621459.1995.10476572' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayes factors</a> could be a useful tool for getting a better quantitative assessment of the evidence our data provides for one hypothesis relative to another, and offer the possibility of using the methods we know but with some additional calculations. A Bayes factor tells you how much more likely your alternative hypothesis (that there is an association) is than your null hypothesis (that there is no association), based on your data. A p value of 0.05 equates to a Bayes factor of around 3 or 4, which indicates that you should update your belief in the probability of the alternative hypothesis by a factor of three or four. Recall that null hypothesis testing only allows you to reject the null hypothesis or not reject it - you can’t say anything about the relative probability of hypotheses. There are conventions (more than one) for the interpretation of the size of Bayes factors, e.g. a BF of &gt;100 could be regarded as “decisive” evidence against the null hypothesis. So <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1543135' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>it has been suggested</a> that presenting p values alongside Bayes factors could be more informative than presenting p values alone.
+      <a href='https://www.tandfonline.com/doi/epdf/10.1080/01621459.1995.10476572' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Bayes factors</a> could be a useful tool for getting a better quantitative assessment of the evidence our data provides for one hypothesis relative to another, and offer the possibility of using the methods we know but with some additional calculations. A Bayes factor tells you how much more likely your alternative hypothesis (that there is an association) is than your null hypothesis (that there is no association), based on your data. A p value of 0.05 equates to a Bayes factor of around 3 or 4, which indicates that you should update your belief in the probability of the alternative hypothesis by a factor of three or four. Recall that null hypothesis testing only allows you to reject the null hypothesis or not reject it - you can’t say anything about the relative probability of hypotheses. There are conventions (more than one) for the interpretation of the size of Bayes factors, e.g. a BF of &gt;100 could be regarded as “decisive” evidence against the null hypothesis. So <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1543135' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>it has been suggested</a> that presenting p values alongside Bayes factors could be more informative than presenting p values alone.
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      Interpretation of Bayes factors is generally a bit more stringent than that of p values, and as with p values, a more stringent threshold increases the risk of a type II error. Despite the name, they are not a full Bayesian approach. So if your prior belief is that the alternative hypothesis is unlikely, then even a large Bayes Factor might not change your mind. Bayes factors do have subtleties and are not infrequently subject to <a href='https://daniellakens.blogspot.com/2023/04/preventing-common-misconceptions-about.html' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>misinterpretations</a> so would also have training implications. There is a “poke a pizza” explanation of Bayes factors <a href='https://www.bayesianspectacles.org/lets-poke-a-pizza-a-new-cartoon-to-explain-the-strength-of-evidence-in-a-bayes-factor/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
+      Interpretation of Bayes factors is generally a bit more stringent than that of p values, and as with p values, a more stringent threshold increases the risk of a type II error. Despite the name, they are not a full Bayesian approach. So if your prior belief is that the alternative hypothesis is unlikely, then even a large Bayes Factor might not change your mind. Bayes factors do have subtleties and are not infrequently subject to <a href='https://daniellakens.blogspot.com/2023/04/preventing-common-misconceptions-about.html' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>misinterpretations</a> so would also have training implications. There is a “poke a pizza” explanation of Bayes factors <a href='https://www.bayesianspectacles.org/lets-poke-a-pizza-a-new-cartoon-to-explain-the-strength-of-evidence-in-a-bayes-factor/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
     </p>
   
     <h4 id='analysis-of-credibility' class='group mt-8 mb-4 font-semibold text-gray-900 dark:text-gray-50 text-2xl'>
@@ -2480,7 +2493,7 @@
   Analysis of credibility
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#analysis-of-credibility' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2490,7 +2503,7 @@
     </h4>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1543136' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This interesting paper</a> proposes a kind of reverse Bayesian analysis called “analysis of credibility”: you present your estimated effect size with a confidence interval, then augment this with a “critical prior interval” (CPI) which represents the range of prior beliefs that would be compatible with a Bayesian credible interval (see below) excluding the null effect. For statistically significant results you would only need to calculate the lower bound of the CPI. Interpretation would be as follows: to regard my finding as credible, I would have had to believe prior to the analysis that the true value was contained in the CPI presented. For an example with numbers from the paper: if (in a Salmonella outbreak) my estimated odds ratio for bread rolls was 2.03 and my confidence interval was 1.03-4.00, and the lower bound of the CPI was 10, then I would have had to have expected an odds ratio for bread rolls of at least 10 for my statistically significant finding to be credible. In other words it is not credible.
+      <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1543136' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This interesting paper</a> proposes a kind of reverse Bayesian analysis called “analysis of credibility”: you present your estimated effect size with a confidence interval, then augment this with a “critical prior interval” (CPI) which represents the range of prior beliefs that would be compatible with a Bayesian credible interval (see below) excluding the null effect. For statistically significant results you would only need to calculate the lower bound of the CPI. Interpretation would be as follows: to regard my finding as credible, I would have had to believe prior to the analysis that the true value was contained in the CPI presented. For an example with numbers from the paper: if (in a Salmonella outbreak) my estimated odds ratio for bread rolls was 2.03 and my confidence interval was 1.03-4.00, and the lower bound of the CPI was 10, then I would have had to have expected an odds ratio for bread rolls of at least 10 for my statistically significant finding to be credible. In other words it is not credible.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2502,7 +2515,7 @@
   A combined approach
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#a-combined-approach' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2512,7 +2525,7 @@
     </h4>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1543135' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper</a> suggests that doing these three things will solve many p value problems:
+      <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1543135' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper</a> suggests that doing these three things will solve many p value problems:
     </p>
   
     <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
@@ -2548,7 +2561,7 @@
   Interpret p values differently depending on context
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#interpret-p-values-differently-depending-on-context' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2566,7 +2579,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      This seems to be an active area of debate with big names such as <a href='https://onlinelibrary.wiley.com/doi/10.1111/sjos.12625' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Sander Greenland</a> (him again) and Bayesian statistician <a href='https://statmodeling.stat.columbia.edu/2023/04/14/4-different-meanings-of-p-value-and-how-my-thinking-has-changed/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Andrew Gelman</a> weighing in.
+      This seems to be an active area of debate with big names such as <a href='https://onlinelibrary.wiley.com/doi/10.1111/sjos.12625' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Sander Greenland</a> (him again) and Bayesian statistician <a href='https://statmodeling.stat.columbia.edu/2023/04/14/4-different-meanings-of-p-value-and-how-my-thinking-has-changed/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Andrew Gelman</a> weighing in.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2586,7 +2599,7 @@
   Use alternative methods when we don’t have a prior hypothesis
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-alternative-methods-when-we-dont-have-a-prior-hypothesis' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2616,7 +2629,7 @@
   Penalised regression
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#penalised-regression' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2626,7 +2639,7 @@
     </h4>
   
     <p class='mb-4 leading-relaxed'>
-      Penalised regression models (examples are ridge regression, lasso regression and elastic net regression) fit models while penalising for complexity (i.e reducing overfitting). Could these enable a safer approach to stepwise model selection? <a href='https://hastie.su.domains/TALKS/hastie_jsm.pdf' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This presentation by Trevor Hastie</a> seems to suggest so. He describes a scenario that may sound familiar:
+      Penalised regression models (examples are ridge regression, lasso regression and elastic net regression) fit models while penalising for complexity (i.e reducing overfitting). Could these enable a safer approach to stepwise model selection? <a href='https://hastie.su.domains/TALKS/hastie_jsm.pdf' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This presentation by Trevor Hastie</a> seems to suggest so. He describes a scenario that may sound familiar:
     </p>
   
     <blockquote class='py-3 px-6 mb-6 italic border-l-4 bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 quote rounded-r-lg'>
@@ -2646,7 +2659,7 @@
     </blockquote>
   
     <p class='mb-4 leading-relaxed'>
-      He proposes an R package for stepwise penalised logistic regression model selection (which can do forward or mixed forward/backward selection) called <a href='https://www.rdocumentation.org/packages/stepPlr/versions/0.93' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>stepPlr</a>.
+      He proposes an R package for stepwise penalised logistic regression model selection (which can do forward or mixed forward/backward selection) called <a href='https://www.rdocumentation.org/packages/stepPlr/versions/0.93' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>stepPlr</a>.
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2658,7 +2671,7 @@
   An eclectic approach
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#an-eclectic-approach' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2680,7 +2693,7 @@
   Use Bayesian statistical methods
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-bayesian-statistical-methods' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2698,7 +2711,7 @@
     </p>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://academic.oup.com/ije/article/35/3/765/735529' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Bayesian analytical process</a> starts with what you knew before the analysis (expressed as a “prior” probability or probability distribution) and then updates this using your data to give you another (“posterior”) probability or probability distribution. If you have prior information, Bayesian analysis can give you a probability of your hypothesis (with an interval around it representing uncertainty, called a credible interval).
+      <a href='https://academic.oup.com/ije/article/35/3/765/735529' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>The Bayesian analytical process</a> starts with what you knew before the analysis (expressed as a “prior” probability or probability distribution) and then updates this using your data to give you another (“posterior”) probability or probability distribution. If you have prior information, Bayesian analysis can give you a probability of your hypothesis (with an interval around it representing uncertainty, called a credible interval).
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -2714,7 +2727,7 @@
   Why Bayesian methods appeal
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#why-bayesian-methods-appeal' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2772,7 +2785,7 @@
   The role of prior information
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-role-of-prior-information' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2798,7 +2811,7 @@
   Bayesian methods are not a silver bullet
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#bayesian-methods-are-not-a-silver-bullet' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2816,7 +2829,7 @@
   Conclusions
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#conclusions' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2850,7 +2863,7 @@
         <li>
           
     <p class='mb-4 leading-relaxed'>
-      Thirdly, that how we think about statistics needs to develop. <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper</a>, mentioned earlier, puts it better than I could. In brief, we need to “Accept uncertainty” and “be Thoughtful, Open and Modest” (ATOM for short).
+      Thirdly, that how we think about statistics needs to develop. <a href='https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>This paper</a>, mentioned earlier, puts it better than I could. In brief, we need to “Accept uncertainty” and “be Thoughtful, Open and Modest” (ATOM for short).
     </p>
   
         </li>
@@ -2862,7 +2875,7 @@
   Accept uncertainty
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#accept-uncertainty' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2872,7 +2885,7 @@
     </h3>
   
     <p class='mb-4 leading-relaxed'>
-      Accepting uncertainty includes “forsaking the false promise of certainty offered by dichotomous declarations of truth or falsity”. Note that the debate about whether we can justify using a threshold value is <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9096069/' class='text-teal-600 dark:text-teal-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>on-going</a>. But better interpretation of effect sizes and confidence intervals would give us a more sophisticated understanding of our results.
+      Accepting uncertainty includes “forsaking the false promise of certainty offered by dichotomous declarations of truth or falsity”. Note that the debate about whether we can justify using a threshold value is <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9096069/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>on-going</a>. But better interpretation of effect sizes and confidence intervals would give us a more sophisticated understanding of our results.
     </p>
   
     <h3 id='be-thoughtful' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
@@ -2880,7 +2893,7 @@
   Be thoughtful
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-thoughtful' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2902,7 +2915,7 @@
   Be open
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-open' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2920,7 +2933,7 @@
   Be modest
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-modest' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2938,7 +2951,7 @@
   Training implications
   
   <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#training-implications' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2970,14 +2983,14 @@
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='How we currently do things'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#how-we-currently-do-things' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#how-we-currently-do-things' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 How we currently do things
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='Context and constraints'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#context-and-constraints' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#context-and-constraints' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Context and constraints
               </a>
               
@@ -2988,7 +3001,7 @@
             </li>
           
             <li class='truncate' title='Analytical variation in practice'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#analytical-variation-in-practice' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#analytical-variation-in-practice' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Analytical variation in practice
               </a>
               
@@ -2999,7 +3012,7 @@
             </li>
           
             <li class='truncate' title='How we interpret results'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#how-we-interpret-results' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#how-we-interpret-results' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 How we interpret results
               </a>
               
@@ -3014,14 +3027,14 @@
             </li>
           
             <li class='truncate' title='Growing doubts'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#growing-doubts' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#growing-doubts' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Growing doubts
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='The role of epidemiological evidence'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-role-of-epidemiological-evidence' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-role-of-epidemiological-evidence' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The role of epidemiological evidence
               </a>
               
@@ -3036,14 +3049,14 @@
             </li>
           
             <li class='truncate' title='The problems with p values'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-problems-with-p-values' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-problems-with-p-values' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The problems with p values
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='The case for and against p<0.05'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-case-for-and-against-p005' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-case-for-and-against-p005' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The case for and against p&lt;0.05
               </a>
               
@@ -3058,7 +3071,7 @@
             </li>
           
             <li class='truncate' title='The problem with stepwise model selection'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-problem-with-stepwise-model-selection' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-problem-with-stepwise-model-selection' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The problem with stepwise model selection
               </a>
               
@@ -3069,7 +3082,7 @@
             </li>
           
             <li class='truncate' title='The garden of forking paths'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-garden-of-forking-paths' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-garden-of-forking-paths' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The garden of forking paths
               </a>
               
@@ -3080,14 +3093,14 @@
             </li>
           
             <li class='truncate' title='The inertia of current practice'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-inertia-of-current-practice' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-inertia-of-current-practice' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The inertia of current practice
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='The practitioner’s dilemma'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-practitioners-dilemma' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-practitioners-dilemma' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The practitioner’s dilemma
               </a>
               
@@ -3102,14 +3115,14 @@
             </li>
           
             <li class='truncate' title='Alternative approaches considered'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#alternative-approaches-considered' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#alternative-approaches-considered' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Alternative approaches considered
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='Keep doing what we are doing now'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#keep-doing-what-we-are-doing-now' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#keep-doing-what-we-are-doing-now' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Keep doing what we are doing now
               </a>
               
@@ -3120,7 +3133,7 @@
             </li>
           
             <li class='truncate' title='Keep doing what we are doing but be highly sceptical'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#keep-doing-what-we-are-doing-but-be-highly-sceptical' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#keep-doing-what-we-are-doing-but-be-highly-sceptical' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Keep doing what we are doing but be highly sceptical
               </a>
               
@@ -3131,7 +3144,7 @@
             </li>
           
             <li class='truncate' title='Adhere to the ASA principles'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#adhere-to-the-asa-principles' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#adhere-to-the-asa-principles' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Adhere to the ASA principles
               </a>
               
@@ -3142,7 +3155,7 @@
             </li>
           
             <li class='truncate' title='Improve our use and interpretation of p values'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#improve-our-use-and-interpretation-of-p-values' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#improve-our-use-and-interpretation-of-p-values' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Improve our use and interpretation of p values
               </a>
               
@@ -3153,7 +3166,7 @@
             </li>
           
             <li class='truncate' title='Redefine statistical significance'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#redefine-statistical-significance' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#redefine-statistical-significance' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Redefine statistical significance
               </a>
               
@@ -3164,7 +3177,7 @@
             </li>
           
             <li class='truncate' title='Drop the significance threshold and use p values as a continuous measure'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#drop-the-significance-threshold-and-use-p-values-as-a-continuous-measure' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#drop-the-significance-threshold-and-use-p-values-as-a-continuous-measure' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Drop the significance threshold and use p values as a continuous measure
               </a>
               
@@ -3175,14 +3188,14 @@
             </li>
           
             <li class='truncate' title='Focus on effect sizes and confidence intervals'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#focus-on-effect-sizes-and-confidence-intervals' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#focus-on-effect-sizes-and-confidence-intervals' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Focus on effect sizes and confidence intervals
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='Magnitude-based inference'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#magnitude-based-inference' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#magnitude-based-inference' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Magnitude-based inference
               </a>
               
@@ -3197,7 +3210,7 @@
             </li>
           
             <li class='truncate' title='Stop using p values altogether'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#stop-using-p-values-altogether' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#stop-using-p-values-altogether' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Stop using p values altogether
               </a>
               
@@ -3208,7 +3221,7 @@
             </li>
           
             <li class='truncate' title='Use alternative statistics to the p value'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-alternative-statistics-to-the-p-value' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-alternative-statistics-to-the-p-value' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Use alternative statistics to the p value
               </a>
               
@@ -3219,14 +3232,14 @@
             </li>
           
             <li class='truncate' title='Adjust p values or present them with additional information'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#adjust-p-values-or-present-them-with-additional-information' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#adjust-p-values-or-present-them-with-additional-information' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Adjust p values or present them with additional information
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='False-positive risk'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#false-positive-risk' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#false-positive-risk' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 False-positive risk
               </a>
               
@@ -3237,7 +3250,7 @@
             </li>
           
             <li class='truncate' title='Bayes factors'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#bayes-factors' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#bayes-factors' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Bayes factors
               </a>
               
@@ -3248,7 +3261,7 @@
             </li>
           
             <li class='truncate' title='Analysis of credibility'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#analysis-of-credibility' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#analysis-of-credibility' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Analysis of credibility
               </a>
               
@@ -3259,7 +3272,7 @@
             </li>
           
             <li class='truncate' title='A combined approach'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#a-combined-approach' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#a-combined-approach' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 A combined approach
               </a>
               
@@ -3274,7 +3287,7 @@
             </li>
           
             <li class='truncate' title='Interpret p values differently depending on context'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#interpret-p-values-differently-depending-on-context' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#interpret-p-values-differently-depending-on-context' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Interpret p values differently depending on context
               </a>
               
@@ -3285,14 +3298,14 @@
             </li>
           
             <li class='truncate' title='Use alternative methods when we don’t have a prior hypothesis'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-alternative-methods-when-we-dont-have-a-prior-hypothesis' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-alternative-methods-when-we-dont-have-a-prior-hypothesis' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Use alternative methods when we don’t have a prior hypothesis
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='Penalised regression'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#penalised-regression' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#penalised-regression' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Penalised regression
               </a>
               
@@ -3303,7 +3316,7 @@
             </li>
           
             <li class='truncate' title='An eclectic approach'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#an-eclectic-approach' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#an-eclectic-approach' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 An eclectic approach
               </a>
               
@@ -3318,14 +3331,14 @@
             </li>
           
             <li class='truncate' title='Use Bayesian statistical methods'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-bayesian-statistical-methods' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#use-bayesian-statistical-methods' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Use Bayesian statistical methods
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='Why Bayesian methods appeal'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#why-bayesian-methods-appeal' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#why-bayesian-methods-appeal' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Why Bayesian methods appeal
               </a>
               
@@ -3336,7 +3349,7 @@
             </li>
           
             <li class='truncate' title='The role of prior information'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-role-of-prior-information' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#the-role-of-prior-information' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 The role of prior information
               </a>
               
@@ -3347,7 +3360,7 @@
             </li>
           
             <li class='truncate' title='Bayesian methods are not a silver bullet'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#bayesian-methods-are-not-a-silver-bullet' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#bayesian-methods-are-not-a-silver-bullet' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Bayesian methods are not a silver bullet
               </a>
               
@@ -3366,14 +3379,14 @@
             </li>
           
             <li class='truncate' title='Conclusions'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#conclusions' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#conclusions' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Conclusions
               </a>
               
         <ul class='space-y-1 ml-2'>
           
             <li class='truncate' title='Accept uncertainty'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#accept-uncertainty' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#accept-uncertainty' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Accept uncertainty
               </a>
               
@@ -3384,7 +3397,7 @@
             </li>
           
             <li class='truncate' title='Be thoughtful'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-thoughtful' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-thoughtful' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Be thoughtful
               </a>
               
@@ -3395,7 +3408,7 @@
             </li>
           
             <li class='truncate' title='Be open'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-open' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-open' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Be open
               </a>
               
@@ -3406,7 +3419,7 @@
             </li>
           
             <li class='truncate' title='Be modest'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-modest' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#be-modest' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Be modest
               </a>
               
@@ -3417,7 +3430,7 @@
             </li>
           
             <li class='truncate' title='Training implications'>
-              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#training-implications' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-teal-50 dark:hover:bg-teal-950 hover:text-teal-700 dark:hover:text-teal-300 transition-colors'>
+              <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions#training-implications' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'>
                 Training implications
               </a>
               
@@ -3498,14 +3511,14 @@
     <ul class='space-y-2'>
       
         <li>
-          <a class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900 inline-block' href='Thoughts/2024-02-03'>
+          <a class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900 inline-block' href='Thoughts/2024-02-03'>
             Back to blogging; RSS feed; p values; SENAITE; 2024 reading
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500 dark:text-gray-300'>
   
-    <div class='pl-2 mt-2 border-l-2 border-teal-200 dark:border-teal-600 hover:border-teal-500 dark:hover:border-teal-400'>
-      <div><p>I did a massive brain dump addressing the <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions' class='text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-teal-100 dark:hover:bg-teal-900' data-wikilink-type='WikiLinkNormal'>concerns about p values</a>; we’ve now successfully used Bayesian logistic regression in an outbreak investigation</p></div>
+    <div class='pl-2 mt-2 border-l-2 border-primary-200 dark:border-primary-600 hover:border-primary-500 dark:hover:border-primary-400'>
+      <div><p>I did a massive brain dump addressing the <a href='Knowledge/Statistics/statistical-practice-in-field-epidemiology-so-many-problems-so-many-solutions' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900' data-wikilink-type='WikiLinkNormal'>concerns about p values</a>; we’ve now successfully used Bayesian logistic regression in an outbreak investigation</p></div>
     </div>
   
 </div>
@@ -3523,7 +3536,7 @@
       <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
         Perhaps Emanote should inject tagMetas with urls.
       -->
-      <a title='Tag' class='px-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-teal-500' href='-/tags/writing'>
+      <a title='Tag' class='px-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-primary-500' href='-/tags/writing'>
         <!-- DoNotFormat -->
         #writing
         <!-- DoNotFormat -->
@@ -3543,7 +3556,7 @@
     
       
         <a href='/' title='Go to Home'>
-          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
           </svg>
         </a>
@@ -3552,19 +3565,19 @@
   </div>
   <div>
     <a href='-/all' title='View Index'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path>
       </svg>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.1'>
-      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.6.0.0'>
+      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>
   <div>
     <a href='-/tags' title='View tags'>
-      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
         </path>
       </svg>
@@ -3572,7 +3585,7 @@
   </div>
   <div>
     <a href='-/tasks' title='View tasks'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
       </svg>
     </a>
@@ -3593,14 +3606,18 @@
 </div>
 
 <script>
-  const wrapper = document.getElementById('stork-wrapper');
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+  // Block-scoped so Ema's reloadScripts can re-execute on route switches
+  // without hitting "Identifier 'wrapper' has already been declared".
+  {
+    const wrapper = document.getElementById('stork-wrapper');
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
-    wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
-  });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
+      wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+    });
+  }
 </script>
   
     <!-- mermaid.js --><script type='module'>
