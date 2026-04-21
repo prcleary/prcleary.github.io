@@ -1,12 +1,12 @@
 /* ---------- global font ---------- */
 body {
-  font-family: 'Fira Sans', system-ui, sans-serif;
+  font-family: 'Share Tech Mono', monospace;
   line-height: 1.7;
   letter-spacing: 0.01em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Fira Sans', monospace;
+  font-family: 'Share Tech Mono', monospace;
   letter-spacing: -0.02em;
   line-height: 1.3;
   font-weight: 700;
@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 strong.error {
   color: lightcoral;
   font-size: 90%;
-  font-family: 'Fira Sans', monospace;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 /* ---------- kbd ---------- */
