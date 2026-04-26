@@ -6936,6 +6936,8 @@ Folder notes are useful for:
 - Custom ordering
 - Tag summaries
 
+Look at the source of this blog for some possibilities.
+
 ---
 
 ## Front Matter for blog pages
