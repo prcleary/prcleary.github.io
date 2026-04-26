@@ -261,6 +261,7 @@ You can follow some or all of the above via their RSS feeds - the software I use
 
 ---
 title: Holiday reading; learning R; most frequently bookmarked
+date: 2023-02-07
 ---
 
 - Yet another holiday (still using up leave carried over from the pandemic) and time to read[[reading|more books]]. But too soon going back to the *anomie* of the public health world.
@@ -277,6 +278,7 @@ title: Holiday reading; learning R; most frequently bookmarked
 
 ---
 title: My tech March 2024
+date: 2023-03-01
 ---
 
 Recently there has been a flurry of "my tech" articles on the blogs I follow, so I thought I would list some of the more interesting software I've been using recently. 
@@ -347,6 +349,7 @@ I am currently thinking about getting a new Android phone, if I can find one tha
 
 ---
 title: Back to blogging; RSS feed; p values; SENAITE; 2024 reading 
+date: 2024-02-03
 ---
 
 ## Back to blogging
@@ -383,6 +386,7 @@ I am now working through [[reading|my 2024 reading]]
 
 ---
 title: SENAITE rabbithole; Python mon amour; Alles was du wissen muss; causal inferencing; better blogging; Bayesian and other shiny new things
+date: 2024-01-27
 ---
 
 ## Deep dive into SENAITE laboratory information management
@@ -423,6 +427,7 @@ Continuing to monitor interesting developments in the data science tooling space
 
 ---
 title: SENAITE progress; Bluesky; home server; AOC; Shiny app; Python apps from R; old blog; LibreELEC; Pop! OS Linux distro and new desktop computer; causal inference course
+date: 2025-03-11
 ---
 
 ## SENAITE open-source laboratory information system for Pakistan
@@ -480,6 +485,7 @@ I have also altered the format to use a new theme that became available; not sur
 
 ---
 title: DHIS 2 indicators for incidence; a good webinar; backing up servers
+date: 2024-04-10
 ---
 
 Just a quick post - I'm going to try to blog little and often in future
@@ -514,6 +520,7 @@ Finally, I have been looking into app frameworks recently, as we have a need for
 
 ---
 title: Karakeep; Paperless GPT; vibe coding; PeerTube; Kodi; Proxmox upgrade
+date: 2025-09-11
 ---
 
 Off today so catching up with the blog. Lots going on as always; at work I am increasingly being led down a technical leadership path, which is not always comfortable for me, and mostly takes me away from doing lovely technical stuff, but it seems to be what they need me to do; the global health work is progressing, but as always taking longer than expected.
@@ -572,6 +579,7 @@ Looking forward to a belated post-pandemic recovery sabbatical next year - only 
 
 ---
 title: Out with the old, in with the new; updates, plans and aspirations
+date: 2025-12-31
 ---
 
 Well, 2025 ends with this ageing epidemiologist still endlessly curious and in love with life and the human race (yes, all of you, you beautiful complex bastards), maybe a bit tired/bored at work but looking forward to a refreshing short sabbatical later in the year and thinking about how I can keep my job interesting for another 5-10 years when I've already done everything I wanted to do.
@@ -614,6 +622,7 @@ Finally, I would like to wish a happy, healthy and meaningful 2026 to both of my
 
 ---
 title: "New Zola blog; Dashboard Reports; integration teaser; most-used tech"
+date: 2026-01-06
 ---
 
 ## New Zola blog
@@ -671,6 +680,7 @@ I think I will stick with [Emanote](https://emanote.srid.ca/) for a while. There
 
 ---
 title: Pop!_OS upgrade; blog development
+date: 2026-04-18
 ---
 
 A quiet weekend. Was supposed to be in Pakistan but Iran got first dibs. Up to over 9,000 words for textbook chapter I am writing. Nothing much else going on.
@@ -705,6 +715,7 @@ alias publish='cd ~/prcleary.github.io; emanote -L content/ gen docs/; git add .
 
 ---
 title: The scope of this blog
+date: 2026-04-20
 ---
 
 Potential reasons for blogging include:
