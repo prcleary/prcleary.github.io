@@ -6772,8 +6772,6 @@ This is how to set up Emanote on a Linux computer (Pop!\_OS) to create a blog to
 
 > [!warning] This is a very big installation (gigabytes)
 
----
-
 ## Installing Nix (Linux)
 
 Follow the official instructions at  
@@ -6789,8 +6787,6 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf  # r
 nix run nixpkgs#omnix -- health  # got a couple of warnings but OK to ignore them
 ```
 
----
-
 ## Install Emanote
 
 ```bash
@@ -6803,7 +6799,6 @@ Check installation:
 emanote --version
 ```
 
----
 
 ## Create Blog Structure
 
@@ -6829,7 +6824,6 @@ http://127.0.0.1:34043
 
 Open this in your browser. It live-reloads as you edit files.
 
----
 
 ## Create the home page
 
@@ -6866,7 +6860,6 @@ There's YAML metadata at the start (other possible fields include date in YYYY-M
 
 You can link to another page by using the filename of the source Markdown file, without the ".md" file ending. You don't need to specify a path as Emanote will find the file that is nearest in the hierarchy with that name. So to link to my blog page (Blog.md), I can use `[[Blog]]`, or `[[Blog|blog]]` if I want the link to show "blog". Note that there is a bit of extra space around links, so you may not need to add a space, e.g. `My[[Blog|blog]]`.
 
----
 
 ## Configure `index.yaml`
 
@@ -6904,7 +6897,6 @@ This enables:
 
 Do not put `#`-prefixed comments in config values — they can be interpreted as tags.
 
----
 
 ## Folder Structure and “Folder Notes”
 
@@ -6938,7 +6930,6 @@ Folder notes are useful for:
 
 Look at the source of this blog for some possibilities.
 
----
 
 ## Front Matter for blog pages
 
@@ -6966,7 +6957,6 @@ Notes:
 
 Dates are not shown unless you use a trick - see the source for this blog. 
 
----
 
 ## Build the Site
 
@@ -6985,7 +6975,6 @@ emanote gen ../docs/
 
 The `docs/` folder is required for GitHub Pages if publishing from `/docs`.
 
----
 
 ## Export Everything to a Single Markdown File
 
@@ -7001,7 +6990,6 @@ Useful for:
 
 You can also export config with `emanote export`.
 
----
 
 ## Publish to GitHub Pages
 
@@ -7023,7 +7011,6 @@ Configure GitHub Pages to serve from:
 
 There is no heavy build pipeline — generation is fast and local.
 
----
 
 ## RSS Feeds
 
@@ -7035,7 +7022,6 @@ Ensure:
 
 RSS is typically generated automatically during `gen`.
 
----
 
 ## Search (Ctrl-K)
 
