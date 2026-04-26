@@ -5216,7 +5216,7 @@ tags:
 
 Been ill with some virus and feeling pretty sorry for myself for nearly two weeks.
 
-![Our investigation into whining-based remedies became the first study to be halted by the IRB on the grounds that the treatment group was 'too annoying'.](https://imgs.xkcd.com/comics/cold_complaints_2x.png)
+![Our investigation into whining-based remedies became the first study to be halted by the IRB on the grounds that the treatment group was 'too annoying'.](https://imgs.xkcd.com/comics/cold_complaints_2x.png) {img-md}
 
 I should note a few teething troubles I had with my Proxmox installation:
 
