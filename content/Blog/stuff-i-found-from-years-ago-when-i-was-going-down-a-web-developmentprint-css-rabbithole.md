@@ -1,6 +1,8 @@
 ---
 title: "Stuff I found from years ago when I was going down a Web development/Print CSS rabbithole"
 date: 2025-02-20
+tags:
+  - Web\ development
 ---
 
 Just found these notes while clearing out old files, from an abortive Quarto blog years ago. I ended up going down a Web development rabbithole and got fed up with both Web development and Quarto.

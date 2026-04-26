@@ -1,6 +1,8 @@
 ---
 title: "SENAITE setup data diagram"
 date: 2024-03-27
+tags:
+  - SENAITE
 ---
 
 As part of getting my head around SENAITE, I put together the diagram below using the Mermaid.js syntax. As you can see, it is quite a large and complex diagram which is hard to read. Syntax is below.

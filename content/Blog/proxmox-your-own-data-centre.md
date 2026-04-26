@@ -1,6 +1,8 @@
 ---
 title: "Proxmox: your own data centre"
 date: 2024-10-04
+tags:
+  - Proxmox
 ---
 
 I want to do more experimentation with virtualisation and containerisation, but don't want to keep paying additional sums for things I might spin up on cloud providers like Hetzner or Digital Ocean. I've got several web apps/services that I use regularly (Nextcloud, Calibre, RStudio, Jupyter, Miniflux, Dolibarr, Appsmith and others) running on my domain, all of which run in Docker containers on a single VM behind CapRover (which uses Docker Swarm). Although only a single point of failure away from data loss (I've seen similar setups described as "clown computing"), this has worked really well for my personal stuff so far. I take snapshots, though not perhaps as frequently as I should, and periodically back up my Nextcloud files and other key stuff to an external drive (Nextcloud syncs with my main home Linux box). So not quite a 3-2-1 backup strategy. I've also got a mailserver running on a separate (much lower spec) VM for a local football club I do some admin stuff for (use MailInABox for this and had to interact with Google, Microsoft and others to get the IP address off various spam blacklists). I've also temporarily set up various other more expensive VPSs to experiment with things like DHIS 2 over the years.

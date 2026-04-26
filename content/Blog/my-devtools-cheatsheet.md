@@ -1,6 +1,8 @@
 ---
 title: "My devtools cheatsheet"
 date: 2025-09-11
+tags:
+  - R
 ---
 
 - Build pkgdown site: `usethis::use_pkgdown(); pkgdown:build_site()`

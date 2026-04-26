@@ -1,6 +1,8 @@
 ---
 title: "Run Shiny app from Windows batch file: example"
 date: 2025-01-13
+tags:
+  - Shiny
 ---
 
 Create `planner.bat` (not `planner.bat.txt`!)

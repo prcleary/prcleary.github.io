@@ -1,6 +1,9 @@
 ---
 title: "Deleting unused/empty dashboards and similar in DHIS 2 via the API using R"
 date: 2025-04-28
+tags:
+  - DHIS\ 2
+  - R
 ---
 
 The Data Administration app (Data Integrity section) in DHIS 2 can give you a list of dashboards which are empty or which have not been viewed within the last year. It is easy to delete those dashboards manually if you can access those dashboards as another user, but what if the dashboards have not been shared with other users?

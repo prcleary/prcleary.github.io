@@ -1,6 +1,8 @@
 ---
 title: "Adding translated subtitles to video recordings of presentations, using large language models"
 date: 2025-01-28
+tags:
+  - AI
 ---
 
 As part of my LIMS implementation I have been delivering training sessions in my native English to non-native English speakers. I usually consciously try to speak slowly but I have realised I may need to do more to increase accessibility for non-native speakers. It's possible a British accent is more difficult to understand (even in the US I found I needed to speak in a mid-Atlantic way to avoid occasional incomprehension). Recently I was excited to find an easy way to add translated subtitles to a presentation recording without using any online services. 

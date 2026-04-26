@@ -1,6 +1,8 @@
 ---
 title: "Automating Bitwarden Send"
 date: 2024-08-24
+tags:
+  - Bitwarden
 ---
 
 Not many years ago your local IT department might be alarmed to learn that you were using a password manager. A password manager is a software tool running on your computer and/or in your browser which helps you keep track of your login details for different websites. The key advantage is that you can create a different long, complex password (I use at least 20 characters from a-z, A-Z, 0-9 plus special characters) for every site without having to remember any of them; the downside is if your password manager gets hacked. However, if your alternative to using a password manager is to use the same passwords (or variations) across sites, then that is far more risky. The UK National Cybersecurity Centre now [recommends the use of password managers](https://www.ncsc.gov.uk/blog-post/what-does-ncsc-think-password-managers). 

@@ -1,6 +1,8 @@
 ---
-title: Emanote syntax
+title: My Emanote cheatsheet
 date: 2023-03-08
+tags:
+  - Emanote
 ---
 
 Uses standard Markdown

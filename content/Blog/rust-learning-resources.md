@@ -1,6 +1,8 @@
 ---
 title: "Rust learning resources"
 date: 2025-12-31
+tags:
+  - Rust
 ---
 
 - [Learn Rust in Y Minutes](https://learnxinyminutes.com/rust/)

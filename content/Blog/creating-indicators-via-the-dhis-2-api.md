@@ -1,6 +1,8 @@
 ---
 title: "Creating indicators via the DHIS 2 API"
 date: 2025-04-21
+tags:
+  - DHIS\ 2
 ---
 
 Creating indicators manually in DHIS 2 is not difficult, but it is time-consuming if you have to do a lot. I needed to create health facility-level rates for over 30 data elements. The R code below takes a manual download of DHIS 2 data element metadata, filters them to those with a certain pattern in their names (in my case, "(new cases)" - not case sensitive) and creates a JSON file to be uploaded into DHIS 2 via the Data Import/Export app. 

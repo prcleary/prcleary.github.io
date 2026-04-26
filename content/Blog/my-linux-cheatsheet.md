@@ -1,6 +1,8 @@
 ---
 title: "My Linux cheatsheet"
 date: 2023-06-12
+tags:
+  - Linux
 ---
 
 > Stuff I find myself Googling for the nth time

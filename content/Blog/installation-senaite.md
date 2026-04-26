@@ -1,6 +1,8 @@
 ---
 title: "Installation · SENAITE"
 date: 2024-10-08
+tags:
+  - SENAITE
 ---
 
 > An updated version of [the official installation instructions](https://www.senaite.com/docs/installation), working as of September 2024 - I subsequently found this which might be better: [bika.documentation/docs/BikaSenaiteServerIntroduction.md at main · bikalims/bika.documentation](https://github.com/bikalims/bika.documentation/blob/main/docs/BikaSenaiteServerIntroduction.md)

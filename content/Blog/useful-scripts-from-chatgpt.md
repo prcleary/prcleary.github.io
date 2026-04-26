@@ -1,6 +1,8 @@
 ---
 title: "Useful scripts from ChatGPT"
 date: 2023-03-16
+tags:
+  - AI
 ---
 
 Possibly like many nerds, I couldn't initially see past all the hype and stupidity around generative AI, but I have now managed to get ChatGPT to generate some really useful scripts recently, which I have included below, and I now realise it can be really useful if not game-changing. It sometimes took several iterations to get the working code I wanted, so there definitely has to be a human in the loop for it to be safe, but generative AI does have the potential to be quite time-saving. It is good at some things (bash or Python scripts) but not so good at others (Dockerfiles, Ansible playbooks). DeepSeek seems quite good for providing technical step-by-step guidance, though again it can take several attempts to get a correct answer. 

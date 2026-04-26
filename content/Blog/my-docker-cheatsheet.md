@@ -1,6 +1,8 @@
 ---
 title: "My Docker cheatsheet"
 date: 2023-03-13
+tags:
+  - Docker
 ---
 
 > Stuff I find myself Googling for the nth time

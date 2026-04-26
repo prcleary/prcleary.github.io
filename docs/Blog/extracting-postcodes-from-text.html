@@ -48,7 +48,7 @@
   --color-primary-900: var(--color-teal-900);
   --color-primary-950: var(--color-teal-950);
 }
-</style><link href='tailwind.css?instanceId=84268808-9182-47d6-8848-199b292dcb76' rel='stylesheet' type='text/css' />
+</style><link href='tailwind.css?instanceId=df709451-1126-4393-b4e1-2fdd41633236' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -1496,8 +1496,8 @@
         
       
     </span>
-    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Emanote syntax' href='Blog/emanote-syntax'>
-      Emanote syntax
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='My Emanote cheatsheet' href='Blog/emanote-syntax'>
+      My Emanote cheatsheet
     </a>
     
       
@@ -3439,6 +3439,15 @@ mydata
     </div>
     
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
+        Perhaps Emanote should inject tagMetas with urls.
+      -->
+      <a title='Tag' class='px-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-primary-500' href='-/tags/R'>
+        <!-- DoNotFormat -->
+        #R
+        <!-- DoNotFormat -->
+      </a>
     
   </section>
 

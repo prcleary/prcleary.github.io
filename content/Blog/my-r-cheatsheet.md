@@ -1,6 +1,8 @@
 ---
 title: "My R cheatsheet"
 date: 2023-03-15
+tags:
+  - R
 ---
 
 > Stuff I find myself Googling for the nth time

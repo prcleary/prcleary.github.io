@@ -1,6 +1,8 @@
 ---
 title: "Next steps with Proxmox"
 date: 2024-10-04
+tags:
+  - Proxmox
 ---
 
 Been ill with some virus and feeling pretty sorry for myself for nearly two weeks.

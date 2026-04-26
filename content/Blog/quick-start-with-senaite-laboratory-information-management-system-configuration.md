@@ -1,6 +1,8 @@
 ---
 title: "Quick start with SENAITE laboratory information management system configuration"
 date: 2024-01-16
+tags:
+  - SENAITE
 ---
 
 I [[installing-senaite-laboratory-information-management-system-on-ubuntu|previously]] installed SENAITE on my test server and I have now installed a production instance on another server, using my notes from last time.

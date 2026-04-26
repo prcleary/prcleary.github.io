@@ -1,6 +1,8 @@
 ---
 title: "Update on progress with SENAITE laboratory information management system configuration"
 date: 2025-03-11
+tags:
+  - SENAITE
 ---
 
 I am currently working on the implementation of a laboratory information management project using SENAITE.

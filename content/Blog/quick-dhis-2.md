@@ -1,6 +1,8 @@
 ---
 title: "Quick DHIS 2" 
 date: 2025-05-02
+tags:
+  - DHIS\ 2
 ---
 
 Needed a quick DHIS 2 for testing something - here is an aide-mémoire of doing it with [dhis2/dhis2-server-tools: Tools to support installation and management of DHIS2](https://github.com/dhis2/dhis2-server-tools) on a new Ubuntu 22.04 VM (4GB RAM, 2 vCPU, 20GB storage, static IP address 192.168.1.104) on Proxmox.

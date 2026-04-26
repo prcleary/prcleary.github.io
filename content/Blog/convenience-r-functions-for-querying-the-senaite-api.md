@@ -1,6 +1,8 @@
 ---
 title: "Convenience R functions for querying the SENAITE API"
 date: 2025-03-11
+tags:
+  - R
 ---
 
 Developed these R functions to query the SENAITE API and to put the data into a more manageable format

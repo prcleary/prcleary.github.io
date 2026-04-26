@@ -1,6 +1,8 @@
 ---
 title: "My Zola cheatsheet"
-daet: 2025-12-31
+date: 2025-12-31
+tags:
+  - Zola
 ---
 
 Most Markdown works as expected, but here are some less obvious things you can do. You can also include HTML.

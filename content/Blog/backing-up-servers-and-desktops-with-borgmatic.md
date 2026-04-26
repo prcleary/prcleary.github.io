@@ -1,6 +1,8 @@
 ---
 title: "Backing up servers and desktops with borgmatic"
 date: 2025-04-06
+tags:
+  - Borgmatic
 ---
 
 To have a resilient backup strategy, you need:

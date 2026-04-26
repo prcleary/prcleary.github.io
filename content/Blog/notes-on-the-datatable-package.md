@@ -1,6 +1,8 @@
 ---
 title: "Notes on the data.table package"
 date: 2024-02-03
+tags:
+  - R
 ---
 
 > Work in progress

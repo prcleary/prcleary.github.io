@@ -1,6 +1,9 @@
 ---
 title: "Running Python apps from R"
 date: 2025-01-08
+tags:
+  - Python
+  - R
 ---
 
 You too can run Python apps from R. I did the following in RStudio:
