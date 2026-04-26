@@ -8576,6 +8576,7 @@ path:./*
 
 ---
 title: Books
+order: -5
 feed:
   enable: true
 ---
