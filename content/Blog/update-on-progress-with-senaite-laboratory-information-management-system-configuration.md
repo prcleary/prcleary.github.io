@@ -34,7 +34,7 @@ add_header Permissions-Policy interest-cohort=();
 
 It wasn't obvious to me at first how you can add security headers to NPM, so here is a picture of how you do it using a "Custom location".
 
-![NPM security headers](static/npm-security-headers.png)
+![NPM security headers](../static/npm-security-headers.png)
 
 There are additional headers I could have added, such as to hide the web server type/version, which I might add later. 
 
