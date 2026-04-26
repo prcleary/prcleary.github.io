@@ -9497,7 +9497,7 @@ feed:
 > Index page for Writing
 
 ```query {.timeline}
-tag:writing
+tag:Writing
 ```
 
 
