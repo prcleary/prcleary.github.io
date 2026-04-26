@@ -4688,7 +4688,7 @@ No path needed e.g.
 
     ![Ama Dablam](ama-dablam.jpeg)
 
-![Ama Dablam](ama-dablam.jpeg)
+![Ama Dablam](../static/ama-dablam.jpeg)
 
 ## Emoji
 
