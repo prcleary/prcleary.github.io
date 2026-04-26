@@ -387,7 +387,7 @@ title: SENAITE rabbithole; Python mon amour; Alles was du wissen muss; causal in
 
 ## Deep dive into SENAITE laboratory information management
 
-When I was previously tasked with implementing [[DHIS 2]] for surveillance I must have spend hundreds of hours learning about it and playing with it, both in work and in my own time; the last several months I have been going through a similar process with [[SENAITE]] the laboratory information management system; I have been documenting things here as I go, such as [[installation-senaite|installation]], [[modifying-a-senaite-add-on|modifying functionality]], [[senaite-customising-laboratory-report-content|styling printed reports]] and the [[post-installation-checklist-for-senaite|myriad other steps]] involved in implementation; this week we should be "soft launching" it at the lab we are working with to see what they think and make any further changes required; I am confident we have chosen the best open source option, but there is further work to do around microbiology/AMR reporting, SMS reporting and integration of the data with DHIS 2.
+When I was previously tasked with implementing DHIS 2 for surveillance I must have spend hundreds of hours learning about it and playing with it, both in work and in my own time; the last several months I have been going through a similar process with SENAITE the laboratory information management system; I have been documenting things here as I go, such as [[installation-senaite|installation]], [[modifying-a-senaite-add-on|modifying functionality]], [[senaite-customising-laboratory-report-content|styling printed reports]] and the [[post-installation-checklist-for-senaite|myriad other steps]] involved in implementation; this week we should be "soft launching" it at the lab we are working with to see what they think and make any further changes required; I am confident we have chosen the best open source option, but there is further work to do around microbiology/AMR reporting, SMS reporting and integration of the data with DHIS 2.
 
 ## SENAITE API and secure report sharing
 
@@ -486,7 +486,7 @@ Just a quick post - I'm going to try to blog little and often in future
 
 ## Creating incidence rates in DHIS 2
 
-I've always known it was possible to create rates in [[DHIS 2]], but it was more work than I expected when I came to do it; I've put my notes [[incidence-rates-in-dhis-2|here]] as there were a couple of things I had to work out in the process; it's not difficult though
+I've always known it was possible to create rates in DHIS 2, but it was more work than I expected when I came to do it; I've put my notes [[incidence-rates-in-dhis-2|here]] as there were a couple of things I had to work out in the process; it's not difficult though
 
 ## DHIS 2 webinars on infrastructure
 
@@ -626,7 +626,7 @@ When I first started working with public health colleagues abroad, it was easies
 
 ## Integration teaser
 
-I think I am getting closer to an integration solution for the global health work, or at least an MVP, and I think it is quite exciting. I will add my notes to the [[Knowledge]] section when it is more developed.
+I think I am getting closer to an integration solution for the global health work, or at least an MVP, and I think it is quite exciting. I will add my notes when it is more developed.
 
 ## Current most-used tech at the start of 2026
 
@@ -681,7 +681,7 @@ Upgraded my home Linux box to Pop!\_OS 24.04 without major issues: [Upgrade Pop!
 
 ## Blog development
 
-Still playing with the blog format - added a list of interesting[[Links|links]]using [Karakeep](https://karakeep.app/). Added a couple of shortcuts to `~/.bashrc` to help with blogging.
+Still playing with the blog format - added a list of interesting[[Bookmarks|bookmarks]]using [Karakeep](https://karakeep.app/). Added a couple of shortcuts to `~/.bashrc` to help with blogging.
 
 ```bash
 blog() {
@@ -9342,8 +9342,10 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 
 ## What you'll find here
 
-- **Knowledge management**: notes in various stages of development as I learn in the open and gradually consolidate and structure my many technical notes from elsewhere
-- **Miscellaneous**[[Thoughts|thoughts,]][[Writing|writing,]]interesting[[Links|links]]and[[Books|reading]]
+- My[[Blog|blog]]
+- Occasional[[Writing|writing]]
+- Interesting[[Bookmarks|Bookmarks]]
+- Notes e.g. on[[Books|reading]] which I am starting to organise in Obsidian
 
 [Email](mailto:blog@paulcleary.net) [GitHub](https://github.com/prcleary) [Letterboxd](https://letterboxd.com/rusticana/) [ORCID](https://orcid.org/0000-0001-9335-5422) [Strava](https://www.strava.com/athletes/9125693) [Zotero](https://www.zotero.org/drprcleary)
 
