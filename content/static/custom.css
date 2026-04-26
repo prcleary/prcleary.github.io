@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 strong.error {
   color: lightcoral;
   font-size: 90%;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Sans', monospace;
 }
 
 /* ---------- kbd ---------- */
