@@ -199,7 +199,8 @@ Notes:
 - `slug` controls URL
 - `tags` enable backlinks and filtering
 
-Dates are not shown unless 
+Dates are not shown unless you use a trick - see the source for this blog. 
+
 ---
 
 ## Build the Site
