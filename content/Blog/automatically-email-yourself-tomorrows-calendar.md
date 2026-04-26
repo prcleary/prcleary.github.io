@@ -3,6 +3,7 @@ title: "Automatically email yourself tomorrow's calendar"
 date: 2026-01-17
 tags:
   - PowerShell
+  - AI
 ---
 
 I sometimes have early meetings and it is nice to check while still in bed. This uses a PowerShell script to send an email containing tomorrow's calendar events to a specified email address.
