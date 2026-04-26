@@ -2,7 +2,7 @@
 title: "Interested in Bayesian statistics and want to know more?"
 date: 2023-06-23
 tags:
-  - Bayesian\ statistics
+  - Bayesian statistics
 ---
 
 Some suggested articles below. Not a systematic review but ones that I found useful or might be of general interest. Some start off easy but suddenly get hard - dip in and out of several to see which interest you most.

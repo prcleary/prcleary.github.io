@@ -2,7 +2,7 @@
 title: "Incidence rates in DHIS 2"
 date: 2025-04-10
 tags:
-  - DHIS\ 2
+  - DHIS 2
 ---
 
 Fair comparison of disease activity across areas typically requires calculation of rates. Here are some notes on uploading denominator data into DHIS 2 and creating indicators for incidence.

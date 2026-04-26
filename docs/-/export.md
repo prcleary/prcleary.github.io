@@ -1433,7 +1433,7 @@ Could definitely have got further with more time - next year's goal is to get up
 title: "Automatically email yourself tomorrow's calendar"
 date: 2026-01-17
 tags:
-  - Powershell
+  - PowerShell
 ---
 
 I sometimes have early meetings and it is nice to check while still in bed. This uses a PowerShell script to send an email containing tomorrow's calendar events to a specified email address.
@@ -2384,7 +2384,7 @@ openxlsx::saveWorkbook(metadata_output, file = 'metadata.xlsx', overwrite = TRUE
 title: "Creating indicators via the DHIS 2 API"
 date: 2025-04-21
 tags:
-  - DHIS\ 2
+  - DHIS 2
 ---
 
 Creating indicators manually in DHIS 2 is not difficult, but it is time-consuming if you have to do a lot. I needed to create health facility-level rates for over 30 data elements. The R code below takes a manual download of DHIS 2 data element metadata, filters them to those with a certain pattern in their names (in my case, "(new cases)" - not case sensitive) and creates a JSON file to be uploaded into DHIS 2 via the Data Import/Export app. 
@@ -2946,7 +2946,7 @@ Shiny app development could be quite time-consuming, but now that ChatGPT, [Shin
 title: "Deleting unused/empty dashboards and similar in DHIS 2 via the API using R"
 date: 2025-04-28
 tags:
-  - DHIS\ 2
+  - DHIS 2
   - R
 ---
 
@@ -3901,7 +3901,7 @@ The best of luck to you.
 title: "Implementation considerations: infrastructure (DHIS 2 Academy)"
 date: 2025-03-21
 tags:
-  - DHIS\ 2
+  - DHIS 2
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y1NL-gvneN8?si=oYOab-ddNj0ZMptC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br/>
@@ -3920,7 +3920,7 @@ Excellent webinar from the University of Oslo on the advantages and disadvantage
 title: "Incidence rates in DHIS 2"
 date: 2025-04-10
 tags:
-  - DHIS\ 2
+  - DHIS 2
 ---
 
 Fair comparison of disease activity across areas typically requires calculation of rates. Here are some notes on uploading denominator data into DHIS 2 and creating indicators for incidence.
@@ -4408,7 +4408,7 @@ Notes from my own recent installation:
 title: "Interested in Bayesian statistics and want to know more?"
 date: 2023-06-23
 tags:
-  - Bayesian\ statistics
+  - Bayesian statistics
 ---
 
 Some suggested articles below. Not a systematic review but ones that I found useful or might be of general interest. Some start off easy but suddenly get hard - dip in and out of several to see which interest you most.
@@ -5513,7 +5513,7 @@ tags:
 title: "Notes on using Bayesian statistics in outbreak investigation"
 date: 2024-02-13
 tags:
-  - Bayesian\ statistics
+  - Bayesian statistics
 ---
 
 I recently had the opportunity to try out Bayesian methods in a large gastrointestinal disease outbreak. This was a case-case study, comparing cases of outbreak infection with cases of another gastrointestinal infection. Data were collected from different regions/countries, in different ways. There was no sampling; just all the data we could get, which is the standard approach.
@@ -5956,7 +5956,7 @@ Edit: have now added two-factor authentication, though more to do
 title: "Quick DHIS 2" 
 date: 2025-05-02
 tags:
-  - DHIS\ 2
+  - DHIS 2
 ---
 
 Needed a quick DHIS 2 for testing something - here is an aide-mémoire of doing it with [dhis2/dhis2-server-tools: Tools to support installation and management of DHIS2](https://github.com/dhis2/dhis2-server-tools) on a new Ubuntu 22.04 VM (4GB RAM, 2 vCPU, 20GB storage, static IP address 192.168.1.104) on Proxmox.
@@ -7340,7 +7340,7 @@ I think this is my longest post by far! I will try to develop some of the above 
 title: "Stuff I found from years ago when I was going down a Web development/Print CSS rabbithole"
 date: 2025-02-20
 tags:
-  - Web\ development
+  - Web development
 ---
 
 Just found these notes while clearing out old files, from an abortive Quarto blog years ago. I ended up going down a Web development rabbithole and got fed up with both Web development and Quarto.

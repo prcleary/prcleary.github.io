@@ -2,7 +2,7 @@
 title: "Notes on using Bayesian statistics in outbreak investigation"
 date: 2024-02-13
 tags:
-  - Bayesian\ statistics
+  - Bayesian statistics
 ---
 
 I recently had the opportunity to try out Bayesian methods in a large gastrointestinal disease outbreak. This was a case-case study, comparing cases of outbreak infection with cases of another gastrointestinal infection. Data were collected from different regions/countries, in different ways. There was no sampling; just all the data we could get, which is the standard approach.

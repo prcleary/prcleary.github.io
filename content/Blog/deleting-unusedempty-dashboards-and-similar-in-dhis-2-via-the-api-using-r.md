@@ -2,7 +2,7 @@
 title: "Deleting unused/empty dashboards and similar in DHIS 2 via the API using R"
 date: 2025-04-28
 tags:
-  - DHIS\ 2
+  - DHIS 2
   - R
 ---
 
