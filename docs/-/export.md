@@ -4569,13 +4569,15 @@ No path needed - it will find nearest
 
 ## Links (three ways)
 
-    This is a URL: <https://prcleary.github.io>
+```
+This is a URL: <https://prcleary.github.io>
 
-    This is a [link](https://prcleary.github.io)
+This is a [link](https://prcleary.github.io)
 
-    This is a [link][link].
+This is a [link][link].
 
-    [link]: https://prcleary.github.io
+[link]: https://prcleary.github.io
+```
 
 This is a URL: <https://prcleary.github.io>
 
