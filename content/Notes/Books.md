@@ -7,5 +7,5 @@ feed:
 > Index page for Books
 
 ```query
-path:Books/*
+path:Notes/Books/*
 ```
