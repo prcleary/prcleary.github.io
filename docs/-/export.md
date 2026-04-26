@@ -18,6 +18,9 @@ The base URL is: https://prcleary.github.io
 title: Blog
 feed:
   enable: true
+template:
+  sidebar:
+    enable: false
 ---
 
 [RSS feed](https://prcleary.github.io/Blog.xml)
