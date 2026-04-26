@@ -5,7 +5,7 @@ date: 2026-04-26
 
 This is how to set up Emanote on a Linux computer (Pop!\_OS) to create a blog to host on GitHub Pages, i.e. this one. 
 
-> [!warning] This is a very big installation (gigabytes)
+> [!warning] This is a very big installation (gigabytes)!
 
 ## Installing Nix (Linux)
 

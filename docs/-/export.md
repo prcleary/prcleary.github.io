@@ -747,6 +747,9 @@ Here are the broad areas I have some interest in and experience with and hope to
 - Cybersecurity, including networking
 - AI, including experience of AI-assisted coding or engineering, GitHub CoPilot, Aider
 
+![Blog scope](../static/blog-scope-infographic.png)
+
+
 
 ===
 
@@ -6770,7 +6773,7 @@ date: 2026-04-26
 
 This is how to set up Emanote on a Linux computer (Pop!\_OS) to create a blog to host on GitHub Pages, i.e. this one. 
 
-> [!warning] This is a very big installation (gigabytes)
+> [!warning] This is a very big installation (gigabytes)!
 
 ## Installing Nix (Linux)
 
