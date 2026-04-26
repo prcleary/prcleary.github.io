@@ -1,6 +1,6 @@
 ---
 title: My Emanote cheatsheet
-date: 2023-03-08
+date: 2026-04-08
 tags:
   - Emanote
 ---
