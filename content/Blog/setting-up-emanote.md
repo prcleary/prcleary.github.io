@@ -9,8 +9,7 @@ This is how to set up Emanote on a Linux computer (Pop!\_OS) to create a blog to
 
 ## Installing Nix (Linux)
 
-Follow the official instructions at  
-[Installing – Emanote](https://emanote.srid.ca/install)
+Follow the official instructions at  [Installing – Emanote](https://emanote.srid.ca/install)
 
 It is apparently feasible on Windows (via WSL) but I haven't tried it.
 
@@ -115,7 +114,7 @@ Useful changes:
   siteTitle: Wikipaulia
   siteUrl: https://yourusername.github.io/repository-name/
   ```
-- Enable Mermaid and MathJax.
+- Enable Mermaid and MathJax by adding the following under `bodyHTtml`. 
 
 Add:
 
@@ -124,11 +123,6 @@ bodyHtml: |
   <snippet var="js.mermaid" />
   <snippet var="js.mathjax" />
 ```
-
-This enables:
-
-- Mermaid diagrams (flowcharts, graphs)
-- LaTeX math rendering
 
 Do not put `#`-prefixed comments in config values — they can be interpreted as tags.
 
@@ -190,7 +184,7 @@ Notes:
 - `slug` controls URL
 - `tags` enable backlinks and filtering
 
-Dates are not shown unless you use a trick - see the source for this blog. 
+Dates are not shown unless you use [a trick](https://github.com/srid/emanote/discussions/131#discussioncomment-1382189) - see the source for this blog. 
 
 
 ## Build the Site
@@ -208,7 +202,7 @@ cd emanote/content
 emanote gen ../docs/
 ```
 
-The `docs/` folder is required for GitHub Pages if publishing from `/docs`.
+As mentioned the `docs/` folder is required for GitHub Pages.
 
 
 ## Export Everything to a Single Markdown File
@@ -216,12 +210,6 @@ The `docs/` folder is required for GitHub Pages if publishing from `/docs`.
 ```bash
 emanote export content
 ```
-
-Useful for:
-
-- Backups
-- Converting to other static site generators
-- Printing
 
 You can also export config with `emanote export`.
 
@@ -243,8 +231,6 @@ Configure GitHub Pages to serve from:
 
 - Branch: `main`
 - Folder: `/docs`
-
-There is no heavy build pipeline — generation is fast and local.
 
 
 ## RSS Feeds

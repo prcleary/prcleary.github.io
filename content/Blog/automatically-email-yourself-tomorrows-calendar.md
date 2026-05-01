@@ -6,7 +6,7 @@ tags:
   - AI
 ---
 
-I sometimes have early meetings and it is nice to check while still in bed. This uses a PowerShell script to send an email containing tomorrow's calendar events to a specified email address.
+I sometimes have early meetings and it is nice to check while still in bed. This is a vibe-coded PowerShell script to send an email containing tomorrow's calendar events to a specified email address.
 
 Create the PowerShell script: `Send-OutlookCalendarEmail.ps1`:
 
@@ -137,7 +137,7 @@ Run it to check - you should get an email:
 .\Send-OutlookCalendarEmail.ps1 -RecipientEmail "name@domain.tld"
 ```
 
-You can add this to Task Scheduler.
+You can add this to Task Scheduler in Windows.
 
 - Open Task Scheduler
 - Create Task

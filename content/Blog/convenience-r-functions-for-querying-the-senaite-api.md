@@ -5,6 +5,8 @@ tags:
   - R
 ---
 
+> Edit: these have been further developed and added to my `sen8r` (geddit) package.
+
 Developed these R functions to query the SENAITE API and to put the data into a more manageable format
 
 - `get_senaite_data` can query data or metadata from any endpoint, specifying parameters

@@ -33,13 +33,10 @@ Note that after some steps you should exit your shell and open another. I also h
 
 ```bash
 sudo apt install borgbackup pipx
-sudo pipx ensurepath  # exit shell and open another
-sudo pipx install borgmatic
-sudo borgmatic --version  # check
 pipx ensurepath  # exit shell and open another
 pipx install borgmatic
-sudo EDITOR=vim visudo # add `:/home/paul/.local/bin` to end of `secure_path`
 borgmatic --version  # check
+sudo EDITOR=vim visudo # add `:/home/paul/.local/bin` to end of `secure_path`
 ```
 
 If you don't already have SSH keys then you should create them. *If you want to run borgmatic both as root and as an ordinary user, you should make sure that the SSH keys are in both `~/.ssh` and `/root/.ssh`, and that permissions and ownership are correct.*
