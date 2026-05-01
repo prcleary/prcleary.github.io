@@ -48,7 +48,7 @@
   --color-primary-900: var(--color-olive-900);
   --color-primary-950: var(--color-olive-950);
 }
-</style><link href='tailwind.css?instanceId=a90fd0bf-6a6c-4387-bb1c-c847727ecd03' rel='stylesheet' type='text/css' />
+</style><link href='tailwind.css?instanceId=dae1b35e-e3cb-43a4-9cac-730fd092ecaf' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -3485,8 +3485,12 @@
   <span class='bu'>local</span> <span class='va'>FILE</span><span class='op'>=</span><span class='st'>"</span><span class='va'>$BLOG_DIR</span><span class='st'>/</span><span class='va'>$DATE</span><span class='st'>.md"</span>
   <span class='ex'>vim</span> <span class='st'>"</span><span class='va'>$FILE</span><span class='st'>"</span>
 <span class='kw'>}</span>
-<span class='bu'>alias</span> publish=<span class='st'>'cd ~/prcleary.github.io; emanote -L content/ gen docs/; git add .; git commit -m "Add content"; git push; cd -'</span>
+<span class='bu'>alias</span> publish=<span class='st'>'cd ~/prcleary.github.io; git pull; emanote -L content/ gen docs/; git add .; git commit -m "Add content"; git push; cd -'</span>
 </code></pre></div>
+    <p class='mb-4 leading-relaxed'>
+      <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>blog</code> opens Vim for me to write a post; <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>publish</code> updates the online version.
+    </p>
+  
   <!-- What goes in this file will appear below the note body-->
 </article>
         </div>

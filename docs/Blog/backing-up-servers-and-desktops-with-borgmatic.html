@@ -48,7 +48,7 @@
   --color-primary-900: var(--color-olive-900);
   --color-primary-950: var(--color-olive-950);
 }
-</style><link href='tailwind.css?instanceId=a90fd0bf-6a6c-4387-bb1c-c847727ecd03' rel='stylesheet' type='text/css' />
+</style><link href='tailwind.css?instanceId=dae1b35e-e3cb-43a4-9cac-730fd092ecaf' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -3500,13 +3500,10 @@
       Note that after some steps you should exit your shell and open another. I also had to add a local executable path into the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>sudo</code> configuration for this to work.
     </p>
   <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='bash'><span class='fu'>sudo</span> apt install borgbackup pipx
-<span class='fu'>sudo</span> pipx ensurepath  <span class='co'># exit shell and open another</span>
-<span class='fu'>sudo</span> pipx install borgmatic
-<span class='fu'>sudo</span> borgmatic <span class='at'>--version</span>  <span class='co'># check</span>
 <span class='ex'>pipx</span> ensurepath  <span class='co'># exit shell and open another</span>
 <span class='ex'>pipx</span> install borgmatic
-<span class='fu'>sudo</span> EDITOR=vim visudo <span class='co'># add `:/home/paul/.local/bin` to end of `secure_path`</span>
 <span class='ex'>borgmatic</span> <span class='at'>--version</span>  <span class='co'># check</span>
+<span class='fu'>sudo</span> EDITOR=vim visudo <span class='co'># add `:/home/paul/.local/bin` to end of `secure_path`</span>
 </code></pre></div>
     <p class='mb-4 leading-relaxed'>
       If you don’t already have SSH keys then you should create them. <em>If you want to run borgmatic both as root and as an ordinary user, you should make sure that the SSH keys are in both <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>~/.ssh</code> and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>/root/.ssh</code>, and that permissions and ownership are correct.</em>

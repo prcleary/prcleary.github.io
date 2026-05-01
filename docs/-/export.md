@@ -702,9 +702,10 @@ blog() {
   local FILE="$BLOG_DIR/$DATE.md"
   vim "$FILE"
 }
-alias publish='cd ~/prcleary.github.io; emanote -L content/ gen docs/; git add .; git commit -m "Add content"; git push; cd -'
+alias publish='cd ~/prcleary.github.io; git pull; emanote -L content/ gen docs/; git add .; git commit -m "Add content"; git push; cd -'
 ```
 
+`blog` opens Vim for me to write a post; `publish` updates the online version.
 
 
 ===
@@ -746,8 +747,6 @@ Here are the broad areas I have some interest in and experience with and hope to
 - Software development, including hosting on the Internet, web development, JavaScript, Plone, Flask, Django
 - Cybersecurity, including networking
 - AI, including experience of AI-assisted coding or engineering, GitHub CoPilot, Aider
-
-![Blog scope](../static/blog-scope-infographic.png)
 
 
 
@@ -1440,7 +1439,7 @@ tags:
   - AI
 ---
 
-I sometimes have early meetings and it is nice to check while still in bed. This uses a PowerShell script to send an email containing tomorrow's calendar events to a specified email address.
+I sometimes have early meetings and it is nice to check while still in bed. This is a vibe-coded PowerShell script to send an email containing tomorrow's calendar events to a specified email address.
 
 Create the PowerShell script: `Send-OutlookCalendarEmail.ps1`:
 
@@ -1571,7 +1570,7 @@ Run it to check - you should get an email:
 .\Send-OutlookCalendarEmail.ps1 -RecipientEmail "name@domain.tld"
 ```
 
-You can add this to Task Scheduler.
+You can add this to Task Scheduler in Windows.
 
 - Open Task Scheduler
 - Create Task
@@ -1732,13 +1731,10 @@ Note that after some steps you should exit your shell and open another. I also h
 
 ```bash
 sudo apt install borgbackup pipx
-sudo pipx ensurepath  # exit shell and open another
-sudo pipx install borgmatic
-sudo borgmatic --version  # check
 pipx ensurepath  # exit shell and open another
 pipx install borgmatic
-sudo EDITOR=vim visudo # add `:/home/paul/.local/bin` to end of `secure_path`
 borgmatic --version  # check
+sudo EDITOR=vim visudo # add `:/home/paul/.local/bin` to end of `secure_path`
 ```
 
 If you don't already have SSH keys then you should create them. *If you want to run borgmatic both as root and as an ordinary user, you should make sure that the SSH keys are in both `~/.ssh` and `/root/.ssh`, and that permissions and ownership are correct.*
@@ -1990,6 +1986,8 @@ date: 2025-03-11
 tags:
   - R
 ---
+
+> Edit: these have been further developed and added to my `sen8r` (geddit) package.
 
 Developed these R functions to query the SENAITE API and to put the data into a more manageable format
 
@@ -6778,8 +6776,7 @@ This is how to set up Emanote on a Linux computer (Pop!\_OS) to create a blog to
 
 ## Installing Nix (Linux)
 
-Follow the official instructions at  
-[Installing – Emanote](https://emanote.srid.ca/install)
+Follow the official instructions at  [Installing – Emanote](https://emanote.srid.ca/install)
 
 It is apparently feasible on Windows (via WSL) but I haven't tried it.
 
@@ -6884,7 +6881,7 @@ Useful changes:
   siteTitle: Wikipaulia
   siteUrl: https://yourusername.github.io/repository-name/
   ```
-- Enable Mermaid and MathJax.
+- Enable Mermaid and MathJax by adding the following under `bodyHTtml`. 
 
 Add:
 
@@ -6893,11 +6890,6 @@ bodyHtml: |
   <snippet var="js.mermaid" />
   <snippet var="js.mathjax" />
 ```
-
-This enables:
-
-- Mermaid diagrams (flowcharts, graphs)
-- LaTeX math rendering
 
 Do not put `#`-prefixed comments in config values — they can be interpreted as tags.
 
@@ -6959,7 +6951,7 @@ Notes:
 - `slug` controls URL
 - `tags` enable backlinks and filtering
 
-Dates are not shown unless you use a trick - see the source for this blog. 
+Dates are not shown unless you use [a trick](https://github.com/srid/emanote/discussions/131#discussioncomment-1382189) - see the source for this blog. 
 
 
 ## Build the Site
@@ -6977,7 +6969,7 @@ cd emanote/content
 emanote gen ../docs/
 ```
 
-The `docs/` folder is required for GitHub Pages if publishing from `/docs`.
+As mentioned the `docs/` folder is required for GitHub Pages.
 
 
 ## Export Everything to a Single Markdown File
@@ -6985,12 +6977,6 @@ The `docs/` folder is required for GitHub Pages if publishing from `/docs`.
 ```bash
 emanote export content
 ```
-
-Useful for:
-
-- Backups
-- Converting to other static site generators
-- Printing
 
 You can also export config with `emanote export`.
 
@@ -7012,8 +6998,6 @@ Configure GitHub Pages to serve from:
 
 - Branch: `main`
 - Folder: `/docs`
-
-There is no heavy build pipeline — generation is fast and local.
 
 
 ## RSS Feeds

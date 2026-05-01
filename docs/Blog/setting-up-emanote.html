@@ -48,7 +48,7 @@
   --color-primary-900: var(--color-olive-900);
   --color-primary-950: var(--color-olive-950);
 }
-</style><link href='tailwind.css?instanceId=a90fd0bf-6a6c-4387-bb1c-c847727ecd03' rel='stylesheet' type='text/css' />
+</style><link href='tailwind.css?instanceId=dae1b35e-e3cb-43a4-9cac-730fd092ecaf' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -3478,7 +3478,7 @@
     </h2>
   
     <p class='mb-4 leading-relaxed'>
-      Follow the official instructions at<br /><a href='https://emanote.srid.ca/install' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Installing – Emanote</a>
+      Follow the official instructions at <a href='https://emanote.srid.ca/install' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Installing – Emanote</a>
     </p>
   
     <p class='mb-4 leading-relaxed'>
@@ -3642,7 +3642,7 @@ siteUrl: https://yourusername.github.io/repository-name/</code></pre></div>
         </li>
       
         <li>
-          Enable Mermaid and MathJax.
+          Enable Mermaid and MathJax by adding the following under <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>bodyHTtml</code>.
         </li>
       
     </ul>
@@ -3653,22 +3653,6 @@ siteUrl: https://yourusername.github.io/repository-name/</code></pre></div>
   <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code>bodyHtml: |
   &lt;snippet var="js.mermaid" /&gt;
   &lt;snippet var="js.mathjax" /&gt;</code></pre></div>
-    <p class='mb-4 leading-relaxed'>
-      This enables:
-    </p>
-  
-    <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
-      
-        <li>
-          Mermaid diagrams (flowcharts, graphs)
-        </li>
-      
-        <li>
-          LaTeX math rendering
-        </li>
-      
-    </ul>
-  
     <p class='mb-4 leading-relaxed'>
       Do not put <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>#</code>-prefixed comments in config values — they can be interpreted as tags.
     </p>
@@ -3785,7 +3769,7 @@ siteUrl: https://yourusername.github.io/repository-name/</code></pre></div>
     </ul>
   
     <p class='mb-4 leading-relaxed'>
-      Dates are not shown unless you use a trick - see the source for this blog.
+      Dates are not shown unless you use <a href='https://github.com/srid/emanote/discussions/131#discussioncomment-1382189' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>a trick</a> - see the source for this blog.
     </p>
   
     <h2 id='build-the-site' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
@@ -3814,7 +3798,7 @@ siteUrl: https://yourusername.github.io/repository-name/</code></pre></div>
 <span class='ex'>emanote</span> gen ../docs/
 </code></pre></div>
     <p class='mb-4 leading-relaxed'>
-      The <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>docs/</code> folder is required for GitHub Pages if publishing from <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>/docs</code>.
+      As mentioned the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>docs/</code> folder is required for GitHub Pages.
     </p>
   
     <h2 id='export-everything-to-a-single-markdown-file' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
@@ -3832,26 +3816,6 @@ siteUrl: https://yourusername.github.io/repository-name/</code></pre></div>
     </h2>
   <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='bash'><span class='ex'>emanote</span> export content
 </code></pre></div>
-    <p class='mb-4 leading-relaxed'>
-      Useful for:
-    </p>
-  
-    <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
-      
-        <li>
-          Backups
-        </li>
-      
-        <li>
-          Converting to other static site generators
-        </li>
-      
-        <li>
-          Printing
-        </li>
-      
-    </ul>
-  
     <p class='mb-4 leading-relaxed'>
       You can also export config with <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>emanote export</code>.
     </p>
@@ -3895,10 +3859,6 @@ siteUrl: https://yourusername.github.io/repository-name/</code></pre></div>
         </li>
       
     </ul>
-  
-    <p class='mb-4 leading-relaxed'>
-      There is no heavy build pipeline — generation is fast and local.
-    </p>
   
     <h2 id='rss-feeds' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
