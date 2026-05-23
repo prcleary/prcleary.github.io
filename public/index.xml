@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Wikipaulia</title>
+      <link>https://prcleary.github.io/quartz</link>
+      <description>Last 10 notes on Wikipaulia</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Wikipaulia</title>
+    <link>https://prcleary.github.io/quartz/</link>
+    <guid>https://prcleary.github.io/quartz/</guid>
+    <description><![CDATA[ Welcome! I’m Paul Cleary, a UK epidemiologist working in public health and global health. ]]></description>
+    <pubDate>Sat, 23 May 2026 09:09:09 GMT</pubDate>
+  </item><item>
+    <title>Public Health Informatics by Sahay et al - notes and reflections</title>
+    <link>https://prcleary.github.io/quartz/notes/booknotes/public-health-informatics-by-sahay-et-al-notes-and-reflections</link>
+    <guid>https://prcleary.github.io/quartz/notes/booknotes/public-health-informatics-by-sahay-et-al-notes-and-reflections</guid>
+    <description><![CDATA[  Public Health Informatics: Designing for change - a developing country perspective Sundeep Sahay, T Sundararaman, and Jørn Braa Published: 2017 ISBN: 9780198758778 Publisher link This is essential reading for anyone involved in developing public health information systems in low and middle-income c... ]]></description>
+    <pubDate>Sat, 23 May 2026 09:09:09 GMT</pubDate>
+  </item><item>
+    <title>Reading/read</title>
+    <link>https://prcleary.github.io/quartz/notes/booknotes/reading</link>
+    <guid>https://prcleary.github.io/quartz/notes/booknotes/reading</guid>
+    <description><![CDATA[  At a rate of 16 books per year (approx. ]]></description>
+    <pubDate>Sat, 23 May 2026 09:09:09 GMT</pubDate>
+  </item><item>
+    <title>The Book of Why by Judea Pearl and Dana Mackenzie: book notes</title>
+    <link>https://prcleary.github.io/quartz/notes/booknotes/the-book-of-why-by-judea-pearl-and-dana-mackenzie-book-notes</link>
+    <guid>https://prcleary.github.io/quartz/notes/booknotes/the-book-of-why-by-judea-pearl-and-dana-mackenzie-book-notes</guid>
+    <description><![CDATA[ What is causality? The book is not sure it provides its own definition of causality, though it does use metaphors about information flowing, or Y “listening to” X. ]]></description>
+    <pubDate>Sat, 23 May 2026 09:09:09 GMT</pubDate>
+  </item><item>
+    <title>Bookmarks</title>
+    <link>https://prcleary.github.io/quartz/Bookmarks</link>
+    <guid>https://prcleary.github.io/quartz/Bookmarks</guid>
+    <description><![CDATA[ Direct link . ]]></description>
+    <pubDate>Fri, 22 May 2026 23:00:00 GMT</pubDate>
+  </item><item>
+    <title>Setting up Emanote</title>
+    <link>https://prcleary.github.io/quartz/blog/setting-up-emanote</link>
+    <guid>https://prcleary.github.io/quartz/blog/setting-up-emanote</guid>
+    <description><![CDATA[ This is how to set up Emanote on a Linux computer (Pop!_OS) to create a blog to host on GitHub Pages, i.e. this one. ]]></description>
+    <pubDate>Sat, 25 Apr 2026 23:00:00 GMT</pubDate>
+  </item><item>
+    <title>The scope of this blog</title>
+    <link>https://prcleary.github.io/quartz/blog/2026-04-20</link>
+    <guid>https://prcleary.github.io/quartz/blog/2026-04-20</guid>
+    <description><![CDATA[ Potential reasons for blogging include: to raise your profile and get a better job to share your opinions to “learn in the open” to share useful materials on the Web to document stuff you’ve learned which just might be useful for someone else one day For me the main reasons are numbers 3 to 5, and r... ]]></description>
+    <pubDate>Sun, 19 Apr 2026 23:00:00 GMT</pubDate>
+  </item><item>
+    <title>Pop!_OS upgrade; blog development</title>
+    <link>https://prcleary.github.io/quartz/blog/2026-04-18</link>
+    <guid>https://prcleary.github.io/quartz/blog/2026-04-18</guid>
+    <description><![CDATA[ A quiet weekend. Was supposed to be in Pakistan but Iran got first dibs. Up to over 9,000 words for textbook chapter I am writing. ]]></description>
+    <pubDate>Fri, 17 Apr 2026 23:00:00 GMT</pubDate>
+  </item><item>
+    <title>New Emanote blog</title>
+    <link>https://prcleary.github.io/quartz/blog/2026-04-13</link>
+    <guid>https://prcleary.github.io/quartz/blog/2026-04-13</guid>
+    <description><![CDATA[ Emanote Yup, I’ve changed the blog software again. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 23:00:00 GMT</pubDate>
+  </item><item>
+    <title>My Emanote cheatsheet</title>
+    <link>https://prcleary.github.io/quartz/notes/code/cheatsheets/my-emanote-cheatsheet</link>
+    <guid>https://prcleary.github.io/quartz/notes/code/cheatsheets/my-emanote-cheatsheet</guid>
+    <description><![CDATA[ Uses standard Markdown Frontmatter --- title: Emanote syntax date: 2023-03-08 tags: - emanote - blogging --- Careful not to use tabs instead of spaces in the YAML Mermaid syntax ```mermaid gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid excludes weekends (`excludes` a... ]]></description>
+    <pubDate>Tue, 07 Apr 2026 23:00:00 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

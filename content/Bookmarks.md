@@ -1,7 +1,6 @@
 ---
 title: Bookmarks
-feed:
-  enable: false
+date: 2026-05-23
 ---
 
 [Direct link](https://karakeep.paulcleary.net/public/lists/ckzqsclyzzw4r7szhcyupeah)
