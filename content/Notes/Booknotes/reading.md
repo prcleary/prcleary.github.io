@@ -5,6 +5,8 @@ order: -5
 
 > At a rate of 16 books per year (approx. 20 pages per day) I can read 528 books before [I die at the predicted age of 88](https://www.livingto100.com/), assuming reasonable compression of morbidity
 
+> [!info] Have paused following a reading list in 2026 but will resume in 2027
+
 ## Reading
 
 ### Statistical Rethinking by Richard McElreath 
