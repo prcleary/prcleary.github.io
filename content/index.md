@@ -10,6 +10,8 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 - Interesting [[Bookmarks|bookmarks]]
 - Notes (e.g. on [[Books|reading]]) which I am starting to organise in Obsidian
 
+> [!info] This site is currently work-in-progress.
+
 [Email](mailto:blog@paulcleary.net) [GitHub](https://github.com/prcleary) [Letterboxd](https://letterboxd.com/rusticana/) [ORCID](https://orcid.org/0000-0001-9335-5422) [Strava](https://www.strava.com/athletes/9125693) [Zotero](https://www.zotero.org/drprcleary) [Old blog](oldblog.html)
 
 ![Ama Dablam](ama-dablam.jpeg)
