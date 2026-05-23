@@ -1,101 +1,118 @@
 ---
+id: 20230313120000
 title: "My Docker cheatsheet"
-date: 2023-03-13
+aliases:
+  - "Docker commands"
+  - "Docker quick reference"
+type: cheatsheet
+category: tech
+subcategory: docker
+domain: programming
 tags:
-  - Docker
+  - tech/docker
+  - tech/containers
+  - tech/devops
+  - tech/cli
+  - reference/cheatsheet
+  - status/active
+created: 2023-03-13
+modified: 2026-05-23
+date: 2023-03-13
+status: active
+up: "[[Docker]]"
 ---
 
-> Stuff I find myself Googling for the nth time
+# My Docker cheatsheet
 
-## Remove all Docker images
+> [!abstract] Summary
+> Things I find myself Googling for the nth time: cleanup, log limits, getting a shell into a container, group permissions, and the `docker compose` alias dance. Less a tour of Docker, more a record of the same six problems I keep solving.
 
-```bash
-docker rmi $(docker images -a -q)
-```
+## Cleanup
 
-## Remove stopped containers, unused networks, dangling images, dangling build caches, unused volumes
+| Task | Command |
+|---|---|
+| Remove all images | `docker rmi $(docker images -a -q)` |
+| Prune system (containers, networks, dangling images, build cache) | `docker system prune` |
+| Same, plus all unused images and volumes | `docker system prune -a --volumes` |
+| Prune unused volumes only | `docker volume prune` |
+| Prune networks only | `docker network prune` |
+| Stop all running containers | `docker stop $(docker ps -q)` |
 
-```bash
-docker system prune --volumes
-# Note also -a [all] and -f [force] options
-## To remove "dangling" (unused) Docker volumes
-docker volume rm $(docker volume ls -qf dangling=true)
-# To remove networks
-docker network prune
-```
-
-## Add your user to the Docker group
-
-To run Docker commands without `sudo`
+## Permissions: run Docker without `sudo`
 
 ```bash
-sudo groupadd docker # may be required - may need a restart
-sudo usermod -aG docker paul  # then log out and back in
+sudo groupadd docker            # often already exists
+sudo usermod -aG docker "$USER" # then log out and back in
 ```
 
-## Get container shell
+## Shell into a running container
 
 ```bash
 docker exec -it <container-id> /bin/bash
 ```
-If you get a weird error with this, then it may be that Bash is not available in the container and you should use `sh` instead.
 
-## Find out about your Docker setup
-
-```bash
-docker info
-```
-
-## Check size of images, containers and volumes
+If `bash` isn't installed in the image (common on Alpine-based images), fall back to:
 
 ```bash
-docker system df
+docker exec -it <container-id> /bin/sh
 ```
 
-## Stop all containers
+## Diagnostics
 
 ```bash
-docker stop $(docker ps -q)
+docker info                      # daemon and host details
+docker system df                 # disk usage by images/containers/volumes
+docker logs <container-id>       # container stdout/stderr
+docker logs -f <container-id>    # ...and follow
 ```
 
-## Check Docker logs
+## Limit Docker log size
 
-```bash
-docker logs <container-id>
-```
+Container logs are unlimited by default. Cap them in `/etc/docker/daemon.json`:
 
-## Limit the size of Docker logs
-
-Logs are unlimited by default - can limit to 50MB
-
-In `/etc/docker/daemon.json`:
-
-```
+```json
 {
-"log-driver": "json-file",
-	"log-opts": {
-		"max-size": "50m",
-		"max-file": "3"
-	}
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "50m",
+    "max-file": "3"
+  }
 }
 ```
 
-then
+Then:
 
 ```bash
 sudo systemctl restart docker
 ```
 
-Other configuration options [here](https://medium.com/@sujaypillai/docker-daemon-configuration-file-f577000da655)
+Existing containers keep their old log config until recreated.
+
+More daemon options: [Docker daemon configuration file](https://medium.com/@sujaypillai/docker-daemon-configuration-file-f577000da655).
 
 ## Aliasing `docker-compose` to `docker compose`
 
-in e.g. `.bashrc`
-
 ```bash
-alias docker-compose="docker compose --compatibility $@"
+# in ~/.bashrc or ~/.zshrc
+alias docker-compose='docker compose --compatibility'
 ```
 
-## Useful links
+Bash and zsh aliases automatically forward arguments, so any `docker-compose up -d`, `docker-compose logs -f web`, etc. just works.
 
-- [The Ultimate Docker Cheat Sheet | dockerlabs](https://dockerlabs.collabnix.com/docker/cheatsheet/)
+---
+
+## LINKS
+
+### Up
+- [[Docker]] *(to write)*
+
+### Related
+- [[Containers]] *(to write)*
+- [[Docker Compose]] *(to write)*
+- [[Self-hosting]] *(to write)*
+
+### External references
+- The Ultimate Docker Cheat Sheet — <https://dockerlabs.collabnix.com/docker/cheatsheet/>
+- Docker daemon configuration — <https://docs.docker.com/engine/reference/commandline/dockerd/>
+- Dockerfile reference — <https://docs.docker.com/engine/reference/builder/>
+

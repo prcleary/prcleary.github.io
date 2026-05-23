@@ -1,105 +1,142 @@
 ---
+id: 20241014120000
 title: "My Proxmox cheatsheet"
-date: 2024-10-14
+aliases:
+  - "Proxmox commands"
+  - "Proxmox quick reference"
+type: cheatsheet
+category: tech
+subcategory: proxmox
+domain: homelab
 tags:
-  - Proxmox
+  - tech/proxmox
+  - tech/virtualization
+  - tech/homelab
+  - tech/cli
+  - reference/cheatsheet
+  - status/active
+created: 2024-10-14
+modified: 2026-05-23
+date: 2024-10-14
+status: active
+up: "[[Homelab]]"
 ---
 
-### Set up Let's Encrypt with Cloudflare
+# My Proxmox cheatsheet
 
-- as HTTP method didn't work (port 80 probably in use by Nginx Proxy Manager), let Cloudflare manage DNS
-	- get zone ID (Overview page) and API token 
-		- [Find zone and account IDs · Cloudflare Fundamentals docs](https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/)
-		- [Create API token · Cloudflare Fundamentals docs](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) - I left all the options at the defaults
-	- this then worked: [Let's Encrypt with Cloudflare - 3os](https://3os.org/infrastructure/proxmox/lets-encrypt-cloudflare/#instalaion-and-configuration)
-	- it should update itself automatically now
-	- less helpful instructions here: [Certificate Management - Proxmox VE](https://pve.proxmox.com/wiki/Certificate_Management)
+> [!abstract] Summary
+> Operational notes for my Proxmox VE host: Let's Encrypt via Cloudflare DNS, updates, the xterm.js trick for copy/paste in VM consoles, and the most-used `pct` and `qm` subcommands. Written for future-me at 2 AM.
 
-### Setting up email notifications
+## Set up Let's Encrypt with Cloudflare
 
-*Not got this working yet*
+The HTTP-01 challenge didn't work for me (port 80 was in use by Nginx Proxy Manager), so I used DNS-01 with Cloudflare as the DNS provider.
 
-### Updating Proxmox
+1. Get the **zone ID** (from the Overview page of your domain in Cloudflare) and create an **API token**.
+   - [Find account and zone IDs — Cloudflare Fundamentals](https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/)
+   - [Create API token — Cloudflare Fundamentals](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) — I used the "Edit zone DNS" template with all options at defaults.
+2. Follow [Let's Encrypt with Cloudflare — 3os](https://3os.org/infrastructure/proxmox/lets-encrypt-cloudflare/#instalaion-and-configuration). This worked.
+3. Renewal is automatic via `pve-daily-update.service` (renews when the cert is within 30 days of expiry).
+
+The official [Proxmox certificate management docs](https://pve.proxmox.com/wiki/Certificate_Management) are correct but less practical for this specific Cloudflare setup.
+
+## Setting up email notifications
+
+> [!todo] Not yet working — revisit.
+
+## Updating Proxmox
 
 ```bash
 # as root
-apt clean
 apt update
 apt dist-upgrade
 apt autoremove
+apt clean         # clears /var/cache/apt/archives
 ```
 
-If updates fail with a disk-out-of-space error, then it could be that `/boot` is full of old kernels and suchlike. This has happened to me already - I solved it simply by deleting some old kernels.
+If updates fail with a disk-out-of-space error, it's often `/boot` filling up with old kernels. I've fixed this by manually removing old kernels — `apt autoremove` should usually catch them, but doesn't always.
 
-This is the more convenient way: [BassT23/Proxmox: Update your Proxmox VE](https://github.com/BassT23/Proxmox)
+For a more convenient updater (host + LXC + VMs in one go): [BassT23/Proxmox](https://github.com/BassT23/Proxmox).
 
-### Use `xterm.js` for VM terminal (nicer and allows copy and paste) 
+## Use xterm.js for VM terminal (nicer, allows copy/paste)
 
-From [here](https://silicon.blog/2023/01/12/how-to-enable-copy-and-paste-function-on-your-proxmox-web-console-without-install-additional-software-in-your-vm/#:~:text=Proxmox%20uses%20noVNC%20by%20default,such%20as%20TeamViewer%20or%20Anydesk)
+Proxmox uses noVNC by default, which doesn't support copy/paste. Switching to xterm.js fixes this without installing anything in the VM. From [Silicon's blog](https://silicon.blog/2023/01/12/how-to-enable-copy-and-paste-function-on-your-proxmox-web-console-without-install-additional-software-in-your-vm/).
 
-In host console:
+**On the host:**
 
 ```bash
-qm set your_vm_id -serial0 socket
-# where your_vm_id is e.g. 100
+qm set <vmid> -serial0 socket   # e.g. qm set 100 -serial0 socket
 ```
 
-In VM console:
-
-```bash
-sudo vim /etc/default/grub
-```
-
-and change line to:
+**In the VM:** edit `/etc/default/grub`, change the line to:
 
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet console=tty0 console=ttyS0,115200"	
+GRUB_CMDLINE_LINUX_DEFAULT="quiet console=tty0 console=ttyS0,115200"
 ```
 
-Then update GRUB and reboot:
+Then:
 
 ```bash
 sudo update-grub
-sudo reboot
+sudo reboot                      # full reboot needed, not just restart of the VM
 ```
 
-Now you can select an xterm.js console for that VM. Press Enter a few times if it seems to get stuck.
+Now an xterm.js console option appears for that VM. If it looks frozen, press Enter a few times.
 
-Sometimes this stops working, but repeating the steps above usually gets it working again.
+Sometimes this stops working — repeating the steps above usually fixes it. SPICE didn't work on my corporate laptop.
 
-Couldn't get SPICE to work, at least on my corporate laptop
+## `pct` — Proxmox container toolkit
 
-### Useful `pct` (Proxmox container toolkit) commands
+For LXC containers. `<id>` below is the container ID (e.g. `100`).
 
-```bash
-pct list
-pct enter 100  # like SSH
-pct status|start|stop|shutdown|destroy|unlock 100
-pct config 100
-pct exec 100 apt update
-pct snapshot 100 snapshotname
-pct restore 100 <file in /mnt/backup>
-pct resize 100 rootfs +10G
-pct push 100 localfilepath containerfilepath
-pct pull 100 containerfilepath localfilepath
-pct create ...
-```
+| Command | Purpose |
+|---|---|
+| `pct list` | List all containers |
+| `pct enter <id>` | Enter the container shell (like SSH) |
+| `pct status <id>` | Container status |
+| `pct start \| stop \| shutdown \| destroy \| unlock <id>` | Lifecycle |
+| `pct config <id>` | Show config |
+| `pct exec <id> -- <cmd>` | Run a command inside the container |
+| `pct snapshot <id> <name>` | Snapshot |
+| `pct restore <id> <file in /mnt/backup>` | Restore from backup |
+| `pct resize <id> rootfs +10G` | Grow rootfs (cannot shrink) |
+| `pct push <id> <local> <remote>` | Copy file in |
+| `pct pull <id> <remote> <local>` | Copy file out |
+| `pct create ...` | Create a new container |
 
-### Useful `qm` (QEMU Machine) commands
+## `qm` — QEMU/KVM machine management
 
-```bash
-qm guest exec 100 -- df -h  # if `qm-guest-agent` installed on VM
-qm guest exec 100 -- su -c 'ls /home/senaite/senaitelims' senaite  # as specific user
-qm terminal 100  # needs serial interface
-qm status|start|stop|shutdown|destroy|reboot 100
-qm resize 100 scsi0|virtio0|ide0 50G|+20G  # can only increase
-qm list
-qm create  ... # must learn more about this one
-qm config 100 # list config
-qm set 100 ... ...  # change config
-qm snapshot 100 snapshotname
-qm rollback 100 snapshotname
-qm unlock 100  # if stuck
-```
+For VMs. `<id>` below is the VM ID.
 
+| Command | Purpose |
+|---|---|
+| `qm list` | List all VMs |
+| `qm status <id>` | VM status |
+| `qm start \| stop \| shutdown \| reboot \| destroy <id>` | Lifecycle |
+| `qm unlock <id>` | Unstick a stuck VM |
+| `qm config <id>` | Show config |
+| `qm set <id> <option> <value>` | Change config |
+| `qm resize <id> scsi0\|virtio0\|ide0 +20G` | Grow disk (cannot shrink) |
+| `qm snapshot <id> <name>` | Snapshot |
+| `qm rollback <id> <name>` | Roll back to snapshot |
+| `qm terminal <id>` | Serial console (needs serial set up — see xterm.js section above) |
+| `qm guest exec <id> -- <cmd>` | Run a command via QEMU guest agent |
+| `qm guest exec <id> -- su -c '<cmd>' <user>` | ...as a specific user |
+| `qm create ...` | Create a new VM (still need to learn this properly) |
 
+---
+
+## LINKS
+
+### Up
+- [[Homelab]] *(to write)*
+
+### Related
+- [[Docker cheatsheet|My Docker cheatsheet]] — most of what runs on top of Proxmox here is Dockerised
+- [[Nginx Proxy Manager]] *(to write)*
+- [[Self-hosting]] *(to write)*
+- [[Backups]] *(to write)*
+
+### External references
+- Proxmox VE wiki: <https://pve.proxmox.com/wiki/>
+- Proxmox certificate management: <https://pve.proxmox.com/wiki/Certificate_Management>
+- BassT23/Proxmox updater: <https://github.com/BassT23/Proxmox>

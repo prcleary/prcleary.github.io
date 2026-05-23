@@ -1,4 +1,3 @@
-```markdown
 ---
 id: 20260408120000
 title: "My Emanote cheatsheet"
@@ -86,5 +85,4 @@ content
 - commonmark-hs attributes extension — <https://github.com/jgm/commonmark-hs/blob/master/commonmark-extensions/test/attributes.md>
 - Obsidian callouts — <https://help.obsidian.md/callouts>
 - GitHub emoji shortcodes — <https://gist.github.com/rxaviers/7360908>
-```
 
