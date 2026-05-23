@@ -6,7 +6,6 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 ## What you'll find here
 
 - My [[Blog|blog]]
-- Occasional [[Writing|writing]]
 - Interesting [[Bookmarks|bookmarks]]
 - Notes (e.g. on [[reading|books I am reading]]), which I am starting to organise in Obsidian
 
