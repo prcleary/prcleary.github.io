@@ -4,7 +4,7 @@ title: "The Book of Why by Judea Pearl and Dana Mackenzie: book notes"
 
 ## What is causality?
 
-The book is not sure it provides its own definition of causality, though it does use metaphors about information flowing, or Y "listening to" X. It does critique some previous attempts at definition.
+Not sure if the book provides its own definition of causality, though it does use metaphors about information flowing, or Y "listening to" X. It does critique some previous attempts at definition.
 
 ## The problem with statistics
 
