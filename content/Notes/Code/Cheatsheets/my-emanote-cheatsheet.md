@@ -9,10 +9,8 @@ category: tech
 subcategory: static-sites
 domain: programming
 tags:
-  - emanote
-  - static-sites
-  - markdown
-  - cheatsheet
+  - Cheatsheet
+  - Blogging
 created: 2026-04-08
 modified: 2026-05-23
 date: 2026-04-08

@@ -1,6 +1,8 @@
 ---
 title: Setting up Emanote
 date: 2026-04-26
+tags:
+  - Blogging
 ---
 
 This is how to set up Emanote on a Linux computer (I am using Pop!\_OS, but this should work on Ubuntu and derivatives too) to create a blog to host on GitHub Pages, i.e. this one. 

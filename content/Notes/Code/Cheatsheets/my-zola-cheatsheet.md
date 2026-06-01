@@ -9,11 +9,8 @@ category: tech
 subcategory: zola
 domain: web
 tags:
-  - zola
-  - static-sites
-  - markdown
-  - web
-  - cheatsheet
+  - Blogging
+  - Cheatsheet
 created: 2025-12-31
 modified: 2026-05-23
 date: 2025-12-31

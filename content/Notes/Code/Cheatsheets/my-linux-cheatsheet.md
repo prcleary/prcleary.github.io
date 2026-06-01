@@ -9,10 +9,9 @@ category: tech
 subcategory: linux
 domain: tools
 tags:
-  - linux
-  - cli
-  - sysadmin
-  - cheatsheet
+  - Linux
+  - CLI
+  - Cheatsheet
 created: 2023-06-12
 modified: 2026-05-23
 date: 2023-06-12

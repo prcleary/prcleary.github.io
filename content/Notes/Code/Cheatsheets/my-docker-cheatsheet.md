@@ -9,11 +9,9 @@ category: tech
 subcategory: docker
 domain: programming
 tags:
-  - docker
-  - containers
-  - devops
-  - cli
-  - cheatsheet
+  - Docker
+  - CLI
+  - Cheatsheet
 created: 2023-03-13
 modified: 2026-05-23
 date: 2023-03-13

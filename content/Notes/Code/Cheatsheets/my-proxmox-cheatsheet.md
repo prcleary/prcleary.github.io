@@ -9,11 +9,9 @@ category: tech
 subcategory: proxmox
 domain: homelab
 tags:
-  - proxmox
-  - virtualization
-  - homelab
-  - cli
-  - cheatsheet
+  - Proxmox
+  - CLI
+  - Cheatsheet
 created: 2024-10-14
 modified: 2026-05-23
 date: 2024-10-14

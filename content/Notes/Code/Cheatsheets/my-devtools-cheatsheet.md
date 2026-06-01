@@ -9,10 +9,8 @@ category: tech
 subcategory: r
 domain: programming
 tags:
-  - r
-  - r-packages
-  - devtools
-  - cheatsheet
+  - R
+  - Cheatsheet
 created: 2025-09-11
 modified: 2026-05-13
 date: 2025-09-11
