@@ -453,9 +453,7 @@ Options considered so far:
    
    > "If the answer to the opposite of the question we really wanted to ask is yes, and all of our assumptions are correct, the p value is the probability of seeing this test statistic or a more extreme one in either direction in a long run of studies like this."
    
-   ::: {class="highlight-block"}
-   Food for thought: is "a long run of studies like this" a defensible concept in our applications of p values in (arguably unique) outbreaks where only one sample of data can feasibly be obtained?
-   :::
+   > [!question] Food for thought: is "a long run of studies like this" a defensible concept in our applications of p values in (arguably unique) outbreaks where only one sample of data can feasibly be obtained?
    
    Wouldn't epidemiologists prefer to think something along the lines of: 
    
