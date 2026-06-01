@@ -1,7 +1,7 @@
 ---
 title: Wikipaulia
 ---
-Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and global health. My technical interests include statistics, coding, open source software, self-hosting, global health informatics and AI.
+Hello! I'm **Paul Cleary**, a UK epidemiologist working in public health and global health. My technical interests include epidemiology, statistics, coding, open source software, self-hosting, global health informatics, data engineering and AI.
 
 ## What you'll find here
 
@@ -9,7 +9,7 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 - Interesting [[Bookmarks|bookmarks]]
 - Notes (e.g. on [[Notes/Booknotes/reading|books I am reading]]), which I am starting to organise in Obsidian
 
-> [!info] This site is currently work-in-progress.
+> [!info] The Notes section of this site is currently work-in-progress as I transfer notes from elsewhere.
 
 [Email](mailto:blog@paulcleary.net) [GitHub](https://github.com/prcleary) [Letterboxd](https://letterboxd.com/rusticana/) [ORCID](https://orcid.org/0000-0001-9335-5422) [Strava](https://www.strava.com/athletes/9125693) [Zotero](https://www.zotero.org/drprcleary) [Old blog](oldblog.html)
 

@@ -9,12 +9,11 @@ category: tech
 subcategory: proxmox
 domain: homelab
 tags:
-  - tech/proxmox
-  - tech/virtualization
-  - tech/homelab
-  - tech/cli
-  - reference/cheatsheet
-  - status/active
+  - proxmox
+  - virtualization
+  - homelab
+  - cli
+  - cheatsheet
 created: 2024-10-14
 modified: 2026-05-23
 date: 2024-10-14

@@ -9,10 +9,9 @@ category: tech
 subcategory: r
 domain: tools
 tags:
-  - tech/r
-  - tech/data-analysis
-  - reference/cheatsheet
-  - status/active
+  - r
+  - data-analysis
+  - cheatsheet
 created: 2023-03-15
 modified: 2026-05-23
 date: 2023-03-15

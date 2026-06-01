@@ -9,11 +9,10 @@ category: tech
 subcategory: linux
 domain: tools
 tags:
-  - tech/linux
-  - tech/cli
-  - tech/sysadmin
-  - reference/cheatsheet
-  - status/active
+  - linux
+  - cli
+  - sysadmin
+  - cheatsheet
 created: 2023-06-12
 modified: 2026-05-23
 date: 2023-06-12

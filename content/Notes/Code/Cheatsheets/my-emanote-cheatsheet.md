@@ -9,11 +9,10 @@ category: tech
 subcategory: static-sites
 domain: programming
 tags:
-  - tech/emanote
-  - tech/static-sites
-  - tech/markdown
-  - reference/cheatsheet
-  - status/archived
+  - emanote
+  - static-sites
+  - markdown
+  - cheatsheet
 created: 2026-04-08
 modified: 2026-05-23
 date: 2026-04-08

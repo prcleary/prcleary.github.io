@@ -9,11 +9,10 @@ category: tech
 subcategory: r
 domain: programming
 tags:
-  - tech/r
-  - tech/r-packages
-  - tech/devtools
-  - reference/cheatsheet
-  - status/active
+  - r
+  - r-packages
+  - devtools
+  - cheatsheet
 created: 2025-09-11
 modified: 2026-05-13
 date: 2025-09-11

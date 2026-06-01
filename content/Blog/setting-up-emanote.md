@@ -3,7 +3,7 @@ title: Setting up Emanote
 date: 2026-04-26
 ---
 
-This is how to set up Emanote on a Linux computer (Pop!\_OS) to create a blog to host on GitHub Pages, i.e. this one. 
+This is how to set up Emanote on a Linux computer (I am using Pop!\_OS, but this should work on Ubuntu and derivatives too) to create a blog to host on GitHub Pages, i.e. this one. 
 
 > [!warning] This is a very big installation (gigabytes)!
 
@@ -13,7 +13,7 @@ Follow the official instructions at  [Installing – Emanote](https://emanote.sr
 
 It is apparently feasible on Windows (via WSL) but I haven't tried it.
 
-The following commands worked for me:
+I haven't used Nix before, and needed to do the following to install it:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://artifacts.nixos.org/experimental-installer | sh -s -- install --no-confirm --extra-conf "trusted-users = $(whoami)"
@@ -90,16 +90,16 @@ Welcome! I'm **Paul Cleary**, a UK epidemiologist working in public health and g
 <p style="white-space:nowrap;" xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://prcleary.github.io">Wikipaulia</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://prcleary.github.io">Paul Cleary</a> is marked with <a href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline;">CC0 1.0<img style="display:inline!important;height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="display:inline!important;height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1" alt=""></a></p>
 ```
 
-There's YAML metadata at the start (other possible fields include date in YYYY-MM-DD format), then it's mostly standard Markdown. 
+There's YAML metadata at the start (other possible fields include date in YYYY-MM-DD format), then it's mostly standard Markdown, with some HTML at the end.
 
 You can link to another page by using the filename of the source Markdown file, without the ".md" file ending. You don't need to specify a path as Emanote will find the file that is nearest in the hierarchy with that name. So to link to my blog page (Blog.md), I can use `[[Blog]]`, or `[[Blog|blog]]` if I want the link to show "blog". Note that there is a bit of extra space around links, so you may not need to add a space, e.g. `My[[Blog|blog]]`.
 
 
 ## Configure `index.yaml`
 
-Copy the default config from: <https://raw.githubusercontent.com/srid/emanote/refs/heads/master/emanote/default/index.yaml>
+I copied the default config from: <https://raw.githubusercontent.com/srid/emanote/refs/heads/master/emanote/default/index.yaml>
 
-Place it in:
+Put it in:
 
 ```
 ~/emanote/content/index.yaml
@@ -116,15 +116,13 @@ Useful changes:
   ```
 - Enable Mermaid and MathJax by adding the following under `bodyHTtml`. 
 
-Add:
+  ```
+  bodyHtml: |
+    <snippet var="js.mermaid" />
+    <snippet var="js.mathjax" />
+  ```
 
-```
-bodyHtml: |
-  <snippet var="js.mermaid" />
-  <snippet var="js.mathjax" />
-```
-
-Do not put `#`-prefixed comments in config values — they can be interpreted as tags.
+> [!warning] Do not put `#`-prefixed comments in config values — they can be interpreted as tags.
 
 
 ## Folder Structure and “Folder Notes”
@@ -166,12 +164,11 @@ Structure pages using YAML front matter:
 
 ```yaml
 ---
-title: Forwarding ssh-agent through WebSockets
+title: My nerdy blog page
 date: 2023-03-08
 order: -5
-slug: forwarding-ssh-agent-through-websockets
+slug: my-nerdy-blog-page
 tags:
-  - haskell
   - blog
 ---
 ```
@@ -179,12 +176,12 @@ tags:
 Notes:
 
 - Use ISO date format: `YYYY-MM-DD`
-- Filename convention like `2023-03-08.md` works well for chronological sorting
+- Naming files e.g. `2023-03-08.md` works well for chronological sorting
 - `order` controls sidebar positioning (lower = higher up)
 - `slug` controls URL
-- `tags` enable backlinks and filtering
+- `tags` allow you to group the content and have separate RSS feeds
 
-Dates are not shown unless you use [a trick](https://github.com/srid/emanote/discussions/131#discussioncomment-1382189) - see the source for this blog. 
+> [!note] Dates are not shown unless you use [a trick](https://github.com/srid/emanote/discussions/131#discussioncomment-1382189) - see the source for this blog. 
 
 
 ## Build the Site
@@ -220,6 +217,7 @@ Typical workflow:
 
 ```bash
 cd emanote
+git pull
 vim content/path/filename.md
 emanote -L content/ gen docs/
 git add .
@@ -264,4 +262,4 @@ There are tips in the Emanote documentation or among the GitHub Issues to:
 
 Have a look at the source of my blog to see how that is done. 
 
-
+I didn't end up using Emanote for long, as I found [something better](https://github.com/jackyzha0/quartz).
