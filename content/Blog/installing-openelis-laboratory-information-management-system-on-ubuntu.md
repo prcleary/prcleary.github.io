@@ -4,7 +4,7 @@ date: 2023-08-24
 tags:
   - OpenELIS
   - LIMS
-  - Ubuntu
+  - Linux
 ---
 
 Notes from my own recent installation:

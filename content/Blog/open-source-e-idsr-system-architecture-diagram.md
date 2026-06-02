@@ -11,8 +11,6 @@ tags:
   - RapidPro
 ---
 
-This works better if you paste the source code (below) into [Mermaid Live](https://mermaid.live/). For some reason only some of the images appear - I could probably fix this by uploading the images and using them directly.
-
 
 ```mermaid
 %%{init: {'theme': 'dark', 'fontFamily': 'monospace', 'flowchart': { 'htmlLabels': true} } }%%

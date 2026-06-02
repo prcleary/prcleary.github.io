@@ -2,7 +2,7 @@
 title: Teaching Bayesian statistics
 date: 2022-11-08
 tags:
-  - statistics
+  - Statistics
   - Bayesian
 ---
 

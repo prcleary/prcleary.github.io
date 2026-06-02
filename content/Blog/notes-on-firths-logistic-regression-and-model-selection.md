@@ -3,7 +3,7 @@ title: "Notes on Firth's logistic regression and model selection"
 date: 2022-12-04
 tags:
   - R
-  - statistics
+  - Statistics
 ---
 
 Problems can arise with fitting logistic regression models, particularly with small sample sizes and lots of explanatory variables. A clue that this is happening is very large estimates of standard errors or the model failing to converge (i.e. giving up trying to fit the model). This can arise because of what is called **separation**, which means that some combination of your explanatory variables perfectly (or nearly perfectly) predicts your outcome variable. To put this more intuitively: you are not giving the model fitting process any variability to work with, when it relies on variability in the data to give you things like confidence intervals.

@@ -4,7 +4,7 @@ date: 2023-06-17
 tags:
   - Xerte Online Toolkits
   - e-learning
-  - Ubuntu
+  - Linux
 ---
 
 Notes from own recent installation:

@@ -9,7 +9,7 @@ Setting up a demonstration version of an open source web service is a good way o
 
 It requires a variety of skills which can be acquired by anyone with a "can do" attitude, curiosity and persistence.
 
-You don't need to become a Linux expert but you should know [[linux-commands-you-should-really-know|the basic **Linux commands**]] and be able to understand what any commands you copy and paste are doing.
+You don't need to become a Linux expert but you should know [[linux-commands-you-should-really-know|the basic Linux commands]] and be able to understand what any commands you copy and paste are doing.
 
 You can acquire the basics in a number of ways:
 - dig out old computer hardware and install Linux on it (you might be surprised how easy this is these days if you tried it previously)
