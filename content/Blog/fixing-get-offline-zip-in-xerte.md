@@ -1,5 +1,5 @@
 ---
-title: "Fixing \"Get Offline Zip\" in Xerte
+title: "Fixing 'Get Offline Zip' in Xerte"
 date: 2022-11-01
 tags:
   - Xerte Online Toolkits
