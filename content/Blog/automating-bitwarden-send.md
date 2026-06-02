@@ -89,3 +89,4 @@ bw_sendfile('bw_send.R', session_token)$accessUrl |> browseURL()
 ```
 
 Next I needed to work out how to interact with the API of an SMS gateway to be able to send the URL as a text - that can be a future post.
+
