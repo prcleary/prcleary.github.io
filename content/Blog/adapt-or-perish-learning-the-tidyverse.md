@@ -6,7 +6,7 @@ tags:
   - Writing
 ---
 
-> [!quote] "Adapt or perish, now as ever, is nature's inexorable imperative." 
+> [!quote] Adapt or perish, now as ever, is nature's inexorable imperative.
 > - H.G. Wells
 
 I am now reading [Tidyverse Skills for Data Science in R by Roger D. Peng et al](https://leanpub.com/tidyverseskillsdatascience).

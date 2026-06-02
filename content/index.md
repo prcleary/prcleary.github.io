@@ -11,7 +11,7 @@ Hello! I'm **Paul Cleary**, a UK epidemiologist working in public health and glo
 
 > [!info] The Notes section of this site is currently work-in-progress as I transfer notes from elsewhere.
 
-[Email](mailto:blog@paulcleary.net) [GitHub](https://github.com/prcleary) [Letterboxd](https://letterboxd.com/rusticana/) [ORCID](https://orcid.org/0000-0001-9335-5422) [Strava](https://www.strava.com/athletes/9125693) [Zotero](https://www.zotero.org/drprcleary) [Old blog](oldblog.html)
+[Email](mailto:blog@paulcleary.net) [GitHub](https://github.com/prcleary) [Letterboxd](https://letterboxd.com/rusticana/) [ORCID](https://orcid.org/0000-0001-9335-5422) [Strava](https://www.strava.com/athletes/9125693) [Zotero](https://www.zotero.org/drprcleary) 
 
 ![Ama Dablam](ama-dablam.jpeg)
 
