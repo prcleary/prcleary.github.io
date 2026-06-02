@@ -8,11 +8,8 @@ date: 2025-12-31
 
 # My Zola cheatsheet
 
-> [!abstract] Summary
-> Zola + tabi tricks beyond plain Markdown: tables of contents, internal links, callouts, asides, mermaid diagrams, KaTeX, emoji, and the shortcode escape syntax. Most of the shortcodes are tabi-provided, not Zola core.
-
 > [!note] Setup assumptions
-> This note assumes the [tabi](https://welpo.github.io/tabi/) theme. Many shortcodes below (admonition, aside, mermaid, spoiler, remote_text) come from tabi rather than Zola itself. The YouTube shortcode is built into Zola.
+> This note assumes the [tabi](https://welpo.github.io/tabi/) theme. 
 
 ## Markdown enhancements
 

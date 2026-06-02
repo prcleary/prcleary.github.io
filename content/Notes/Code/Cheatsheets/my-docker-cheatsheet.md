@@ -9,9 +9,6 @@ date: 2023-03-13
 
 # My Docker cheatsheet
 
-> [!abstract] Summary
-> Things I find myself Googling for the nth time: cleanup, log limits, getting a shell into a container, group permissions, and the `docker compose` alias dance. Less a tour of Docker, more a record of the same six problems I keep solving.
-
 ## Cleanup
 
 | Task | Command |

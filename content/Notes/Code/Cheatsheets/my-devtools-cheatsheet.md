@@ -9,7 +9,7 @@ date: 2025-09-11
 # My devtools cheatsheet
 
 > [!abstract] Summary
-> Quick-reference for the `{devtools}` workflow when developing R packages: load, document, test, check, build, install, and publish a `pkgdown` site. These are the commands I reach for repeatedly and forget the order of.
+> Quick-reference for the `{devtools}` workflow when developing R packages: load, document, test, check, build, install, and publish a `pkgdown` site. 
 
 ---
 

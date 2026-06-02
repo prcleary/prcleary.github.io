@@ -9,10 +9,7 @@ date: 2026-04-08
 # My Emanote cheatsheet
 
 > [!warning] Archived
-> This cheatsheet documents [[Emanote]], which I used as the generator for an earlier version of this site. The site is now built with [[Quartz]] and the syntax differs in places — particularly around fenced divs, callouts, and embeds. Kept for reference; consult [[My Quartz cheatsheet]] for current usage.
-
-> [!abstract] Summary
-> Quick reference for Markdown extensions and conventions used in Emanote: frontmatter, Mermaid diagrams, code highlighting, internal links, math, tables, callouts, CSS classes, embeds, images, emoji, and attribute syntax for fenced divs.
+> This cheatsheet documents [[Emanote]], which I used as the generator for an earlier version of this site. 
 
 Uses standard Markdown.
 

@@ -9,11 +9,8 @@ date: 2023-06-12
 
 # My Linux cheatsheet
 
-> [!quote] 
-> Stuff I find myself Googling for the *n*th time.
-
 > [!note] Distro assumptions
-> Most commands here are distro-agnostic, but a few assume Debian/Ubuntu (e.g. the `sudo` group is named `sudo`, not `wheel`; `ufw` is the firewall front-end). Notes flag these where relevant.
+> Most commands here are distro-agnostic, but a few assume Debian/Ubuntu (e.g. the `sudo` group is named `sudo`, not `wheel`; `ufw` is the firewall front-end). 
 
 ## Networking & ports
 

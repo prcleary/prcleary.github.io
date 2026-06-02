@@ -9,9 +9,6 @@ date: 2024-10-14
 
 # My Proxmox cheatsheet
 
-> [!abstract] Summary
-> Operational notes for my Proxmox VE host: Let's Encrypt via Cloudflare DNS, updates, the xterm.js trick for copy/paste in VM consoles, and the most-used `pct` and `qm` subcommands. Written for future-me at 2 AM.
-
 ## Set up Let's Encrypt with Cloudflare
 
 The HTTP-01 challenge didn't work for me (port 80 was in use by Nginx Proxy Manager), so I used DNS-01 with Cloudflare as the DNS provider.
