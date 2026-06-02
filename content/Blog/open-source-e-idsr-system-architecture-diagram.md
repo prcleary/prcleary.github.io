@@ -13,31 +13,12 @@ tags:
 graph TD
 title["<u>e-IDSR system architecture</u>"]
 
-    %% links
-    OpenELIS --- OpenMRS
-    OpenFN --- dhis1
-    OpenMRS --- dhis1
-    RapidPro --- OpenFN
-    SMS --- RapidPro
-    analysis --- postgres2
-    dhis1 --- OpenHIE
-    dhis1 ---|"<img src='https://apps.dhis2.org/api/v1/apps/media/dhis2/08012f21-0061-4e96-b49b-286e2743a8b4/a78021d9-1e89-4adf-af29-2142f5601a9b' width='40' height='40'/><br/>Data Exchange"| dhis2
-    dhis1 ---|"<img src='https://apps.dhis2.org/api/v1/apps/media/dhis2/08012f21-0061-4e96-b49b-286e2743a8b4/a78021d9-1e89-4adf-af29-2142f5601a9b' width='40' height='40'/><br/>Data Exchange"| dhis3
-    dhis4 --- OpenFN
-    dhis5 ---|"manual"| WHONET
-    dhis5 ---|"<img src='https://apps.dhis2.org/api/v1/apps/media/dhis2/08012f21-0061-4e96-b49b-286e2743a8b4/a78021d9-1e89-4adf-af29-2142f5601a9b' width='40' height='40'/><br/>Data Exchange"| dhis1
-    fileserver --- dhis1
-    postgres1 --- OffsiteBackup
-    postgres1 --- dhis1
-    postgres1 --- postgres2
-    redis --- dhis1
-
     %% nodes
     OffsiteBackup["<img src='https://icons.iconarchive.com/icons/icons8/windows-8/256/Database-Backup-icon.png' height='40' width='40'/><br/>Secure offsite backup"]
     OpenELIS["<img src='https://images.squarespace-cdn.com/content/v1/59bc3457ccc5c5890fe7cacd/1593041170321-QXQH87RYT3V6181U7JTL/ELIS.png' width='200' height='40'/><br/>OpenELIS LIMS"]
     OpenFN["<img src='https://docs.openfn.org/img/logo.svg' width='40' height='40'/><br/>OpenFN integration platform"]
     OpenHIE["<img src='https://wiki.ohie.org/download/attachments/8945721/logoHD.fw.png' height='40' width='180'/><br/>Link to wider HMIS integration"]
-    OpenMRS["<img src='https://camo.githubusercontent.com/af224fc4a6839acfdcb4f4021290b2c5825ca0fa518ae6bcaab8636ad8a30bed/68747470733a2f2f74616c6b2e6f70656e6d72732e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f662f663165633537396230333938636230346338306135346335366461323139623234343066653234392e6a7067' width='160' height='60'/><br/>OpenMRS electronic health record"]
+    OpenMRS["<img src='https://i0.wp.com/openmrs.org/wp-content/uploads/2025/07/OpenMRS-logo-transparent-1.png' width='160' height='60'/><br/>OpenMRS electronic health record"]
     RapidPro["<img src='https://app.rapidpro.io/sitestatic/images/logo-dark.svg' height='40' width='160'/><br/>RapidPro SMS gateway"]
     SMS["<img src='https://img.icons8.com/color/512/sms.png' height='40' width='40'/><br/>SMS"]
     WHONET["<img src='https://community.whonet.org/uploads/default/original/1X/a60e8f43ec439ae6868e82b90a5fd6f5146826f5.png' height='40' width='100'/><br/>WHONET AMR surveillance"]
@@ -80,4 +61,23 @@ title["<u>e-IDSR system architecture</u>"]
     subgraph "Province"
         dhis4
     end
+
+    %% links
+    OpenELIS --- OpenMRS
+    OpenFN --- dhis1
+    OpenMRS --- dhis1
+    RapidPro --- OpenFN
+    SMS --- RapidPro
+    analysis --- postgres2
+    dhis1 --- OpenHIE
+    dhis1 ---|"<img src='https://apps.dhis2.org/api/v1/apps/media/dhis2/08012f21-0061-4e96-b49b-286e2743a8b4/a78021d9-1e89-4adf-af29-2142f5601a9b' width='40' height='40'/><br/>Data Exchange"| dhis2
+    dhis1 ---|"<img src='https://apps.dhis2.org/api/v1/apps/media/dhis2/08012f21-0061-4e96-b49b-286e2743a8b4/a78021d9-1e89-4adf-af29-2142f5601a9b' width='40' height='40'/><br/>Data Exchange"| dhis3
+    dhis4 --- OpenFN
+    dhis5 ---|"manual"| WHONET
+    dhis5 ---|"<img src='https://apps.dhis2.org/api/v1/apps/media/dhis2/08012f21-0061-4e96-b49b-286e2743a8b4/a78021d9-1e89-4adf-af29-2142f5601a9b' width='40' height='40'/><br/>Data Exchange"| dhis1
+    fileserver --- dhis1
+    postgres1 --- OffsiteBackup
+    postgres1 --- dhis1
+    postgres1 --- postgres2
+    redis --- dhis1
 ```
