@@ -9,7 +9,7 @@ tags:
 ---
 
 ```mermaid
-%%{init: {'theme': 'neutral', 'fontFamily': 'monospace', 'flowchart': { 'htmlLabels': true} } }%%
+%%{init: {'theme': 'dark', 'fontFamily': 'monospace', 'flowchart': { 'htmlLabels': true} } }%%
 graph TD
 title["<u>e-IDSR system architecture</u>"]
 
@@ -81,3 +81,4 @@ title["<u>e-IDSR system architecture</u>"]
     postgres1 --- postgres2
     redis --- dhis1
 ```
+
