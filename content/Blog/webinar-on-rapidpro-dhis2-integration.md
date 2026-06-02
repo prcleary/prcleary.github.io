@@ -3,6 +3,7 @@ title: "Webinar on RapidPro-DHIS2 integration"
 date: 2023-03-29
 tags:
   - DHIS 2
+  - RapidPro
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Yvkvyefa3fo?si=iBaxIiLheVpIAKk8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
