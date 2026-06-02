@@ -1,6 +1,6 @@
 ---
 title: How to learn R (an opinionated view)
-date: 2023-02-27
+date: 2023-02-07
 tags:
   - Writing
   - R

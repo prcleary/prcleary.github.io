@@ -6,7 +6,8 @@ tags:
   - Writing
 ---
 
-> "Adapt or perish, now as ever, is nature's inexorable imperative." - H.G. Wells
+> [!quote] "Adapt or perish, now as ever, is nature's inexorable imperative." 
+> - H.G. Wells
 
 I am now reading [Tidyverse Skills for Data Science in R by Roger D. Peng et al](https://leanpub.com/tidyverseskillsdatascience).
 To be honest I don't want to learn the tidyverse, and don't need to learn it, and have some issues with it, but I have decided it would be useful to understand it better for teaching purposes.

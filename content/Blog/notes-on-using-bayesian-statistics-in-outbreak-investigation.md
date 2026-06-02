@@ -3,6 +3,7 @@ title: "Notes on using Bayesian statistics in outbreak investigation"
 date: 2024-02-13
 tags:
   - Statistics
+  - Bayesian
 ---
 
 I recently had the opportunity to try out Bayesian methods in a large gastrointestinal disease outbreak. This was a case-case study, comparing cases of outbreak infection with cases of another gastrointestinal infection. Data were collected from different regions/countries, in different ways. There was no sampling; just all the data we could get, which is the standard approach.
@@ -89,34 +90,34 @@ We initially used QR = TRUE (QR decomposition) as we had so many exposure variab
 
 ### Variable types
 
-Most of our variables were binary (0/1 coded); the only continuous variable was age. We discussed centring/scaling age, but were not convinced we needed to. We used a cubic spline to fit age (not Bayesian; just something I have always wanted to do): ns(age, df = 4) (cubic spline with 5 knots based on quantiles).
+Most of our variables were binary (0/1 coded); the only continuous variable was age. We discussed centring/scaling age, but were not convinced we needed to. We used a cubic spline to fit age (not Bayesian; just something I have always wanted to do): `ns(age, df = 4)` (cubic spline with 5 knots based on quantiles).
 
 ### Model checks
 
 We did the model checks with the bayesplot package:
 
-- rhat to check convergence
-- mcmc_trace for trace plots
-- pp_check for posterior predictive checks (good fit apparent for all the models except one non-mixed logistic regression model we did for one particular geography; still pondering that)
-- check_collinearity (performance package) to check for collinearity
+- `rhat` to check convergence
+- `mcmc_trace` for trace plots
+- `pp_check` for posterior predictive checks (good fit apparent for all the models except one non-mixed logistic regression model we did for one particular geography; still pondering that)
+- `check_collinearity` (performance package) to check for collinearity
 
 There are a lot more checks available in ShinyStan.
 
 ### Summarising results
 
-Once you have fitted a model you can get a nice regression table with parameters from the parameters package. There are other functions for looking at estimates and credible intervals, but don't assume they give 95% intervals without checking, as some give e.g. 90%; we stuck with 95% for familiarity. You can plot your model (use the pars argument to specify which estimates you want to show). mcmc_areas (bayesplot package) gives you some nice visualisations of the posterior distributions.
+Once you have fitted a model you can get a nice regression table with parameters from the parameters package. There are other functions for looking at estimates and credible intervals, but don't assume they give 95% intervals without checking, as some give e.g. 90%; we stuck with 95% for familiarity. You can plot your model (use the pars argument to specify which estimates you want to show). `mcmc_areas` (bayesplot package) gives you some nice visualisations of the posterior distributions.
 
 ### Bayes factors
 
-You can get Bayes factors with the bayestestR package. bf_rope gives ROPE Bayes factors, where the null hypothesis is that the parameter is zero or trivially different from zero.
+You can get Bayes factors with the bayestestR package. `bf_rope` gives ROPE Bayes factors, where the null hypothesis is that the parameter is zero or trivially different from zero.
 
 ### Sensitivity analysis
 
 For sensitivity analysis we tried different priors.
 
-A less weakly informative prior, prior=normal(0, 1), gave results more in the ballpark expected (we were not expecting to see large effects).
+A less weakly informative prior, `prior=normal(0, 1)`, gave results more in the ballpark expected (we were not expecting to see large effects).
 
-A "half-Cauchy" prior, prior=student_t(1, 0, 2.5), showed no major differences.
+A "half-Cauchy" prior, `prior=student_t(1, 0, 2.5)`, showed no major differences.
 
 We did not try different priors for the random intercepts, or the overall intercept, but we could have.
 
@@ -126,7 +127,8 @@ Note that rstanarm does "autoscaling" where you have not specified the scale on 
 
 Next steps are to compare the Bayesian with the frequentist results.
 
-- Useful links
+## LINKS
+
 	- [14 Separation | Updating: A Set of Bayesian Notes](https://jrnold.github.io/bayesian_notes/separtion.html)
 	- [A weakly informative default prior distribution for logistic and other regression models - priors11.pdf](http://www.stat.columbia.edu/%7Egelman/research/published/priors11.pdf)
 	- [Bayesian Regression Models: Choosing informative priors in rstanarm - bayesian-regression-models.pdf](https://strengejacke.files.wordpress.com/2017/12/bayesian-regression-models.pdf)
