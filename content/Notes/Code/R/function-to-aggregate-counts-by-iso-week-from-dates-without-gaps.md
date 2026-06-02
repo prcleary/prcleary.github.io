@@ -3,7 +3,7 @@ title: "Function to aggregate counts by ISO week from dates, without gaps"
 date: 2025-02-20
 tags:
   - R
-  - snippet
+  - Snippet
 ---
 
 

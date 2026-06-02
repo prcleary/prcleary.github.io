@@ -3,7 +3,7 @@ title: "Generating a random outbreak data set for testing and teaching"
 date: 2023-12-11
 tags:
   - R
-  - snippet
+  - Snippet
 ---
 
 A function I just found in my old code dump, for generating dummy outbreak data sets. It doesn't include exposure variables, but somewhere I have some code that will generate some exposure data with (approximate) given odds/risk ratios. I think I was using it to test something, but it could be useful for teaching too. It obviously did something with a file of postcodes, but still works without that. 

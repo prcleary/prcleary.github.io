@@ -3,7 +3,7 @@ title: "Extracting postcodes from text"
 date: 2025-02-20
 tags:
   - R
-  - snippet
+  - Snippet
 ---
 
 ```r

@@ -1,6 +1,8 @@
 ---
 title: "How to follow blogs without RSS feeds"
 date: 2024-03-09
+tags:
+  - Blogging
 ---
 
 If like me you have given up on Twitter, Reddit, Mastodon and whatnot (I haven't deleted my Facebook and LinkedIn accounts just yet), and follow blogs exclusively using their RSS (or Atom or JSON) feeds, then you will occasionally find a really good geek blog which inexplicably does not have a web feed (expecting you to use Twitter or Mastodon instead). In vain you will add things like `/feed.xml` to the end of the URL or search the page source. 

@@ -3,7 +3,7 @@ title: Simple frequency table with data.table
 date: 2023-11-27
 tags:
   - R
-  - snippet
+  - Snippet
 ---
 
 

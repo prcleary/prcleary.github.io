@@ -3,6 +3,7 @@ title: "Useful JavaScript snippets"
 date: 2025-02-03
 tags:
   - JavaScript
+  - Snippet
 ---
 
 ## Extract Outlook or Proton webmail info to add to task list
