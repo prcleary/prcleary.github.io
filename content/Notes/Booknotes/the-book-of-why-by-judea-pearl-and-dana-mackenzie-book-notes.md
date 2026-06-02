@@ -1,5 +1,7 @@
 ---
 title: "The Book of Why by Judea Pearl and Dana Mackenzie: book notes"
+tags:
+  - Causal inference
 ---
 
 ## What is causality?
