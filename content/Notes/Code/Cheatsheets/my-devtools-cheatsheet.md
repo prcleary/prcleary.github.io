@@ -1,21 +1,9 @@
 ---
-id: 20250911120000
 title: "My devtools cheatsheet"
-aliases:
-  - "devtools commands"
-  - "R package development cheatsheet"
-type: cheatsheet
-category: tech
-subcategory: r
-domain: programming
 tags:
   - R
   - Cheatsheet
-created: 2025-09-11
-modified: 2026-05-13
 date: 2025-09-11
-status: active
-up: "[[R]]"
 ---
 
 # My devtools cheatsheet
@@ -50,16 +38,6 @@ up: "[[R]]"
 
 ## LINKS
 
-### Up
-- [[R]] *(to write)*
-
-### Related
-- [[Roxygen2]] *(to write)*
-- [[testthat]] *(to write)*
-- [[pkgdown]] *(to write)*
-- [[usethis]] *(to write)*
-
-### External references
 - `devtools` — <https://devtools.r-lib.org/>
 - `pkgdown` — <https://pkgdown.r-lib.org/>
 - R Packages (Wickham & Bryan) — <https://r-pkgs.org/>

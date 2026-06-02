@@ -1,21 +1,9 @@
 ---
-id: 20251231120000
 title: "My Zola cheatsheet"
-aliases:
-  - "Zola cheatsheet"
-  - "Zola Markdown reference"
-type: cheatsheet
-category: tech
-subcategory: zola
-domain: web
 tags:
   - Blogging
   - Cheatsheet
-created: 2025-12-31
-modified: 2026-05-23
 date: 2025-12-31
-status: active
-up: "[[Blogging]]"
 ---
 
 # My Zola cheatsheet
@@ -173,15 +161,6 @@ Full reference: [ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-c
 
 ## LINKS
 
-### Up
-- [[Blogging]] *(to write)*
-
-### Related
-- [[Static site generators compared]] — why I chose Zola
-- [[My website]] *(to write)*
-- [[Markdown cheatsheet]] *(to write)* — for the Markdown that works everywhere, not Zola-specific
-
-### External references
 - [Tera](https://keats.github.io/tera/docs/) — the templating language used in shortcodes and templates
 - [tabi documentation](https://welpo.github.io/tabi/blog/) — the theme this site uses
 - [Zola Discourse](https://zola.discourse.group/) — community forum

@@ -1,22 +1,10 @@
 ---
-id: 20230313120000
 title: "My Docker cheatsheet"
-aliases:
-  - "Docker commands"
-  - "Docker quick reference"
-type: cheatsheet
-category: tech
-subcategory: docker
-domain: programming
 tags:
   - Docker
   - CLI
   - Cheatsheet
-created: 2023-03-13
-modified: 2026-05-23
 date: 2023-03-13
-status: active
-up: "[[Docker]]"
 ---
 
 # My Docker cheatsheet
@@ -100,15 +88,6 @@ Bash and zsh aliases automatically forward arguments, so any `docker-compose up 
 
 ## LINKS
 
-### Up
-- [[Docker]] *(to write)*
-
-### Related
-- [[Containers]] *(to write)*
-- [[Docker Compose]] *(to write)*
-- [[Self-hosting]] *(to write)*
-
-### External references
 - The Ultimate Docker Cheat Sheet — <https://dockerlabs.collabnix.com/docker/cheatsheet/>
 - Docker daemon configuration — <https://docs.docker.com/engine/reference/commandline/dockerd/>
 - Dockerfile reference — <https://docs.docker.com/engine/reference/builder/>

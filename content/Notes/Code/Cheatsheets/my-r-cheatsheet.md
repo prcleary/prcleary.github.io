@@ -1,21 +1,9 @@
 ---
-id: 20230315120000
 title: "My R cheatsheet"
-aliases:
-  - "R cheatsheet"
-  - "R command reference"
-type: cheatsheet
-category: tech
-subcategory: r
-domain: tools
 tags:
   - R
   - Cheatsheet
-created: 2023-03-15
-modified: 2026-05-23
 date: 2023-03-15
-status: active
-up: "[[R]]"
 ---
 
 # My R cheatsheet
@@ -96,10 +84,3 @@ The two elements of the vector apply to **unordered** and **ordered** factors re
 
 ## LINKS
 
-### Up
-- [[R]] *(to write)*
-
-### Related
-- [[data.table cheatsheet]] *(to write)*
-- [[Linear models in R]] *(to write)*
-- [[Reproducibility in R]] *(to write)* — overlap on `options()`, `set.seed()`, session info

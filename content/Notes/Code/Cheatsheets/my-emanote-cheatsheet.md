@@ -1,22 +1,9 @@
 ---
-id: 20260408120000
 title: "My Emanote cheatsheet"
-aliases:
-  - "Emanote syntax"
-  - "Emanote markdown reference"
-type: cheatsheet
-category: tech
-subcategory: static-sites
-domain: programming
 tags:
   - Cheatsheet
   - Blogging
-created: 2026-04-08
-modified: 2026-05-23
 date: 2026-04-08
-status: archived
-superseded-by: "[[My Quartz cheatsheet]]"
-up: "[[Static site generators]]"
 ---
 
 # My Emanote cheatsheet
@@ -67,16 +54,6 @@ content
 
 ## LINKS
 
-### Up
-- [[Static site generators]] *(to write)*
-
-### Related
-- [[Emanote]] *(to write)*
-- [[Quartz]] *(to write)*
-- [[My Quartz cheatsheet]] *(to write — current generator)*
-- [[my-zola-cheatsheet]] *(predecessor)*
-
-### External references
 - Emanote — <https://emanote.srid.ca/>
 - Pandoc Markdown — <https://pandoc.org/MANUAL.html#pandocs-markdown>
 - commonmark-hs attributes extension — <https://github.com/jgm/commonmark-hs/blob/master/commonmark-extensions/test/attributes.md>

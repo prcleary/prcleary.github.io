@@ -1,22 +1,10 @@
 ---
-id: 20241014120000
 title: "My Proxmox cheatsheet"
-aliases:
-  - "Proxmox commands"
-  - "Proxmox quick reference"
-type: cheatsheet
-category: tech
-subcategory: proxmox
-domain: homelab
 tags:
   - Proxmox
   - CLI
   - Cheatsheet
-created: 2024-10-14
-modified: 2026-05-23
 date: 2024-10-14
-status: active
-up: "[[Homelab]]"
 ---
 
 # My Proxmox cheatsheet
@@ -124,16 +112,6 @@ For VMs. `<id>` below is the VM ID.
 
 ## LINKS
 
-### Up
-- [[Homelab]] *(to write)*
-
-### Related
-- [[Docker cheatsheet|My Docker cheatsheet]] — most of what runs on top of Proxmox here is Dockerised
-- [[Nginx Proxy Manager]] *(to write)*
-- [[Self-hosting]] *(to write)*
-- [[Backups]] *(to write)*
-
-### External references
 - Proxmox VE wiki: <https://pve.proxmox.com/wiki/>
 - Proxmox certificate management: <https://pve.proxmox.com/wiki/Certificate_Management>
 - BassT23/Proxmox updater: <https://github.com/BassT23/Proxmox>

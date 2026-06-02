@@ -1,22 +1,10 @@
 ---
-id: 20230612120000
 title: "My Linux cheatsheet"
-aliases:
-  - "Linux cheatsheet"
-  - "Linux command reference"
-type: cheatsheet
-category: tech
-subcategory: linux
-domain: tools
 tags:
   - Linux
   - CLI
   - Cheatsheet
-created: 2023-06-12
-modified: 2026-05-23
 date: 2023-06-12
-status: active
-up: "[[Linux]]"
 ---
 
 # My Linux cheatsheet
@@ -198,12 +186,3 @@ Priority levels for `-p`: `emerg` (0), `alert` (1), `crit` (2), `err` (3), `warn
 
 ## LINKS
 
-### Up
-- [[Linux]] *(to write)*
-
-### Related
-- [[Bash scripting cheatsheet]] *(to write)*
-- [[SSH cheatsheet]] *(to write)*
-- [[Setting up a new Linux server]] *(to write)*
-- [[Proxmox cheatsheet]] — overlap on `journalctl`, `ufw`, user management
-- [[Docker cheatsheet]] — different tool, similar "stuff I keep Googling" energy
