@@ -9,7 +9,7 @@ tags:
 <p>Simply using the embed code from XOT.</p>
 
 ```html
-<iframe src="https://xot.paulcleary.net/xerte/play.php?template_id=3" width="802" height="602" frameborder="0" style="position:relative; top:0px; left:0px; z-index:0;"></iframe>
+<iframe src="https://xot2.paulcleary.net/xerte/play.php?template_id=3" width="802" height="602" frameborder="0" style="position:relative; top:0px; left:0px; z-index:0;"></iframe>
 ```
 
-<iframe src="https://xot.paulcleary.net/xerte/play.php?template_id=3" width="802" height="602" frameborder="0" style="position:relative; top:0px; left:0px; z-index:0;"></iframe>
+<iframe src="https://xot2.paulcleary.net/xerte/play.php?template_id=3" width="802" height="602" frameborder="0" style="position:relative; top:0px; left:0px; z-index:0;"></iframe>

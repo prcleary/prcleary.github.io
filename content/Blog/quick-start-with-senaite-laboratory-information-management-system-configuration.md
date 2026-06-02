@@ -3,6 +3,7 @@ title: "Quick start with SENAITE laboratory information management system config
 date: 2024-01-16
 tags:
   - SENAITE
+  - LIMS
 ---
 
 I [[installing-senaite-laboratory-information-management-system-on-ubuntu|previously]] installed SENAITE on my test server and I have now installed a production instance on another server, using my notes from last time.

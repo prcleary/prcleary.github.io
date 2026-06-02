@@ -3,6 +3,7 @@ title: "SENAITE: customising laboratory report content"
 date: 2025-03-31
 tags:
   - SENAITE
+  - LIMS
 ---
 
 [senaite/senaite.patient: Patient handling for SENAITE](https://github.com/senaite/senaite.patient) is the add-on that adds the capability to SENAITE to manage patient data but unfortunately it does not include any patient information in lab reports (COA, or Certificates Of Analysis in SENAITE parlance) by default. The COA templates used are in the folder `/home/senaite/buildout-cache/eggs/cp27mu/senaite.impress-2.5.0-py2.7.egg/senaite/impress/templates/reports/` - you can create a Plone add-on which overrides these templates (hard if you don't know Plone) or simply edit the templates in place (easier but your changes will disappear if you upgrade `senaite.patient`). Plone is pretty complex and it may be a while before I am creating my own add-ons, so I went with the easy option.

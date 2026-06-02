@@ -3,6 +3,7 @@ title: "Post-installation checklist for SENAITE"
 date: 2024-10-27
 tags:
   - SENAITE
+  - LIMS
 ---
 
 Congratulations if you have successfully installed SENAITE. This checklist follows on [[installation-senaite|here]].

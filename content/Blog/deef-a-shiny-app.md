@@ -3,6 +3,7 @@ title: "deef: a Shiny app"
 date: 2024-11-15
 tags:
   - Shiny
+  - R
 ---
 
 Nearly 10 years ago I was faced with the challenge of routinely collecting personally-identifiable data on TB cases from clinicians across my region. I created a form in Microsoft Word and some code (ultimately a Shiny app) to extract the data from a batch of forms (sent via secure email), which involved getting my head around XML and XPath queries. This process worked surprisingly well for several years, and I automated much of the analysis too. I even Dockerised the Shiny app at one point and tried to deploy it on our internal OpenShift platform (ultimately stymied by a non-functioning GitLab Runner). For fun (only) I deployed the app on my CapRover PaaS. It was my first real Shiny app and I did want to develop it further to tidy up the code and the user interface and capture more types of form field, but version 2 never progressed very far due to increasing competing demands on my time. Eventually the national surveillance data collection system was upgraded to capture the same data and we switched to using that instead.

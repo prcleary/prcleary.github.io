@@ -3,6 +3,8 @@ title: "How to create a Bluesky feed"
 date: 2025-03-11
 ---
 
+> [!note] This feed is no longer active and I am no longer on Bluesky.
+
 - You need a Bluesky account, and to create an app password in the Bluesky site: Settings --> Privacy and Security --> App passwords
 - Next log in to [SkyFeed](https://skyfeed.app/) with your Bluesky user name and the app password from the previous step
 - SkyFeed has quite a busy interface - what you are looking for is "Feed Builder" (in the left hand column) then "Create Feed" at the top of the interface that opens 

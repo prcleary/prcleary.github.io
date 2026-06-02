@@ -3,6 +3,7 @@ title: "Update on progress with SENAITE laboratory information management system
 date: 2025-03-11
 tags:
   - SENAITE
+  - LIMS
 ---
 
 I am currently working on the implementation of a laboratory information management project using SENAITE.

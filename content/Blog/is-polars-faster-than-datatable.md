@@ -4,6 +4,7 @@ date: 2023-04-24
 tags:
   - R
   - data.table
+  - polars
 ---
 
 I use the `data.table` package in preference to the tidyverse, mainly

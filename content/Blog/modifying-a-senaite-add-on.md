@@ -3,6 +3,7 @@ title: "Modifying a SENAITE add-on"
 date: 2024-10-10
 tags:
   - SENAITE
+  - LIMS
 ---
 
 The lab I am working with needs to add some additional patient identifiers to its sample requests. SENAITE (with the `senaite.patient` add-on) has an unsatisfactory solution to this: you can add arbitrary identifiers, but only if you go into the Patient listing and add the patient there, i.e. as an additional step to entering the sample request information. Ideally you would be able to enter the additional identifiers at the same time as you enter the sample request information. 
