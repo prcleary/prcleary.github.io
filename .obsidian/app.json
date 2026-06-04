@@ -1,1 +1,9 @@
-{}
+{
+  "vimMode": true,
+  "alwaysUpdateLinks": true,
+  "userIgnoreFilters": [
+    "quartz/",
+    "node_modules/",
+    "public/"
+  ]
+}
