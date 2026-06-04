@@ -222,15 +222,9 @@ This will print several logs to the terminal and notifies when the server is rea
 
 Open a browser (Safari/Chrome/FireFox ...) and navigate to the URL [http://localhost:8080](http://localhost:8080/)
 
-![Welcome Screen](https://www.senaite.com/screenshots/welcome_screen.png)
-
 Log in with `admin:whateveryouwant` to proceed to the next page.
 
-![Installation Screen](https://www.senaite.com/screenshots/installation_screen.png)
-
 You can continue with the default settings and press the *Install SENAITE LIMS* button. After a few moments, SENAITE should be installed and the dashboard view appears.
-
-![Dashboard Screen](https://www.senaite.com/screenshots/dashboard_screen.png)
 
 Congratulations 🙌 you successfully installed SENAITE LIMS on your system!
 
