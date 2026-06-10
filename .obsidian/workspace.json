@@ -171,6 +171,18 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "b81f2d5fa7eb3292",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "content/Blog/2026-05-23.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
+            }
           }
         ],
         "currentTab": 5
@@ -181,6 +193,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "markdown-importer:Open format converter": false,
+      "zk-prefixer:Create new unique note": false,
+      "random-note:Open random note": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -191,7 +206,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "88105c789ce0c736",
+  "active": "9248e17b6bd6454e",
   "lastOpenFiles": [
     "content/Blog/installation-senaite.md",
     "content/Blog/2024-10-27.md",
