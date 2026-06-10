@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "24a0113478895b97",
+        "id": "cdd844311874304e",
         "type": "tabs",
         "children": [
           {
-            "id": "eddd78136f5b2600",
+            "id": "88105c789ce0c736",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Blog/2026-05-23.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2026-05-23"
+              "title": "New tab"
             }
           }
         ]
@@ -53,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "installation-sen",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +70,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -194,12 +191,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "eddd78136f5b2600",
+  "active": "88105c789ce0c736",
   "lastOpenFiles": [
+    "content/Blog/installation-senaite.md",
+    "content/Blog/2024-10-27.md",
+    "Untitled.base",
+    "content/Blog/2026-05-23.md",
+    "content/Blog/collider-bias.md",
     "content/Blog/checklist-for-setting-up-a-new-ubuntu-server-vm-in-proxmox-to-run-docker.md",
+    "content/Blog/bulk-creation-of-data-elements-in-dhis-2.md",
+    "content/Blog/bookmarklet-to-create-markdown-links.md",
     "CODE_OF_CONDUCT.md",
     "README.md",
-    "content/Blog/2026-05-23.md",
     "content/Blog/2023-02-26.md"
   ]
 }
