@@ -17,6 +17,8 @@ title: Interactive R in the blog using WASM
 <div class="r-plot"></div>
 
 </div>
+
+{{< raw >}}
 <script type="module">
 const webRModule = await import("https://webr.r-wasm.org/latest/webr.mjs");
 const { WebR } = webRModule;
@@ -57,3 +59,4 @@ async function runRInBox(boxId) {
 document.querySelector("#q1 .r-run")
   .addEventListener("click", () => runRInBox("q1"));
 </script>
+{{< /raw >}}
