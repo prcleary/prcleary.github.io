@@ -2,10 +2,10 @@
 title: Interactive R in the blog using WASM
 ---
 
-<script type="module" src="/js/webr-fast.js"></script>
+<script type="module" src="/static/js/webr-fast.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js');
+  navigator.serviceWorker.register('/static/sw.js');
 }
 </script>
 

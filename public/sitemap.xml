@@ -1,18 +1,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>https://prcleary.github.io/Bookmarks</loc>
-    <lastmod>2026-05-22T23:00:00.000Z</lastmod>
+    <loc>https://prcleary.github.io/Blog/2022-10-24</loc>
+    <lastmod>2022-10-23T23:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://prcleary.github.io/</loc>
-    <lastmod>2026-06-01T07:29:04.360Z</lastmod>
+    <loc>https://prcleary.github.io/Blog/2022-10-29</loc>
+    <lastmod>2022-10-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/2022-11-08</loc>
+    <lastmod>2022-11-08T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/2022-11-19</loc>
+    <lastmod>2022-11-19T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/2022-12-04</loc>
+    <lastmod>2022-12-04T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/2023-02-26</loc>
-    <lastmod>2023-02-27T00:00:00.000Z</lastmod>
+    <lastmod>2023-02-07T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/2023-02-27</loc>
     <lastmod>2023-02-07T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/2023-03-01</loc>
     <lastmod>2023-03-01T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/2023-03-29</loc>
+    <lastmod>2023-03-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/2023-06-24</loc>
+    <lastmod>2023-06-23T23:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/2024-02-03</loc>
     <lastmod>2024-02-03T00:00:00.000Z</lastmod>
@@ -47,14 +62,11 @@
     <loc>https://prcleary.github.io/Blog/2026-05-23</loc>
     <lastmod>2026-05-12T23:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Blog/adapt-or-perish-learning-the-tidyverse</loc>
+    <lastmod>2023-06-11T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Blog/adding-translated-subtitles-to-video-recordings-of-presentations-using-large-language-models</loc>
     <lastmod>2025-01-28T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://prcleary.github.io/Blog/advent-of-code-2024-days-1-5</loc>
-    <lastmod>2024-12-13T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://prcleary.github.io/Blog/advent-of-code-2024-days-6-9</loc>
-    <lastmod>2024-12-30T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/automatically-email-yourself-tomorrows-calendar</loc>
     <lastmod>2026-01-17T00:00:00.000Z</lastmod>
@@ -65,14 +77,26 @@
     <loc>https://prcleary.github.io/Blog/backing-up-servers-and-desktops-with-borgmatic</loc>
     <lastmod>2025-04-05T23:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Blog/bookmarklet-to-create-markdown-links</loc>
+    <lastmod>2022-11-19T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/bulk-creation-of-data-elements-in-dhis-2</loc>
+    <lastmod>2023-07-11T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Blog/checklist-for-setting-up-a-new-ubuntu-server-vm-in-proxmox-to-run-docker</loc>
     <lastmod>2023-03-16T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://prcleary.github.io/Blog/command-line-weather-forecast</loc>
-    <lastmod>2025-02-18T00:00:00.000Z</lastmod>
+    <loc>https://prcleary.github.io/Blog/collider-bias</loc>
+    <lastmod>2023-07-11T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/combining-r-and-python-in-rstudio</loc>
+    <lastmod>2023-03-28T23:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/convenience-r-functions-for-querying-the-senaite-api</loc>
     <lastmod>2025-03-11T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/creating-a-qr-code-for-your-wifi</loc>
+    <lastmod>2023-03-06T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/creating-indicators-via-the-dhis-2-api</loc>
     <lastmod>2025-04-20T23:00:00.000Z</lastmod>
@@ -86,6 +110,42 @@
     <loc>https://prcleary.github.io/Blog/deleting-unusedempty-dashboards-and-similar-in-dhis-2-via-the-api-using-r</loc>
     <lastmod>2025-04-27T23:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Blog/dhis-2-version-39-wow</loc>
+    <lastmod>2022-12-04T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/digital-health-networks</loc>
+    <lastmod>2022-12-20T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/downloading-maps-from-dhis-2-with-rselenium</loc>
+    <lastmod>2023-07-11T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/embedding-xerte-online-toolkits-e-learning-in-a-web-page-example</loc>
+    <lastmod>2023-06-19T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/evaluating-laboratory-information-management-systems-for-low-and-middle-income-countries</loc>
+    <lastmod>2022-11-19T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/field-epidemiology-toolkit</loc>
+    <lastmod>2023-03-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/first-steps-with-observables-in-quarto</loc>
+    <lastmod>2022-10-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/first-steps-with-setting-up-demonstration-versions-of-open-source-software-platforms-in-the-cloud</loc>
+    <lastmod>2022-11-19T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/fixing-get-offline-zip-in-xerte</loc>
+    <lastmod>2022-11-01T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/fun-with-file-formats-todotxt-and-the-icalendar-format</loc>
+    <lastmod>2023-06-23T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/gentle-introduction-to-python</loc>
+    <lastmod>2022-11-08T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/getting-things-done-the-todotxt-format-and-the-quest-for-the-perfect-productivity-system</loc>
+    <lastmod>2023-06-23T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Blog/how-to-create-a-bluesky-feed</loc>
     <lastmod>2025-03-11T00:00:00.000Z</lastmod>
   </url><url>
@@ -96,22 +156,46 @@
     <lastmod>2025-10-23T23:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/how-to-learn-r</loc>
-    <lastmod>2023-02-27T00:00:00.000Z</lastmod>
+    <lastmod>2023-02-07T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/implementation-considerations-infrastructure-dhis-2-academy</loc>
     <lastmod>2025-03-21T00:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Blog/in-which-i-accidentally-submit-a-pull-request-to-ozone-his</loc>
+    <lastmod>2023-03-28T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Blog/incidence-rates-in-dhis-2</loc>
     <lastmod>2025-04-09T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/informatics-book-review-lims-evaluation-information-security-self-assessment</loc>
+    <lastmod>2023-01-19T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/information-security-self-assessment</loc>
+    <lastmod>2023-01-19T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/installation-senaite</loc>
     <lastmod>2024-10-07T23:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Blog/installing-openelis-laboratory-information-management-system-on-ubuntu</loc>
+    <lastmod>2023-08-23T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Blog/installing-senaite-laboratory-information-management-system-on-ubuntu</loc>
     <lastmod>2023-12-08T00:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Blog/installing-xerte-online-toolkits-on-ubuntu-2204-linux</loc>
+    <lastmod>2023-06-16T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Blog/interested-in-bayesian-statistics-and-want-to-know-more</loc>
     <lastmod>2023-06-22T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/is-polars-faster-than-datatable</loc>
+    <lastmod>2023-04-23T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/k-anonymising-data-sets-with-the-sdcmicro-shiny-app</loc>
+    <lastmod>2023-04-13T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/linux-commands-you-should-really-know</loc>
+    <lastmod>2022-11-19T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/modifying-a-senaite-add-on</loc>
     <lastmod>2024-10-09T23:00:00.000Z</lastmod>
@@ -119,11 +203,17 @@
     <loc>https://prcleary.github.io/Blog/moocs</loc>
     <lastmod>2024-09-22T23:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Blog/more-fun-with-chatgpt</loc>
+    <lastmod>2023-03-28T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Blog/my-tech-march-2024</loc>
     <lastmod>2024-03-09T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/next-steps-with-proxmox</loc>
     <lastmod>2024-10-03T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/notes-on-firths-logistic-regression-and-model-selection</loc>
+    <lastmod>2022-12-04T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/notes-on-new-homelab-setup</loc>
     <lastmod>2025-03-11T00:00:00.000Z</lastmod>
@@ -131,8 +221,11 @@
     <loc>https://prcleary.github.io/Blog/notes-on-the-datatable-package</loc>
     <lastmod>2024-02-03T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://prcleary.github.io/Blog/notes-on-using-bayesian-statistics-in-outbreak-investigation</loc>
-    <lastmod>2024-02-13T00:00:00.000Z</lastmod>
+    <loc>https://prcleary.github.io/Blog/open-source-e-idsr-system-architecture-diagram</loc>
+    <lastmod>2022-12-04T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/openelis-versus-senaite-as-lims-options</loc>
+    <lastmod>2023-01-19T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/post-installation-checklist-for-senaite</loc>
     <lastmod>2024-10-26T23:00:00.000Z</lastmod>
@@ -145,6 +238,9 @@
   </url><url>
     <loc>https://prcleary.github.io/Blog/quick-start-with-senaite-laboratory-information-management-system-configuration</loc>
     <lastmod>2024-01-16T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/regression-tables-for-firths-logistic-regression</loc>
+    <lastmod>2022-12-06T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/run-shiny-app-from-windows-batch-file-example</loc>
     <lastmod>2025-01-13T00:00:00.000Z</lastmod>
@@ -173,8 +269,14 @@
     <loc>https://prcleary.github.io/Blog/stuff-i-found-from-years-ago-when-i-was-going-down-a-web-developmentprint-css-rabbithole</loc>
     <lastmod>2025-02-20T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://prcleary.github.io/Blog/timezones</loc>
-    <lastmod>2024-01-19T00:00:00.000Z</lastmod>
+    <loc>https://prcleary.github.io/Blog/the-dhis-2-api-part-1</loc>
+    <lastmod>2023-06-13T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/things-you-can-now-do-with-ai-online</loc>
+    <lastmod>2023-03-29T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/timeline-with-mermaidjs</loc>
+    <lastmod>2022-11-19T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Blog/update-on-progress-with-senaite-laboratory-information-management-system-configuration</loc>
     <lastmod>2025-03-11T00:00:00.000Z</lastmod>
@@ -185,6 +287,24 @@
     <loc>https://prcleary.github.io/Blog/useful-scripts-from-chatgpt</loc>
     <lastmod>2023-03-16T00:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Blog/using-renv-in-rstudio-with-git-for-reproducible-package-management</loc>
+    <lastmod>2022-11-21T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/webinar-on-rapidpro-dhis2-integration</loc>
+    <lastmod>2023-03-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/windows-subsystem-for-linux-wsl2-rstudio-git-docker-and-a-windows-laptop</loc>
+    <lastmod>2022-10-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/xerte-online-toolkits-hiding-the-next-button-for-a-specified-time</loc>
+    <lastmod>2023-06-19T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Blog/xerte-online-toolkits-making-a-quiz-pass-rate-mandatory</loc>
+    <lastmod>2023-03-12T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Bookmarks</loc>
+    <lastmod>2026-05-22T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Notes/Booknotes/public-health-informatics-by-sahay-et-al-notes-and-reflections</loc>
     <lastmod>2026-05-23T09:31:02.763Z</lastmod>
   </url><url>
@@ -192,7 +312,13 @@
     <lastmod>2026-05-23T10:54:09.632Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Notes/Booknotes/the-book-of-why-by-judea-pearl-and-dana-mackenzie-book-notes</loc>
-    <lastmod>2026-05-23T10:46:42.390Z</lastmod>
+    <lastmod>2026-06-01T17:08:53.155Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Ansible/ansible-first-steps</loc>
+    <lastmod>2026-06-02T17:30:24.746Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-datatable-cheatsheet</loc>
+    <lastmod>2023-01-25T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-devtools-cheatsheet</loc>
     <lastmod>2025-09-10T23:00:00.000Z</lastmod>
@@ -203,24 +329,198 @@
     <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-emanote-cheatsheet</loc>
     <lastmod>2026-04-07T23:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-ggplot2-cheatsheet</loc>
+    <lastmod>2023-08-23T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-git-cheatsheet</loc>
+    <lastmod>2022-11-08T00:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-linux-cheatsheet</loc>
     <lastmod>2023-06-11T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-postgresql-cheatsheet</loc>
+    <lastmod>2023-08-23T23:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-proxmox-cheatsheet</loc>
     <lastmod>2024-10-13T23:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-python-cheatsheet</loc>
+    <lastmod>2023-03-07T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-quartz-cheatsheet</loc>
+    <lastmod>2026-05-31T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-r-cheatsheet</loc>
     <lastmod>2023-03-15T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-rmarkdown-cheatsheet</loc>
+    <lastmod>2023-01-30T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-vim-cheatsheet</loc>
+    <lastmod>2022-11-08T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Notes/Code/Cheatsheets/my-zola-cheatsheet</loc>
     <lastmod>2025-12-31T00:00:00.000Z</lastmod>
   </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Linux/updating-an-ubuntu-server</loc>
+    <lastmod>2022-10-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Python/multilevel-logistic-regression-in-python</loc>
+    <lastmod>2023-03-21T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Quarto/formatting-in-quarto</loc>
+    <lastmod>2022-11-01T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/adding-multicolumn-function-output-to-a-datatable</loc>
+    <lastmod>2022-10-25T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/advent-of-code-2024-days-1-5</loc>
+    <lastmod>2024-12-13T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/advent-of-code-2024-days-6-9</loc>
+    <lastmod>2024-12-30T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/aggregate-data-on-time</loc>
+    <lastmod>2022-11-08T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/calculating-directly-standardised-rates-with-data-for-only-some-age-groups</loc>
+    <lastmod>2022-11-15T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/combine-two-dichotomous-variables-into-a-single-variable-with-four-levels</loc>
+    <lastmod>2022-11-10T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/create-a-gitlab-project-from-r</loc>
+    <lastmod>2022-11-11T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/create-gitignore-file-from-r</loc>
+    <lastmod>2022-10-25T23:00:00.000Z</lastmod>
+  </url><url>
     <loc>https://prcleary.github.io/Notes/Code/R/extracting-postcodes-from-text</loc>
     <lastmod>2025-02-20T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/filtering-on-datatable-list-columns</loc>
+    <lastmod>2022-11-08T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/function-for-labelling-eg-age-groups</loc>
+    <lastmod>2023-03-21T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Notes/Code/R/function-to-aggregate-counts-by-iso-week-from-dates-without-gaps</loc>
     <lastmod>2025-02-20T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://prcleary.github.io/Notes/Code/R/function-to-find-date-of-end-of-iso-week-for-a-date</loc>
     <lastmod>2025-02-20T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/function-to-look-for-filenames-of-form-yyyymmddpattern-and-select-one-with-latest-date</loc>
+    <lastmod>2025-02-20T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/generating-a-random-outbreak-data-set-for-testing-and-teaching</loc>
+    <lastmod>2023-12-11T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/melting-questionnaire-data-with-datatable</loc>
+    <lastmod>2022-10-27T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/plotly-stacked-bar-chart-that-works-better-for-hiding-categories</loc>
+    <lastmod>2022-11-03T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/plotting-likert-style-questionnaire-responses</loc>
+    <lastmod>2022-10-27T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/quick-summary-of-a-variable</loc>
+    <lastmod>2022-11-08T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/read-stata-labels-in-r</loc>
+    <lastmod>2022-10-25T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/rounding-like-you-expect-it</loc>
+    <lastmod>2022-10-25T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/R/simple-frequency-table-with-datatable</loc>
+    <lastmod>2023-11-27T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Vim/my-vim-configuration-file</loc>
+    <lastmod>2026-06-02T17:30:24.748Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/Vim/my-vim-settings</loc>
+    <lastmod>2022-11-15T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/notes-on-reproducible-analytical-pipelines</loc>
+    <lastmod>2022-11-15T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Code/r-wasm</loc>
+    <lastmod>2026-06-11T16:34:45.798Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/GlobalHealthInformatics/laboratory-implementation-and-idsr</loc>
+    <lastmod>2022-10-24T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/GlobalHealthInformatics/the-importance-of-sustainable-secure-and-coordinated-digital-health-technologies</loc>
+    <lastmod>2022-10-24T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/JournalClub/machine-learning-and-deep-learning-a-review-for-ecologists-arxiv</loc>
+    <lastmod>2022-12-04T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/JournalClub/outcomes-among-confirmed-cases-and-a-matched-comparison-group-in-the-long-covid-in-scotland-study</loc>
+    <lastmod>2022-10-23T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/JournalClub/use-of-straighteners-and-other-hair-products-and-incident-uterine-cancer</loc>
+    <lastmod>2022-11-19T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Reference/and-the-time-is</loc>
+    <lastmod>2023-03-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Reference/command-line-weather-forecast</loc>
+    <lastmod>2025-02-18T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Reference/live-train-times-from-alsager-to-liverpool</loc>
+    <lastmod>2023-08-23T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Reference/live-train-times-from-liverpool-to-alsager</loc>
+    <lastmod>2023-08-23T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Reference/online-diagram-editors</loc>
+    <lastmod>2022-12-04T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Reference/online-tools-which-may-occasionally-be-useful</loc>
+    <lastmod>2022-12-04T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Reference/timezones</loc>
+    <lastmod>2024-01-19T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Reference/useful-websites-for-checking-if-your-site-is-secure</loc>
+    <lastmod>2022-12-04T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Software/debsums</loc>
+    <lastmod>2022-10-27T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Software/hardening-ssh-configuration</loc>
+    <lastmod>2022-10-27T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Software/installing-authentication-for-google-earth-on-dhis-2</loc>
+    <lastmod>2022-10-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Software/installing-dhis2-dependencies-on-linux</loc>
+    <lastmod>2022-10-27T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Software/my-2018-notes-on-installation-of-dhis2</loc>
+    <lastmod>2022-10-27T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Software/restarting-nginx-web-server-after-configuration-changes</loc>
+    <lastmod>2022-10-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Software/setting-up-lets-encrypt-with-nginx</loc>
+    <lastmod>2022-10-28T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Software/starting-fail2ban</loc>
+    <lastmod>2022-10-27T23:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Statistics/introduction-to-bayesian-reasoning-and-statistical-methods</loc>
+    <lastmod>2022-10-31T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Statistics/notes-on-using-bayesian-statistics-in-outbreak-investigation</loc>
+    <lastmod>2024-02-13T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/Notes/Statistics/teaching-bayesian-statistics</loc>
+    <lastmod>2022-11-08T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://prcleary.github.io/</loc>
+    <lastmod>2026-06-02T17:30:24.749Z</lastmod>
   </url></urlset>
