@@ -17,9 +17,9 @@ title: Interactive R in the blog using WASM
 <div class="r-plot"></div>
 
 </div>
-
 <script type="module">
-import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
+const webRModule = await import("https://webr.r-wasm.org/latest/webr.mjs");
+const { WebR } = webRModule;
 
 const webR = new WebR();
 
@@ -28,7 +28,6 @@ let webRReady = (async () => {
   spinner.style.display = "inline";
 
   await webR.init();
-  await webR.installPackages(["data.table"]);
   console.log("WebR initialized");
 
   spinner.style.display = "none";
