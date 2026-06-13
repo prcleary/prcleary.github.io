@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "cdd844311874304e",
+        "id": "f7175aff75ed2695",
         "type": "tabs",
         "children": [
           {
-            "id": "88105c789ce0c736",
+            "id": "470dc64e4661dc8e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Notes/Code/r-wasm.md",
-                "mode": "source",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "r-wasm"
+              "title": "New tab"
             }
           }
         ]
@@ -209,9 +205,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "88105c789ce0c736",
+  "active": "470dc64e4661dc8e",
   "lastOpenFiles": [
     "quartz/static/js/r-wasm.js~",
+    "content/Notes/Code/r-wasm.md",
     "quartz/static/js/r-wasm.js",
     "quartz/static/js",
     "quartz/static/sw.js",
