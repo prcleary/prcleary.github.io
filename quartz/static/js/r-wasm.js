@@ -2,42 +2,31 @@ const webRModule = await import("https://webr.r-wasm.org/latest/webr.mjs");
 const { WebR } = webRModule;
 
 const webR = new WebR();
-let webRReady;
 
-// ---------- INITIALIZE ONCE ----------
-async function initWebR() {
-  const globalSpinner = document.querySelector("#r-global-status");
+let webRReady = (async () => {
+  const spinner = document.querySelector("#q1 .r-spinner");
 
-  if (globalSpinner) {
-    globalSpinner.style.display = "block";
-    globalSpinner.textContent = "Starting R runtime...";
+  if (spinner) {
+    spinner.style.display = "inline";
+    spinner.textContent = "Starting R runtime...";
   }
 
   await webR.init();
 
-  if (globalSpinner) {
-    globalSpinner.textContent = "Installing data.table...";
-  }
+  if (spinner) spinner.textContent = "Installing data.table...";
 
   await webR.installPackages(["data.table"]);
 
-  // Preload library so users don't have to
-  await webR.evalR(`library(data.table)`);
+  console.log("WebR initialized and data.table installed");
 
-  if (globalSpinner) {
-    globalSpinner.textContent = "R ready.";
-    setTimeout(() => {
-      globalSpinner.style.display = "none";
-    }, 1000);
+  if (spinner) {
+    spinner.style.display = "none";
+    spinner.textContent = "";
   }
+})();
 
-  console.log("WebR ready with data.table");
-}
-
-webRReady = initWebR();
-
-// ---------- RUN CODE (SHARED SESSION) ----------
-async function runRInBox(box) {
+async function runRInBox(boxId) {
+  const box = document.getElementById(boxId);
   const textarea = box.querySelector(".r-input");
   const consoleEl = box.querySelector(".r-console");
   const spinner = box.querySelector(".r-spinner");
@@ -49,6 +38,7 @@ async function runRInBox(box) {
   await webRReady;
 
   try {
+    // ✅ Wrap user code in capture.output to force console-style output
     const wrappedCode = `
       paste(
         capture.output({
@@ -68,14 +58,9 @@ async function runRInBox(box) {
   spinner.textContent = "";
 }
 
-// ---------- AUTO-WIRE ALL R BOXES ----------
 document.addEventListener("DOMContentLoaded", () => {
-  const boxes = document.querySelectorAll(".r-box");
-
-  boxes.forEach((box) => {
-    const button = box.querySelector(".r-run");
-    if (button) {
-      button.addEventListener("click", () => runRInBox(box));
-    }
-  });
+  const button = document.querySelector("#q1 .r-run");
+  if (button) {
+    button.addEventListener("click", () => runRInBox("q1"));
+  }
 });

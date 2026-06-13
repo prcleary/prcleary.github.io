@@ -2,28 +2,20 @@
 title: Interactive R in the blog using WASM
 ---
 
-<div id="r-global-status" style="margin-bottom:1em; font-weight:bold;"></div>
+## Try R
 
-## Try `data.table`
+<div id="q1" class="r-box">
 
-
-<div class="r-box">
 <textarea class="r-input">
-DT <- data.table(x = 1:5)
-DT
+1 + 1
 </textarea>
-<button class="r-run">Run</button>
-<span class="r-spinner" style="display:none;"></span>
-<pre class="r-console"></pre>
-</div>
 
-<div class="r-box">
-<textarea class="r-input">
-DT[, sum(x)]
-</textarea>
 <button class="r-run">Run</button>
-<span class="r-spinner" style="display:none;"></span>
+<span class="r-spinner" style="display:none;">Starting R runtime...</span>
+
 <pre class="r-console"></pre>
+<div class="r-plot"></div>
+
 </div>
 
 <script type="module" src="/static/js/r-wasm.js"></script>
