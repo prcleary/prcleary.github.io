@@ -11,10 +11,14 @@
             "id": "88105c789ce0c736",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Notes/Code/r-wasm.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "r-wasm"
             }
           }
         ]
@@ -205,8 +209,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2ac035802bc6580a",
+  "active": "88105c789ce0c736",
   "lastOpenFiles": [
+    "quartz/static/js/r-wasm.js",
+    "quartz/static/js",
     "quartz/static/sw.js",
     "quartz/static/webr-fast.js",
     "content/Blog/installation-senaite.md",

@@ -18,45 +18,4 @@ title: Interactive R in the blog using WASM
 
 </div>
 
-{{< raw >}}
-<script type="module">
-const webRModule = await import("https://webr.r-wasm.org/latest/webr.mjs");
-const { WebR } = webRModule;
-
-const webR = new WebR();
-
-let webRReady = (async () => {
-  const spinner = document.querySelector("#q1 .r-spinner");
-  spinner.style.display = "inline";
-
-  await webR.init();
-  console.log("WebR initialized");
-
-  spinner.style.display = "none";
-})();
-
-async function runRInBox(boxId) {
-  const box = document.getElementById(boxId);
-  const textarea = box.querySelector(".r-input");
-  const consoleEl = box.querySelector(".r-console");
-  const spinner = box.querySelector(".r-spinner");
-
-  spinner.style.display = "inline";
-  consoleEl.textContent = "";
-
-  await webRReady;
-
-  try {
-    const result = await webR.evalR(textarea.value);
-    consoleEl.textContent = result.toString();
-  } catch (err) {
-    consoleEl.textContent = err;
-  }
-
-  spinner.style.display = "none";
-}
-
-document.querySelector("#q1 .r-run")
-  .addEventListener("click", () => runRInBox("q1"));
-</script>
-{{< /raw >}}
+<script type="module" src="/static/js/r-wasm.js"></script>
