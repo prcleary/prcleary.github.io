@@ -36,7 +36,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "installation-sen",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,8 +70,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -206,7 +205,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9248e17b6bd6454e",
+  "active": "2ac035802bc6580a",
   "lastOpenFiles": [
     "quartz/static/sw.js",
     "quartz/static/webr-fast.js",
