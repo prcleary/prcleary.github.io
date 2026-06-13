@@ -1,5 +1,3 @@
-// quartz/static/js/r-wasm.js
-
 const webRModule = await import("https://webr.r-wasm.org/latest/webr.mjs");
 const { WebR } = webRModule;
 
@@ -17,14 +15,14 @@ let webRReady = (async () => {
 
   if (spinner) spinner.textContent = "Installing data.table...";
 
-  // Install data.table (safe to call even if already installed in this session)
+  // Install data.table
   await webR.installPackages(["data.table"]);
 
   console.log("WebR initialized and data.table installed");
 
   if (spinner) {
     spinner.style.display = "none";
-    spinner.textContent = "Starting R runtime...";
+    spinner.textContent = "";
   }
 })();
 
@@ -41,15 +39,15 @@ async function runRInBox(boxId) {
   await webRReady;
 
   try {
-    const result = await webR.evalR(textarea.value);
-    const output = await result.toString();
+    // ✅ THIS is the correct API for console output
+    const output = await webR.evalRString(textarea.value);
     consoleEl.textContent = output;
   } catch (err) {
     consoleEl.textContent = err.message || String(err);
   }
 
   spinner.style.display = "none";
-  spinner.textContent = "Starting R runtime...";
+  spinner.textContent = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
