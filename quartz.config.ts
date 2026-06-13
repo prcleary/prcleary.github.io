@@ -65,11 +65,8 @@ const config: QuartzConfig = {
         keepBackground: false,
       }),
 
-      // ✅ THIS IS THE IMPORTANT FIX
-      Plugin.ObsidianFlavoredMarkdown({
-        enableInHtmlEmbed: false,
-        enableRawHTML: true,
-      }),
+      Plugin.ObsidianFlavoredMarkdown(
+      ),
 
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
