@@ -2,9 +2,7 @@
 title: Interactive R in the blog using WASM
 ---
 
-```xml
 <div id="r-global-status" style="margin-bottom:1em; font-weight:bold;"></div>
-```
 
 ## Try `data.table`
 
