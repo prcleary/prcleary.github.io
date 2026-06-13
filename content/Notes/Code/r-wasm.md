@@ -25,3 +25,5 @@ DT[, sum(x)]
 <span class="r-spinner" style="display:none;"></span>
 <pre class="r-console"></pre>
 </div>
+
+<script type="module" src="/static/js/r-wasm.js"></script>
