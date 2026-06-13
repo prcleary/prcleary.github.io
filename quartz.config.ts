@@ -67,7 +67,7 @@ const config: QuartzConfig = {
 
       // ✅ THIS IS THE IMPORTANT FIX
       Plugin.ObsidianFlavoredMarkdown({
-        enableInHtmlEmbed: true,
+        enableInHtmlEmbed: false,
         enableRawHTML: true,
       }),
 
