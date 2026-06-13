@@ -5,17 +5,16 @@ const webR = new WebR();
 
 let webRReady = (async () => {
   const spinner = document.querySelector("#q1 .r-spinner");
+
   if (spinner) {
     spinner.style.display = "inline";
     spinner.textContent = "Starting R runtime...";
   }
 
-  // Start R
   await webR.init();
 
   if (spinner) spinner.textContent = "Installing data.table...";
 
-  // Install data.table
   await webR.installPackages(["data.table"]);
 
   console.log("WebR initialized and data.table installed");
@@ -39,8 +38,17 @@ async function runRInBox(boxId) {
   await webRReady;
 
   try {
-    // ✅ THIS is the correct API for console output
-    const output = await webR.evalRString(textarea.value);
+    // ✅ Wrap user code in capture.output to force console-style output
+    const wrappedCode = `
+      paste(
+        capture.output({
+          ${textarea.value}
+        }),
+        collapse = "\n"
+      )
+    `;
+
+    const output = await webR.evalRString(wrappedCode);
     consoleEl.textContent = output;
   } catch (err) {
     consoleEl.textContent = err.message || String(err);
