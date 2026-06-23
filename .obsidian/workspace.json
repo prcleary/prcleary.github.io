@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "581a3471c431cd5a",
+        "id": "a1b739964b1c8712",
         "type": "tabs",
         "children": [
           {
-            "id": "6aaf2f5b87ddee2b",
+            "id": "3faebe388ecd1d8a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -206,7 +206,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6aaf2f5b87ddee2b",
+  "active": "3faebe388ecd1d8a",
   "lastOpenFiles": [
     "content/Blog/2026-06-21.md",
     "2026-06-21.md",
