@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "06df10b9f397a85e",
+        "id": "581a3471c431cd5a",
         "type": "tabs",
         "children": [
           {
-            "id": "6c62c68d3bd44cd0",
+            "id": "6aaf2f5b87ddee2b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2026-06-21.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2026-06-21"
+              "title": "New tab"
             }
           }
         ]
@@ -210,12 +206,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9248e17b6bd6454e",
+  "active": "6aaf2f5b87ddee2b",
   "lastOpenFiles": [
+    "2026-06-21.md",
     "public/tags/snippet.html",
     "public/tags/Snippet.html",
     "content/Blog/2026-05-23.md",
-    "2026-06-21.md",
     "quartz.config.ts~",
     "content/Notes/Code/r-wasm.md~",
     "quartz/static/js/r-wasm.js~",
