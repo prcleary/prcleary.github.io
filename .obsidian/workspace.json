@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f7175aff75ed2695",
+        "id": "06df10b9f397a85e",
         "type": "tabs",
         "children": [
           {
-            "id": "470dc64e4661dc8e",
+            "id": "6c62c68d3bd44cd0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "2026-06-21.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2026-06-21"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "2026-06-21",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -205,8 +210,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "470dc64e4661dc8e",
+  "active": "9248e17b6bd6454e",
   "lastOpenFiles": [
+    "public/tags/snippet.html",
+    "public/tags/Snippet.html",
+    "content/Blog/2026-05-23.md",
+    "2026-06-21.md",
     "quartz.config.ts~",
     "content/Notes/Code/r-wasm.md~",
     "quartz/static/js/r-wasm.js~",
@@ -218,7 +227,6 @@
     "content/Blog/installation-senaite.md",
     "content/Blog/2024-10-27.md",
     "Untitled.base",
-    "content/Blog/2026-05-23.md",
     "content/Blog/collider-bias.md",
     "content/Blog/checklist-for-setting-up-a-new-ubuntu-server-vm-in-proxmox-to-run-docker.md",
     "content/Blog/bulk-creation-of-data-elements-in-dhis-2.md",
