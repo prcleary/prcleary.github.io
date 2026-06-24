@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a1b739964b1c8712",
+        "id": "fdee5145380cb408",
         "type": "tabs",
         "children": [
           {
-            "id": "3faebe388ecd1d8a",
+            "id": "8a281bbb2e0fda11",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "2026-06-21",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,8 +70,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -206,8 +205,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3faebe388ecd1d8a",
+  "active": "8a281bbb2e0fda11",
   "lastOpenFiles": [
+    "content/Blog/2026-06-23.md",
     "content/Blog/2026-06-21.md",
     "2026-06-21.md",
     "public/tags/snippet.html",
