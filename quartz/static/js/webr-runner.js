@@ -336,7 +336,8 @@ function augmentRBlock(pre) {
   const spinner = document.createElement("span");
   spinner.className = "r-spinner";
   spinner.style.display = "none";
-  spinner.textContent = " running…";
+  spinner.style.marginLeft = "0.75rem";
+  spinner.textContent = "⏳ Running…";
 
   controls.appendChild(btn);
   controls.appendChild(spinner);
