@@ -75,53 +75,13 @@ Opt-in is per page: adding a single `<script>` tag to a page enables the behavio
 
 ## Files created
 
-Four new files and two small edits. All paths are relative to the Quartz project root.
+Four new files and two small edits. All paths are relative to the Quartz project root. Each file is linked to its current version on GitHub — commented and complete.
 
 ### 1. `quartz/plugins/emitters/coiServiceWorker.ts` (new)
 
-A tiny Quartz emitter plugin that writes a coi-serviceworker to the built site root as `sw.js`. This is the *only* way to serve a file at `/` scope from within Quartz.
+A tiny Quartz emitter plugin (~35 lines) that writes a coi-serviceworker to the built site root as `sw.js`. This is the *only* way to serve a file at `/` scope from within Quartz.
 
-```typescript
-import { QuartzEmitterPlugin } from "../types"
-import { write } from "./helpers"
-import { FullSlug } from "../../util/path"
-
-const SW_SOURCE = `
-self.addEventListener("install", () => self.skipWaiting());
-self.addEventListener("activate", (event) => event.waitUntil(self.clients.claim()));
-
-self.addEventListener("fetch", (event) => {
-  if (event.request.cache === "only-if-cached" && event.request.mode !== "same-origin") return;
-  event.respondWith(
-    fetch(event.request).then((response) => {
-      if (response.status === 0) return response;
-      const headers = new Headers(response.headers);
-      headers.set("Cross-Origin-Embedder-Policy", "credentialless");
-      headers.set("Cross-Origin-Opener-Policy", "same-origin");
-      return new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers,
-      });
-    }).catch((e) => console.error(e))
-  );
-});
-`
-
-export const COIServiceWorker: QuartzEmitterPlugin = () => ({
-  name: "COIServiceWorker",
-  async emit(ctx) {
-    const path = await write({
-      ctx,
-      content: SW_SOURCE,
-      slug: "sw" as FullSlug,
-      ext: ".js",
-    })
-    return [path]
-  },
-  async *partialEmit() {},
-})
-```
+**View source:** [coiServiceWorker.ts on GitHub](https://github.com/prcleary/prcleary.github.io/blob/main/quartz/plugins/emitters/coiServiceWorker.ts)
 
 ### 2. `quartz/plugins/emitters/index.ts` (one-line edit)
 
@@ -132,6 +92,8 @@ export { COIServiceWorker } from "./coiServiceWorker"
 ```
 
 This is the only edit to a file Quartz "owns". On upgrade, resolve the trivial merge conflict by keeping this line.
+
+**View source:** [emitters/index.ts on GitHub](https://github.com/prcleary/prcleary.github.io/blob/main/quartz/plugins/emitters/index.ts)
 
 ### 3. `quartz.config.ts` (one-line edit)
 
@@ -145,6 +107,8 @@ emitters: [
 ],
 ```
 
+**View source:** [quartz.config.ts on GitHub](https://github.com/prcleary/prcleary.github.io/blob/main/quartz.config.ts)
+
 ### 4. `quartz/static/js/webr-runner.js` (new)
 
 The client-side runtime. It:
@@ -156,13 +120,23 @@ The client-side runtime. It:
 5. On Run, reads the block's text verbatim (no editing), evaluates it inside a webR `Shelter`, and displays streamed stdout/stderr and any captured graphics.
 6. Re-scans on Quartz's SPA `nav` event so runners appear on client-side navigation too.
 
-The full file is at [quartz/static/js/webr-runner.js](/static/js/webr-runner.js). Key configuration:
+**View source:** [webr-runner.js on GitHub](https://github.com/prcleary/prcleary.github.io/blob/main/quartz/static/js/webr-runner.js) &middot; [raw served copy](/static/js/webr-runner.js)
+
+The file opens with a plain-English "what this does and does not do" statement and a JavaScript-for-R-users glossary, so you can read it on trust without having to be a JavaScript developer.
+
+Key configuration constant:
 
 ```javascript
 const DEFAULT_PACKAGES = ["data.table", "ggplot2"];
 ```
 
 Add or remove packages here; they'll be installed and attached the first time any Run is clicked on any page.
+
+### 5. `.github/workflows/deploy.yml` (one-line edit)
+
+Added `workflow_dispatch:` to the `on:` block so the workflow can be re-triggered manually from the Actions tab UI when a push-triggered run gets stuck (see Debugging setup below).
+
+**View source:** [deploy.yml on GitHub](https://github.com/prcleary/prcleary.github.io/blob/main/.github/workflows/deploy.yml)
 
 ## How to use it in a post
 
