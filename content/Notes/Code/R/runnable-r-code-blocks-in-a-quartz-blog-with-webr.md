@@ -49,7 +49,9 @@ ggplot(data.frame(x = x), aes(x)) +
 WebR needs `SharedArrayBuffer`. Browsers only expose `SharedArrayBuffer` when the page is **cross-origin isolated**, which requires two HTTP response headers on every page:
 
 - `Cross-Origin-Opener-Policy: same-origin`
-- `Cross-Origin-Embedder-Policy: credentialless` (or `require-corp`)
+- `Cross-Origin-Embedder-Policy: require-corp`
+
+(The alternative `credentialless` value works in Chromium but is not yet supported in Firefox, so this setup uses `require-corp` for cross-browser compatibility. Under `require-corp`, cross-origin resources must additionally carry a `Cross-Origin-Resource-Policy` header — the service worker below injects that too.)
 
 GitHub Pages does not let you set custom HTTP headers. The standard workaround is a service worker that intercepts every fetch and re-adds the headers itself — the [coi-serviceworker](https://github.com/gzuidhof/coi-serviceworker) pattern. A service worker only controls pages **at or below its own URL**, so the worker must be served from the site root (`/sw.js`), not from a subdirectory such as `/static/sw.js`.
 
