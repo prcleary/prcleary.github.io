@@ -77,7 +77,7 @@ Opt-in is per page: adding a single `<script>` tag to a page enables the behavio
 
 ## Files created
 
-Four new files and two small edits. All paths are relative to the Quartz project root. Each file is linked to its current version on GitHub — commented and complete.
+Two new files and two small edits. All paths are relative to the Quartz project root. Each file is linked to its current version on GitHub — commented and complete.
 
 ### 1. `quartz/plugins/emitters/coiServiceWorker.ts` (new)
 
@@ -133,12 +133,6 @@ const DEFAULT_PACKAGES = ["data.table", "ggplot2"];
 ```
 
 Add or remove packages here; they'll be installed and attached the first time any Run is clicked on any page.
-
-### 5. `.github/workflows/deploy.yml` (one-line edit)
-
-Added `workflow_dispatch:` to the `on:` block so the workflow can be re-triggered manually from the Actions tab UI when a push-triggered run gets stuck (see Debugging setup below).
-
-**View source:** [deploy.yml on GitHub](https://github.com/prcleary/prcleary.github.io/blob/main/.github/workflows/deploy.yml)
 
 ## How to use it in a post
 
