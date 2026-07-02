@@ -1,34 +1,29 @@
 /*
  * webr-runner.js — run R in the browser from within Quartz pages.
  *
- * Usage in a markdown page: add
+ * Usage: add
  *
  *     <script type="module" src="/static/js/webr-runner.js"></script>
  *
- * anywhere on the page. That does two things:
+ * anywhere on a markdown page. Every fenced ```r code block on that page then
+ * gets a "▶ Run" button appended; clicking it evaluates the block and shows
+ * text output + any plots produced. State (variables, functions, loaded
+ * packages) persists between runs within the same page load, so blocks can
+ * refer to objects defined earlier.
  *
- * 1. Every fenced ```r code block on that page gets a "Run" button appended.
- *    Clicking it evaluates the code and shows the output below.
+ * Only pages that include the <script> tag above are affected — R blocks on
+ * other pages are untouched.
  *
- * 2. Any explicit editable widget of the form
+ * The block contents are read from the rendered HTML written by you. There is
+ * no editable widget: visitors can only run the exact code you published.
+ * (webR runs in a WASM sandbox with its own virtual filesystem, so even if
+ *  a visitor forges a call through DevTools, it cannot read the host machine.)
  *
- *        <div class="r-runner" id="unique-id" data-default="1 + 1">
- *          <textarea></textarea>
- *          <button onclick="runR(this.closest('.r-runner'))">Run</button>
- *          <pre class="r-console"></pre>
- *        </div>
- *
- *    is upgraded to a CodeMirror editor pre-filled with data-default (or the
- *    last edit from localStorage).
- *
- * Optional: add
- *
+ * Optional diagnostic:
  *     <pre id="webr-diag"></pre>
  *
- * to see cross-origin isolation status.
- *
- * Cross-origin isolation is provided by /sw.js (a coi-serviceworker style
- * worker emitted by the COIServiceWorker Quartz plugin).
+ * Cross-origin isolation (needed for SharedArrayBuffer) is provided by the
+ * root-scope /sw.js emitted by the COIServiceWorker Quartz plugin.
  */
 
 /* -------- 1. Register cross-origin isolation service worker -------- */
@@ -64,9 +59,18 @@ updateDiag();
 
 /* -------- 2. webR lifecycle -------- */
 
+// Packages installed and attached on first run. Add/remove here to change
+// what's available by default in every ```r block.
+const DEFAULT_PACKAGES = ["data.table", "ggplot2"];
+
 let webR = null;
 let ready = false;
 let starting = null;
+let progressCb = null;
+
+function reportProgress(msg) {
+  if (progressCb) progressCb(msg);
+}
 
 async function startWebR() {
   if (ready) return;
@@ -77,140 +81,91 @@ async function startWebR() {
     );
   }
   starting = (async () => {
+    reportProgress("Loading webR runtime...");
     const mod = await import("https://webr.r-wasm.org/latest/webr.mjs");
     webR = new mod.WebR();
     await webR.init();
+
+    if (DEFAULT_PACKAGES.length) {
+      reportProgress("Installing packages: " + DEFAULT_PACKAGES.join(", ") + " (first load only)...");
+      await webR.evalRVoid(
+        `webr::install(c(${DEFAULT_PACKAGES.map((p) => `"${p}"`).join(", ")}))`,
+      );
+      reportProgress("Loading packages...");
+      for (const pkg of DEFAULT_PACKAGES) {
+        await webR.evalRVoid(`suppressPackageStartupMessages(library(${pkg}))`);
+      }
+    }
+
     ready = true;
   })();
   return starting;
 }
 
-/* -------- 3. CodeMirror (lazy) -------- */
-
-let cmPromise = null;
-function loadCodeMirror() {
-  if (cmPromise) return cmPromise;
-  cmPromise = (async () => {
-    const cm = await import("https://esm.sh/codemirror@6.0.1");
-    const lang = await import("https://esm.sh/@codemirror/language@6");
-    const rMode = await import("https://esm.sh/@codemirror/legacy-modes@6/mode/r");
-    const theme = await import("https://esm.sh/@codemirror/theme-one-dark@6.1.2");
-    return {
-      EditorView: cm.EditorView,
-      basicSetup: cm.basicSetup,
-      rLanguage: lang.StreamLanguage.define(rMode.r),
-      oneDark: theme.oneDark,
-    };
-  })();
-  return cmPromise;
-}
-
-async function makeEditor(container, initialCode) {
-  const { EditorView, basicSetup, rLanguage, oneDark } = await loadCodeMirror();
-  const textarea = container.querySelector("textarea");
-  const view = new EditorView({
-    doc: initialCode,
-    extensions: [
-      basicSetup,
-      rLanguage,
-      oneDark,
-      EditorView.domEventHandlers({
-        keydown(event) {
-          if (event.key === "Enter" && event.shiftKey) {
-            event.preventDefault();
-            runR(container);
-          }
-        },
-      }),
-    ],
-    parent: textarea.parentNode,
-  });
-  textarea.style.display = "none";
-  container.cmView = view;
-  return view;
-}
-
-/* -------- 4. Runner -------- */
+/* -------- 3. Runner -------- */
 
 async function runR(container) {
   if (typeof container === "string") container = document.getElementById(container);
   const consoleEl = container.querySelector(".r-console");
+  const plotEl = container.querySelector(".r-plot");
   const spinner = container.querySelector(".r-spinner");
 
   consoleEl.textContent = "";
+  if (plotEl) plotEl.innerHTML = "";
   if (spinner) spinner.style.display = "inline-block";
+
+  progressCb = (msg) => {
+    consoleEl.textContent = msg;
+  };
 
   try {
     if (!ready) {
-      consoleEl.textContent = "Starting R runtime (first run may take ~10s)...\n";
       await startWebR();
       consoleEl.textContent = "";
     }
 
-    let code;
-    if (container.cmView) {
-      code = container.cmView.state.doc.toString();
-    } else if (container.dataset.staticCode) {
-      code = container.dataset.staticCode;
-    } else {
-      code = container.querySelector("textarea").value;
-    }
-    saveCode(container.id, code);
-
+    const code = container.dataset.staticCode || "";
     const shelter = await new webR.Shelter();
     try {
-      const result = await shelter.captureR(code, { withAutoprint: true });
+      const result = await shelter.captureR(code, {
+        withAutoprint: true,
+        captureStreams: true,
+        captureConditions: false,
+        captureGraphics: { width: 600, height: 400 },
+      });
+
       const text = result.output.map((o) => o.data).join("\n");
-      consoleEl.textContent = text || "(no output)";
+      consoleEl.textContent = text || "(no text output)";
+
+      if (plotEl && result.images && result.images.length) {
+        for (const img of result.images) {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.width;
+          canvas.height = img.height;
+          canvas.style.maxWidth = "100%";
+          canvas.style.height = "auto";
+          canvas.style.background = "white";
+          canvas.style.border = "1px solid var(--lightgray)";
+          canvas.style.borderRadius = "4px";
+          canvas.style.marginTop = "0.5rem";
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+          plotEl.appendChild(canvas);
+        }
+      }
     } finally {
       shelter.purge();
     }
   } catch (err) {
-    consoleEl.textContent += String(err);
+    consoleEl.textContent += "\n" + String(err);
   } finally {
     if (spinner) spinner.style.display = "none";
+    progressCb = null;
   }
 }
 window.runR = runR;
 
-/* -------- 5. Local storage of edits -------- */
-
-function saveCode(id, code) {
-  if (!id) return;
-  try {
-    localStorage.setItem("webr_code_" + id, code);
-  } catch (e) {}
-}
-function loadCode(id, fallback) {
-  if (!id) return fallback;
-  try {
-    return localStorage.getItem("webr_code_" + id) || fallback;
-  } catch (e) {
-    return fallback;
-  }
-}
-
-/* -------- 6. Init explicit .r-runner widgets (CodeMirror-backed) -------- */
-
-function initRunnerWidget(container) {
-  if (container.dataset.initialized === "1") return;
-  container.dataset.initialized = "1";
-  const defaultCode = container.getAttribute("data-default") || "";
-  const initialCode = loadCode(container.id, defaultCode);
-  makeEditor(container, initialCode).catch((err) => {
-    // CodeMirror failed to load; fall back to plain textarea.
-    const textarea = container.querySelector("textarea");
-    if (textarea) {
-      textarea.value = initialCode;
-      textarea.rows = Math.max(4, initialCode.split("\n").length + 1);
-      textarea.style.width = "100%";
-      textarea.style.fontFamily = "monospace";
-    }
-    console.warn("CodeMirror failed to load, falling back to textarea:", err);
-  });
-}
-
-/* -------- 7. Augment fenced ```r blocks with a Run button -------- */
+/* -------- 4. Augment fenced ```r blocks with a Run button -------- */
 
 function augmentRBlock(pre) {
   if (pre.dataset.webrAugmented === "1") return;
@@ -221,7 +176,7 @@ function augmentRBlock(pre) {
   const source = code.innerText.replace(/\n$/, "");
 
   const container = document.createElement("div");
-  container.className = "r-runner r-runner-inline";
+  container.className = "r-runner-inline";
   container.dataset.staticCode = source;
 
   const controls = document.createElement("div");
@@ -240,8 +195,12 @@ function augmentRBlock(pre) {
   const output = document.createElement("pre");
   output.className = "r-console";
 
+  const plot = document.createElement("div");
+  plot.className = "r-plot";
+
   container.appendChild(controls);
   container.appendChild(output);
+  container.appendChild(plot);
   pre.parentNode.insertBefore(container, pre.nextSibling);
 }
 
@@ -249,18 +208,13 @@ function augmentAllRBlocks() {
   document.querySelectorAll('pre[data-language="r"]').forEach(augmentRBlock);
 }
 
-/* -------- 8. Boot -------- */
+/* -------- 5. Boot -------- */
 
-function initAll() {
-  document.querySelectorAll(".r-runner:not(.r-runner-inline)").forEach(initRunnerWidget);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", augmentAllRBlocks);
+} else {
   augmentAllRBlocks();
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initAll);
-} else {
-  initAll();
-}
-
-// Quartz SPA navigation: re-init on new pages.
-window.addEventListener("nav", initAll);
+// Quartz SPA navigation: re-augment on new pages.
+window.addEventListener("nav", augmentAllRBlocks);
