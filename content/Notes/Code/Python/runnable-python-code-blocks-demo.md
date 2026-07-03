@@ -16,6 +16,8 @@ author: GitHub Copilot
 
 Python evaluates entirely client-side via [Pyodide](https://pyodide.org/) — CPython 3.12 compiled to WebAssembly. The first Run downloads Pyodide and the default packages (`numpy`, `pandas`, `matplotlib`) and then warms up matplotlib's font cache; expect a wait of roughly **30–90 seconds** on that first click. Subsequent runs on the same page load are near-instant. State persists across every block on this page, so later blocks can use variables defined earlier.
 
+As in an interactive Python REPL or a Jupyter cell, a bare expression on the last line of a block is auto-printed — you don't need to wrap it in `print(...)`. So `df.head()` or `{"mean": x.mean()}` at the end of a block will show its `repr()` in the console. Assignments and other statements produce no text output by themselves (again, exactly as in a REPL).
+
 ## A first run
 
 ```python

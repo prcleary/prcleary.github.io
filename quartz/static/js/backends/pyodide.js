@@ -81,6 +81,63 @@ async function installOne(pkg, progressCb) {
   await micropip.install(pkg)
 }
 
+// Installed into Pyodide's globals during init() so run() can call it.
+// The transform function rewrites the user's code so that any bare
+// expression appearing as the last top-level statement gets wrapped in
+// a display call — mirroring how the interactive Python REPL (or a
+// Jupyter cell) auto-prints the value of the last expression. Without
+// this, blocks like `df.head()` or `{"mean": x.mean()}` compute the
+// right thing but produce no visible text output because
+// runPythonAsync only *returns* the value, it doesn't print it.
+//
+// _code_runner_display() skips matplotlib Figures (they're already
+// captured by our postlude, so printing `<Figure size ...>` would just
+// be noise) and skips None (which is what most non-expression
+// statements evaluate to; also what functions like print() return).
+const REPL_HELPERS_PY = `
+import ast as _ast
+
+def _code_runner_display(value):
+    if value is None:
+        return
+    try:
+        from matplotlib.figure import Figure as _Fig
+        if isinstance(value, _Fig):
+            return
+    except ImportError:
+        pass
+    try:
+        text = repr(value)
+    except Exception:
+        text = str(value)
+    print(text)
+
+def _code_runner_transform(source):
+    # PyCF_ALLOW_TOP_LEVEL_AWAIT so user blocks may use \`await\` at the top level.
+    try:
+        tree = compile(
+            source, '<code-block>', 'exec',
+            flags=_ast.PyCF_ONLY_AST | _ast.PyCF_ALLOW_TOP_LEVEL_AWAIT,
+            dont_inherit=True,
+        )
+    except SyntaxError:
+        return source  # let Pyodide surface the SyntaxError with a real traceback
+    if tree.body and isinstance(tree.body[-1], _ast.Expr):
+        last = tree.body[-1]
+        tree.body[-1] = _ast.Expr(
+            value=_ast.Call(
+                func=_ast.Name(id='_code_runner_display', ctx=_ast.Load()),
+                args=[last.value],
+                keywords=[],
+            )
+        )
+        _ast.fix_missing_locations(tree)
+    try:
+        return _ast.unparse(tree)
+    except Exception:
+        return source
+`
+
 async function init(packages, progressCb) {
   if (ready) return
   if (starting) return starting
@@ -93,6 +150,10 @@ async function init(packages, progressCb) {
     // WebAssembly binary and stdlib payload from.
     const mod = await import(/* @vite-ignore */ PYODIDE_RUNTIME_URL)
     pyodide = await mod.loadPyodide({ indexURL: PYODIDE_INDEX_URL })
+
+    // Install the REPL-style auto-display helpers into Python globals
+    // so run() can transform each block before execution.
+    pyodide.runPython(REPL_HELPERS_PY)
 
     if (packages && packages.length) {
       progressCb?.(
@@ -143,10 +204,26 @@ async function run(code) {
   pyodide.setStdout({ batched: (s) => chunks.push(s + "\n") })
   pyodide.setStderr({ batched: (s) => chunks.push(s + "\n") })
 
+  // Rewrite the block so its last bare expression prints its repr,
+  // matching interactive REPL behaviour. Falls back to the original
+  // source on any transform failure so errors surface naturally.
+  let effectiveCode = code
+  try {
+    const transform = pyodide.globals.get("_code_runner_transform")
+    if (transform) {
+      const transformed = transform(code)
+      if (typeof transformed === "string") effectiveCode = transformed
+      transform.destroy?.()
+    }
+  } catch (_e) {
+    // If the transform itself blows up, run the user's code verbatim.
+    effectiveCode = code
+  }
+
   try {
     // runPythonAsync supports top-level `await` and awaits async user
     // code, which runPython does not. Preferred for interactive use.
-    await pyodide.runPythonAsync(code)
+    await pyodide.runPythonAsync(effectiveCode)
   } catch (err) {
     // Python errors surface as JS exceptions with the formatted
     // traceback in .message — display it like the interactive REPL would.
