@@ -48,7 +48,7 @@
 // copy. If you don't see this exact string logged after a page load,
 // clear site data (DevTools -> Application -> Storage -> Clear site data)
 // and reload.
-const CODE_RUNNER_VERSION = "2026-07-03.5 (selective COI: fonts + iframes fixed)"
+const CODE_RUNNER_VERSION = "2026-07-03.6 (SW sniff-based opt-in, no allowlist)"
 console.log("[code-runner] version:", CODE_RUNNER_VERSION)
 
 // document.currentScript is null in ES modules, so we locate our own

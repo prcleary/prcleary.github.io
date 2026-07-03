@@ -129,7 +129,7 @@ Four new files (the emitter, the shell, and one backend per language) and two sm
 
 A small Quartz emitter plugin that writes a coi-serviceworker to the built site root as `sw.js`. This is the *only* way to serve a file at `/` scope from within Quartz.
 
-The SW applies COOP/COEP headers **selectively** — only to a hardcoded allowlist of page paths (the two runnable-code demo pages). Every other page is served untouched, so cross-origin iframes (e.g. embedded Karakeep, YouTube), Google Fonts, and other cross-origin subresources across the rest of the site load normally. **If you add another runnable-code page, add its path to the `COI_PATHS` array in this file.**
+The SW is **fully page-driven**: on every top-level HTML response, it peeks at the body for the exact `<script src="/static/js/code-runner.js" ...>` tag. If found, it adds COOP/COEP so the page becomes cross-origin isolated (needed by webR / Pyodide). If not, the response passes through untouched. Consequence: opting a page into runnable code is literally just adding the script tag — no allowlist, no config, no code to edit. Pages without the script tag are unaffected, so cross-origin iframes (Karakeep, YouTube, …), Google Fonts, and other cross-origin subresources across the rest of the site load normally.
 
 **View source:** [coiServiceWorker.ts on GitHub](https://github.com/prcleary/prcleary.github.io/blob/main/quartz/plugins/emitters/coiServiceWorker.ts)
 
