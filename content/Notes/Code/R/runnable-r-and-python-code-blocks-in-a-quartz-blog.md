@@ -332,6 +332,7 @@ fig
 - **Memory limits.** WebAssembly has a 4 GB memory ceiling per instance; in practice browsers cap this lower. Analyses on large datasets will not work.
 - **No filesystem access to the visitor's machine.** Both runtimes use a sandboxed virtual filesystem. `readLines()` / `open()` inside a block sees only what the runtime has (essentially nothing sensitive). This is a feature — but it means you cannot read local files or write results the visitor can download without extra plumbing.
 - **First page load reloads once.** The service worker registration triggers a single automatic reload the first time a visitor lands on any page with the runner. Subsequent visits (SW already installed) do not reload.
+- **Navigation off a runnable page is a full reload.** Cross-origin-isolated capability sticks to the document it was loaded on. Quartz's SPA nav (`enableSPA`) keeps the same document across link clicks, which would leak the isolation to non-runnable pages and break their cross-origin iframes and fonts. So on runnable-code pages the client script intercepts link clicks and forces a full browser navigation. Visitors won't notice — pages load quickly — but under the hood you're doing a real reload rather than SPA content swap when leaving a runnable page.
 - **Requires HTTPS.** Service workers only work on HTTPS or `localhost`. Not a real limitation for GitHub Pages, but worth knowing if you preview through some other host.
 
 ### R-specific

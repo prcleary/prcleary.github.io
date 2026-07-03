@@ -48,7 +48,7 @@
 // copy. If you don't see this exact string logged after a page load,
 // clear site data (DevTools -> Application -> Storage -> Clear site data)
 // and reload.
-const CODE_RUNNER_VERSION = "2026-07-03.7 (SW harden: updateViaCache + strip stale COEP)"
+const CODE_RUNNER_VERSION = "2026-07-03.8 (force full nav on SPA-link clicks so COI doesn't leak)"
 console.log("[code-runner] version:", CODE_RUNNER_VERSION)
 
 // document.currentScript is null in ES modules, so we locate our own
@@ -122,6 +122,59 @@ function updateDiag(extra) {
   diag.textContent = lines.join("\n")
 }
 updateDiag()
+
+/* -------- 2.5. Prevent Quartz SPA nav from leaking COI to other pages
+ *
+ * Cross-origin-isolated capability is a per-document setting: once this
+ * page has been loaded with COOP/COEP headers (via the SW-triggered
+ * reload above), the document keeps those restrictions for its entire
+ * lifetime.
+ *
+ * Quartz's SPA navigation (enableSPA in quartz.config.ts) does NOT
+ * create a new document on link clicks. It fetches the destination
+ * HTML, injects the article content into the current DOM, and updates
+ * the URL. So SPA-navigating from a code-runner page to, say,
+ * /Bookmarks keeps this same COI document active — with the URL now
+ * saying /Bookmarks but the document still cross-origin isolated. Any
+ * cross-origin iframe (Karakeep, YouTube, ...) or cross-origin font
+ * (Google Fonts) in the destination gets blocked by COEP.
+ *
+ * Fix: intercept clicks on same-origin links from this page and force
+ * a full browser navigation. The destination then loads in a fresh
+ * document that gets its own headers evaluated cleanly.
+ *
+ * External links, new-tab clicks (target=_blank, Ctrl/Cmd+click, middle
+ * click), hash-only fragments, and downloads are left alone.
+ * ------------------------------------------------------------------- */
+
+document.addEventListener(
+  "click",
+  (e) => {
+    if (!self.crossOriginIsolated) return
+    if (e.defaultPrevented) return
+    if (e.button !== 0) return
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+    const link = e.target.closest && e.target.closest("a[href]")
+    if (!link) return
+    if (link.target && link.target !== "_self") return
+    if (link.hasAttribute("download")) return
+    const href = link.getAttribute("href")
+    if (!href || href.startsWith("#")) return
+    let url
+    try {
+      url = new URL(href, window.location.href)
+    } catch {
+      return
+    }
+    if (url.origin !== window.location.origin) return
+    // Same-origin navigation from a COI page — force full reload so we
+    // don't drag the COI state into a page that doesn't want it.
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    window.location.href = url.href
+  },
+  true, // capture phase, run before Quartz's SPA click handler
+)
 
 /* -------- 3. Backend lifecycle -------------------------------------- */
 
