@@ -27,6 +27,9 @@ Both run entirely client-side. No server, no back end, no per-visitor cost. Comm
 
 Try it — click Run below (this page is opted in to R):
 
+> [!note] DuckDuckGo Browser users
+> DuckDuckGo Browser's tracker blocking blocks the WebAssembly runtimes (webR at `webr.r-wasm.org`, Pyodide at `cdn.jsdelivr.net`) and the CRAN-like package mirror at `repo.r-wasm.org` as third-party requests. If the Run buttons hang or the diagnostic panel below shows an error, tap the shield icon in the address bar and turn Site Privacy Protection off for this site. Every other major browser (Chrome, Firefox, Safari, Edge, on desktop and mobile) works out of the box.
+
 <pre id="code-runner-diag" style="background:var(--lightgray); padding:0.5rem; font-size:0.85em; border-radius:4px;"></pre>
 
 ```r
@@ -334,6 +337,19 @@ fig
 - **First page load reloads once.** The service worker registration triggers a single automatic reload the first time a visitor lands on any page with the runner. Subsequent visits (SW already installed) do not reload.
 - **Navigation off a runnable page is a full reload.** Cross-origin-isolated capability sticks to the document it was loaded on. Quartz's SPA nav (`enableSPA`) keeps the same document across link clicks, which would leak the isolation to non-runnable pages and break their cross-origin iframes and fonts. So on runnable-code pages the client script intercepts link clicks and forces a full browser navigation. Visitors won't notice — pages load quickly — but under the hood you're doing a real reload rather than SPA content swap when leaving a runnable page.
 - **Requires HTTPS.** Service workers only work on HTTPS or `localhost`. Not a real limitation for GitHub Pages, but worth knowing if you preview through some other host.
+
+### Browser compatibility
+
+Everything above (webR, Pyodide, matplotlib font-cache warmup, plot capture, cross-origin isolation, the SPA-nav workaround) uses only standards-track web features. All major browsers on desktop and mobile handle it identically:
+
+| Browser | Runnable code | Cross-origin iframes elsewhere | Google Fonts |
+|---|---|---|---|
+| Chrome / Edge (Chromium, all platforms) | ✅ | ✅ | ✅ |
+| Firefox (desktop + Android, normal + private) | ✅ | ✅ | ✅ |
+| Safari (macOS 12+, iOS 16+) | ✅ | ✅ | ✅ |
+| DuckDuckGo Browser | ❌ blocked by DDG's tracking protection | ❌ blocked by DDG's tracking protection | ✅ |
+
+DuckDuckGo Browser blocks `cdn.jsdelivr.net` (Pyodide), `webr.r-wasm.org` (webR), `repo.r-wasm.org` (R packages), and most cross-origin iframes as third-party trackers. This is a browser-side policy that runs before any page-side code sees the request, so there is no site-side workaround. DDG users can toggle the Privacy Shield off per-site to opt in.
 
 ### R-specific
 
