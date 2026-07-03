@@ -23,8 +23,18 @@ self.addEventListener("activate", (event) => event.waitUntil(self.clients.claim(
 
 self.addEventListener("fetch", (event) => {
   if (event.request.cache === "only-if-cached" && event.request.mode !== "same-origin") return;
+  const url = new URL(event.request.url);
+  // For our own runner JS (code-runner.js and the backends/), bypass the
+  // HTTP cache entirely so a deploy takes effect on the next page load.
+  // Everything else follows normal caching \u2014 in particular the language
+  // runtimes and package binaries from webr.r-wasm.org / jsdelivr.net,
+  // which are big and change rarely, must stay cacheable.
+  const isRunnerAsset =
+    url.origin === self.location.origin &&
+    /\\/static\\/js\\/(code-runner\\.js|backends\\/)/.test(url.pathname);
+  const fetchOpts = isRunnerAsset ? { cache: "no-store" } : undefined;
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, fetchOpts)
       .then((response) => {
         if (response.status === 0) return response;
         const headers = new Headers(response.headers);
@@ -33,6 +43,11 @@ self.addEventListener("fetch", (event) => {
         // Needed under require-corp so cross-origin fetches (language
         // runtimes and their package binaries) are not blocked by the browser.
         headers.set("Cross-Origin-Resource-Policy", "cross-origin");
+        if (isRunnerAsset) {
+          // Tell the browser cache to revalidate every time as well, in
+          // case a future user hits us without the SW yet installed.
+          headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+        }
         return new Response(response.body, {
           status: response.status,
           statusText: response.statusText,

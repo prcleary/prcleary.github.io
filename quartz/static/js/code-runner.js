@@ -43,6 +43,14 @@
 
 /* -------- 0. Read configuration from the script tag ----------------- */
 
+// Bump on every deploy so you can tell at a glance in DevTools console
+// whether the browser is running the freshly-deployed code or a cached
+// copy. If you don't see this exact string logged after a page load,
+// clear site data (DevTools -> Application -> Storage -> Clear site data)
+// and reload.
+const CODE_RUNNER_VERSION = "2026-07-03.2 (matplotlib font-cache warmup)"
+console.log("[code-runner] version:", CODE_RUNNER_VERSION)
+
 // document.currentScript is null in ES modules, so we locate our own
 // tag by src pattern. This lets us read the data-* attributes the post
 // author set.
