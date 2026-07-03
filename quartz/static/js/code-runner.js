@@ -48,7 +48,7 @@
 // copy. If you don't see this exact string logged after a page load,
 // clear site data (DevTools -> Application -> Storage -> Clear site data)
 // and reload.
-const CODE_RUNNER_VERSION = "2026-07-03.6 (SW sniff-based opt-in, no allowlist)"
+const CODE_RUNNER_VERSION = "2026-07-03.7 (SW harden: updateViaCache + strip stale COEP)"
 console.log("[code-runner] version:", CODE_RUNNER_VERSION)
 
 // document.currentScript is null in ES modules, so we locate our own
@@ -79,7 +79,16 @@ if (!LANGUAGE) {
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/sw.js", { scope: "/" })
+    .register("/sw.js", {
+      scope: "/",
+      // Bypass the HTTP cache when checking for /sw.js updates. Without
+      // this, GitHub Pages' default Cache-Control: max-age=600 on /sw.js
+      // means browsers may keep serving an old SW for up to 10 minutes
+      // after a deploy. With updateViaCache: "none", every update check
+      // fetches /sw.js fresh, so a fixed SW rolls out on the next
+      // navigation regardless of the HTTP cache.
+      updateViaCache: "none",
+    })
     .then(() => {
       updateDiag()
       // First time the browser sees the SW, this page loaded WITHOUT

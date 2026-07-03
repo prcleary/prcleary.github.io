@@ -69,7 +69,10 @@ self.addEventListener("fetch", (event) => {
 
     // Path 1: same-origin top-level HTML navigation.
     // Sniff the body for the code-runner script tag and apply COI headers
-    // only when it's present.
+    // only when it's present. Defensively strip any stray COOP/COEP that
+    // might have somehow arrived on a non-runner response (e.g. from a
+    // stale CDN cache, a misconfigured origin, or a previous version of
+    // this service worker whose Response is still in some cache layer).
     if (sameOrigin && isNavigation && isHtml) {
       const text = await response.text();
       const needsCoi = CODE_RUNNER_TAG.test(text);
@@ -78,6 +81,13 @@ self.addEventListener("fetch", (event) => {
         headers.set("Cross-Origin-Embedder-Policy", "require-corp");
         headers.set("Cross-Origin-Opener-Policy", "same-origin");
         headers.set("Cross-Origin-Resource-Policy", "cross-origin");
+      } else {
+        // Explicitly clear any COI headers that shouldn't be there.
+        // Keeps pages with cross-origin iframes (Karakeep, YouTube, ...)
+        // and Google-Fonts-loaded typography working even in degenerate
+        // caching scenarios.
+        headers.delete("Cross-Origin-Embedder-Policy");
+        headers.delete("Cross-Origin-Opener-Policy");
       }
       return new Response(text, {
         status: response.status,
