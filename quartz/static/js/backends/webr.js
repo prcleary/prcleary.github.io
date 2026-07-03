@@ -72,6 +72,21 @@ async function run(code) {
   // Roughly analogous to withr::with_*() in R.
   const shelter = await new webR.Shelter()
   try {
+    // captureR options:
+    //   withAutoprint       — emit the same auto-printed output an R REPL
+    //                         would produce for bare expressions on the
+    //                         last line of a block (e.g. `mean(x)`).
+    //   captureStreams      — collect stdout+stderr into result.output
+    //                         instead of letting webR write to console.
+    //   captureConditions   — false: let messages/warnings/errors flow
+    //                         through as normal stderr text, matching
+    //                         how the interactive R console looks. If
+    //                         set true, webR would return them as
+    //                         structured objects the shell would then
+    //                         have to format itself.
+    //   captureGraphics     — render any plots the block produces to a
+    //                         600x400 canvas and return them as
+    //                         ImageBitmaps in result.images.
     const result = await shelter.captureR(code, {
       withAutoprint: true,
       captureStreams: true,

@@ -241,6 +241,20 @@ async function ensureReady(reportProgress) {
 
 /* -------- 4. Runner (evaluate a block, display its output) ---------- */
 
+/**
+ * Entry point for a single Run click. Lifecycle:
+ *   1. Clear any previous console / plot output and show the spinner.
+ *   2. `ensureReady()` — lazily import the backend module for this page's
+ *      language, register the SW, install the requested packages. Runs
+ *      only once per page load; subsequent calls short-circuit.
+ *   3. Read the block's original source from `dataset.staticCode` (set
+ *      once in `augmentBlock` from the pre-syntax-highlight text) and
+ *      hand it to the backend's `run()`.
+ *   4. Render text output into the console <pre> and every returned
+ *      ImageBitmap into its own <canvas> under the plot area.
+ *   5. Any thrown error is displayed at the bottom of the console so
+ *      the failure is visible without opening DevTools.
+ */
 async function runBlock(container) {
   if (typeof container === "string") container = document.getElementById(container)
 
