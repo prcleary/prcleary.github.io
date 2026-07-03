@@ -27,56 +27,104 @@
  * ===================================================================== */
 
 // Pin to a specific Pyodide release for reproducibility. Bumping this
-// version is the only change needed to upgrade the runtime.
+// version is the only change needed to upgrade the runtime — nothing
+// is vendored into the repo; every URL below is derived from it.
 const PYODIDE_VERSION = "0.27.7"
 
 const JSDELIVR_BASE = `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full/`
-const UNPKG_BASE = `https://unpkg.com/pyodide@${PYODIDE_VERSION}/`
 
-// Ordered list of mirror configurations to try. Each entry is a pair of
-//   runtimeURL: URL passed to `import()` to fetch pyodide.mjs itself
-//   indexURL:   value passed to loadPyodide() as `indexURL`. Pyodide
-//               uses this for the nested import of pyodide.asm.js and
-//               for every subsequent asset fetch
-//               (pyodide.asm.wasm, python_stdlib.zip, pyodide-lock.json,
-//               and every wheel referenced by the lockfile).
-//
-// Why a hybrid fallback:
-//
-// 1. jsDelivr is the Pyodide project's primary CDN and hosts both the
-//    runtime AND every pre-built wheel (numpy, pandas, matplotlib, ...).
-//    This is the preferred path on every browser that supports it.
-//
-// 2. Firefox for Android has been observed to fail the SW-mediated
-//    dynamic `import()` of the jsDelivr-served pyodide.mjs under
-//    COOP/COEP require-corp with a generic "error loading dynamically
-//    imported module", even though a plain fetch of the same URL
-//    succeeds. The .mjs served by unpkg (a different CDN with
-//    materially different response headers/framing) does not trigger
-//    this Gecko bug.
-//
-// 3. unpkg re-hosts the `pyodide` npm package, which contains ONLY the
-//    runtime core (pyodide.mjs, pyodide.asm.js, pyodide.asm.wasm,
-//    python_stdlib.zip, pyodide-lock.json). It does NOT host the
-//    package wheels the lockfile references — those return 404 from
-//    unpkg. So pointing indexURL at unpkg leaves loadPackage() with no
-//    way to install numpy/pandas/matplotlib.
-//
-// 4. Hence the hybrid fallback entry below: load pyodide.mjs from
-//    unpkg (which works on Firefox Android) but set indexURL to
-//    jsDelivr so every non-import() asset — including all wheels —
-//    is fetched from the jsDelivr URL, which the affected devices can
-//    reach via plain fetch().
+/**
+ * Standard loader: dynamically `import()` pyodide.mjs from `indexURL`,
+ * then call loadPyodide({ indexURL }). Pyodide's own bootstrap then does
+ * a nested `import(indexURL + "pyodide.asm.js")` and fetches its .wasm,
+ * stdlib, lockfile and wheels via plain fetch() from `indexURL`.
+ * This is the happy path on every browser that supports it.
+ */
+async function loadStandard(indexURL) {
+  const mod = await import(/* @vite-ignore */ indexURL + "pyodide.mjs")
+  return await mod.loadPyodide({ indexURL })
+}
+
+/**
+ * Same-origin bypass loader for browsers whose SW-mediated cross-origin
+ * dynamic `import()` path is broken under COOP/COEP require-corp
+ * (observed: Firefox for Android, all versions to date). Plain
+ * cross-origin `fetch()` still works on those browsers, so:
+ *
+ *   1. fetch(indexURL + "pyodide.asm.js") as text, then indirect-eval
+ *      it in global scope. The file is Emscripten classic-script output
+ *      whose first statement is `var _createPyodideModule = ...`, which
+ *      installs the factory as a property of the global object.
+ *   2. fetch(indexURL + "pyodide.mjs") as text and import() it from a
+ *      `blob:` URL. Blob URLs are treated as same-origin, so the buggy
+ *      cross-origin module-fetch path is never entered.
+ *   3. Call loadPyodide({ indexURL }). pyodide.mjs contains an explicit
+ *      `if (typeof _createPyodideModule !== "function") { ...import... }`
+ *      gate, so with the factory pre-defined it never issues the
+ *      cross-origin `import()` of pyodide.asm.js. Every remaining
+ *      asset (.wasm, stdlib, lockfile, wheels) is fetched with fetch(),
+ *      which works fine on the affected browsers.
+ *
+ * This bypass depends on two Pyodide-side facts that have held across
+ * every 0.x release to date:
+ *   • pyodide.asm.js is a classic script defining a global var factory.
+ *   • pyodide.mjs guards its internal .asm.js import behind a typeof
+ *     check on that global.
+ * If a future Pyodide release drops either, this fallback needs a look.
+ */
+async function loadSameOriginBypass(indexURL) {
+  async function fetchText(url) {
+    const res = await fetch(url, { credentials: "omit" })
+    if (!res.ok) throw new Error(`fetch ${url}: HTTP ${res.status}`)
+    return await res.text()
+  }
+
+  // 1. Install _createPyodideModule on the global object so pyodide.mjs
+  //    skips its own dynamic import of pyodide.asm.js.
+  if (typeof globalThis._createPyodideModule !== "function") {
+    const asmText = await fetchText(indexURL + "pyodide.asm.js")
+    // Indirect eval: runs in global scope, so `var _createPyodideModule`
+    // becomes globalThis._createPyodideModule.
+    ;(0, eval)(asmText)
+    if (typeof globalThis._createPyodideModule !== "function") {
+      throw new Error(
+        "pyodide.asm.js evaluated but did not define _createPyodideModule; " +
+          "Pyodide's classic-script contract may have changed.",
+      )
+    }
+  }
+
+  // 2. Load pyodide.mjs via a same-origin blob: URL.
+  const mjsText = await fetchText(indexURL + "pyodide.mjs")
+  const blob = new Blob([mjsText], { type: "text/javascript" })
+  const blobURL = URL.createObjectURL(blob)
+  let mod
+  try {
+    mod = await import(/* @vite-ignore */ blobURL)
+  } finally {
+    URL.revokeObjectURL(blobURL)
+  }
+
+  // 3. Standard loadPyodide with indexURL pointing at the real CDN so
+  //    every non-import asset (wasm, stdlib, lockfile, wheels) resolves
+  //    against it via fetch().
+  return await mod.loadPyodide({ indexURL })
+}
+
+// Ordered list of loader strategies. Each entry is fully self-contained:
+// on failure the outer loop just tries the next one. All entries point at
+// the same jsDelivr base URL — the only variable is HOW the runtime
+// module is brought in.
 const PYODIDE_MIRRORS = [
   {
-    name: "jsDelivr",
-    runtimeURL: JSDELIVR_BASE + "pyodide.mjs",
+    name: "jsDelivr (dynamic import)",
     indexURL: JSDELIVR_BASE,
+    load: loadStandard,
   },
   {
-    name: "unpkg (runtime) + jsDelivr (wheels)",
-    runtimeURL: UNPKG_BASE + "pyodide.mjs",
+    name: "jsDelivr (same-origin blob bypass)",
     indexURL: JSDELIVR_BASE,
+    load: loadSameOriginBypass,
   },
 ]
 
@@ -192,29 +240,24 @@ async function init(packages, progressCb) {
   starting = (async () => {
     progressCb?.("Loading Pyodide runtime (first load only)...")
 
-    // Dynamic import so pages that never trigger a Run don't pay the
-    // download cost. The `indexURL` tells Pyodide where to fetch its
-    // WebAssembly binary, stdlib, lockfile, and package wheels from.
-    //
-    // Try each configured mirror pair in order; if both the dynamic
-    // import of pyodide.mjs and the subsequent loadPyodide() call
-    // succeed we keep that pyodide instance and stop. Otherwise fall
-    // through to the next pair, remembering the last error so we can
-    // surface it if every mirror fails.
+    // Try each loader strategy in order until one produces a working
+    // pyodide instance. `loadStandard` is the fast happy path on
+    // browsers that can dynamically import the cross-origin pyodide.mjs
+    // under COI; `loadSameOriginBypass` is the workaround for Firefox
+    // Android (see the comment on PYODIDE_MIRRORS above).
     let lastErr = null
     pyodide = null
     for (let i = 0; i < PYODIDE_MIRRORS.length; i++) {
-      const { name, runtimeURL, indexURL } = PYODIDE_MIRRORS[i]
+      const { name, indexURL, load } = PYODIDE_MIRRORS[i]
       if (i > 0) {
-        progressCb?.(`Retrying Pyodide from fallback mirror (${name})...`)
+        progressCb?.(`Retrying Pyodide via fallback strategy (${name})...`)
       }
       try {
-        const mod = await import(/* @vite-ignore */ runtimeURL)
-        pyodide = await mod.loadPyodide({ indexURL })
+        pyodide = await load(indexURL)
         break
       } catch (err) {
         lastErr = err
-        console.warn(`[pyodide] mirror ${name} failed:`, err)
+        console.warn(`[pyodide] strategy "${name}" failed:`, err)
       }
     }
     if (!pyodide) {
