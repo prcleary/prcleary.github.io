@@ -102,13 +102,29 @@ async function init(packages, progressCb) {
         await installOne(pkg, progressCb)
       }
 
-      // If matplotlib is present, force a non-interactive backend so
-      // plt.show() doesn't try to open a GUI window and figures stay
-      // available for our postlude to collect.
+      // If matplotlib is present:
+      //  1. Force a non-interactive backend so plt.show() doesn't try to
+      //     open a GUI window and figures stay available for our postlude.
+      //  2. Warm up font_manager NOW rather than on the user's first Run.
+      //     In Pyodide the first font-metric query triggers a font-cache
+      //     rebuild that can take 30-90s and prints "Matplotlib is building
+      //     the font cache; this may take a moment." to stderr. Doing it
+      //     during init means the wait is attributed to the visible
+      //     "Loading Python packages..." progress line, and the first Run
+      //     click starts drawing immediately.
       if (packages.includes("matplotlib")) {
+        progressCb?.("Warming up matplotlib font cache (first load only, may take up to a minute)...")
         pyodide.runPython(`
 import matplotlib
 matplotlib.use("Agg")
+import matplotlib.pyplot as _plt
+import io as _io
+_fig, _ax = _plt.subplots()
+_ax.text(0.5, 0.5, "warmup")
+_buf = _io.BytesIO()
+_fig.savefig(_buf, format="png")   # forces font_manager to build its cache
+_plt.close(_fig)
+del _fig, _ax, _buf
 `)
       }
     }

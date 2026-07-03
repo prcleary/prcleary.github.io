@@ -14,7 +14,7 @@ author: GitHub Copilot
 
 <pre id="code-runner-diag" style="background:var(--lightgray); padding:0.5rem; font-size:0.85em; border-radius:4px;"></pre>
 
-Python evaluates entirely client-side via [Pyodide](https://pyodide.org/) — CPython 3.12 compiled to WebAssembly. The first Run downloads Pyodide and the default packages (`numpy`, `pandas`, `matplotlib`); subsequent runs on the same page load are near-instant. State persists across every block on this page, so later blocks can use variables defined earlier.
+Python evaluates entirely client-side via [Pyodide](https://pyodide.org/) — CPython 3.12 compiled to WebAssembly. The first Run downloads Pyodide and the default packages (`numpy`, `pandas`, `matplotlib`) and then warms up matplotlib's font cache; expect a wait of roughly **30–90 seconds** on that first click. Subsequent runs on the same page load are near-instant. State persists across every block on this page, so later blocks can use variables defined earlier.
 
 ## A first run
 

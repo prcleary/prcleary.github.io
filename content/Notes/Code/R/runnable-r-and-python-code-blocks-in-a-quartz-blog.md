@@ -326,7 +326,7 @@ fig
 
 ### Common to both languages
 
-- **First-run cost.** The first click of any Run button downloads the language runtime plus the default packages. Expect 15–30 s for R (webR + `data.table` + `ggplot2`) and 20–45 s for Python (Pyodide + `numpy` + `pandas` + `matplotlib`) on a decent connection. Subsequent runs on the same page load are near-instant.
+- **First-run cost.** The first click of any Run button downloads the language runtime plus the default packages. Expect 15–30 s for R (webR + `data.table` + `ggplot2`) and 60–120 s for Python (Pyodide + `numpy` + `pandas` + `matplotlib`, including matplotlib's font-cache warmup) on a decent connection. Subsequent runs on the same page load are near-instant.
 - **Memory limits.** WebAssembly has a 4 GB memory ceiling per instance; in practice browsers cap this lower. Analyses on large datasets will not work.
 - **No filesystem access to the visitor's machine.** Both runtimes use a sandboxed virtual filesystem. `readLines()` / `open()` inside a block sees only what the runtime has (essentially nothing sensitive). This is a feature — but it means you cannot read local files or write results the visitor can download without extra plumbing.
 - **First page load reloads once.** The service worker registration triggers a single automatic reload the first time a visitor lands on any page with the runner. Subsequent visits (SW already installed) do not reload.
@@ -341,6 +341,7 @@ fig
 
 - **Not all PyPI packages are available.** Pyodide ships pre-built binaries for the [~250-package Pyodide package repository](https://pyodide.org/en/stable/usage/packages-in-pyodide.html), which covers the scientific stack (numpy, scipy, pandas, matplotlib, scikit-learn, statsmodels, sympy, networkx, …). For anything else, `micropip.install(...)` from PyPI works — but *only* for pure-Python packages. Anything with a C extension not pre-compiled for WebAssembly (e.g. `psycopg2`, some cryptography wheels) will fail.
 - **Interactive front-ends do not render.** Same story as R's htmlwidgets: `plotly`, `bokeh`, `altair`, `ipywidgets` and similar produce HTML/JS that needs their runtime loaded on the page. Use `matplotlib` (fully supported), or embed the interactive output as a pre-rendered static file / iframe.
+- **matplotlib font cache warmup adds 30–90 s to the first Run** on any page whose package list includes `matplotlib`. Pyodide has no persistent filesystem across page loads, so `font_manager` rebuilds its cache from scratch every time. The runner triggers this during init (attributed to the visible "Warming up matplotlib font cache…" progress line) so the first plot renders immediately once init finishes.
 - **`plt.show()` is a no-op.** With `matplotlib.use("Agg")` there is no window to show into. Any open figure is picked up automatically by the runner's postlude, so you don't need `plt.show()` — but leaving it in does no harm.
 - **stdout / stderr are captured line-by-line.** Progress bars that use carriage returns (`\r`) to overwrite the same line will appear as many separate lines in the console output. Use `print(..., flush=True)` sparingly.
 
