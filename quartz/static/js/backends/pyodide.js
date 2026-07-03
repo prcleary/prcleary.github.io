@@ -26,12 +26,33 @@
  * them below the console output as canvas images, exactly like R.
  * ===================================================================== */
 
-// Pin to a specific Pyodide release for reproducibility. The Pyodide
-// team ships a `full/pyodide.mjs` at every version; bumping this URL
-// is the only change needed to upgrade the runtime.
-const PYODIDE_VERSION = "v0.27.7"
-const PYODIDE_RUNTIME_URL = `https://cdn.jsdelivr.net/pyodide/${PYODIDE_VERSION}/full/pyodide.mjs`
-const PYODIDE_INDEX_URL = `https://cdn.jsdelivr.net/pyodide/${PYODIDE_VERSION}/full/`
+// Pin to a specific Pyodide release for reproducibility. Bumping this
+// version is the only change needed to upgrade the runtime.
+const PYODIDE_VERSION = "0.27.7"
+
+// Ordered list of mirrors to try. jsDelivr is the Pyodide project's
+// primary CDN and is used first. unpkg re-hosts the same npm package
+// (`pyodide@<version>`, which contains pyodide.mjs, pyodide.asm.js,
+// pyodide.asm.wasm, python_stdlib.zip and pyodide-lock.json) with the
+// CORS and Cross-Origin-Resource-Policy: cross-origin headers COEP
+// require-corp needs.
+//
+// Why the fallback: Firefox for Android has been observed to fail the
+// initial dynamic `import()` of the jsDelivr-served pyodide.mjs under
+// COOP/COEP with a generic "error loading dynamically imported module"
+// even though a plain address-bar fetch of the same URL succeeds
+// (i.e. the CDN is reachable, but Gecko's SW-mediated module fetch
+// path chokes on that particular response). Falling through to unpkg
+// recovers the page on those clients. Desktop and other mobile
+// browsers succeed on the first entry and never touch the fallback.
+//
+// Each entry MUST end in a trailing slash — it becomes the Pyodide
+// `indexURL`, which is used both for the initial .mjs import and for
+// every nested asset load (pyodide.asm.js, .wasm, stdlib zip, lockfile).
+const PYODIDE_INDEX_URLS = [
+  `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full/`,
+  `https://unpkg.com/pyodide@${PYODIDE_VERSION}/`,
+]
 
 let pyodide = null
 let ready = false
@@ -148,8 +169,38 @@ async function init(packages, progressCb) {
     // Dynamic import so pages that never trigger a Run don't pay the
     // download cost. The `indexURL` tells Pyodide where to fetch its
     // WebAssembly binary and stdlib payload from.
-    const mod = await import(/* @vite-ignore */ PYODIDE_RUNTIME_URL)
-    pyodide = await mod.loadPyodide({ indexURL: PYODIDE_INDEX_URL })
+    //
+    // Try each configured mirror in order; if both the dynamic import
+    // of pyodide.mjs and the subsequent loadPyodide() call succeed we
+    // keep that pyodide instance and stop. Otherwise fall through to
+    // the next mirror, remembering the last error so we can surface it
+    // if every mirror fails.
+    let lastErr = null
+    pyodide = null
+    for (let i = 0; i < PYODIDE_INDEX_URLS.length; i++) {
+      const indexURL = PYODIDE_INDEX_URLS[i]
+      const runtimeURL = indexURL + "pyodide.mjs"
+      if (i > 0) {
+        progressCb?.(
+          `Retrying Pyodide from fallback mirror (${new URL(indexURL).host})...`,
+        )
+      }
+      try {
+        const mod = await import(/* @vite-ignore */ runtimeURL)
+        pyodide = await mod.loadPyodide({ indexURL })
+        break
+      } catch (err) {
+        lastErr = err
+        console.warn(`[pyodide] mirror ${indexURL} failed:`, err)
+      }
+    }
+    if (!pyodide) {
+      throw new Error(
+        `Pyodide failed to load from any configured mirror. Last error: ${
+          lastErr?.message ?? lastErr
+        }`,
+      )
+    }
 
     // Preload micropip so `import micropip` works in any user block
     // without first calling `pyodide.loadPackage("micropip")`. It's

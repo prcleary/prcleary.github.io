@@ -48,7 +48,7 @@
 // copy. If you don't see this exact string logged after a page load,
 // clear site data (DevTools -> Application -> Storage -> Clear site data)
 // and reload.
-const CODE_RUNNER_VERSION = "2026-07-03.8 (force full nav on SPA-link clicks so COI doesn't leak)"
+const CODE_RUNNER_VERSION = "2026-07-03.9 (Pyodide: unpkg fallback for Firefox Android dynamic-import failure)"
 console.log("[code-runner] version:", CODE_RUNNER_VERSION)
 
 // document.currentScript is null in ES modules, so we locate our own
