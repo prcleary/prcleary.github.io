@@ -151,6 +151,11 @@ async function init(packages, progressCb) {
     const mod = await import(/* @vite-ignore */ PYODIDE_RUNTIME_URL)
     pyodide = await mod.loadPyodide({ indexURL: PYODIDE_INDEX_URL })
 
+    // Preload micropip so `import micropip` works in any user block
+    // without first calling `pyodide.loadPackage("micropip")`. It's
+    // small (~50 KB) and part of the standard Pyodide distribution.
+    await pyodide.loadPackage("micropip")
+
     // Install the REPL-style auto-display helpers into Python globals
     // so run() can transform each block before execution.
     pyodide.runPython(REPL_HELPERS_PY)
