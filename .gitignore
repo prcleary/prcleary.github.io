@@ -5,3 +5,9 @@
 *.swm
 *~
 *.un~
+
+# Quartz build output. Rebuilt on every GitHub Actions run and
+# deployed from the runner's artifact, so nothing here needs to be
+# committed. Tracking it also caused case-collision noise on Windows
+# (public/tags/Snippet.html vs snippet.html).
+public/
