@@ -28,7 +28,7 @@ Both run entirely client-side. No server, no back end, no per-visitor cost. Comm
 Try it — click Run below (this page is opted in to R):
 
 > [!note] DuckDuckGo Browser users
-> DuckDuckGo Browser's tracker blocking blocks the WebAssembly runtimes (webR at `webr.r-wasm.org`, Pyodide at `cdn.jsdelivr.net`) and the CRAN-like package mirror at `repo.r-wasm.org` as third-party requests. If the Run buttons hang or the diagnostic panel below shows an error, tap the shield icon in the address bar and turn Site Privacy Protection off for this site. Every other major browser (Chrome, Firefox, Safari, Edge, on desktop and mobile) works out of the box.
+> DuckDuckGo Browser's tracker blocking blocks the WebAssembly runtimes (webR at `webr.r-wasm.org`, Pyodide at `cdn.jsdelivr.net`) and the R package mirror at `repo.r-wasm.org` as third-party requests — so Run buttons here will not work. Worse, after the runtime download fails, the service worker + isolation state left in your tab causes subsequent same-tab navigations to other pages on this site (e.g. [Bookmarks](/Bookmarks)) to fail with *Web page not available — ERR_BLOCKED_BY_RESPONSE*. To recover: close and reopen the tab. To make the runnable code work: tap the shield icon in the address bar and turn Site Privacy Protection off for this site. Every other major browser (Chrome, Firefox, Safari, Edge, on desktop and mobile) works out of the box.
 
 <pre id="code-runner-diag" style="background:var(--lightgray); padding:0.5rem; font-size:0.85em; border-radius:4px;"></pre>
 
@@ -347,9 +347,11 @@ Everything above (webR, Pyodide, matplotlib font-cache warmup, plot capture, cro
 | Chrome / Edge (Chromium, all platforms) | ✅ | ✅ | ✅ |
 | Firefox (desktop + Android, normal + private) | ✅ | ✅ | ✅ |
 | Safari (macOS 12+, iOS 16+) | ✅ | ✅ | ✅ |
-| DuckDuckGo Browser | ❌ blocked by DDG's tracking protection | ❌ blocked by DDG's tracking protection | ✅ |
+| DuckDuckGo Browser | ❌ blocked by DDG's tracking protection | ⚠️ works on first tab visit; **fails after visiting a runnable page in the same tab** | ✅ |
 
-DuckDuckGo Browser blocks `cdn.jsdelivr.net` (Pyodide), `webr.r-wasm.org` (webR), `repo.r-wasm.org` (R packages), and most cross-origin iframes as third-party trackers. This is a browser-side policy that runs before any page-side code sees the request, so there is no site-side workaround. DDG users can toggle the Privacy Shield off per-site to opt in.
+DuckDuckGo Browser blocks `cdn.jsdelivr.net` (Pyodide), `webr.r-wasm.org` (webR), and `repo.r-wasm.org` (R packages) as third-party trackers. This is a browser-side policy that runs before any page-side code sees the request, so there is no site-side workaround.
+
+The tab-poisoning behaviour is a specific side-effect: once the runtime download fails on a runnable page, the residual service worker + cross-origin isolation state seems to interact badly with DDG's tracker layer, and subsequent same-tab navigations to other pages on this site (e.g. Bookmarks with its embedded iframe) fail with *ERR_BLOCKED_BY_RESPONSE*. Opening a new tab clears the state; toggling Site Privacy Protection off in DDG avoids the problem entirely for that site.
 
 ### R-specific
 
