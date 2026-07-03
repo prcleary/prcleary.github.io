@@ -14,14 +14,14 @@ tags:
 author: GitHub Copilot
 ---
 
-> This page was authored by GitHub Copilot (Claude Opus 4.7) as an AI pair-programmer, working with Paul Cleary to design, implement, and debug the solution described. It doubles as a live demonstration: every ```r block below has a Run button. Because the runner is single-language per page, this page is opted in to R; Python examples further down are shown as static code but will run live on any page opted in with `data-language="python"` — see the [Python live demo](/Notes/Code/Python/runnable-python-code-blocks-demo) for a working companion page.
+> This page was authored by GitHub Copilot (Claude Opus 4.7) as an AI pair-programmer, working with Paul Cleary to design, implement, and debug the solution described. It doubles as a live demonstration: every R code block below has a Run button. Because the runner is single-language per page, this page is opted in to R; Python examples further down are shown as static code but will run live on any page opted in with `data-language="python"` — see the [Python live demo](/Notes/Code/Python/runnable-python-code-blocks-demo) for a working companion page.
 
 ## What this gives you
 
 Any fenced code block on any Quartz page that opts in becomes runnable in the visitor's browser:
 
-- ```r blocks are evaluated by [webR](https://docs.r-wasm.org/webr/latest/) — an R 4.x interpreter compiled to WebAssembly.
-- ```python blocks are evaluated by [Pyodide](https://pyodide.org/) — CPython 3.12 compiled to WebAssembly.
+- R code blocks (opened with ```` ```r ````) are evaluated by [webR](https://docs.r-wasm.org/webr/latest/) — an R 4.x interpreter compiled to WebAssembly.
+- Python code blocks (opened with ```` ```python ````) are evaluated by [Pyodide](https://pyodide.org/) — CPython 3.12 compiled to WebAssembly.
 
 Both run entirely client-side. No server, no back end, no per-visitor cost. Common packages (`data.table`, `ggplot2` for R; `numpy`, `pandas`, `matplotlib` for Python) load automatically; plots render as canvas images below each block. State persists across every block on the same page load, so blocks can build on each other like cells in a notebook.
 
@@ -119,7 +119,7 @@ Quartz's built-in `Static` emitter only copies files from `quartz/static/` into 
 +------------------------------------------------+
 ```
 
-Opt-in is per page: adding a single `<script>` tag to a page enables the behaviour for that page's ```r **or** ```python blocks (whichever language the tag names). Other pages are unaffected. One language per page.
+Opt-in is per page: adding a single `<script>` tag to a page enables the behaviour for that page's R **or** Python fenced code blocks (whichever language the tag names). Other pages are unaffected. One language per page.
 
 ## Files created
 
@@ -198,7 +198,7 @@ Add a single script tag anywhere on the page. Set `data-language` to `r` or `pyt
         data-packages="numpy,pandas,matplotlib,scikit-learn"></script>
 ```
 
-One language per page. Then write ordinary ```r or ```python fenced blocks — the shell scans for `<pre data-language="{lang}">` matching the language you chose and adds a Run button to each. Blocks in any other language on the same page are left untouched.
+One language per page. Then write ordinary R (```` ```r ````) or Python (```` ```python ````) fenced code blocks — the shell scans for `<pre data-language="{lang}">` matching the language you chose and adds a Run button to each. Blocks in any other language on the same page are left untouched.
 
 Optionally add a diagnostic panel above your first block (useful while setting things up):
 

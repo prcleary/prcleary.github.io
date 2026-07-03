@@ -10,7 +10,7 @@ tags:
 author: GitHub Copilot
 ---
 
-> Companion to [Runnable R and Python code blocks in a Quartz blog](/Notes/Code/R/runnable-r-and-python-code-blocks-in-a-quartz-blog). That page is opted in to R and the Python examples there are static; this page is opted in to Python so every ```python block below is live — click **▶ Run** to execute it in your browser.
+> Companion to [Runnable R and Python code blocks in a Quartz blog](/Notes/Code/R/runnable-r-and-python-code-blocks-in-a-quartz-blog). That page is opted in to R and the Python examples there are static; this page is opted in to Python so every Python code block below is live — click **▶ Run** to execute it in your browser.
 
 <pre id="code-runner-diag" style="background:var(--lightgray); padding:0.5rem; font-size:0.85em; border-radius:4px;"></pre>
 
