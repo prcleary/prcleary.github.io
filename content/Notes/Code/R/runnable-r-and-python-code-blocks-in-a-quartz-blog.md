@@ -127,7 +127,9 @@ Four new files (the emitter, the shell, and one backend per language) and two sm
 
 ### 1. `quartz/plugins/emitters/coiServiceWorker.ts` (new)
 
-A tiny Quartz emitter plugin (~35 lines) that writes a coi-serviceworker to the built site root as `sw.js`. This is the *only* way to serve a file at `/` scope from within Quartz.
+A small Quartz emitter plugin that writes a coi-serviceworker to the built site root as `sw.js`. This is the *only* way to serve a file at `/` scope from within Quartz.
+
+The SW applies COOP/COEP headers **selectively** — only to a hardcoded allowlist of page paths (the two runnable-code demo pages). Every other page is served untouched, so cross-origin iframes (e.g. embedded Karakeep, YouTube), Google Fonts, and other cross-origin subresources across the rest of the site load normally. **If you add another runnable-code page, add its path to the `COI_PATHS` array in this file.**
 
 **View source:** [coiServiceWorker.ts on GitHub](https://github.com/prcleary/prcleary.github.io/blob/main/quartz/plugins/emitters/coiServiceWorker.ts)
 
