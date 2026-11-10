@@ -3,7 +3,6 @@ title: My ggplot2 cheatsheet
 date: 2023-08-24
 tags:
   - R
-  - Cheatsheet
   - ggplot2
 ---
 

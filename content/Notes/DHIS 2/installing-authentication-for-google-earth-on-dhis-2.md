@@ -2,7 +2,7 @@
 title: "Installing authentication for Google Earth on DHIS 2"
 date: 2022-10-29
 tags:
-  - DHIS 2
+  - dhis2
 ---
 
 This is a bit of a complicated process. You require a Google account but it should be free to create a service account.

@@ -2,8 +2,8 @@
 title: "Fun with file formats: todo.txt and the iCalendar format"
 date: 2023-06-24
 tags:
-  - R
-  - Productivity
+  - r
+  - productivity
 ---
 
 After careful pruning, I have 600+ tasks that I need to move into my [[Getting Things Done, the todo.txt format and the quest for the perfect productivity system]].

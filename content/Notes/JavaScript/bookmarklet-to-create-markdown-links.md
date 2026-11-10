@@ -2,7 +2,7 @@
 title: Bookmarklet to create Markdown links
 date: 2022-11-19
 tags:
-  - JavaScript
+  - javascript
 ---
 
 Modified the existing TW bookmarklet from [here](https://techlifeweb.com/tiddlywiki/tw5tribalknowledge/static/Bookmarklet%2520for%2520pasting%2520links%2520into%2520TiddlyWiki.html).

@@ -2,9 +2,8 @@
 title: "The DHIS 2 API - part 1"
 date: 2023-06-14
 tags:
-  - DHIS 2
-  - R
-  - API
+  - dhis2
+  - r
 ---
 
 

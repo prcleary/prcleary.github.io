@@ -1,6 +1,8 @@
 ---
 title: Field Epidemiology Toolkit
 date: 2023-03-29
+tags:
+- epidemiology
 ---
 
 

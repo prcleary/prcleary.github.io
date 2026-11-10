@@ -2,9 +2,9 @@
 title: First steps with Observables in Quarto
 date: 2022-10-29
 tags:
-  - Observables
-  - Quarto
-  - R
+  - observables
+  - quarto
+  - r
 ---
 
 ## General

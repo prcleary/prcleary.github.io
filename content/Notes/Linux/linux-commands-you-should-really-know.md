@@ -2,7 +2,7 @@
 title: Linux commands you should really know
 date: 2022-11-19
 tags:
-  - Linux
+  - linux
 ---
 
 - `cat`

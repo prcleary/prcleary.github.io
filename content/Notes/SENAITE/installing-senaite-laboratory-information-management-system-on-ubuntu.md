@@ -2,8 +2,7 @@
 title: "Installing SENAITE laboratory information management system on Ubuntu"
 date: 2023-12-08
 tags:
-  - SENAITE
-  - LIMS
+  - senaite
 ---
 
 Notes from my own recent installation:

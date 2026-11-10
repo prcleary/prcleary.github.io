@@ -2,9 +2,8 @@
 title: Create .gitignore file from R
 date: 2022-10-26
 tags:
-  - R
-  - Snippet
-  - Git
+  - r
+  - git
 ---
 
 Amend with your own files/directories.

@@ -2,8 +2,8 @@
 title: Regression tables for Firth's logistic regression
 date: 2022-12-06
 tag:
-  - Statistics
-  - R
+  - statistics
+  - r
 ---
 
 Here is an example of a function to produce simple regression tables for Firth's logistic regression models. It includes the estimates (exponentiated to odds ratios by default), plus 95% confidence intervals and the p values from the penalised likelihood ratio tests. You can tweak the rounding and output as Markdown if desired. It can't handle functions in the model formula (e.g. `+ factor(sex) +`) but you can usually do that sort of thing outside the model call. Example table beneath the code.

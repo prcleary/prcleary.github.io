@@ -2,7 +2,7 @@
 title: First steps with setting up demonstration versions of open source software platforms in the cloud
 date: 2022-11-19
 tags:
-  - Linux
+  - linux
 ---
 
 Setting up a demonstration version of an open source web service is a good way of helping to assess its feasibility, suitability and acceptability for a particular digital health application.

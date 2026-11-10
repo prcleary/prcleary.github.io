@@ -1,8 +1,6 @@
 ---
 title: "The importance of sustainable, secure and coordinated digital health technologies"
 date: 2022-10-25
-tags:
-  - Global health informatics
 ---
 
 Introduction

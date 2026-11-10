@@ -2,7 +2,7 @@
 title: My 2018 notes on installation of DHIS 2
 date: 2022-10-28
 tags:
-  - DHIS 2
+  - dhis2
 ---
 
 

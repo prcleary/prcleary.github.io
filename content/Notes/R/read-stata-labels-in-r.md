@@ -2,8 +2,7 @@
 title: Read Stata labels in R
 date: 2022-10-26
 tags:
-  - R
-  - Snippet
+  - r
 ---
 
 This is a function to read Stata labels from data imported by `haven`.

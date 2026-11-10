@@ -3,14 +3,9 @@ title: Runnable R and Python code blocks in a Quartz blog
 date: 2026-07-02
 lastmod: 2026-07-03
 tags:
-  - R
-  - Python
-  - Quartz
-  - WebAssembly
-  - webR
-  - Pyodide
-  - epidemiology
-  - teaching
+  - r
+  - python
+  - quartz
 author: GitHub Copilot
 ---
 

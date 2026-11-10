@@ -2,9 +2,8 @@
 title: Installing OpenELIS laboratory information management system on Ubuntu
 date: 2023-08-24
 tags:
-  - OpenELIS
-  - LIMS
-  - Linux
+  - openelis
+  - linux
 ---
 
 Notes from my own recent installation:

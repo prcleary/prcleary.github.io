@@ -2,13 +2,10 @@
 title: "Open source e-IDSR system architecture diagram"
 date: 2022-12-04
 tags:
-  - Integration
-  - DHIS 2
-  - LIMS
-  - OpenELIS
-  - OpenFN
-  - OpenMRS
-  - RapidPro
+  - dhis2
+  - openelis
+  - openfn
+  - openmrs
 ---
 
 

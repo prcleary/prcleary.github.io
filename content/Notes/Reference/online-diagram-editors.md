@@ -2,7 +2,7 @@
 title: Online diagram editors
 date: 2022-12-04
 tags:
-  - Links
+  - links
 ---
 
 Needing to draw an information system architecture so looking at my options.

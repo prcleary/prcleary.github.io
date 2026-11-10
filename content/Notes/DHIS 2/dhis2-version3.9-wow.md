@@ -2,8 +2,7 @@
 title: "DHIS 2 version 3.9 - wow"
 date: 2022-12-04
 tags:
-  - DHIS 2
-  - RapidPro
+  - dhis2
 ---
 
 [DHIS 2.39 Overview](https://dhis2.org/releases/version-239/)

@@ -2,7 +2,7 @@
 title: "Online tools which may occasionally be useful"
 date: 2022-12-04
 tags:
-  - Links
+  - links
 ---
 
 Not specifically recommending any of these, and would not use any of these for anything sensitive (e.g. work-related)

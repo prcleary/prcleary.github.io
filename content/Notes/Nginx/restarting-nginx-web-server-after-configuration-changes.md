@@ -2,8 +2,7 @@
 title: Restarting nginx Web server after configuration changes
 date: 2022-10-29
 tags:
-  - Nginx
-  - Snippet
+  - nginx
 ---
 
 ```bash

@@ -1,8 +1,6 @@
 ---
 title: Evaluating laboratory information management systems for low and middle income countries
 date: 2022-11-19
-tags:
-  - LIMS
 ---
 
 Is it sustainable?

@@ -2,10 +2,8 @@
 title: "Convenience R functions for querying the SENAITE API"
 date: 2025-03-11
 tags:
-  - R
-  - SENAITE
-  - LIMS
-  - API
+  - r
+  - senaite
 ---
 
 > [!note] These have been further developed and added to my `sen8r` (geddit) package.

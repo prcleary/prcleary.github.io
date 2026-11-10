@@ -2,7 +2,7 @@
 title: "Getting Things Done, the todo.txt format and the quest for the perfect productivity system"
 date: 2023-06-24
 tags: 
-  - Productivity
+  - productivity
 ---
 
 Years ago, while painfully transitioning from a regimented hospital-based existence to an alien office environment, I read the book ["Getting Things Done" by David Allen](https://en.wikipedia.org/wiki/Getting_Things_Done) and it saved my life. Well, made me more organised anyway.

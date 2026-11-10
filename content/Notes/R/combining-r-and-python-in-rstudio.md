@@ -2,8 +2,8 @@
 title: Combining R with Python
 date: 2023-03-29
 tags:
-  - R
-  - Python
+  - r
+  - python
 ---
 
 Python seems a bit more flexible in terms of data structures. While of course you can create and use complex data structures in R, it might take more code than it would in Python. On the other hand some things are easier in R, so you might want to use both R and Python, and then of course you would like to be able to use both languages in the same development environment.

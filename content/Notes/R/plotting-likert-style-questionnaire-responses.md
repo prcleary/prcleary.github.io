@@ -2,9 +2,8 @@
 title: "Plotting Likert-style questionnaire responses"
 date: 2022-10-28
 tags:
-  - R
+  - r
   - ggplot2
-  - Snippet
 ---
 
 

@@ -2,7 +2,7 @@
 title: Gentle introduction to Python
 date: 2022-11-08
 tags:
-  - Python
+  - python
 ---
 
 You can run Python in your browser [here](https://www.online-python.com/).

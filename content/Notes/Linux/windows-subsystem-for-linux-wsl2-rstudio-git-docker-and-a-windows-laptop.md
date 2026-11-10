@@ -2,7 +2,7 @@
 title: "Windows Subsystem for Linux (WSL2), RStudio, Git, Docker and a Windows laptop"
 date: 2022-10-29
 tags:
-  - Linux
+  - linux
 ---
 
 ### WSL1

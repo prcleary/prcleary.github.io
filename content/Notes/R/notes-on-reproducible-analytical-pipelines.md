@@ -2,7 +2,7 @@
 title: Notes on Reproducible Analytical Pipelines
 date: 2022-11-15
 tags:
-  - Statistics
+  - statistics
 ---
 
 - Use of Git and GitLab/GitHub

@@ -2,8 +2,7 @@
 title: Rounding like you expect it
 date: 2022-10-26
 tags:
-  - R
-  - Snippet
+  - r
 ---
 
 Note how R rounds numbers.

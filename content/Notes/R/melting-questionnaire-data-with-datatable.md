@@ -2,9 +2,8 @@
 title: Melting questionnaire data with data.table
 date: 2022-10-28
 tags:
-  - R
-  - data.table
-  - Snippet
+  - r
+  - datatable
 ---
 
 

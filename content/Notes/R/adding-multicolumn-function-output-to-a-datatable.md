@@ -2,9 +2,8 @@
 title: "Adding multicolumn function output to a data.table"
 date: 2022-10-26
 tags:
-  - R
-  - data.table
-  - Snippet
+  - r
+  - datatable
 ---
 
 First generate some random data.

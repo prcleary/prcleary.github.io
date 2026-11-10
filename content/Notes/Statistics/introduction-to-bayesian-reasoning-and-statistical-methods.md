@@ -2,8 +2,8 @@
 title: Introduction to Bayesian reasoning and statistical methods
 date: 2022-10-31
 tags:
-  - Statistics
-  - Bayesian
+  - statistics
+  - bayesian
 ---
 
 

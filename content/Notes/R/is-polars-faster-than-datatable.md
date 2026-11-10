@@ -2,8 +2,8 @@
 title: "Is polars faster than data.table?"
 date: 2023-04-24
 tags:
-  - R
-  - data.table
+  - r
+  - datatable
   - polars
 ---
 

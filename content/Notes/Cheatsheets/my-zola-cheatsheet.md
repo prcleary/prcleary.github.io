@@ -1,8 +1,7 @@
 ---
 title: "My Zola cheatsheet"
 tags:
-  - Blogging
-  - Cheatsheet
+  - blogging
 date: 2025-12-31
 ---
 

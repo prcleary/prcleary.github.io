@@ -1,6 +1,8 @@
 ---
 title: More fun with ChatGPT
 date: 2023-03-29
+tags:
+- ai
 ---
 
 You can sign up for a free account here: [OpenAI](https://openai.com/) - it's very easy to use.

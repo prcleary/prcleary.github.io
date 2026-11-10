@@ -2,8 +2,7 @@
 title: "Xerte Online Toolkits: hiding the Next button for a specified time"
 date: 2023-06-20
 tags:
-  - Xerte Online Toolkits
-  - e-learning
+  - xot
 ---
 
 You can hide the Next button for a specified time (say 15 seconds) to confound people like me who try to click through e-learning as fast as possible.

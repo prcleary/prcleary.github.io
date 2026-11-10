@@ -2,8 +2,7 @@
 title: "Function for labelling e.g. age groups"
 date: 2023-03-21
 tags:
-  - R
-  - Snippet
+  - r
 ---
 
 ```r

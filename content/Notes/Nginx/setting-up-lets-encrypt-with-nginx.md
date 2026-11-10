@@ -2,8 +2,7 @@
 title: "Setting up Let's Encrypt with Nginx"
 date: 2022-10-29
 tags:
-  - Nginx
-  - Snippet
+  - nginx
 ---
 
 Generate Diffie-Hellman parameters:

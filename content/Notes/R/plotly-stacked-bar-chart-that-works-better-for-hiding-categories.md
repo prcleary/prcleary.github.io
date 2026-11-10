@@ -2,9 +2,8 @@
 title: Plotly stacked bar chart that works better for hiding categories
 date: 2022-11-03
 tags:
-  - R
-  - Snippet
-  - Plotly
+  - r
+  - plotly
 ---
 
 `ggplotly` in the `plotly` package is a good quick way of making `ggplot2` charts interactive. But if you use it for stacked bar charts then clicking items in the legend to hide categories does not give the expected result (try it with p1 below) - however it does work with the plotly R package code (see p2).

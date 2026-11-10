@@ -2,8 +2,7 @@
 title: "Adapt or perish: learning the tidyverse"
 date: 2023-06-12
 tags:
-  - R
-  - Writing
+  - r
 ---
 
 > [!quote] Adapt or perish, now as ever, is nature's inexorable imperative.

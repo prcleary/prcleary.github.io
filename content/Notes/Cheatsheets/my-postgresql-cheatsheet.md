@@ -2,8 +2,7 @@
 title: My PostgreSQL cheatsheet
 date: 2023-08-24
 tags:
-  - PostgreSQL
-  - Cheatsheet
+  - postgreSQL
 ---
 
 ### Find Postgres config file (as root) and set up database logging

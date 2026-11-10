@@ -2,7 +2,7 @@
 title: "Advent of Code 2024: days 1-5"
 date: 2024-12-13
 tags:
-  - R
+  - r
 ---
 
 Here are my solutions so far:

@@ -1,9 +1,7 @@
 ---
 title: "My Linux cheatsheet"
 tags:
-  - Linux
-  - CLI
-  - Cheatsheet
+  - linux
 date: 2023-06-12
 ---
 

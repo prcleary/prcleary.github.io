@@ -2,7 +2,7 @@
 title: Updating an Ubuntu server
 date: 2022-10-29
 tags:
-  - Linux
+  - linux
 ---
 
 

@@ -2,8 +2,8 @@
 title: Bulk creation of data elements in DHIS 2
 date: 2023-07-12
 tags:
-  - R
-  - DHIS 2
+  - r
+  - dhis2
 ---
 
 DHIS 2 makes it easy to create new data sets for data collection and analysis. One of the most time-consuming parts of this is creating each data element (in DHIS 2 lingo a data element is a basic item of information that is captured in a form, such as a number or date or bit of text) in the Maintenance app. I was recently asked to set up a new case-based data collection for COVID-19 cases, which required about 50 data elements to be created, and looked into how this could be automated.

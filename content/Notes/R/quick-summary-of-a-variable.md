@@ -2,8 +2,7 @@
 title: Quick summary of a variable
 date: 2022-11-08
 tags:
-  - R
-  - Snippet
+  - r
 ---
 
 ```r

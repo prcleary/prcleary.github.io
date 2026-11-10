@@ -2,8 +2,7 @@
 title: Calculating directly standardised rates with data for only some age groups
 date: 2022-11-15
 tags:
-  - R
-  - Snippet
+  - r
 ---
 
 ```r

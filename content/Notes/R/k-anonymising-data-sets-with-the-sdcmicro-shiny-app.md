@@ -2,8 +2,8 @@
 title: "k-anonymising data sets with the sdcMicro Shiny app"
 date: 2023-04-14
 tags:
-  - R
-  - Shiny
+  - r
+  - shiny
 ---
 
 I am currently involved in going through our organisational approvals process for sharing some anonymised case-level disease data with a research partner.

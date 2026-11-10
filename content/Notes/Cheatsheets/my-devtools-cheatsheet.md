@@ -1,8 +1,7 @@
 ---
 title: "My devtools cheatsheet"
 tags:
-  - R
-  - Cheatsheet
+  - r
 date: 2025-09-11
 ---
 

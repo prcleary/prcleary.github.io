@@ -1,7 +1,7 @@
 ---
 title: My Vim configuration file
 tags:
-  - Vim
+  - vim
 ---
 
 ![](https://external-preview.redd.it/LpuUdPutERMVFKPZUHAT1asPA4KfH2n7HbIgERtMtCs.jpg?auto=webp&s=4fa3063ad9a9ad012083d658f84cc2b0d3c9dd9d)

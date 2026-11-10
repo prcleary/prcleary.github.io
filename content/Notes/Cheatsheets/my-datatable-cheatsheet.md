@@ -2,9 +2,8 @@
 title: My data.table cheatsheet
 date: 2023-01-25
 tags:
-  - R
-  - Cheatsheet
-  - data.table
+  - r 
+  - datatable
 ---
 
 ### Inner join

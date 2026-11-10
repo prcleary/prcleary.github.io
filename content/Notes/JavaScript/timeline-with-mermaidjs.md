@@ -2,7 +2,7 @@
 title: Timeline with mermaid.js
 date: 2022-11-19
 tags:
-  - Mermaid.js
+  - javascript
 ---
 
 Probably the easiest way to construct this type of visualisation - can be helpful for presenting a timeline of colonisation or invasive infection among cases when person-to-person transmission is occurring.

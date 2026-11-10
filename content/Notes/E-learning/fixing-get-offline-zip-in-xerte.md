@@ -2,8 +2,7 @@
 title: "Fixing 'Get Offline Zip' in Xerte"
 date: 2022-11-01
 tags:
-  - Xerte Online Toolkits
-  - e-learning
+  - xot
 ---
 
 I maintain [Xerte Online Toolkit](https://xerte.org.uk/index.php/en/home) (free e-learning environment) for demonstration purposes and a few trainee projects. I updated it not that long ago to version 3.10 (git v3.10.4-24-g54c8a27). The "Get Offline Zip" functionality, which allows users to download their training materials as a self-contained zip file, has never worked.

@@ -2,8 +2,7 @@
 title: Combine two dichotomous variables into a single variable with four levels
 date: 2022-11-10
 tags:
-  - R
-  - Snippet
+  - r
 ---
 
 

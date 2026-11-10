@@ -2,9 +2,8 @@
 title: "Installing Xerte Online Toolkits on Ubuntu 22.04 Linux"
 date: 2023-06-17
 tags:
-  - Xerte Online Toolkits
-  - e-learning
-  - Linux
+  - xot
+  - linux
 ---
 
 Notes from own recent installation:

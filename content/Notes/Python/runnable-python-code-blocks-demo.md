@@ -2,11 +2,8 @@
 title: Runnable Python code blocks — live demo
 date: 2026-07-03
 tags:
-  - Python
-  - Quartz
-  - WebAssembly
-  - Pyodide
-  - teaching
+  - python
+  - quartz
 author: GitHub Copilot
 ---
 

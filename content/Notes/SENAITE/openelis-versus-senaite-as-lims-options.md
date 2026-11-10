@@ -2,9 +2,8 @@
 title: "OpenELIS versus SENAITE as LIMS options"
 date: 2023-01-19
 tags:
-  - SENAITE
-  - OpenELIS
-  - LIMS
+  - senaite
+  - openelis
 ---
 
 Although [OpenELIS](http://openelis-global.org/) seemed to be the most integrated LIMS option, I have installed it several times now, with problems every time. The first time I installed it directly on CentOS 7, the second time as Bahmini and the third and subsequent times using different versions of the installers for Ubuntu.

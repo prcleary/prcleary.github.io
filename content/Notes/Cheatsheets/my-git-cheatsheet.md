@@ -2,8 +2,7 @@
 title: My Git cheatsheet
 date: 2022-11-08
 tags:
-  - Git
-  - Cheatsheet
+  - git
 ---
 
 ### Create a branch from a specific commit hash

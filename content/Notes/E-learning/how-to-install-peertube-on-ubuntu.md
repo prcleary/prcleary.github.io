@@ -2,8 +2,7 @@
 title: "How to install PeerTube on Ubuntu" 
 date: 2025-10-24
 tags:
-  - PeerTube
-  - Linux
+  - linux
 ---
 
 PeerTube is a self-hosted video streaming platform, with various social networking features that I am not using. I need this to host training videos for SENAITE. 

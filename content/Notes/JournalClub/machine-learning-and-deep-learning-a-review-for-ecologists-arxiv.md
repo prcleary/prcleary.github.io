@@ -2,7 +2,7 @@
 title: "Machine Learning and Deep Learning - A review for Ecologists (arXiv)"
 date: 2022-12-04
 tags:
-  - Machine learning
+  - machinelearning
 ---
 
 [Machine Learning and Deep Learning -- A review for Ecologists](https://arxiv.org/abs/2204.05023)

@@ -2,8 +2,8 @@
 title: Multilevel logistic regression in Python
 date: 2023-03-21
 tags:
-  - Statistics
-  - Python
+  - python
+  - statistics
 ---
 
 Run in RStudio via `reticulate` package.

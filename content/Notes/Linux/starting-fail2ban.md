@@ -2,7 +2,7 @@
 title: Starting fail2ban
 date: 2022-10-28
 tags:
-  - Cybersecurity
+  - infosec
 ---
 
 Check it is not running first.

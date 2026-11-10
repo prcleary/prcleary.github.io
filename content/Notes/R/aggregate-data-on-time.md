@@ -2,9 +2,8 @@
 title: Aggregate data on time
 date: 2022-11-08
 tags:
-  - R
-  - Snippet
-  - data.table
+  - r
+  - datatable
 ---
 
 

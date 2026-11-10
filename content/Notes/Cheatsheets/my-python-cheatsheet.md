@@ -2,8 +2,7 @@
 title: My Python cheatsheet
 date: 2023-03-07
 tags:
-  - Python
-  - Cheatsheet
+  - python
 ---
 
 ### Install Python package from GitLab

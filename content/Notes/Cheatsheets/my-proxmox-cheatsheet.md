@@ -1,9 +1,7 @@
 ---
 title: "My Proxmox cheatsheet"
 tags:
-  - Proxmox
-  - CLI
-  - Cheatsheet
+  - proxmox
 date: 2024-10-14
 ---
 

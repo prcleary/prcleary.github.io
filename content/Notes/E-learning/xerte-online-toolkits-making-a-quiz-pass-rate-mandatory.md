@@ -2,8 +2,7 @@
 title: "Xerte Online Toolkits: making a quiz pass rate mandatory"
 date: 2023-03-12
 tags:
-  - Xerte Online Toolkits
-  - e-learning
+  - xot
 ---
 
 You can enforce a pass mark in an [XOT](https://xerte.org.uk/index.php/en/home) quiz - add the long snippet below to the source code of the "Feedback" section of the quiz.

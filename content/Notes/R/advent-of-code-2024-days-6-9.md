@@ -1,6 +1,8 @@
 ---
 title: "Advent of Code 2024: days 6-9"
 date: 2024-12-30
+tags:
+- r
 ---
 
 Got further than I thought I would - ran out of alone time when I got to day 9 .

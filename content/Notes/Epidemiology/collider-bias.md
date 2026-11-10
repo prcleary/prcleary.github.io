@@ -2,7 +2,7 @@
 title: Collider bias
 date: 2023-07-12
 tags:
-  - Causal inference
+  - causalinference
 ---
 
 Best explanation of collider bias (which causes paradoxical findings in epidemiological studies) I have come across.

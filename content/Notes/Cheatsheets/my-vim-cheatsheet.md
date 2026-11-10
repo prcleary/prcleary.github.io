@@ -2,8 +2,7 @@
 title: My Vim cheatsheet
 date: 2022-11-08
 tags:
-  - Vim
-  - Cheatsheet
+  - vim
 ---
 
 ### Move all lines matching pattern to start of file

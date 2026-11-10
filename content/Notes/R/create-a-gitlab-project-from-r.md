@@ -2,8 +2,7 @@
 title: Create a GitLab project (from R)
 date: 2022-11-11
 tags:
-  - R
-  - Snippet
+  - r
 ---
 
 I used to think you had to log in to our GitLab instance to create a project before switching back to GitBash on my local machine to add the remote, but I have just realised that you can do it all from R.

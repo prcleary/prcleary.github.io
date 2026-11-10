@@ -2,7 +2,7 @@
 title: "Notes on new homelab setup"
 date: 2025-03-11
 tags:
-  - Proxmox
+  - proxmox
 ---
 
 Bullet point notes on recent acquisition of home server and set up so far:

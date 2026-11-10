@@ -2,8 +2,7 @@
 title: Function to look for filenames of form yyyymmddpattern and select one with latest date
 date: 2025-02-20
 tags:
-  - R
-  - Snippet
+  - r
 ---
 
 

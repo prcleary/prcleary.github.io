@@ -2,8 +2,7 @@
 title: "My Quartz cheatsheet"
 description: A demonstration of the capabilities of Quartz for blogging
 tags:
-  - Blogging
-  - Cheatsheet
+  - blogging
 date: 2026-06-01
 ---
 

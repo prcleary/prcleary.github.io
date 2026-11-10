@@ -2,8 +2,8 @@
 title: "Should I learn Python now I know R?"
 date: 2024-10-27
 tags:
-  - Python
-  - R
+  - python
+  - r
 ---
 
 In response to a query from a colleague:

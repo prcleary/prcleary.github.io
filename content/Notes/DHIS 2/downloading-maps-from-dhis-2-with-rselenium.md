@@ -2,8 +2,8 @@
 title: Downloading maps from DHIS 2 with RSelenium
 date: 2023-07-12
 tags:
-  - R
-  - DHIS 2
+  - r
+  - dhis2
 ---
 
 It would be nice to use the native maps from DHIS 2 in automated outputs, and probably save a lot of work recreating them in R. I'm pleased to say that maps can be downloaded from DHIS 2 using the R package RSelenium, though it is a slightly fragile process.

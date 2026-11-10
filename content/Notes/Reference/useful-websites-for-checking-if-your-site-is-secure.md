@@ -2,7 +2,7 @@
 title: "Useful websites for checking if your site is secure"
 date: 2022-12-04
 tags:
-  - Links
+  - links
 ---
 
 - [Check the security of your private Nextcloud server](https://scan.nextcloud.com/)

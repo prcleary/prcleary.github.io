@@ -2,8 +2,7 @@
 title: "Embedding Xerte Online Toolkits e-learning in a Web page - example"
 date: 2023-06-20
 tags:
-  - Xerte Online Toolkits
-  - e-learning
+  - xot
 ---
 
 <p>Simply using the embed code from XOT.</p>

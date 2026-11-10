@@ -1,9 +1,7 @@
 ---
 title: "My Docker cheatsheet"
 tags:
-  - Docker
-  - CLI
-  - Cheatsheet
+  - docker
 date: 2023-03-13
 ---
 

@@ -1,8 +1,7 @@
 ---
 title: "My R cheatsheet"
 tags:
-  - R
-  - Cheatsheet
+  - r
 date: 2023-03-15
 ---
 

@@ -2,8 +2,8 @@
 title: Things you can now do with AI online
 date: 2023-03-30
 tags:
-  - AI
-  - Links
+  - ai
+  - links
 ---
 
 In no particular order - some require signup but all have some free options

@@ -1,8 +1,7 @@
 ---
 title: "My Emanote cheatsheet"
 tags:
-  - Cheatsheet
-  - Blogging
+  - blogging
 date: 2026-04-08
 ---
 

@@ -2,9 +2,9 @@
 title: "Checklist for setting up a new Ubuntu Server VM in Proxmox to run Docker" 
 date: 2023-03-16
 tags:
-  - Linux
-  - Docker
-  - Proxmox
+  - linux
+  - docker
+  - proxmox
 ---
 
 Bit of an aide-memoire as I have done this so many times now and keep forgetting bits. 

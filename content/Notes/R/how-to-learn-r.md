@@ -2,8 +2,7 @@
 title: How to learn R (an opinionated view)
 date: 2023-02-07
 tags:
-  - Writing
-  - R
+  - r
 ---
 
 So you would like to learn the statistical programming language R. You have decided this entirely of your own free will and without any undue coercion, conscious or unconscious, from me.

@@ -1,9 +1,6 @@
 ---
 title: Laboratory implementation and IDSR
 date: 2022-10-25
-tags:
-  - LIMS
-  - Global health informatics
 ---
 
 ### How Does a Public Health Laboratory Interface with IDSR?

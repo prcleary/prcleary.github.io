@@ -2,8 +2,8 @@
 title: Installing DHIS 2 dependencies on Linux
 date: 2022-10-28
 tags:
-  - Linux
-  - DHIS 2
+  - linux
+  - dhis2
 ---
 
 ```bash

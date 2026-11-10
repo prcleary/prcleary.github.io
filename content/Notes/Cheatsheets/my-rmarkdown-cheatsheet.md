@@ -2,7 +2,7 @@
 title: My RMarkdown cheatsheet
 date: 2023-01-30
 tags:
-  - RMarkdown
+  - r
 ---
 
 ### Allow full width chart

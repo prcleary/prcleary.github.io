@@ -1,7 +1,7 @@
 ---
 title: Ansible first steps
 tags:
-  - Ansible
+  - ansible
 ---
 
 First install Ansible on master node. On Manjaro Linux you use this:

@@ -2,9 +2,8 @@
 title: "Statistical practice in field epidemiology: so many problems, so many solutions"
 date: 2023-10-01
 tags:
-  - Writing
-  - Statistics
-  - Bayesian
+  - statistics
+  - bayesian
 ---
 
 Some colleagues and I have recently been having an interesting discussion about how we should be taking account of recent statistical criticisms of p values and practices such as stepwise model selection.

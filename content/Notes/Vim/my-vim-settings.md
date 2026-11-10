@@ -2,7 +2,7 @@
 title: My Vim settings
 date: 2022-11-15
 tags:
-  - Vim
+  - vim
 ---
 
 ```vim
