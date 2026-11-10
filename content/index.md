@@ -6,10 +6,7 @@ Hello! I'm **Paul Cleary**, a UK epidemiologist working in public health and glo
 ## What you'll find here
 
 - My [[Blog|blog]]
-- Interesting [[Bookmarks|bookmarks]]
 - Notes (e.g. on [[Notes/Booknotes/reading|books I am reading]]), which I am starting to organise in Obsidian
-
-> [!info] The Notes section of this site is currently work-in-progress as I transfer notes from elsewhere.
 
 [Email](mailto:blog@paulcleary.net) [GitHub](https://github.com/prcleary) [Letterboxd](https://letterboxd.com/rusticana/) [ORCID](https://orcid.org/0000-0001-9335-5422) [Strava](https://www.strava.com/athletes/9125693) [Zotero](https://www.zotero.org/drprcleary) 
 
