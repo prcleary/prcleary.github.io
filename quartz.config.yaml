@@ -47,6 +47,7 @@ configuration:
     enableSiteMap: true
     enableRSS: true
     rssFullHtml: true
+    rssLimit: 1
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
