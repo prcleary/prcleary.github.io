@@ -11,27 +11,74 @@ order: -5
 
 ### Statistical Rethinking by Richard McElreath 
 
-- reading it as a gentle introduction to Bayesian methods
+- (still) reading it as a gentle introduction to Bayesian methods
 - it is great and I would recommend it to anyone with some statistical background 
 - readable and often funny!
 - it tackles some quite complex areas in a way that is very accessible to those of us who are more comfortable with code than equations
-- I've read that some people get a bit lost from chapter 9 but I'm on chapter 12 and it's still going well
+- restarted it and taking notes this time
 
-### Der Tod in Venedig by Thomas Mann (in German) 
+### The Waves by Virginia Woolf
 
-- he's arrived in Venice but I put this down to read Pickwick Papers and need to get back to it
+- experimental stream-of-consciousness novel, recommended by my daughter
+- taking it in small doses
+
+### How Steeple Sinderby Wanderers Won The F.A. Cup by JL Carr
+
+- light relief from the The Waves
+- witty comedy about grassroots football
+
+### Networking for System Administrators by Michael W Lucas
+
+- saw it recommended somewhere
+- short, chatty book on networks aimed at giving those who aren't network experts the minimum they need to know
+- taking notes on this one
+
+### Fundamentals of Data Engineering
+
+- started this as an audiobook long ago, but lost track and now reading it as a PDF and taking notes
+
+### 
+
+## Read in 2026
+
+### A History Of The World in 47 Borders by Jonn Elledge
+
+- a well chosen present
+- potted, podcast-style history of weird borders
+- educational and enjoyable
+
+### East of Eden by John Steinbeck 
+
+- read it a while back
+- great story, loved the characters
+- I really should write notes at the time...
+
+### The Brothers Karamazov by Fyodor Dostoevsky
+
+- read it a while back
+- great story, loved the characters
+
+### Orlando by Virginia Woolf
+
+- enjoyed this one too
+- loved the historical sweep and gender subversion
+
+### The Hawkline Monster by Richard Brautigan
+
+- read it because I like his poetry
+- short but very strange story from the mind of Brautigan
 
 ### Neuromancer by William Gibson
 
-- reading it on personal recommendation
-- it is also apparently where the concepts of cyberspace and virtual reality were first developed
-- read most of it but then put it down and might need to start it again
+- read it on personal recommendation and as an essential part of geek culture
+- supposedly where the concepts of cyberspace and virtual reality were first developed
+- there are so many neologisms that I lost track and had to restart it
+- looking forward to seeing the screen version
 
-### Professional Plone 4 Development by Martin Aspeli
+### Der Tod in Venedig by Thomas Mann (in German) 
 
-- skimming this on and off to get a better understanding of Plone, the complex content management system that SENAITE is built on
-- very out-of-date and too much on insane Python package management
-- not sure I will finish it
+- short but difficult book 
+- may re-read when my German is better
 
 ## Read in 2025
 
@@ -261,7 +308,7 @@ order: -5
 ### Post Office by Charles Bukowski
 
 - another breakthrough novel
-- I read several Phillipe Djian (he wrote the book they made into Betty Blue) novels in my twenties and loved them
+- I read several Philippe Djian (he wrote the book they made into Betty Blue) novels in my twenties and loved them
 - Djian occasionally refers to the American authors who influenced him, among whom was Bukowski
 - it's a social-realism, semi-autobiographical account of a drunken low-life womanising postal worker who's just about getting by
 - read it in a day or so as it's short and simply written
@@ -715,7 +762,6 @@ order: -5
 
 ## Books I want to get back to
 
-
 ### Geschichte Europas: Von der Völkerwanderung bis zur Reformation by Henri Pirenne
 
 - similar long-term project in German
@@ -729,5 +775,11 @@ order: -5
 - also it holds your hand on the maths more than other books I could mention
 - I think I read the first chapter but the dodgy second-hand print copy I have is badly printed and has bits missing
 
+## Books I gave up on
+
+### Professional Plone 4 Development by Martin Aspeli
+
+- was skimming this on and off to get a better understanding of Plone, the complex content management system that SENAITE is built on
+- very out-of-date and too much on insane Python package management
 ---
 
